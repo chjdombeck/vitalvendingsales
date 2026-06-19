@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vending Machine Parts for Sale | Vital Vending Sales</title>
+  <meta name="description" content="Shop genuine vending machine parts online. Motors, bill validators, coin mechanisms, control boards, and more. Fast shipping across the Northeast." />
+  <link rel="canonical" href="https://www.vitalvendingsales.com/vending-parts.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Vending Machine Parts for Sale | Vital Vending Sales" />
+  <meta property="og:description" content="Shop genuine vending machine parts online. Motors, bill validators, coin mechanisms, and more. Fast shipping." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.vitalvendingsales.com/vending-parts.html" />
+  <meta property="og:image" content="https://www.vitalvendingsales.com/og-image.jpg" />
+  <meta property="og:site_name" content="Vital Vending Sales" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Vital Vending Sales — Vending Parts","url":"https://www.vitalvendingsales.com/vending-parts.html","description":"Genuine replacement parts for snack, combo, and beverage vending machines. Fast shipping across the Northeast.","telephone":"+14132009068","address":{"@type":"PostalAddress","streetAddress":"15 Dana Way","addressLocality":"Ludlow","addressRegion":"MA","postalCode":"01056","addressCountry":"US"}}</script>
+
+  <link rel="preload" href="./VitalLogoandmoreTEXTONLY.png" as="image" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            'navy-dark': '#121e35',
+            green: '#3DB54A',
+            'green-dark': '#2e9439',
+            'green-soft': '#D6F0DA',
+            'gray-light': '#F4F6F8',
+            'gray-mid': '#8C95A0',
+            'gray-dark': '#3D4D5C',
+          },
+          fontFamily: { sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ===== SHARED BUTTON STYLES ===== */
+    .btn-green {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #3DB54A; color: #fff; font-weight: 700;
+      padding: 12px 24px; border-radius: 9999px; border: none; cursor: pointer;
+      font-size: 0.9rem; letter-spacing: 0.01em; text-decoration: none;
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), filter 0.25s ease, box-shadow 0.25s ease;
+    }
+    .btn-green:hover { transform: scale(1.04) translateY(-1px); filter: brightness(1.1); box-shadow: 0 8px 24px rgba(61,181,74,0.35); }
+    .btn-green:active { transform: translateY(1px) scale(0.97); }
+
+    .btn-outline-navy {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #1B2A4A; font-weight: 700;
+      padding: 11px 22px; border-radius: 9999px; border: 2px solid #1B2A4A; cursor: pointer;
+      font-size: 0.9rem; text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline-navy:hover { background: #1B2A4A; color: #fff; }
+
+    /* ===== NAV ===== */
+    .nav-link {
+      color: #3D4D5C; font-weight: 600; font-size: 0.9rem;
+      text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active { color: #1B2A4A; border-bottom-color: #3DB54A; }
+
+    /* ===== PRODUCT CARDS ===== */
+    .part-card {
+      background: #fff; border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(27,42,74,0.07);
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+    }
+    .part-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(27,42,74,0.08), 0 16px 40px rgba(27,42,74,0.1);
+    }
+    .badge {
+      display: inline-block; background: #D6F0DA; color: #1B2A4A;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 9999px;
+    }
+    .badge-red { background: #FFE4E4; color: #c0392b; }
+    .badge-navy { background: #1B2A4A; color: #fff; }
+
+    /* ===== CART DRAWER ===== */
+    #cart-drawer {
+      position: fixed; top: 0; right: 0; bottom: 0; width: 100%; max-width: 420px;
+      background: #fff; z-index: 200; transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: -8px 0 40px rgba(0,0,0,0.15); display: flex; flex-direction: column;
+    }
+    #cart-drawer.open { transform: translateX(0); }
+    #cart-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 199;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #cart-overlay.open { opacity: 1; pointer-events: auto; }
+
+    /* ===== CART BUTTON ===== */
+    #cart-btn {
+      position: relative; display: flex; align-items: center; gap: 8px;
+      background: #1B2A4A; color: #fff; font-weight: 700;
+      padding: 10px 20px; border-radius: 9999px; border: none; cursor: pointer;
+      font-size: 0.85rem; transition: background 0.2s;
+    }
+    #cart-btn:hover { background: #243560; }
+    #cart-count {
+      background: #3DB54A; color: #fff; font-size: 0.7rem; font-weight: 800;
+      min-width: 20px; height: 20px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center; padding: 0 4px;
+    }
+
+    /* ===== FILTER TABS ===== */
+    .filter-tab {
+      padding: 8px 18px; border-radius: 9999px; border: 2px solid #e5e7eb;
+      background: #fff; color: #3D4D5C; font-weight: 600; font-size: 0.82rem;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-tab:hover, .filter-tab.active {
+      background: #1B2A4A; color: #fff; border-color: #1B2A4A;
+    }
+
+    /* ===== MISC ===== */
+    .section-heading { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: #1B2A4A; letter-spacing: -0.03em; line-height: 1.15; }
+    .toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
+      background: #1B2A4A; color: #fff; padding: 12px 24px; border-radius: 9999px;
+      font-weight: 600; font-size: 0.875rem; z-index: 300; transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+      display: flex; align-items: center; gap-8px;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* Quantity input */
+    .qty-btn {
+      width: 28px; height: 28px; border-radius: 6px; border: 1px solid #e5e7eb;
+      background: #F4F6F8; font-weight: 700; font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+    .qty-btn:hover { background: #e5e7eb; }
+  </style>
+</head>
+<body class="font-sans bg-white antialiased">
+
+<!-- ========== ANNOUNCEMENT BAR ========== -->
+<div style="background:#3DB54A;" class="text-white text-center py-2.5 px-4 text-sm font-medium">
+  <span>Fast shipping across the Northeast. </span>
+  <a href="tel:4132009068" class="underline font-bold hover:opacity-80 transition-opacity duration-200">Questions? Call (413) 200-9068</a>
+</div>
+
+<!-- ========== NAV ========== -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100" style="box-shadow: 0 1px 3px rgba(27,42,74,0.06);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 lg:h-24">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="./VitalLogoandmoreTEXTONLY.png" alt="Vital Vending Sales" class="h-14 lg:h-16 w-auto" width="220" height="64" fetchpriority="high" decoding="sync" />
+      </a>
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="smart-coolers.html" class="nav-link">AI Smart Coolers</a>
+        <a href="vending-machines.html" class="nav-link">Vending Machines</a>
+        <a href="vending-parts.html" class="nav-link active">Vending Parts</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+      </nav>
+      <button id="menu-toggle" class="lg:hidden p-2 rounded-md text-gray-dark hover:bg-gray-100 transition-colors" aria-label="Open menu">
+        <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div class="flex items-center gap-3">
+        <!-- Cart button -->
+        <button id="cart-btn" onclick="openCart()" aria-label="View cart">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          Cart
+          <span id="cart-count">0</span>
+        </button>
+        <a href="index.html#contact" class="btn-green text-sm hidden lg:inline-flex">Free Consultation</a>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white px-4 py-4 flex flex-col gap-1">
+    <a href="smart-coolers.html" class="py-2.5 px-3 rounded-lg text-gray-dark font-medium hover:bg-gray-light hover:text-navy transition-colors">AI Smart Coolers</a>
+    <a href="vending-machines.html" class="py-2.5 px-3 rounded-lg text-gray-dark font-medium hover:bg-gray-light hover:text-navy transition-colors">Vending Machines</a>
+    <a href="vending-parts.html" class="py-2.5 px-3 rounded-lg text-navy font-semibold bg-gray-light">Vending Parts</a>
+    <a href="about.html" class="py-2.5 px-3 rounded-lg text-gray-dark font-medium hover:bg-gray-light hover:text-navy transition-colors">About</a>
+    <a href="reviews.html" class="py-2.5 px-3 rounded-lg text-gray-dark font-medium hover:bg-gray-light hover:text-navy transition-colors">Reviews</a>
+    <a href="tel:4132009068" class="py-2.5 px-3 rounded-lg text-gray-dark font-medium hover:bg-gray-light hover:text-navy transition-colors">(413) 200-9068</a>
+    <div class="pt-2"><a href="index.html#contact" class="btn-green w-full justify-center text-sm">Free Consultation</a></div>
+  </div>
+</header>
+
+<!-- ========== CART OVERLAY ========== -->
+<div id="cart-overlay" onclick="closeCart()"></div>
+
+<!-- ========== CART DRAWER ========== -->
+<div id="cart-drawer" role="dialog" aria-label="Shopping cart">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+    <h2 class="font-black text-navy text-lg" style="letter-spacing:-0.02em;">Your Cart</h2>
+    <button onclick="closeCart()" class="p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Close cart">
+      <svg class="w-5 h-5 text-gray-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-4">
+    <div id="cart-empty" class="flex flex-col items-center justify-center h-full py-16 text-center">
+      <svg class="w-14 h-14 text-gray-200 mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      <p class="text-gray-mid font-medium">Your cart is empty</p>
+      <p class="text-gray-mid text-sm mt-1">Add some parts to get started</p>
+    </div>
+    <div id="cart-list" class="space-y-4 hidden"></div>
+  </div>
+
+  <div id="cart-footer" class="border-t border-gray-100 px-6 py-5 space-y-4 hidden">
+    <div class="flex items-center justify-between">
+      <span class="text-gray-dark font-medium">Subtotal</span>
+      <span id="cart-subtotal" class="font-black text-navy text-xl" style="letter-spacing:-0.02em;">$0.00</span>
+    </div>
+    <p class="text-xs text-gray-mid" style="line-height:1.5;">Shipping and taxes calculated at checkout. Free shipping on orders over $75.</p>
+    <button onclick="checkout()" class="btn-green w-full justify-center text-base" style="width:100%;">
+      Proceed to Checkout
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </button>
+    <button onclick="closeCart()" class="w-full text-center text-sm text-gray-mid hover:text-navy transition-colors font-medium">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- ========== HERO BAND ========== -->
+<section style="background:#1B2A4A;" class="py-12 lg:py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+      <div>
+        <nav class="text-sm mb-3" style="color:rgba(255,255,255,0.55);">
+          <a href="index.html" class="hover:text-white transition-colors">Home</a>
+          <span class="mx-2">/</span>
+          <span style="color:rgba(255,255,255,0.85);">Vending Parts</span>
+        </nav>
+        <h1 class="font-black text-white mb-3" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.03em;line-height:1.1;">Vending Machine Parts</h1>
+        <p style="color:rgba(255,255,255,0.7);line-height:1.7;max-width:520px;">Genuine replacement parts for snack, combo, and beverage machines. Buy online and ship direct. Need help finding a part? Call us.</p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <div class="text-center">
+          <div class="font-black text-white text-2xl" style="letter-spacing:-0.03em;">500+</div>
+          <div style="color:rgba(255,255,255,0.55);font-size:0.8rem;font-weight:600;">Parts in Stock</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.12);" class="hidden lg:block"></div>
+        <div class="text-center">
+          <div class="font-black text-white text-2xl" style="letter-spacing:-0.03em;">2-Day</div>
+          <div style="color:rgba(255,255,255,0.55);font-size:0.8rem;font-weight:600;">Northeast Shipping</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.12);" class="hidden lg:block"></div>
+        <div class="text-center">
+          <div class="font-black text-white text-2xl" style="letter-spacing:-0.03em;">15+</div>
+          <div style="color:rgba(255,255,255,0.55);font-size:0.8rem;font-weight:600;">Yrs Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRUST STRIP ========== -->
+<div style="background:#F4F6F8;border-bottom:1px solid rgba(27,42,74,0.06);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div class="flex flex-wrap items-center justify-center lg:justify-between gap-4 text-sm text-gray-dark font-medium">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        Free shipping on orders over $75
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        Secure checkout
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        30-day returns
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        Expert phone support: (413) 200-9068
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PRODUCT CATALOG ========== -->
+<section class="py-12 lg:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Filter tabs -->
+    <div class="flex flex-wrap gap-2 mb-10">
+      <button class="filter-tab active" onclick="filterParts('all', this)">All Parts</button>
+      <button class="filter-tab" onclick="filterParts('motors', this)">Motors &amp; Actuators</button>
+      <button class="filter-tab" onclick="filterParts('validators', this)">Bill Validators</button>
+      <button class="filter-tab" onclick="filterParts('coin', this)">Coin Mechanisms</button>
+      <button class="filter-tab" onclick="filterParts('electronics', this)">Electronics &amp; Boards</button>
+      <button class="filter-tab" onclick="filterParts('locks', this)">Locks &amp; Keys</button>
+      <button class="filter-tab" onclick="filterParts('misc', this)">Misc Parts</button>
+    </div>
+
+    <!-- Product grid -->
+    <div id="parts-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Cards injected by JS -->
+    </div>
+
+    <p class="text-center text-gray-mid text-sm mt-12" style="line-height:1.7;">
+      Don't see the part you need? Call us at <a href="tel:4132009068" class="text-navy font-bold hover:text-green transition-colors">(413) 200-9068</a> and we'll help you source it.
+    </p>
+  </div>
+</section>
+
+<!-- ========== EBAY / MULTICHANNEL STRIP ========== -->
+<section style="background:#F4F6F8;border-top:1px solid rgba(27,42,74,0.06);border-bottom:1px solid rgba(27,42,74,0.06);" class="py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row items-center gap-6 justify-between">
+      <div>
+        <div class="font-black text-navy text-lg mb-1" style="letter-spacing:-0.02em;">Also Available on eBay</div>
+        <p class="text-gray-dark text-sm" style="line-height:1.6;">Many of our parts are listed on eBay for your convenience. Shop on your preferred platform.</p>
+      </div>
+      <a href="https://www.ebay.com/str/vitalvendingsales" target="_blank" rel="noopener" class="btn-outline-navy flex-shrink-0">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3.5 10.5C3.5 7.46 5.96 5 9 5c1.6 0 3.04.66 4.08 1.72L11.5 8.3A2.99 2.99 0 009 7C7.34 7 6 8.34 6 10s1.34 3 3 3c1.31 0 2.42-.84 2.83-2H9V9h6v1.5c0 3.04-2.46 5.5-5.5 5.5S3.5 13.54 3.5 10.5zm10 0H15v1h-1.5v-1zm3 0H18v1h-1.5v-1zm-1.5 2.5h1.5v1H15v-1zm1.5-5H18v1h-1.5V8zm-3 0H15v1h-1.5V8z"/></svg>
+        Shop on eBay
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="py-16 lg:py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <h2 class="section-heading mb-3">Frequently Asked Questions</h2>
+      <p class="text-gray-dark text-base" style="line-height:1.7;">Common questions about ordering vending machine parts from VVS.</p>
+    </div>
+    <div class="space-y-4">
+      <details class="rounded-xl border border-gray-100 p-5 group" style="background:#F4F6F8;">
+        <summary class="font-bold text-navy cursor-pointer list-none flex items-center justify-between text-sm">
+          Do you ship outside New England?
+          <svg class="w-4 h-4 text-gray-mid group-open:rotate-180 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-dark text-sm mt-3" style="line-height:1.7;">Yes. While we specialize in the Northeast, we ship parts to all 50 states. Shipping rates are calculated at checkout based on your location and order weight.</p>
+      </details>
+      <details class="rounded-xl border border-gray-100 p-5 group" style="background:#F4F6F8;">
+        <summary class="font-bold text-navy cursor-pointer list-none flex items-center justify-between text-sm">
+          How do I know if a part is compatible with my machine?
+          <svg class="w-4 h-4 text-gray-mid group-open:rotate-180 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-dark text-sm mt-3" style="line-height:1.7;">Each listing includes compatible machine models. If you're unsure, call us at (413) 200-9068 and our team will help you identify the right part for your machine.</p>
+      </details>
+      <details class="rounded-xl border border-gray-100 p-5 group" style="background:#F4F6F8;">
+        <summary class="font-bold text-navy cursor-pointer list-none flex items-center justify-between text-sm">
+          What is your return policy?
+          <svg class="w-4 h-4 text-gray-mid group-open:rotate-180 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-dark text-sm mt-3" style="line-height:1.7;">We accept returns within 30 days of delivery on unused parts in original packaging. Electrical components are non-returnable once installed. Contact us to initiate a return.</p>
+      </details>
+      <details class="rounded-xl border border-gray-100 p-5 group" style="background:#F4F6F8;">
+        <summary class="font-bold text-navy cursor-pointer list-none flex items-center justify-between text-sm">
+          How fast will my order arrive?
+          <svg class="w-4 h-4 text-gray-mid group-open:rotate-180 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-dark text-sm mt-3" style="line-height:1.7;">Orders placed before 2pm EST ship same day. Northeast delivery typically arrives in 1-2 business days. Standard shipping for other regions is 3-5 business days.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer style="background:#1B2A4A;" class="pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="lg:col-span-1">
+        <img src="./VitalLogoandmoreTEXTONLY.png" alt="Vital Vending Sales" class="h-12 w-auto mb-4 brightness-0 invert" width="180" height="48" loading="lazy" />
+        <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;line-height:1.7;">The Break Time Experts. AI smart coolers, vending machines, and parts for the Northeast.</p>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm mb-4 uppercase tracking-wide">Equipment</div>
+        <ul class="space-y-2.5" style="color:rgba(255,255,255,0.6);font-size:0.875rem;">
+          <li><a href="smart-coolers.html" class="hover:text-white transition-colors">AI Smart Coolers</a></li>
+          <li><a href="vending-machines.html" class="hover:text-white transition-colors">Vending Machines</a></li>
+          <li><a href="vending-parts.html" class="hover:text-white transition-colors">Vending Parts</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm mb-4 uppercase tracking-wide">Company</div>
+        <ul class="space-y-2.5" style="color:rgba(255,255,255,0.6);font-size:0.875rem;">
+          <li><a href="index.html#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About VVS</a></li>
+          <li><a href="reviews.html" class="hover:text-white transition-colors">Reviews</a></li>
+          <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm mb-4 uppercase tracking-wide">Contact</div>
+        <ul class="space-y-2.5" style="color:rgba(255,255,255,0.6);font-size:0.875rem;">
+          <li><a href="tel:4132009068" class="hover:text-white transition-colors">(413) 200-9068</a></li>
+          <li><a href="mailto:info@vitalvendingsales.com" class="hover:text-white transition-colors">Email Us</a></li>
+          <li style="line-height:1.5;">Massachusetts &amp; Northeast</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-color:rgba(255,255,255,0.1);">
+      <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;">&copy; 2026 Vital Vending Sales. All rights reserved. &nbsp;&middot;&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.4);" class="hover:text-white transition-colors">Privacy Policy</a></p>
+      <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;">The Break Time Experts.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== TOAST ========== -->
+<div id="toast" class="toast" role="alert">
+  <svg class="w-4 h-4 text-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+  <span id="toast-msg">Added to cart!</span>
+</div>
+
+<script>
+// ============================================================
+//  PRODUCT CATALOG
+//  To add a new part: copy one object and update all fields.
+//  stripeLink: create a Stripe Payment Link at dashboard.stripe.com
+//              and paste the URL here for that product.
+// ============================================================
+const PARTS = [
+  {
+    id: 'vend-motor-001',
+    name: 'Vend Motor — Spiral / Coil',
+    sku: 'VM-SPIRAL-001',
+    category: 'motors',
+    price: 24.99,
+    stock: 48,
+    badge: 'Best Seller',
+    badgeStyle: '',
+    description: 'Universal spiral vend motor for snack machines. Compatible with most USI, AMS, and National machines. Drop-in replacement, no wiring required.',
+    compatible: 'USI Evoke Series, AMS 35/39, National 147/157',
+    image: 'https://placehold.co/400x300/F4F6F8/1B2A4A?text=Vend+Motor',
+    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_vend_motor',
+  },
+  {
+    id: 'bill-val-mei-001',
+    name: 'MEI CF7000 Bill Validator',
+    sku: 'BV-MEI-CF7000',
+    category: 'validators',
+    price: 189.99,
+    stock: 12,
+    badge: 'In Stock',
+    badgeStyle: '',
+    description: 'Mars MEI CF7000 cashless bill acceptor. Accepts $1-$100 bills with 98%+ acceptance rate. Includes stacker and 90-day warranty.',
+    compatible: 'Universal mount — fits most snack and combo machines',
+    image: 'https://placehold.co/400x300/F4F6F8/1B2A4A?text=Bill+Validator',
+    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_bill_validator',
+  },
+  {
+    id: 'coinco-9300',
+    name: 'Coinco 9300-L Coin Mechanism',
+    sku: 'CM-COINCO-9300L',
+    category: 'coin',
+    price: 149.99,
+    stock: 7,
+    badge: 'Low Stock',
+    badgeStyle: 'badge-red',
+    description: 'Coinco 9300-L multi-price coin mechanism. Accepts nickels, dimes, quarters, and dollar coins. Refurbished and tested — guaranteed to work.',
+    compatible: 'USI, AMS, Vendo, Crane National machines',
+    image: 'https://placehold.co/400x300/F4F6F8/1B2A4A?text=Coin+Mechanism',
+    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_coin_mech',
+  },
+  {
+    id: 'selection-btn-led',
+    name: 'Selection Button w/ LED (4-pack)',
+    sku: 'BTN-LED-4PK',
+    category: 'electronics',
+    price: 18.99,
+    stock: 82,
+    badge: 'Best Seller',
+    badgeStyle: '',
+    description: 'Lighted selection buttons with integrated LEDs. Snap-in replacement, standard 30mm cutout. Available in white. Pack of 4.',
+    compatible: 'AMS 35, AMS 39, USI 3014, USI 3015',
+    image: 'https://placehold.co/400x300/F4F6F8/1B2A4A?text=Selection+Buttons',
+    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_sel_button',
+  },
+  {
+    id: 'control-board-usi',
+    name: 'USI Evoke Main Control Board',
+    sku: 'CB-USI-EVOKE',
+    category: 'electronics',
+    price: 249.00,
+    stock: 4,
+    badge: 'Low Stock',
+    badgeStyle: 'badge-red',
+    description: 'OEM replacement main control board for USI Evoke 5 and Evoke 6 series machines. Plug-and-play — no programming required.',
+    compatible: 'USI Evoke 5, USI Evoke 6, USI Evoke ST5',
+    image: 'https://placehold.co/400x300/F4F6F8/1B2A4A?text=Control+Board',
+    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_ctrl_board',
+  },
+  {
+    id: 'vend-motor-kit-4pk',
+    name: 'Vend Motor Kit — 4-Pack',
+    sku: 'VM-KIT-4PK',
+    category: 'motors',
+    price: 79.99,
+    stock: 23,
+    badge: 'Save 20%',
+    badgeStyle: 'badge-navy',
+    description: 'Value 4-pack of universal spiral vend motors. Stock up and save. Same motor as VM-SPIRAL-001 sold individually at $24.99 each.',
+    compatible: 'USI Evoke Series, AMS 35/39, National 147/157',
+    image: 'https://placehold.co/400x300/F4F6F8/1B2A4A?text=Motor+4-Pack',
+    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_motor_4pk',
+  },
+  {
+    id: 'cam-lock-tubular',
+    name: 'Tubular Cam Lock — T-Handle',
+    sku: 'LK-CAM-TUBE',
+    category: 'locks',
+    price: 14.99,
+    stock: 60,
+    badge: 'In Stock',
+    badgeStyle: '',
+    description: 'Standard tubular cam lock with T-handle for vending machine doors. Includes 2 keys. 7-pin security cylinder.',
+    compatible: 'Universal — fits most vending machine door panels',
+    image: 'https://placehold.co/400x300/F4F6F8/1B2A4A?text=Cam+Lock',
+    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_cam_lock',
+  },
+  {
+    id: 'door-gasket-universal',
+    name: 'Door Gasket / Seal Strip — 6ft',
+    sku: 'GS-DOOR-6FT',
+    category: 'misc',
+    price: 12.49,
+    stock: 35,
+    badge: 'In Stock',
+    badgeStyle: '',
+    description: 'Universal magnetic door gasket/seal for beverage and combo machines. Sold per 6-foot length. Cut to size. Black foam-backed magnetic strip.',
+    compatible: 'Vendo, Dixie Narco, Royal, AMS cooler doors',
+    image: 'https://placehold.co/400x300/F4F6F8/1B2A4A?text=Door+Gasket',
+    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_door_gasket',
+  },
+];
+
+// ============================================================
+//  CART STATE
+// ============================================================
+let cart = JSON.parse(localStorage.getItem('vvs_cart') || '[]');
+
+function saveCart() {
+  localStorage.setItem('vvs_cart', JSON.stringify(cart));
+}
+
+function getCartTotal() {
+  return cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+}
+
+function getCartCount() {
+  return cart.reduce((sum, item) => sum + item.qty, 0);
+}
+
+function updateCartUI() {
+  const count = getCartCount();
+  document.getElementById('cart-count').textContent = count;
+
+  const listEl = document.getElementById('cart-list');
+  const emptyEl = document.getElementById('cart-empty');
+  const footerEl = document.getElementById('cart-footer');
+  const subtotalEl = document.getElementById('cart-subtotal');
+
+  if (cart.length === 0) {
+    listEl.classList.add('hidden');
+    emptyEl.classList.remove('hidden');
+    footerEl.classList.add('hidden');
+    return;
+  }
+
+  listEl.classList.remove('hidden');
+  emptyEl.classList.add('hidden');
+  footerEl.classList.remove('hidden');
+  subtotalEl.textContent = '$' + getCartTotal().toFixed(2);
+
+  listEl.innerHTML = cart.map(item => `
+    <div class="flex gap-4 py-4 border-b border-gray-100 last:border-0" data-id="${item.id}">
+      <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" style="background:#F4F6F8;" />
+      <div class="flex-1 min-w-0">
+        <div class="font-bold text-navy text-sm mb-0.5" style="line-height:1.3;">${item.name}</div>
+        <div class="text-gray-mid text-xs mb-2">${item.sku}</div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <button class="qty-btn" onclick="updateQty('${item.id}', ${item.qty - 1})">-</button>
+            <span class="font-bold text-navy text-sm w-6 text-center">${item.qty}</span>
+            <button class="qty-btn" onclick="updateQty('${item.id}', ${item.qty + 1})">+</button>
+          </div>
+          <div class="font-black text-navy text-sm">$${(item.price * item.qty).toFixed(2)}</div>
+        </div>
+      </div>
+      <button onclick="removeFromCart('${item.id}')" class="text-gray-mid hover:text-red-500 transition-colors flex-shrink-0 mt-1" aria-label="Remove">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  `).join('');
+}
+
+function addToCart(partId) {
+  const part = PARTS.find(p => p.id === partId);
+  if (!part) return;
+  const existing = cart.find(i => i.id === partId);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ id: part.id, name: part.name, sku: part.sku, price: part.price, image: part.image, qty: 1 });
+  }
+  saveCart();
+  updateCartUI();
+  showToast(part.name + ' added to cart');
+}
+
+function removeFromCart(partId) {
+  cart = cart.filter(i => i.id !== partId);
+  saveCart();
+  updateCartUI();
+}
+
+function updateQty(partId, newQty) {
+  if (newQty < 1) { removeFromCart(partId); return; }
+  const item = cart.find(i => i.id === partId);
+  if (item) { item.qty = newQty; saveCart(); updateCartUI(); }
+}
+
+function openCart() {
+  document.getElementById('cart-drawer').classList.add('open');
+  document.getElementById('cart-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  document.getElementById('cart-drawer').classList.remove('open');
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function checkout() {
+  if (cart.length === 0) return;
+  // Connect a Stripe Payment Link here.
+  // For a single-product cart, redirect to that product's stripeLink.
+  // For multi-product, use a Stripe-hosted checkout session via your backend,
+  // or redirect to a general checkout page. Placeholder below:
+  const firstItem = cart[0];
+  const part = PARTS.find(p => p.id === firstItem.id);
+  if (part && part.stripeLink && !part.stripeLink.includes('PLACEHOLDER')) {
+    window.location.href = part.stripeLink;
+  } else {
+    // Fallback: email intent with cart summary
+    const summary = cart.map(i => `${i.name} x${i.qty} ($${(i.price * i.qty).toFixed(2)})`).join(', ');
+    const total = getCartTotal().toFixed(2);
+    window.location.href = `mailto:info@vitalvendingsales.com?subject=Parts Order from VVS Website&body=I would like to order the following parts:%0A%0A${encodeURIComponent(summary)}%0A%0ATotal: $${total}%0A%0APlease contact me to complete this purchase.`;
+  }
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2800);
+}
+
+// ============================================================
+//  RENDER PRODUCTS
+// ============================================================
+function renderParts(parts) {
+  const grid = document.getElementById('parts-grid');
+  if (parts.length === 0) {
+    grid.innerHTML = `<div class="col-span-full text-center py-16 text-gray-mid">No parts found in this category.</div>`;
+    return;
+  }
+  grid.innerHTML = parts.map(part => `
+    <div class="part-card" data-category="${part.category}">
+      <div class="relative overflow-hidden" style="aspect-ratio:4/3;background:#F4F6F8;">
+        <img src="${part.image}" alt="${part.name}" class="w-full h-full object-contain p-4" style="mix-blend-mode:multiply;" width="400" height="300" loading="lazy" decoding="async" />
+        ${part.badge ? `<div class="absolute top-3 left-3"><span class="badge ${part.badgeStyle}">${part.badge}</span></div>` : ''}
+        ${part.stock <= 10 && part.stock > 0 ? `<div class="absolute top-3 right-3 text-xs font-bold" style="color:#c0392b;">Only ${part.stock} left</div>` : ''}
+      </div>
+      <div class="p-5">
+        <div class="text-xs text-gray-mid font-semibold uppercase tracking-wide mb-1">${part.sku}</div>
+        <h3 class="font-bold text-navy text-base mb-2" style="letter-spacing:-0.01em;line-height:1.3;">${part.name}</h3>
+        <p class="text-gray-dark text-xs mb-3" style="line-height:1.55;">${part.description}</p>
+        <div class="text-xs text-gray-mid mb-4" style="line-height:1.5;">
+          <span class="font-semibold text-navy">Compatible:</span> ${part.compatible}
+        </div>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-black text-navy text-xl" style="letter-spacing:-0.02em;">$${part.price.toFixed(2)}</div>
+            <div class="text-xs text-gray-mid">${part.stock > 10 ? 'In stock' : part.stock > 0 ? 'Low stock' : 'Out of stock'}</div>
+          </div>
+          <button onclick="addToCart('${part.id}')" class="btn-green text-sm py-2 px-4" ${part.stock === 0 ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''}>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterParts(category, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered = category === 'all' ? PARTS : PARTS.filter(p => p.category === category);
+  renderParts(filtered);
+}
+
+// Init
+renderParts(PARTS);
+updateCartUI();
+
+// Mobile menu toggle
+(function() {
+  var toggle = document.getElementById('menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var iconOpen = document.getElementById('icon-open');
+  var iconClose = document.getElementById('icon-close');
+  if (toggle && menu) {
+    toggle.addEventListener('click', function() {
+      var open = menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

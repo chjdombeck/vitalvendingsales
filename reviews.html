@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Reviews | Vital Vending Sales</title>
+  <meta name="description" content="Real reviews from real clients across the Northeast. See what businesses are saying about Vital Vending Sales vending machines and AI smart coolers." />
+  <link rel="canonical" href="https://www.vitalvendingsales.com/reviews.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Customer Reviews | Vital Vending Sales" />
+  <meta property="og:description" content="Real reviews from real clients across the Northeast. See what businesses are saying about Vital Vending Sales." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.vitalvendingsales.com/reviews.html" />
+  <meta property="og:image" content="https://www.vitalvendingsales.com/og-image.jpg" />
+  <meta property="og:site_name" content="Vital Vending Sales" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Vital Vending Sales","url":"https://www.vitalvendingsales.com","telephone":"+14132009068","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"10","bestRating":"5","worstRating":"1"}}</script>
+
+  <link rel="preload" href="./VitalLogoandmoreTEXTONLY.png" as="image" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            'navy-dark': '#121e35',
+            'navy-mid': '#243560',
+            green: '#3DB54A',
+            'green-dark': '#2e9439',
+            'green-soft': '#D6F0DA',
+            'gray-light': '#F4F6F8',
+            'gray-mid': '#8C95A0',
+            'gray-dark': '#3D4D5C',
+          },
+          fontFamily: { sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+
+    /* Buttons */
+    .btn-green {
+      position: relative; overflow: hidden;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 700; border-radius: 10px; cursor: pointer;
+      text-decoration: none; padding: 14px 28px; color: #fff;
+      background: rgba(61,181,74,0.88);
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 4px 16px rgba(0,0,0,0.18), 0 0 24px rgba(61,181,74,0.28);
+      transition: transform 0.28s cubic-bezier(0.1,0.4,0.2,1), filter 0.28s, box-shadow 0.28s;
+    }
+    .btn-green:hover { transform: scale(1.045) translateY(-1px); filter: brightness(1.12); }
+    .btn-green:active { transform: translateY(2px) scale(0.97); }
+
+    /* Nav */
+    .nav-link {
+      color: #3D4D5C; font-weight: 500; font-size: 0.9rem;
+      transition: color 0.2s; position: relative; text-decoration: none;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 2px; background: #3DB54A; transform: scaleX(0);
+      transition: transform 0.2s; transform-origin: left; border-radius: 2px;
+    }
+    .nav-link:hover { color: #1B2A4A; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .nav-link.active { color: #1B2A4A; font-weight: 600; }
+    .nav-link.active::after { transform: scaleX(1); }
+
+    /* Stars */
+    .stars { color: #F59E0B; letter-spacing: 1px; }
+
+    /* Review card */
+    .review-card {
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid rgba(27,42,74,0.07);
+      box-shadow: 0 2px 8px rgba(27,42,74,0.05), 0 12px 32px rgba(27,42,74,0.07);
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.35s;
+      display: flex;
+      flex-direction: column;
+    }
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(27,42,74,0.09), 0 24px 48px rgba(27,42,74,0.11);
+    }
+    .review-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .review-body {
+      padding: 20px 22px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .quote-mark {
+      font-size: 3.5rem;
+      line-height: 0.6;
+      color: #3DB54A;
+      opacity: 0.25;
+      font-family: Georgia, serif;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .review-text {
+      font-size: 0.88rem;
+      line-height: 1.72;
+      color: #3D4D5C;
+      flex: 1;
+    }
+    .reviewer-name {
+      font-weight: 800;
+      color: #1B2A4A;
+      font-size: 0.9rem;
+      letter-spacing: -0.01em;
+      margin-top: 14px;
+    }
+    .reviewer-detail {
+      font-size: 0.75rem;
+      color: #8C95A0;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* Google review card */
+    .google-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(27,42,74,0.07);
+      box-shadow: 0 2px 8px rgba(27,42,74,0.05), 0 8px 24px rgba(27,42,74,0.06);
+      padding: 22px 24px;
+      transition: transform 0.3s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.3s;
+    }
+    .google-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 16px rgba(27,42,74,0.08), 0 16px 40px rgba(27,42,74,0.09);
+    }
+    .google-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; color: #fff; flex-shrink: 0;
+    }
+
+    /* Section heading */
+    .section-heading {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900; color: #1B2A4A; letter-spacing: -0.03em; line-height: 1.1;
+    }
+    .eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #3DB54A;
+    }
+
+    /* Stat */
+    .stat-num {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 900; color: #fff; letter-spacing: -0.04em; line-height: 1;
+    }
+
+    /* Photo mosaic */
+    .mosaic-photo {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(27,42,74,0.15);
+      transition: transform 0.4s cubic-bezier(0.34,1.2,0.64,1);
+    }
+    .mosaic-photo:hover { transform: scale(1.03); }
+    .mosaic-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+    }
+  </style>
+</head>
+<body class="font-sans bg-white antialiased">
+
+<!-- ========== ANNOUNCEMENT BAR ========== -->
+<div style="background:#3DB54A;" class="text-white text-center py-2.5 px-4 text-sm font-medium">
+  <span>The Break Time Experts. Serving the Northeast since day one. </span>
+  <a href="tel:4132009068" class="underline font-bold hover:opacity-80 transition-opacity">(413) 200-9068</a>
+</div>
+
+<!-- ========== NAV ========== -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100" style="box-shadow:0 1px 3px rgba(27,42,74,0.06);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 lg:h-24">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="./VitalLogoandmoreTEXTONLY.png" alt="Vital Vending Sales" class="h-14 lg:h-16 w-auto" width="220" height="64" fetchpriority="high" decoding="sync" />
+      </a>
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="smart-coolers.html" class="nav-link">AI Smart Coolers</a>
+        <a href="vending-machines.html" class="nav-link">Vending Machines</a>
+        <a href="vending-parts.html" class="nav-link">Vending Parts</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reviews.html" class="nav-link active">Reviews</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="index.html#contact" class="btn-green text-sm hidden lg:inline-flex">Free Consultation</a>
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-dark hover:bg-gray-100 transition-colors" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">
+      <a href="smart-coolers.html" class="nav-link py-2">AI Smart Coolers</a>
+      <a href="vending-machines.html" class="nav-link py-2">Vending Machines</a>
+      <a href="vending-parts.html" class="nav-link py-2">Vending Parts</a>
+      <a href="about.html" class="nav-link py-2">About</a>
+      <a href="reviews.html" class="nav-link active py-2">Reviews</a>
+      <a href="index.html#contact" class="btn-green mt-2 justify-center">Free Consultation</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section style="background:#1B2A4A;position:relative;overflow:hidden;" class="py-16 lg:py-24">
+  <div style="position:absolute;inset:0;opacity:0.04;" aria-hidden="true">
+    <svg width="100%" height="100%"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#noise)"/></svg>
+  </div>
+  <div style="position:absolute;top:-20%;right:-10%;width:55%;height:130%;background:radial-gradient(ellipse at center,rgba(61,181,74,0.1) 0%,transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <nav class="text-sm mb-5" style="color:rgba(255,255,255,0.45);">
+          <a href="index.html" class="hover:text-white transition-colors">Home</a>
+          <span class="mx-2">/</span>
+          <span style="color:rgba(255,255,255,0.8);">Reviews</span>
+        </nav>
+        <div class="eyebrow mb-4">What Our Clients Say</div>
+        <h1 class="font-black text-white mb-5" style="font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-0.03em;line-height:1.1;">
+          Happy clients.<br />Happy break rooms.
+        </h1>
+        <p style="color:rgba(255,255,255,0.65);line-height:1.75;font-size:1.05rem;max-width:480px;">
+          From small offices to warehouses, gyms to schools, real businesses across the Northeast trust VVS to keep their people fueled and satisfied.
+        </p>
+        <!-- Google rating badge -->
+        <div class="mt-8 inline-flex items-center gap-4 rounded-2xl px-5 py-4" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);">
+          <svg viewBox="0 0 24 24" class="w-7 h-7 flex-shrink-0" fill="none">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="stars text-lg">★★★★★</span>
+              <span class="font-black text-white text-lg" style="letter-spacing:-0.02em;">5.0</span>
+            </div>
+            <div style="color:rgba(255,255,255,0.55);font-size:0.78rem;font-weight:500;">Google Reviews</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,0.15);height:36px;"></div>
+          <div class="text-center">
+            <div class="font-black text-white text-lg" style="letter-spacing:-0.02em;">10+</div>
+            <div style="color:rgba(255,255,255,0.55);font-size:0.78rem;font-weight:500;">Verified Reviews</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero single client photo -->
+      <div class="hidden lg:flex items-center justify-center" style="height:420px;">
+        <div style="height:391px;width:391px;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.35);">
+          <img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-36-54 Instagram.png" alt="Happy VVS client" loading="eager" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;width:100%;height:60px;">
+      <path d="M0 60L1440 60L1440 20C1200 55 960 5 720 25C480 45 240 5 0 25L0 60Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== STATS STRIP ========== -->
+<section style="background:#3DB54A;" class="py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div>
+        <div class="stat-num">5.0</div>
+        <div style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;margin-top:4px;">Google Rating</div>
+      </div>
+      <div>
+        <div class="stat-num">200+</div>
+        <div style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;margin-top:4px;">Happy Clients</div>
+      </div>
+      <div>
+        <div class="stat-num">15+</div>
+        <div style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;margin-top:4px;">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;margin-top:4px;">Would Recommend</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PHOTO GRID ========== -->
+<section class="py-16 lg:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="eyebrow mb-3">Client Photos</div>
+      <h2 class="section-heading mb-4">Real clients. Real machines. Real smiles.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-35-35 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-35-53 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-36-33 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-36-40 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-36-47 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-36-54 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-37-06 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-37-21 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-37-27 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-37-32 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-37-40 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-37-45 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-37-52 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-37-58 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="border-radius:14px;overflow:hidden;aspect-ratio:1/1;"><img src="./Client testimonial pictures/Screenshot 2026-06-17 at 08-38-06 Instagram.png" alt="VVS client" loading="lazy" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GOOGLE REVIEWS ========== -->
+<section style="background:#F4F6F8;" class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+      <div>
+        <div class="eyebrow mb-3">Google Reviews</div>
+        <h2 class="section-heading mb-3">What people are saying</h2>
+        <p class="text-gray-dark" style="max-width:460px;line-height:1.7;">Pulled straight from Google. Unedited, unfiltered, and 100% real.</p>
+      </div>
+      <!-- Overall rating display -->
+      <div class="flex items-center gap-4 rounded-2xl px-6 py-4 bg-white" style="box-shadow:0 2px 12px rgba(27,42,74,0.08);border:1px solid rgba(27,42,74,0.07);flex-shrink:0;">
+        <div class="text-center">
+          <div style="font-size:3rem;font-weight:900;color:#1B2A4A;letter-spacing:-0.04em;line-height:1;">5.0</div>
+          <div class="stars text-xl mt-1">★★★★★</div>
+          <div class="text-gray-mid text-xs font-medium mt-1">Google Rating</div>
+        </div>
+        <div style="width:1px;background:rgba(27,42,74,0.08);height:60px;"></div>
+        <div>
+          <svg viewBox="0 0 24 24" class="w-10 h-10 mx-auto mb-1" fill="none">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          <div class="text-gray-mid text-xs font-medium text-center">Verified</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Real Google review 1 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#1B2A4A;">J</div>
+          <div>
+            <div class="font-bold text-navy text-sm">John Ragno</div>
+            <div class="stars text-sm">★★★★★</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">Nick is trustworthy, honest, and takes his time to help you find the right machine — whether you're starting out or expanding your vending business. He's knowledgeable, patient, and goes above and beyond to ensure you understand your options. Excellent service from start to finish.</p>
+      </div>
+
+      <!-- Real Google review 2 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#3DB54A;">E</div>
+          <div>
+            <div class="font-bold text-navy text-sm">Emma Canarick</div>
+            <div class="stars text-sm">★★★★★</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">Vital Vending exceeded every expectation! From day one, they went above and beyond to help ZenVend find the perfect machines for our needs. They didn't just sell us equipment — they walked us through every detail of how it works, patiently answering all of our questions.</p>
+      </div>
+
+      <!-- Real Google review 3 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#243560;">C</div>
+          <div>
+            <div class="font-bold text-navy text-sm">Chris Smalley</div>
+            <div class="stars text-sm">★★★★★</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">Vital Vending has been an absolute game-changer in helping my wife and I get our vending business off the ground. Nick, Justin, and Prez are a wealth of knowledge, easy to work with, ultra responsive, and are all extremely professional. I'm grateful that I found them!</p>
+      </div>
+
+      <!-- Real Google review 4 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#2e9439;">T</div>
+          <div>
+            <div class="font-bold text-navy text-sm">Timothy Wear</div>
+            <div class="stars text-sm">★★★★★</div>
+            <div class="text-gray-mid" style="font-size:0.7rem;">Local Guide</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">Deanna in the office is always such a delight to work with. And Prez has always shown the utmost care when delivering my machines. Highly recommend Vital Vending.</p>
+      </div>
+
+      <!-- Real Google review 5 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#1B2A4A;">R</div>
+          <div>
+            <div class="font-bold text-navy text-sm">Roopa Naik</div>
+            <div class="stars text-sm">★★★★★</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">Excellent communication and an easy setup process. Nick was very helpful and responded quickly to all my questions. Highly recommend.</p>
+      </div>
+
+      <!-- Real Google review 6 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#3DB54A;">D</div>
+          <div>
+            <div class="font-bold text-navy text-sm">Drew Friedman</div>
+            <div class="stars text-sm">★★★★★</div>
+            <div class="text-gray-mid" style="font-size:0.7rem;">Local Guide</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">I met Nick at the NAMA show in Las Vegas and was blown away by his knowledge and experience in the vending machine sales realm. A true professional who knows this industry inside and out.</p>
+      </div>
+
+      <!-- Real Google review 7 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#243560;">K</div>
+          <div>
+            <div class="font-bold text-navy text-sm">KM Dispensing</div>
+            <div class="stars text-sm">★★★★★</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">Nick is very knowledgeable and great to work with. He has a great selection of machines and can help with parts as well. I have had a great experience working with Vital Vending and would highly recommend!</p>
+      </div>
+
+      <!-- Real Google review 8 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#2e9439;">L</div>
+          <div>
+            <div class="font-bold text-navy text-sm">Lily Markee</div>
+            <div class="stars text-sm">★★★★★</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">Nick has a great wealth of knowledge and experience! Always professional and on time when we need him. — Erich @ LTD Refreshments</p>
+      </div>
+
+      <!-- Real Google review 9 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#1B2A4A;">M</div>
+          <div>
+            <div class="font-bold text-navy text-sm">Michael Sepe</div>
+            <div class="stars text-sm">★★★★★</div>
+            <div class="text-gray-mid" style="font-size:0.7rem;">Local Guide</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">It's always a pleasure to do business with Nick. He serves the vending industry well. Stands behind his products and his word.</p>
+      </div>
+
+      <!-- Real Google review 10 -->
+      <div class="google-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="google-avatar" style="background:#3DB54A;">J</div>
+          <div>
+            <div class="font-bold text-navy text-sm">Jay Hooks</div>
+            <div class="stars text-sm">★★★★★</div>
+            <div class="text-gray-mid" style="font-size:0.7rem;">Local Guide</div>
+          </div>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 ml-auto flex-shrink-0" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <p class="text-gray-dark text-sm" style="line-height:1.72;">I had a few questions about some machines. Customer service was great! Very knowledgeable and helpful.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section style="background:#1B2A4A;position:relative;overflow:hidden;" class="py-16 lg:py-20">
+  <div style="position:absolute;inset:0;opacity:0.04;" aria-hidden="true">
+    <svg width="100%" height="100%"><filter id="noise3"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#noise3)"/></svg>
+  </div>
+  <div style="position:absolute;bottom:-20%;left:-10%;width:60%;height:120%;background:radial-gradient(ellipse,rgba(61,181,74,0.1) 0%,transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="eyebrow mb-4" style="color:#3DB54A;">Join 200+ Happy Clients</div>
+    <h2 class="font-black text-white mb-5" style="font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-0.03em;line-height:1.15;">Ready to be our next success story?</h2>
+    <p style="color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:2rem;">Get a free consultation and see why businesses across the Northeast choose Vital Vending Sales.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="index.html#contact" class="btn-green">Get a Free Consultation</a>
+      <a href="tel:4132009068" style="display:inline-flex;align-items:center;gap:8px;font-weight:600;color:rgba(255,255,255,0.8);font-size:0.95rem;text-decoration:none;padding:14px 0;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+        (413) 200-9068
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer style="background:#121e35;" class="pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="lg:col-span-1">
+        <img src="./VitalLogoandmoreTEXTONLY.png" alt="Vital Vending Sales" class="h-12 w-auto mb-4 brightness-0 invert" width="180" height="48" loading="lazy" />
+        <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.7;">The Break Time Experts. AI smart coolers, vending machines, and parts for the Northeast.</p>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm mb-4 uppercase tracking-wide">Equipment</div>
+        <ul class="space-y-2.5" style="color:rgba(255,255,255,0.55);font-size:0.875rem;">
+          <li><a href="smart-coolers.html" class="hover:text-white transition-colors">AI Smart Coolers</a></li>
+          <li><a href="vending-machines.html" class="hover:text-white transition-colors">Vending Machines</a></li>
+          <li><a href="vending-parts.html" class="hover:text-white transition-colors">Vending Parts</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm mb-4 uppercase tracking-wide">Company</div>
+        <ul class="space-y-2.5" style="color:rgba(255,255,255,0.55);font-size:0.875rem;">
+          <li><a href="index.html#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About VVS</a></li>
+          <li><a href="reviews.html" class="hover:text-white transition-colors">Reviews</a></li>
+          <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm mb-4 uppercase tracking-wide">Contact</div>
+        <ul class="space-y-2.5" style="color:rgba(255,255,255,0.55);font-size:0.875rem;">
+          <li><a href="tel:4132009068" class="hover:text-white transition-colors">(413) 200-9068</a></li>
+          <li><a href="mailto:info@vitalvendingsales.com" class="hover:text-white transition-colors">Email Us</a></li>
+          <li>Massachusetts &amp; Northeast</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-color:rgba(255,255,255,0.08);">
+      <p style="color:rgba(255,255,255,0.35);font-size:0.8rem;">&copy; 2026 Vital Vending Sales. All rights reserved. &nbsp;&middot;&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.35);" class="hover:text-white transition-colors">Privacy Policy</a></p>
+      <p style="color:rgba(255,255,255,0.25);font-size:0.75rem;">The Break Time Experts.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+</script>
+
+</body>
+</html>

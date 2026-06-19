@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Vital Vending Sales</title>
+  <meta name="description" content="Meet the team behind Vital Vending Sales. 15+ years serving MA, CT, and RI operators with vending machines, AI smart coolers, and micro-market solutions." />
+  <link rel="canonical" href="https://www.vitalvendingsales.com/about.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="About Us | Vital Vending Sales" />
+  <meta property="og:description" content="Meet the team behind Vital Vending Sales. 15+ years serving MA, CT, and RI operators with vending machines and AI smart coolers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.vitalvendingsales.com/about.html" />
+  <meta property="og:image" content="https://www.vitalvendingsales.com/og-image.jpg" />
+  <meta property="og:site_name" content="Vital Vending Sales" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About Vital Vending Sales","url":"https://www.vitalvendingsales.com/about.html","description":"15+ years serving Northeast operators with vending machines, AI smart coolers, and micro-market solutions.","mainEntity":{"@type":"LocalBusiness","name":"Vital Vending Sales","address":{"@type":"PostalAddress","streetAddress":"15 Dana Way","addressLocality":"Ludlow","addressRegion":"MA","postalCode":"01056","addressCountry":"US"},"telephone":"+14132009068"}}</script>
+
+  <link rel="preload" href="./VitalLogoandmoreTEXTONLY.png" as="image" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            'navy-dark': '#121e35',
+            'navy-mid': '#243560',
+            green: '#3DB54A',
+            'green-dark': '#2e9439',
+            'green-soft': '#D6F0DA',
+            'gray-light': '#F4F6F8',
+            'gray-mid': '#8C95A0',
+            'gray-dark': '#3D4D5C',
+          },
+          fontFamily: { sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+
+    /* Buttons */
+    .btn-green {
+      position: relative; overflow: hidden;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 700; border-radius: 10px; cursor: pointer;
+      text-decoration: none; padding: 14px 28px; color: #fff;
+      background: rgba(61,181,74,0.88);
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 4px 16px rgba(0,0,0,0.18), 0 0 24px rgba(61,181,74,0.28);
+      transition: transform 0.28s cubic-bezier(0.1,0.4,0.2,1), filter 0.28s, box-shadow 0.28s;
+    }
+    .btn-green:hover { transform: scale(1.045) translateY(-1px); filter: brightness(1.12); }
+    .btn-green:active { transform: translateY(2px) scale(0.97); }
+
+    .btn-outline-navy {
+      position: relative; overflow: hidden;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 600; border-radius: 10px; cursor: pointer; text-decoration: none;
+      padding: 12px 26px; color: #1B2A4A;
+      background: rgba(255,255,255,0.55);
+      border: 1.5px solid rgba(27,42,74,0.3);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 4px 14px rgba(27,42,74,0.1);
+      transition: transform 0.28s cubic-bezier(0.1,0.4,0.2,1), background 0.28s, color 0.28s;
+    }
+    .btn-outline-navy:hover { background: rgba(27,42,74,0.88); color: #fff; transform: scale(1.045) translateY(-1px); }
+    .btn-outline-navy:active { transform: translateY(2px) scale(0.97); }
+
+    /* Nav */
+    .nav-link {
+      color: #3D4D5C; font-weight: 500; font-size: 0.9rem;
+      transition: color 0.2s; position: relative; text-decoration: none;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 2px; background: #3DB54A; transform: scaleX(0);
+      transition: transform 0.2s; transform-origin: left; border-radius: 2px;
+    }
+    .nav-link:hover { color: #1B2A4A; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .nav-link.active { color: #1B2A4A; font-weight: 600; }
+    .nav-link.active::after { transform: scaleX(1); }
+
+    /* Cards */
+    .card-shadow {
+      box-shadow: 0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08), 0 16px 32px rgba(27,42,74,0.06);
+    }
+
+    /* Photo grid */
+    .photo-slot {
+      background: #F4F6F8;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(27,42,74,0.07);
+    }
+    .photo-slot img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s cubic-bezier(0.34,1.2,0.64,1);
+    }
+    .photo-slot:hover img { transform: scale(1.04); }
+    .photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(18,30,53,0.72) 0%, rgba(18,30,53,0.1) 50%, transparent 100%);
+      pointer-events: none;
+    }
+    .photo-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 16px 18px;
+      color: #fff;
+    }
+
+    /* Team card */
+    .team-card {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      border: 1px solid rgba(27,42,74,0.07);
+      box-shadow: 0 2px 8px rgba(27,42,74,0.06), 0 12px 32px rgba(27,42,74,0.07);
+      transition: transform 0.35s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.35s;
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 4px 16px rgba(27,42,74,0.1), 0 24px 48px rgba(27,42,74,0.12);
+    }
+    .team-photo {
+      aspect-ratio: 4/5;
+      background: #F4F6F8;
+      overflow: hidden;
+      position: relative;
+    }
+    .team-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s cubic-bezier(0.34,1.2,0.64,1);
+    }
+    .team-card:hover .team-photo img { transform: scale(1.04); }
+
+    /* Value badge */
+    .value-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: #D6F0DA; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Timeline */
+    .timeline-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: #3DB54A; flex-shrink: 0; margin-top: 5px;
+      box-shadow: 0 0 0 4px rgba(61,181,74,0.2);
+    }
+    .timeline-line {
+      width: 2px; background: linear-gradient(to bottom, #3DB54A, rgba(61,181,74,0.15));
+      flex-shrink: 0; margin-left: 6px;
+    }
+
+    /* Section heading */
+    .section-heading {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900; color: #1B2A4A; letter-spacing: -0.03em; line-height: 1.1;
+    }
+    .eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #3DB54A;
+    }
+
+    /* Stat */
+    .stat-num {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 900; color: #1B2A4A; letter-spacing: -0.04em; line-height: 1;
+    }
+  </style>
+</head>
+<body class="font-sans bg-white antialiased">
+
+<!-- ========== ANNOUNCEMENT BAR ========== -->
+<div style="background:#3DB54A;" class="text-white text-center py-2.5 px-4 text-sm font-medium">
+  <span>The Break Time Experts. Serving the Northeast since day one. </span>
+  <a href="tel:4132009068" class="underline font-bold hover:opacity-80 transition-opacity">(413) 200-9068</a>
+</div>
+
+<!-- ========== NAV ========== -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100" style="box-shadow:0 1px 3px rgba(27,42,74,0.06);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 lg:h-24">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="./VitalLogoandmoreTEXTONLY.png" alt="Vital Vending Sales" class="h-14 lg:h-16 w-auto" width="220" height="64" fetchpriority="high" decoding="sync" />
+      </a>
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="smart-coolers.html" class="nav-link">AI Smart Coolers</a>
+        <a href="vending-machines.html" class="nav-link">Vending Machines</a>
+        <a href="vending-parts.html" class="nav-link">Vending Parts</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="index.html#contact" class="btn-green text-sm hidden lg:inline-flex">Free Consultation</a>
+        <!-- Mobile menu toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-dark hover:bg-gray-100 transition-colors" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile nav -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">
+      <a href="smart-coolers.html" class="nav-link py-2">AI Smart Coolers</a>
+      <a href="vending-machines.html" class="nav-link py-2">Vending Machines</a>
+      <a href="vending-parts.html" class="nav-link py-2">Vending Parts</a>
+      <a href="about.html" class="nav-link active py-2">About</a>
+      <a href="reviews.html" class="nav-link py-2">Reviews</a>
+      <a href="index.html#contact" class="btn-green mt-2 justify-center">Free Consultation</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========== HERO BAND ========== -->
+<section style="background:#1B2A4A;" class="relative overflow-hidden py-16 lg:py-24">
+  <!-- Background texture -->
+  <div style="position:absolute;inset:0;opacity:0.04;" aria-hidden="true">
+    <svg width="100%" height="100%"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#noise)"/></svg>
+  </div>
+  <!-- Radial glow -->
+  <div style="position:absolute;top:-20%;left:-10%;width:60%;height:120%;background:radial-gradient(ellipse at center, rgba(61,181,74,0.12) 0%, transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <nav class="text-sm mb-5" style="color:rgba(255,255,255,0.45);">
+      <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span style="color:rgba(255,255,255,0.8);">About Us</span>
+    </nav>
+    <div class="eyebrow mb-4" style="color:#3DB54A;">Our Story</div>
+    <h1 class="font-black text-white mb-5" style="font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:-0.03em;line-height:1.1;">
+      Built by operators,<br class="hidden sm:block" /> for operators.
+    </h1>
+    <p style="color:rgba(255,255,255,0.65);line-height:1.75;font-size:1.05rem;max-width:580px;" class="mx-auto">
+      Vital Vending Sales was built from real experience on real routes. We know vending because we live it every day.
+    </p>
+  </div>
+
+  <!-- Wave -->
+  <div class="absolute bottom-0 left-0 right-0" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;width:100%;height:60px;">
+      <path d="M0 60L1440 60L1440 20C1200 55 960 5 720 25C480 45 240 5 0 25L0 60Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== ORIGIN STORY ========== -->
+<section class="py-16 lg:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+      <!-- Left: story text -->
+      <div>
+        <div class="eyebrow mb-4">How It Started</div>
+        <h2 class="section-heading mb-6">The story behind<br />Vital Vending Sales</h2>
+
+        <!-- Placeholder story — replace with Nick's real story -->
+        <div class="space-y-5 text-gray-dark" style="line-height:1.8;font-size:1rem;">
+          <p>
+            <strong class="text-navy">[Owner name] started Vital Vending Sales after [X] years working in the vending industry and seeing firsthand what operators actually needed</strong> — reliable equipment, honest advice, and a partner who picks up the phone.
+          </p>
+          <p>
+            What began as a small operation in [location] grew into one of the most trusted vending equipment companies in the Northeast. Today, VVS serves [X]+ locations across Massachusetts and beyond, supplying everything from traditional snack machines to cutting-edge AI smart coolers.
+          </p>
+          <p>
+            The mission has never changed: put the right machine in the right location, keep it running, and make sure every client feels like their business matters. Because to us, it does.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a href="index.html#contact" class="btn-green">Get a Free Consultation</a>
+          <a href="vending-machines.html" class="btn-outline-navy">See Our Equipment</a>
+        </div>
+      </div>
+
+      <!-- Right: owner photo placeholder -->
+      <div class="relative">
+        <div class="photo-slot card-shadow" style="aspect-ratio:4/5;max-width:420px;margin:0 auto;">
+          <img src="https://placehold.co/840x1050/1B2A4A/ffffff?text=Owner+Photo" alt="Owner photo placeholder" width="840" height="1050" loading="lazy" />
+          <div class="photo-overlay"></div>
+          <div class="photo-label">
+            <div class="font-black text-white text-lg" style="letter-spacing:-0.02em;">[Owner Name]</div>
+            <div style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:500;">Founder, Vital Vending Sales</div>
+          </div>
+        </div>
+        <!-- Decorative accent -->
+        <div style="position:absolute;bottom:-24px;right:-24px;width:120px;height:120px;background:radial-gradient(circle, rgba(61,181,74,0.18) 0%, transparent 70%);border-radius:50%;pointer-events:none;" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BY THE NUMBERS ========== -->
+<section style="background:#F4F6F8;border-top:1px solid rgba(27,42,74,0.06);border-bottom:1px solid rgba(27,42,74,0.06);" class="py-14 lg:py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="stat-num">15+</div>
+        <div class="text-gray-dark font-semibold text-sm mt-1" style="line-height:1.4;">Years in the<br/>vending industry</div>
+      </div>
+      <div>
+        <div class="stat-num">200+</div>
+        <div class="text-gray-dark font-semibold text-sm mt-1" style="line-height:1.4;">Machines placed<br/>across the Northeast</div>
+      </div>
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="text-gray-dark font-semibold text-sm mt-1" style="line-height:1.4;">Parts in stock<br/>ready to ship</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="text-gray-dark font-semibold text-sm mt-1" style="line-height:1.4;">Owner-operated<br/>and independent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TEAM SECTION ========== -->
+<section class="py-16 lg:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+      <div class="eyebrow mb-3">The People Behind VVS</div>
+      <h2 class="section-heading mb-4">Meet the team</h2>
+      <p class="text-gray-dark mx-auto" style="max-width:520px;line-height:1.75;">Real people, real experience. Every person on the VVS team has hands-on knowledge of the industry.</p>
+    </div>
+
+    <!-- Team grid: add or remove cards as needed -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 — Owner -->
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="https://placehold.co/480x600/1B2A4A/ffffff?text=Owner+Photo" alt="[Owner Name]" width="480" height="600" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(18,30,53,0.5) 0%, transparent 50%);pointer-events:none;"></div>
+        </div>
+        <div class="p-6">
+          <div class="font-black text-navy text-lg mb-0.5" style="letter-spacing:-0.02em;">[Owner Name]</div>
+          <div class="text-green font-semibold text-sm mb-3">Founder &amp; Owner</div>
+          <p class="text-gray-dark text-sm" style="line-height:1.7;">
+            [Short bio — 1-2 sentences about this person's background, role, and what they bring to VVS.]
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 — Team member -->
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="https://placehold.co/480x600/243560/ffffff?text=Team+Photo" alt="[Team Member Name]" width="480" height="600" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(18,30,53,0.5) 0%, transparent 50%);pointer-events:none;"></div>
+        </div>
+        <div class="p-6">
+          <div class="font-black text-navy text-lg mb-0.5" style="letter-spacing:-0.02em;">[Team Member Name]</div>
+          <div class="text-green font-semibold text-sm mb-3">[Title / Role]</div>
+          <p class="text-gray-dark text-sm" style="line-height:1.7;">
+            [Short bio — 1-2 sentences about this person's background, role, and what they bring to VVS.]
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 — Team member -->
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="https://placehold.co/480x600/2e9439/ffffff?text=Team+Photo" alt="[Team Member Name]" width="480" height="600" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(18,30,53,0.5) 0%, transparent 50%);pointer-events:none;"></div>
+        </div>
+        <div class="p-6">
+          <div class="font-black text-navy text-lg mb-0.5" style="letter-spacing:-0.02em;">[Team Member Name]</div>
+          <div class="text-green font-semibold text-sm mb-3">[Title / Role]</div>
+          <p class="text-gray-dark text-sm" style="line-height:1.7;">
+            [Short bio — 1-2 sentences about this person's background, role, and what they bring to VVS.]
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== BEHIND THE SCENES PHOTO GALLERY ========== -->
+<section style="background:#F4F6F8;" class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+      <div class="eyebrow mb-3">Behind the Scenes</div>
+      <h2 class="section-heading mb-4">Life at VVS</h2>
+      <p class="text-gray-dark mx-auto" style="max-width:500px;line-height:1.75;">From installs and route runs to warehouse days and machine builds — a look at how we operate.</p>
+    </div>
+
+    <!-- Gallery grid: mix of tall + wide slots -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+
+      <!-- Tall feature slot -->
+      <div class="photo-slot card-shadow col-span-1 lg:row-span-2" style="aspect-ratio:3/4;">
+        <img src="https://placehold.co/600x800/1B2A4A/ffffff?text=Behind+the+Scenes" alt="Behind the scenes photo" width="600" height="800" loading="lazy" />
+        <div class="photo-overlay"></div>
+        <div class="photo-label">
+          <div class="font-bold text-white text-sm">Machine Install</div>
+          <div style="color:rgba(255,255,255,0.65);font-size:0.75rem;">[Location / Caption]</div>
+        </div>
+      </div>
+
+      <!-- Regular slot -->
+      <div class="photo-slot card-shadow" style="aspect-ratio:4/3;">
+        <img src="https://placehold.co/600x450/243560/ffffff?text=Project+Photo" alt="Project photo" width="600" height="450" loading="lazy" />
+        <div class="photo-overlay"></div>
+        <div class="photo-label">
+          <div class="font-bold text-white text-sm">[Caption]</div>
+          <div style="color:rgba(255,255,255,0.65);font-size:0.75rem;">[Location]</div>
+        </div>
+      </div>
+
+      <!-- Regular slot -->
+      <div class="photo-slot card-shadow" style="aspect-ratio:4/3;">
+        <img src="https://placehold.co/600x450/2e9439/ffffff?text=Project+Photo" alt="Project photo" width="600" height="450" loading="lazy" />
+        <div class="photo-overlay"></div>
+        <div class="photo-label">
+          <div class="font-bold text-white text-sm">[Caption]</div>
+          <div style="color:rgba(255,255,255,0.65);font-size:0.75rem;">[Location]</div>
+        </div>
+      </div>
+
+      <!-- Wide slot -->
+      <div class="photo-slot card-shadow col-span-2 lg:col-span-1" style="aspect-ratio:16/9;">
+        <img src="https://placehold.co/900x506/1B2A4A/ffffff?text=Team+at+Work" alt="Team at work" width="900" height="506" loading="lazy" />
+        <div class="photo-overlay"></div>
+        <div class="photo-label">
+          <div class="font-bold text-white text-sm">[Caption]</div>
+          <div style="color:rgba(255,255,255,0.65);font-size:0.75rem;">[Location]</div>
+        </div>
+      </div>
+
+      <!-- Regular slot -->
+      <div class="photo-slot card-shadow col-span-1" style="aspect-ratio:4/3;">
+        <img src="https://placehold.co/600x450/121e35/ffffff?text=Warehouse" alt="Warehouse photo" width="600" height="450" loading="lazy" />
+        <div class="photo-overlay"></div>
+        <div class="photo-label">
+          <div class="font-bold text-white text-sm">[Caption]</div>
+          <div style="color:rgba(255,255,255,0.65);font-size:0.75rem;">[Location]</div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-gray-mid text-sm mt-8">Replace placeholder images by dropping your real photos in and updating the <code class="bg-white px-1.5 py-0.5 rounded text-navy text-xs font-mono">src</code> attributes above.</p>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section style="background:#1B2A4A;position:relative;overflow:hidden;" class="py-16 lg:py-20">
+  <div style="position:absolute;inset:0;opacity:0.04;" aria-hidden="true">
+    <svg width="100%" height="100%"><filter id="noise2"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#noise2)"/></svg>
+  </div>
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="eyebrow mb-4" style="color:#3DB54A;">Ready to talk?</div>
+    <h2 class="font-black text-white mb-5" style="font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-0.03em;line-height:1.15;">Start a conversation with the VVS team</h2>
+    <p style="color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:2rem;">Whether you need one machine or twenty, we'll give you straight answers and a fair quote. No pressure.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="index.html#contact" class="btn-green">Get a Free Consultation</a>
+      <a href="tel:4132009068" style="display:inline-flex;align-items:center;gap:8px;font-weight:600;color:rgba(255,255,255,0.85);font-size:0.95rem;text-decoration:none;padding:14px 0;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+        (413) 200-9068
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer style="background:#121e35;" class="pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="lg:col-span-1">
+        <img src="./VitalLogoandmoreTEXTONLY.png" alt="Vital Vending Sales" class="h-12 w-auto mb-4 brightness-0 invert" width="180" height="48" loading="lazy" />
+        <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.7;">The Break Time Experts. AI smart coolers, vending machines, and parts for the Northeast.</p>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm mb-4 uppercase tracking-wide">Equipment</div>
+        <ul class="space-y-2.5" style="color:rgba(255,255,255,0.55);font-size:0.875rem;">
+          <li><a href="smart-coolers.html" class="hover:text-white transition-colors">AI Smart Coolers</a></li>
+          <li><a href="vending-machines.html" class="hover:text-white transition-colors">Vending Machines</a></li>
+          <li><a href="vending-parts.html" class="hover:text-white transition-colors">Vending Parts</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm mb-4 uppercase tracking-wide">Company</div>
+        <ul class="space-y-2.5" style="color:rgba(255,255,255,0.55);font-size:0.875rem;">
+          <li><a href="index.html#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About VVS</a></li>
+          <li><a href="reviews.html" class="hover:text-white transition-colors">Reviews</a></li>
+          <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm mb-4 uppercase tracking-wide">Contact</div>
+        <ul class="space-y-2.5" style="color:rgba(255,255,255,0.55);font-size:0.875rem;">
+          <li><a href="tel:4132009068" class="hover:text-white transition-colors">(413) 200-9068</a></li>
+          <li><a href="mailto:info@vitalvendingsales.com" class="hover:text-white transition-colors">Email Us</a></li>
+          <li style="line-height:1.5;">Massachusetts &amp; Northeast</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-color:rgba(255,255,255,0.08);">
+      <p style="color:rgba(255,255,255,0.35);font-size:0.8rem;">&copy; 2026 Vital Vending Sales. All rights reserved. &nbsp;&middot;&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.35);" class="hover:text-white transition-colors">Privacy Policy</a></p>
+      <p style="color:rgba(255,255,255,0.25);font-size:0.75rem;">The Break Time Experts.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+</body>
+</html>
