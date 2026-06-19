@@ -77,7 +77,7 @@
       #hero-copy-col {
         width: 100% !important;
         padding-top: 2.8rem !important;
-        padding-bottom: 2.8rem !important;
+        padding-bottom: 6rem !important;
       }
       #hero-copy-col h1 {
         font-size: 2rem !important;
@@ -671,7 +671,7 @@
           </a>
           <a href="#contact" class="btn-outline text-base">Free Consultation</a>
         </div>
-        <div class="flex flex-wrap gap-5 mt-6 sm:mt-10">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-5 mt-6 sm:mt-10">
           <div class="flex items-center gap-2 text-white/70 text-sm">
             <svg class="w-4 h-4 text-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             15+ Years Experience
@@ -1335,7 +1335,10 @@
         var viewport = track.parentElement;
         var gap = getGap();
         var vis = getVisible();
-        _cachedCardWidth = (viewport.offsetWidth - gap * (vis - 1)) / vis;
+        var style = window.getComputedStyle(viewport);
+        var pl = parseInt(style.paddingLeft) || 0;
+        var pr = parseInt(style.paddingRight) || 0;
+        _cachedCardWidth = (viewport.offsetWidth - pl - pr - gap * (vis - 1)) / vis;
         return _cachedCardWidth;
       }
 
