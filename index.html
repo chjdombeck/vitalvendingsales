@@ -72,6 +72,26 @@
     /* CLS: system font stack holds layout until Inter loads */
     body { font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
 
+    /* ===== MOBILE HERO OVERRIDES ===== */
+    @media (max-width: 767px) {
+      #hero-copy-col {
+        width: 100% !important;
+        padding-top: 2.8rem !important;
+        padding-bottom: 2.8rem !important;
+      }
+      #hero-copy-col h1 {
+        font-size: 2rem !important;
+        line-height: 1.12 !important;
+        margin-bottom: 0.75rem !important;
+      }
+      #hero-machine-col {
+        display: none !important;
+      }
+      .hero-desc {
+        font-size: 0.95rem !important;
+      }
+    }
+
     /* SVG noise texture for depth */
     .noise-overlay {
       position: relative;
@@ -634,15 +654,15 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="display:flex;align-items:center;min-height:0;">
 
       <!-- Left: copy — determines section height -->
-      <div style="position:relative;z-index:2;width:50%;padding-top:7rem;padding-bottom:9rem;max-width:540px;">
-        <div class="badge-white mb-5">Northeast's Leader in AI Smart Vending</div>
-        <h1 class="text-white font-black leading-tight mb-6" style="font-size:clamp(2.4rem,5vw,3.5rem);letter-spacing:-0.03em;line-height:1.08;">
+      <div id="hero-copy-col" style="position:relative;z-index:2;width:50%;padding-top:7rem;padding-bottom:9rem;max-width:540px;">
+        <div class="badge-white mb-3 sm:mb-5">Northeast's Leader in AI Smart Vending</div>
+        <h1 class="text-white font-black leading-tight mb-4 sm:mb-6" style="font-size:clamp(2.4rem,5vw,3.5rem);letter-spacing:-0.03em;line-height:1.08;">
           The Break Time Experts.<br />
           <span style="color:#3DB54A;">Now Smarter</span><br />
           Than Ever.
         </h1>
-        <p class="text-blue-100 mb-8 text-lg" style="line-height:1.7;opacity:0.85;max-width:480px;">
-          AI-powered smart coolers, vending machines, and micro-market solutions for entrepreneurs and businesses across the Northeast United States.<br /><br />Vital Vending Sales: The Break Time Experts.
+        <p class="text-blue-100 mb-5 sm:mb-8 hero-desc" style="line-height:1.7;opacity:0.85;max-width:480px;">
+          AI-powered smart coolers, vending machines, and micro-market solutions for entrepreneurs and businesses across the Northeast.
         </p>
         <div class="flex flex-wrap gap-3">
           <a href="smart-coolers.html" class="btn-green text-base">
@@ -651,7 +671,7 @@
           </a>
           <a href="#contact" class="btn-outline text-base">Free Consultation</a>
         </div>
-        <div class="flex flex-wrap gap-5 mt-10">
+        <div class="flex flex-wrap gap-5 mt-6 sm:mt-10">
           <div class="flex items-center gap-2 text-white/70 text-sm">
             <svg class="w-4 h-4 text-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             15+ Years Experience
@@ -668,7 +688,7 @@
       </div>
 
       <!-- Right: machine — absolutely positioned, never adds height to section -->
-      <div style="position:absolute;right:0;top:0;bottom:0;width:55%;display:flex;align-items:center;justify-content:flex-end;pointer-events:none;" aria-hidden="false">
+      <div id="hero-machine-col" style="position:absolute;right:0;top:0;bottom:0;width:55%;display:flex;align-items:center;justify-content:flex-end;pointer-events:none;" aria-hidden="false">
         <!-- Glow -->
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(61,181,74,0.26) 0%,rgba(61,181,74,0.08) 48%,transparent 72%);filter:blur(50px);animation:vmGlow 5s ease-in-out infinite;pointer-events:none;"></div>
         <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:340px;height:50px;background:radial-gradient(ellipse,rgba(61,181,74,0.45) 0%,transparent 70%);filter:blur(20px);border-radius:50%;pointer-events:none;"></div>
@@ -715,7 +735,7 @@
   </section>
 
   <!-- ========== AI SMART COOLERS (HERO PRODUCT) ========== -->
-  <section id="smart-coolers" class="bg-white py-20 lg:py-28 section-glow">
+  <section id="smart-coolers" class="bg-white py-10 lg:py-28 section-glow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="max-w-2xl mb-14">
@@ -845,7 +865,7 @@
   <div class="section-divider"></div>
 
   <!-- ========== VENDING MACHINES ========== -->
-  <section id="equipment" class="bg-white py-20 lg:py-28">
+  <section id="equipment" class="bg-white py-10 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
         <div class="max-w-xl">
@@ -943,7 +963,7 @@
   </section>
 
   <!-- ========== SERVICES ========== -->
-  <section id="services" class="py-20 lg:py-28" style="background:#F4F6F8;">
+  <section id="services" class="py-10 lg:py-28" style="background:#F4F6F8;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <div class="badge mb-4">What We Do</div>
@@ -1031,7 +1051,7 @@
   </section>
 
   <!-- ========== ENTREPRENEUR CTA ========== -->
-  <section class="py-20 lg:py-28 noise-overlay" style="background:#1B2A4A;position:relative;overflow:hidden;">
+  <section class="py-10 lg:py-28 noise-overlay" style="background:#1B2A4A;position:relative;overflow:hidden;">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <div style="position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(61,181,74,0.1) 0%,transparent 65%);"></div>
       <div style="position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(36,53,96,0.7) 0%,transparent 65%);"></div>
@@ -1098,7 +1118,7 @@
   </section>
 
   <!-- ========== TESTIMONIALS ========== -->
-  <section id="testimonials" class="py-20 lg:py-28" style="background:#1B2A4A;">
+  <section id="testimonials" class="py-10 lg:py-28" style="background:#1B2A4A;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Header with Google branding -->
@@ -1410,7 +1430,7 @@
   </script>
 
   <!-- ========== CONTACT / CTA ========== -->
-  <section id="contact" class="py-20 lg:py-28 bg-white">
+  <section id="contact" class="py-10 lg:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <!-- Left: info -->
