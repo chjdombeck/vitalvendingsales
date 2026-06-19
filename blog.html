@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vending Industry Blog | Vital Vending Sales</title>
+  <meta name="description" content="Expert insights on vending machines, AI smart coolers, micro-markets, and building a successful vending business. Tips from 15+ years in the industry." />
+  <link rel="canonical" href="https://www.vitalvendingsales.com/blog.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Vending Industry Blog | Vital Vending Sales" />
+  <meta property="og:description" content="Expert insights on vending machines, AI smart coolers, and building a successful vending business." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.vitalvendingsales.com/blog.html" />
+  <meta property="og:image" content="https://www.vitalvendingsales.com/og-image.jpg" />
+  <meta property="og:site_name" content="Vital Vending Sales" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Vital Vending Sales Blog","url":"https://www.vitalvendingsales.com/blog.html","description":"Expert insights on vending machines, AI smart coolers, and the vending industry.","publisher":{"@type":"Organization","name":"Vital Vending Sales","url":"https://www.vitalvendingsales.com"}}</script>
+
+  <link rel="preload" href="./VitalLogoandmoreTEXTONLY.png" as="image" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" /></noscript>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            'navy-dark': '#121e35',
+            'navy-mid': '#243560',
+            green: '#3DB54A',
+            'green-dark': '#2e9439',
+            'green-soft': '#D6F0DA',
+            'gray-light': '#F4F6F8',
+            'gray-mid': '#8C95A0',
+            'gray-dark': '#3D4D5C',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+
+    /* ===== BUTTONS ===== */
+    .btn-green {
+      position: relative; overflow: hidden;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 700; border-radius: 10px; cursor: pointer;
+      text-decoration: none; padding: 14px 28px; color: #fff;
+      background: rgba(61,181,74,0.88);
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 4px 16px rgba(0,0,0,0.18), 0 0 24px rgba(61,181,74,0.28);
+      transition: transform 0.28s cubic-bezier(0.1,0.4,0.2,1), filter 0.28s, box-shadow 0.28s;
+    }
+    .btn-green:hover { transform: scale(1.045) translateY(-1px); filter: brightness(1.12); }
+    .btn-green:active { transform: translateY(2px) scale(0.97); }
+
+    /* ===== NAV ===== */
+    .nav-link {
+      color: #3D4D5C; font-weight: 500; font-size: 0.9rem;
+      transition: color 0.2s; position: relative; text-decoration: none;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 2px; background: #3DB54A; transform: scaleX(0);
+      transition: transform 0.2s; transform-origin: left; border-radius: 2px;
+    }
+    .nav-link:hover { color: #1B2A4A; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .nav-link.active { color: #1B2A4A; font-weight: 600; }
+    .nav-link.active::after { transform: scaleX(1); }
+
+    /* ===== EYEBROW / LABELS ===== */
+    .eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #3DB54A;
+    }
+
+    /* ===== NEWSPAPER MASTHEAD ===== */
+    .masthead-rule {
+      border: none;
+      border-top: 3px solid #1B2A4A;
+      margin: 0;
+    }
+    .masthead-rule-thin {
+      border: none;
+      border-top: 1px solid rgba(27,42,74,0.15);
+      margin: 0;
+    }
+    .masthead-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      color: #1B2A4A;
+      letter-spacing: -0.02em;
+    }
+
+    /* ===== HERO CARD (featured post) ===== */
+    .featured-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #1B2A4A;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      transition: transform 0.35s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.35s;
+      box-shadow: 0 4px 16px rgba(27,42,74,0.12), 0 24px 64px rgba(27,42,74,0.16);
+    }
+    .featured-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 32px rgba(27,42,74,0.18), 0 32px 80px rgba(27,42,74,0.2);
+    }
+    .featured-card-img {
+      width: 100%; height: 360px; object-fit: cover;
+      display: block; opacity: 0.45;
+      transition: transform 0.6s cubic-bezier(0.34,1.2,0.64,1), opacity 0.3s;
+    }
+    .featured-card:hover .featured-card-img { transform: scale(1.04); opacity: 0.5; }
+    .featured-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(27,42,74,0.3) 0%, rgba(18,30,53,0.92) 70%);
+    }
+    .featured-content {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 32px 36px;
+    }
+
+    /* ===== STANDARD BLOG CARDS ===== */
+    .blog-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(27,42,74,0.07);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.35s;
+      box-shadow: 0 1px 2px rgba(27,42,74,0.05), 0 4px 12px rgba(27,42,74,0.07), 0 16px 32px rgba(27,42,74,0.05);
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 2px 8px rgba(27,42,74,0.1), 0 12px 32px rgba(27,42,74,0.13), 0 32px 56px rgba(27,42,74,0.09);
+    }
+    .blog-card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: #F4F6F8;
+      flex-shrink: 0;
+    }
+    .blog-card-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.34,1.2,0.64,1);
+    }
+    .blog-card:hover .blog-card-img { transform: scale(1.06); }
+    .blog-card-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(27,42,74,0.55) 0%, transparent 55%);
+    }
+
+    /* ===== WIDE HORIZONTAL CARD ===== */
+    .blog-card-wide {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(27,42,74,0.07);
+      text-decoration: none;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      transition: transform 0.35s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.35s;
+      box-shadow: 0 1px 2px rgba(27,42,74,0.05), 0 4px 12px rgba(27,42,74,0.07), 0 16px 32px rgba(27,42,74,0.05);
+    }
+    .blog-card-wide:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 2px 8px rgba(27,42,74,0.1), 0 12px 32px rgba(27,42,74,0.13), 0 32px 56px rgba(27,42,74,0.09);
+    }
+    .blog-card-wide-img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s cubic-bezier(0.34,1.2,0.64,1);
+    }
+    .blog-card-wide:hover .blog-card-wide-img { transform: scale(1.05); }
+    .blog-card-wide-img-wrap {
+      overflow: hidden;
+      position: relative;
+      background: #F4F6F8;
+    }
+
+    /* ===== CATEGORY PILLS ===== */
+    .cat-pill {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; border-radius: 6px;
+      padding: 3px 9px;
+    }
+    .cat-green { background: #D6F0DA; color: #1e7a28; }
+    .cat-navy  { background: rgba(27,42,74,0.1); color: #1B2A4A; }
+    .cat-amber { background: #FEF3C7; color: #92400E; }
+    .cat-rose  { background: #FEE2E2; color: #991B1B; }
+
+    /* ===== READ MORE ARROW ===== */
+    .read-more {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.8rem; font-weight: 700; color: #3DB54A;
+      transition: gap 0.2s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .blog-card:hover .read-more,
+    .blog-card-wide:hover .read-more,
+    .featured-card:hover .read-more { gap: 10px; }
+
+    /* ===== TICKER DIVIDER ===== */
+    .ticker-wrap {
+      background: #1B2A4A;
+      overflow: hidden;
+      padding: 10px 0;
+      position: relative;
+    }
+    .ticker-inner {
+      display: flex;
+      gap: 0;
+      animation: ticker-scroll 60s linear infinite;
+      width: max-content;
+    }
+    .ticker-inner:hover { animation-play-state: paused; }
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      white-space: nowrap;
+      padding: 0 32px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      display: flex; align-items: center; gap: 24px;
+    }
+    .ticker-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: #3DB54A; flex-shrink: 0;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer-link {
+      color: rgba(255,255,255,0.55); font-size: 0.85rem; text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: #fff; }
+  </style>
+</head>
+<body class="font-sans bg-white antialiased">
+
+<!-- ===== ANNOUNCEMENT BAR ===== -->
+<div style="background:#3DB54A;" class="text-white text-center py-2.5 px-4 text-sm font-medium">
+  <span>The Break Time Experts. Serving the Northeast since day one. </span>
+  <a href="tel:4132009068" class="underline font-bold hover:opacity-80 transition-opacity">(413) 200-9068</a>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100" style="box-shadow:0 1px 3px rgba(27,42,74,0.06);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 lg:h-24">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="./VitalLogoandmoreTEXTONLY.png" alt="Vital Vending Sales" class="h-14 lg:h-16 w-auto" width="220" height="64" fetchpriority="high" decoding="sync" />
+      </a>
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="smart-coolers.html" class="nav-link">AI Smart Coolers</a>
+        <a href="vending-machines.html" class="nav-link">Vending Machines</a>
+        <a href="vending-parts.html" class="nav-link">Vending Parts</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="index.html#contact" class="btn-green text-sm hidden lg:inline-flex">Free Consultation</a>
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-dark hover:bg-gray-100 transition-colors" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">
+      <a href="smart-coolers.html" class="nav-link py-2">AI Smart Coolers</a>
+      <a href="vending-machines.html" class="nav-link py-2">Vending Machines</a>
+      <a href="vending-parts.html" class="nav-link py-2">Vending Parts</a>
+      <a href="about.html" class="nav-link py-2">About</a>
+      <a href="reviews.html" class="nav-link py-2">Reviews</a>
+      <a href="blog.html" class="nav-link active py-2">Blog</a>
+      <a href="index.html#contact" class="btn-green mt-2 justify-center">Free Consultation</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MASTHEAD ===== -->
+<section class="bg-white pt-10 pb-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Top rule -->
+    <hr class="masthead-rule mb-3" />
+
+    <!-- Masthead row -->
+    <div class="flex items-end justify-between gap-4 pb-3">
+      <div>
+        <p class="eyebrow mb-1">Vital Vending Sales</p>
+        <h1 class="masthead-title" style="font-size:clamp(2.8rem,7vw,5.5rem);line-height:0.95;">The Vending<br />Insider</h1>
+      </div>
+      <div class="hidden md:block text-right">
+        <p class="text-xs text-gray-mid font-medium mb-1" style="letter-spacing:0.06em;">INDUSTRY KNOWLEDGE</p>
+        <p class="text-xs text-gray-mid">10 Articles &nbsp;|&nbsp; Free to Read</p>
+        <p class="text-xs text-gray-mid mt-1">Northeast Edition</p>
+      </div>
+    </div>
+
+    <!-- Thin rule -->
+    <hr class="masthead-rule-thin mb-1" />
+    <!-- Second thin rule with label -->
+    <div class="flex items-center gap-3 py-2">
+      <span class="text-xs font-bold text-navy" style="letter-spacing:0.08em;white-space:nowrap;">TODAY'S TOPICS</span>
+      <div class="flex-1 h-px" style="background:rgba(27,42,74,0.12);"></div>
+      <span class="text-xs text-gray-mid hidden sm:block" style="white-space:nowrap;">Equipment &bull; Marketing &bull; Operations &bull; Industry</span>
+    </div>
+    <hr class="masthead-rule-thin" />
+  </div>
+</section>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker-wrap">
+  <div class="ticker-inner" aria-hidden="true">
+    <!-- duplicate content for seamless loop -->
+    <span class="ticker-item">New vs. Refurbished Machines <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Leasing and Financing Options <span class="ticker-dot"></span></span>
+    <span class="ticker-item">14 Marketing Strategies <span class="ticker-dot"></span></span>
+    <span class="ticker-item">How to Find Vending Locations <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Start Your Vending Empire <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Healthy Vending Options <span class="ticker-dot"></span></span>
+    <span class="ticker-item">The Evolution of Vending Machines <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Economy and Vending Opportunities <span class="ticker-dot"></span></span>
+    <span class="ticker-item">New vs. Refurbished Machines <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Leasing and Financing Options <span class="ticker-dot"></span></span>
+    <span class="ticker-item">14 Marketing Strategies <span class="ticker-dot"></span></span>
+    <span class="ticker-item">How to Find Vending Locations <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Start Your Vending Empire <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Healthy Vending Options <span class="ticker-dot"></span></span>
+    <span class="ticker-item">The Evolution of Vending Machines <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Economy and Vending Opportunities <span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- ===== FEATURED + SECONDARY GRID ===== -->
+<section class="bg-white py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <!-- FEATURED: biggest card, spans 2 cols -->
+      <div class="lg:col-span-2">
+        <a href="blog/new-vs-refurbished-vending-machines.html" class="featured-card" style="height:100%;min-height:400px;">
+          <img src="https://placehold.co/900x500/1B2A4A/3DB54A?text=New+vs+Refurbished" alt="New vs. Refurbished Vending Machines" class="featured-card-img" style="height:100%;position:absolute;top:0;left:0;width:100%;object-fit:cover;" />
+          <div class="featured-overlay"></div>
+          <div class="featured-content">
+            <span class="cat-pill cat-green mb-3 inline-block">Equipment</span>
+            <h2 class="masthead-title text-white mb-3" style="font-size:clamp(1.5rem,3.5vw,2.4rem);line-height:1.1;">New vs. Refurbished Vending Machines: Which is Right for Your Business?</h2>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;line-height:1.6;max-width:520px;" class="mb-4">One of the biggest decisions when starting or expanding a vending business is whether to invest in a new machine or save with a refurbished one.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0" style="background:#3DB54A;">
+                  <span class="text-white font-bold" style="font-size:0.6rem;">VVS</span>
+                </div>
+                <span style="color:rgba(255,255,255,0.55);font-size:0.8rem;">Nick Williamson &nbsp;&bull;&nbsp; Feb 2025</span>
+              </div>
+              <span class="read-more">
+                Read Article
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- SIDE STACK: 2 smaller cards -->
+      <div class="flex flex-col gap-6">
+
+        <a href="blog/vending-machine-leasing-and-financing.html" class="blog-card flex-1">
+          <div class="blog-card-img-wrap">
+            <img loading="lazy" decoding="async" src="https://placehold.co/600x340/243560/3DB54A?text=Leasing+%26+Financing" alt="Vending Machine Leasing" class="blog-card-img" />
+            <div class="blog-card-img-overlay"></div>
+            <span class="cat-pill cat-amber absolute bottom-3 left-3">Finance</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-black text-navy mb-2" style="font-size:1rem;line-height:1.25;letter-spacing:-0.02em;">The Ultimate Guide to Vending Machine Leasing and Financing Options</h3>
+            <p class="text-gray-mid text-xs mb-4 flex-1" style="line-height:1.6;">Explore leasing vs. buying, SBA loans, equipment financing, and vendor programs to fund your vending business.</p>
+            <div class="flex items-center justify-between">
+              <span style="color:#8C95A0;font-size:0.75rem;">Feb 2024</span>
+              <span class="read-more">Read <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="blog/marketing-your-vending-business.html" class="blog-card flex-1">
+          <div class="blog-card-img-wrap">
+            <img loading="lazy" decoding="async" src="https://placehold.co/600x340/1e7a28/D6F0DA?text=14+Marketing+Strategies" alt="Marketing Vending Business" class="blog-card-img" />
+            <div class="blog-card-img-overlay"></div>
+            <span class="cat-pill cat-navy absolute bottom-3 left-3">Marketing</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-black text-navy mb-2" style="font-size:1rem;line-height:1.25;letter-spacing:-0.02em;">Marketing Your Vending Machine Business: 14 Strategies for Success</h3>
+            <p class="text-gray-mid text-xs mb-4 flex-1" style="line-height:1.6;">From digital ads and loyalty programs to community involvement and analytics -- the full playbook.</p>
+            <div class="flex items-center justify-between">
+              <span style="color:#8C95A0;font-size:0.75rem;">Nov 2023</span>
+              <span class="read-more">Read <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- SECTION LABEL -->
+    <div class="flex items-center gap-3 mt-12 mb-6">
+      <span class="text-xs font-bold text-navy" style="letter-spacing:0.1em;">MORE ARTICLES</span>
+      <div class="flex-1 h-px" style="background:rgba(27,42,74,0.12);"></div>
+    </div>
+
+    <!-- 3-COLUMN CARD GRID -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <a href="blog/new-or-used-vending-machines.html" class="blog-card">
+        <div class="blog-card-img-wrap">
+          <img loading="lazy" decoding="async" src="https://placehold.co/600x340/121e35/ffffff?text=New+or+Used%3F" alt="New or Used Vending Machines" class="blog-card-img" />
+          <div class="blog-card-img-overlay"></div>
+          <span class="cat-pill cat-green absolute bottom-3 left-3">Equipment</span>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-black text-navy mb-2" style="font-size:1rem;line-height:1.25;letter-spacing:-0.02em;">New or Used Vending Machines: Making the Right Choice</h3>
+          <p class="text-gray-mid text-xs mb-4 flex-1" style="line-height:1.6;">Reliability, modern features, energy efficiency, and budget -- breaking down the four critical factors.</p>
+          <div class="flex items-center justify-between">
+            <span style="color:#8C95A0;font-size:0.75rem;">Oct 2023</span>
+            <span class="read-more">Read <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/economy-vending-opportunities.html" class="blog-card">
+        <div class="blog-card-img-wrap">
+          <img loading="lazy" decoding="async" src="https://placehold.co/600x340/92400E/FEF3C7?text=Economy+%26+Vending" alt="Economy and Vending Opportunities" class="blog-card-img" />
+          <div class="blog-card-img-overlay"></div>
+          <span class="cat-pill cat-amber absolute bottom-3 left-3">Industry</span>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-black text-navy mb-2" style="font-size:1rem;line-height:1.25;letter-spacing:-0.02em;">Riding the Rebound: Economy Sparks Vending Opportunities</h3>
+          <p class="text-gray-mid text-xs mb-4 flex-1" style="line-height:1.6;">How a resilient economy and the return to in-person work is creating prime conditions for vending entrepreneurs.</p>
+          <div class="flex items-center justify-between">
+            <span style="color:#8C95A0;font-size:0.75rem;">Aug 2023</span>
+            <span class="read-more">Read <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/evolution-of-vending-machines.html" class="blog-card">
+        <div class="blog-card-img-wrap">
+          <img loading="lazy" decoding="async" src="https://placehold.co/600x340/1B2A4A/3DB54A?text=Evolution+of+Vending" alt="Evolution of Vending Machines" class="blog-card-img" />
+          <div class="blog-card-img-overlay"></div>
+          <span class="cat-pill cat-navy absolute bottom-3 left-3">Industry</span>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-black text-navy mb-2" style="font-size:1rem;line-height:1.25;letter-spacing:-0.02em;">The Evolution of Vending Machines and the Industry</h3>
+          <p class="text-gray-mid text-xs mb-4 flex-1" style="line-height:1.6;">From coin-only machines in the 1880s to touchscreens and mobile payments -- a century of transformation.</p>
+          <div class="flex items-center justify-between">
+            <span style="color:#8C95A0;font-size:0.75rem;">Jun 2023</span>
+            <span class="read-more">Read <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- SECTION LABEL 2 -->
+    <div class="flex items-center gap-3 mt-10 mb-6">
+      <span class="text-xs font-bold text-navy" style="letter-spacing:0.1em;">OPERATIONS &amp; GROWTH</span>
+      <div class="flex-1 h-px" style="background:rgba(27,42,74,0.12);"></div>
+    </div>
+
+    <!-- WIDE HORIZONTAL CARDS -->
+    <div class="flex flex-col gap-5">
+
+      <a href="blog/top-healthy-vending-options.html" class="blog-card-wide">
+        <div class="blog-card-wide-img-wrap">
+          <img loading="lazy" decoding="async" src="https://placehold.co/560x320/1e7a28/D6F0DA?text=Healthy+Options" alt="Healthy Vending Options" class="blog-card-wide-img" />
+        </div>
+        <div class="p-7 flex flex-col justify-center">
+          <span class="cat-pill cat-green mb-3">Health</span>
+          <h3 class="font-black text-navy mb-2" style="font-size:1.15rem;line-height:1.25;letter-spacing:-0.02em;">Top 5 Popular, Healthy Options for Your Vending Machine</h3>
+          <p class="text-gray-mid text-sm mb-5" style="line-height:1.65;">Granola bars, trail mix, baked chips, popcorn, and fruit cups -- the best-selling healthy items stocking operators' machines right now.</p>
+          <div class="flex items-center justify-between">
+            <span style="color:#8C95A0;font-size:0.8rem;">Nick Williamson &nbsp;&bull;&nbsp; Apr 2023</span>
+            <span class="read-more text-sm">Read Article <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/how-to-find-vending-locations.html" class="blog-card-wide">
+        <div class="blog-card-wide-img-wrap">
+          <img loading="lazy" decoding="async" src="https://placehold.co/560x320/243560/ffffff?text=Find+Locations" alt="How to Find Vending Locations" class="blog-card-wide-img" />
+        </div>
+        <div class="p-7 flex flex-col justify-center">
+          <span class="cat-pill cat-navy mb-3">Operations</span>
+          <h3 class="font-black text-navy mb-2" style="font-size:1.15rem;line-height:1.25;letter-spacing:-0.02em;">How to Find Vending Locations That Actually Generate Revenue</h3>
+          <p class="text-gray-mid text-sm mb-5" style="line-height:1.65;">Foot traffic, demographics, competition, and negotiation -- the framework for securing your first (or next) high-performing location.</p>
+          <div class="flex items-center justify-between">
+            <span style="color:#8C95A0;font-size:0.8rem;">Nick Williamson &nbsp;&bull;&nbsp; Apr 2023</span>
+            <span class="read-more text-sm">Read Article <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/history-of-vending-machines.html" class="blog-card-wide">
+        <div class="blog-card-wide-img-wrap">
+          <img loading="lazy" decoding="async" src="https://placehold.co/560x320/3D4D5C/F4F6F8?text=History+of+Vending" alt="History of Vending Machines" class="blog-card-wide-img" />
+        </div>
+        <div class="p-7 flex flex-col justify-center">
+          <span class="cat-pill cat-navy mb-3">Industry</span>
+          <h3 class="font-black text-navy mb-2" style="font-size:1.15rem;line-height:1.25;letter-spacing:-0.02em;">The History and Types of Vending Machines</h3>
+          <p class="text-gray-mid text-sm mb-5" style="line-height:1.65;">Snack machines, beverage machines, food machines, electronics, clothing, and smart vending -- every category explained.</p>
+          <div class="flex items-center justify-between">
+            <span style="color:#8C95A0;font-size:0.8rem;">Nick Williamson &nbsp;&bull;&nbsp; Apr 2023</span>
+            <span class="read-more text-sm">Read Article <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/start-a-vending-business.html" class="blog-card-wide">
+        <div class="blog-card-wide-img-wrap">
+          <img loading="lazy" decoding="async" src="https://placehold.co/560x320/121e35/3DB54A?text=Start+Your+Empire" alt="Start a Vending Business" class="blog-card-wide-img" />
+        </div>
+        <div class="p-7 flex flex-col justify-center">
+          <span class="cat-pill cat-green mb-3">Getting Started</span>
+          <h3 class="font-black text-navy mb-2" style="font-size:1.15rem;line-height:1.25;letter-spacing:-0.02em;">Start Your Vending Empire: How to Start a Vending Business</h3>
+          <p class="text-gray-mid text-sm mb-5" style="line-height:1.65;">Research, equipment, suppliers, financing, marketing, and legal requirements -- the complete roadmap to launching your first vending machine business.</p>
+          <div class="flex items-center justify-between">
+            <span style="color:#8C95A0;font-size:0.8rem;">Nick Williamson &nbsp;&bull;&nbsp; Apr 2023</span>
+            <span class="read-more text-sm">Read Article <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="py-16 mt-10" style="background:#1B2A4A;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;opacity:0.04;" aria-hidden="true">
+    <svg width="100%" height="100%"><filter id="n2"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#n2)"/></svg>
+  </div>
+  <div style="position:absolute;top:-40%;right:-10%;width:60%;height:140%;background:radial-gradient(ellipse at center,rgba(61,181,74,0.1) 0%,transparent 65%);pointer-events:none;" aria-hidden="true"></div>
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="eyebrow mb-4" style="color:#3DB54A;">Ready to Get Started?</div>
+    <h2 class="masthead-title text-white mb-5" style="font-size:clamp(1.8rem,4vw,3rem);line-height:1.05;">Talk to a vending expert today.</h2>
+    <p style="color:rgba(255,255,255,0.6);line-height:1.75;font-size:1rem;" class="mb-8">Whether you're starting your first route or scaling to 50 machines, we'll point you in the right direction. No pressure.</p>
+    <a href="index.html#contact" class="btn-green">Get a Free Consultation</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background:#121e35;" class="pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-10 pb-10 border-b" style="border-color:rgba(255,255,255,0.08);">
+      <div class="md:col-span-1">
+        <img src="./VitalLogoandmoreTEXTONLY.png" alt="Vital Vending Sales" class="h-12 w-auto mb-4 brightness-0 invert" width="180" height="48" />
+        <p style="color:rgba(255,255,255,0.45);font-size:0.82rem;line-height:1.7;">The Northeast's trusted source for vending machines, AI smart coolers, and micro-market solutions.</p>
+      </div>
+      <div>
+        <p class="text-xs font-bold text-white mb-4" style="letter-spacing:0.1em;">EQUIPMENT</p>
+        <div class="flex flex-col gap-2.5">
+          <a href="smart-coolers.html" class="footer-link">AI Smart Coolers</a>
+          <a href="vending-machines.html" class="footer-link">Vending Machines</a>
+          <a href="vending-parts.html" class="footer-link">Vending Parts</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-bold text-white mb-4" style="letter-spacing:0.1em;">COMPANY</p>
+        <div class="flex flex-col gap-2.5">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="reviews.html" class="footer-link">Reviews</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-bold text-white mb-4" style="letter-spacing:0.1em;">CONTACT</p>
+        <div class="flex flex-col gap-2.5">
+          <a href="tel:4132009068" class="footer-link">(413) 200-9068</a>
+          <a href="mailto:info@vitalvendingsales.com" class="footer-link">info@vitalvendingsales.com</a>
+          <p style="color:rgba(255,255,255,0.45);font-size:0.82rem;">15 Dana Way, Ludlow MA 01056</p>
+        </div>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p style="color:rgba(255,255,255,0.3);font-size:0.78rem;">&copy; 2026 Vital Vending Sales. All rights reserved.</p>
+      <a href="privacy-policy.html" style="color:rgba(255,255,255,0.3);font-size:0.78rem;" class="hover:text-white transition-colors">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+</script>
+
+</body>
+</html>
