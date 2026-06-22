@@ -1067,11 +1067,66 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <div class="eyebrow mb-3">Why Make the Switch</div>
-        <h2 class="section-heading mb-4">HAHA Smart Vending vs. Traditional Vending</h2>
+        <h2 class="section-heading mb-4">AI Smart Vending vs. Traditional Vending</h2>
         <p class="text-gray-dark mx-auto" style="max-width:520px;line-height:1.75;">Side by side, the difference is clear. More product flexibility, fewer service calls, higher revenue per visit.</p>
       </div>
-      <div class="rounded-2xl overflow-hidden" style="box-shadow:0 4px 32px rgba(27,42,74,0.12);">
-        <img src="./MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .png" alt="HAHA Smart Vending vs Traditional Vending comparison" loading="lazy" style="width:100%;height:auto;display:block;" />
+      <!-- Comparison table (replaces image so header text is editable) -->
+      <div class="rounded-2xl overflow-hidden" style="border:1px solid rgba(27,42,74,0.1);box-shadow:0 4px 32px rgba(27,42,74,0.12);">
+        <!-- Column headers -->
+        <div class="grid" style="grid-template-columns:1fr 160px 1fr;background:#fff;">
+          <div class="flex items-center justify-center p-5">
+            <span style="background:#FFF3CD;border:2px solid #F5A623;border-radius:999px;padding:10px 22px;font-weight:800;font-size:1rem;color:#E59400;display:inline-block;">AI Smart Vending</span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-5 gap-1">
+            <span style="font-family:'Playfair Display',Georgia,serif;font-size:2.5rem;font-weight:900;color:#1B2A4A;line-height:1;">VS</span>
+          </div>
+          <div class="flex items-center justify-center p-5">
+            <span style="background:#F4F6F8;border:2px solid #8C95A0;border-radius:999px;padding:10px 22px;font-weight:600;font-size:1rem;color:#3D4D5C;display:inline-block;">Old Vending Machines</span>
+          </div>
+        </div>
+        <!-- Rows -->
+        <div style="border-top:1px dashed rgba(27,42,74,0.15);" class="grid" style="grid-template-columns:1fr 160px 1fr;">
+        </div>
+        <!-- Row template repeated -->
+        <style>
+          .vs-row{display:grid;grid-template-columns:1fr 160px 1fr;border-top:1px dashed rgba(27,42,74,0.15);}
+          .vs-left{background:#FFFBEE;padding:14px 18px;display:flex;align-items:center;gap:12px;}
+          .vs-mid{background:#fff;padding:14px 8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#1B2A4A;text-align:center;border-left:1px dashed rgba(27,42,74,0.15);border-right:1px dashed rgba(27,42,74,0.15);}
+          .vs-right{background:#F9F9F9;padding:14px 18px;display:flex;align-items:center;gap:12px;}
+          .vs-check{width:22px;height:22px;border-radius:50%;background:#F5A623;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+          .vs-x{width:22px;height:22px;border-radius:50%;background:#D1D5DB;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+          .vs-left p,.vs-right p{margin:0;font-size:0.875rem;line-height:1.5;color:#3D4D5C;}
+        </style>
+        <div class="vs-row">
+          <div class="vs-left"><div class="vs-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Sells 15,000+ SKUs — covering drinks, snacks, flowers, fresh produce, even glass or irregular-shaped items</p></div>
+          <div class="vs-mid">What It Sells</div>
+          <div class="vs-right"><div class="vs-x"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div><p>Limited selection — no glass, fresh produce, or irregular-shaped items</p></div>
+        </div>
+        <div class="vs-row">
+          <div class="vs-left"><div class="vs-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Works anywhere — offices, dorms, gyms, and more. One person can easily move it; fits through doors and elevators</p></div>
+          <div class="vs-mid">Where It Works</div>
+          <div class="vs-right"><div class="vs-x"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div><p>Bulky and heavy — limited to larger or more accessible locations</p></div>
+        </div>
+        <div class="vs-row">
+          <div class="vs-left"><div class="vs-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Customers can grab multiple items at once, spend more per visit, and pay any way (card, Apple Pay, etc.)</p></div>
+          <div class="vs-mid">How Customers Buy</div>
+          <div class="vs-right"><div class="vs-x"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div><p>Fixed slots — less flexible and slower to restock</p></div>
+        </div>
+        <div class="vs-row">
+          <div class="vs-left"><div class="vs-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Smart app enables remote control, restock alerts, and data-driven product operation analysis</p></div>
+          <div class="vs-mid">How It Restocks</div>
+          <div class="vs-right"><div class="vs-x"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div><p>Complex slot mechanisms — harder to maintain and more prone to failure</p></div>
+        </div>
+        <div class="vs-row">
+          <div class="vs-left"><div class="vs-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Slot-free design makes it easy to maintain and less likely to break down</p></div>
+          <div class="vs-mid">Machine Design</div>
+          <div class="vs-right"><div class="vs-x"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div><p>Clumsy design and size limit mobility — frequent maintenance issues</p></div>
+        </div>
+        <div class="vs-row">
+          <div class="vs-left"><div class="vs-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Quick and easy — customers pick items directly, no bending required</p></div>
+          <div class="vs-mid">User Experience</div>
+          <div class="vs-right"><div class="vs-x"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div><p>Less user-friendly — items drop behind a door, forcing customers to bend down</p></div>
+        </div>
       </div>
       <div class="mt-8 text-center">
         <a href="index.html#contact" class="btn-green">Get a Free Consultation</a>
