@@ -649,7 +649,7 @@
       </div>
 
       <!-- Product Grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
         <!-- ── HAHA Brand Header ── -->
         <div class="col-span-full flex items-center gap-4 pt-2 pb-1">
@@ -865,7 +865,7 @@
         </div>
 
         <!-- USI Spectra Launch -->
-        <div class="product-card card-shadow card-shadow-hover block" role="button" tabindex="0" aria-label="View USI Spectra Launch Smart Cooler details" style="cursor:pointer;" onclick="openModal('spectraLaunch')">
+        <article data-id="spectraLaunch" class="product-card card-shadow card-shadow-hover" role="button" tabindex="0" aria-label="View USI Spectra Launch Smart Cooler details" style="cursor:pointer;">
           <div class="product-img-wrap bg-white flex items-center justify-center" style="height:220px;">
             <img src="./vvs_product_catalog/images/spectra-launch-1.png" alt="USI Spectra Launch AI Smart Cooler" width="400" height="300" loading="lazy" decoding="async" style="height:200px;width:auto;object-fit:contain;" />
           </div>
@@ -890,10 +890,10 @@
               <span class="btn-green text-xs py-2.5 px-4">Get a Quote</span>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- USI Spectra Core -->
-        <div class="product-card card-shadow card-shadow-hover block" role="button" tabindex="0" aria-label="View USI Spectra Core Smart Cooler details" style="cursor:pointer;" onclick="openModal('spectraCore')">
+        <article data-id="spectraCore" class="product-card card-shadow card-shadow-hover" role="button" tabindex="0" aria-label="View USI Spectra Core Smart Cooler details" style="cursor:pointer;">
           <div class="product-img-wrap bg-white flex items-center justify-center" style="height:220px;">
             <img src="./vvs_product_catalog/images/spectra-core-1.png" alt="USI Spectra Core AI Smart Cooler" width="400" height="300" loading="lazy" decoding="async" style="height:200px;width:auto;object-fit:contain;" />
           </div>
@@ -918,10 +918,10 @@
               <span class="btn-green text-xs py-2.5 px-4">Get a Quote</span>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- USI Spectra Pro -->
-        <div class="product-card card-shadow card-shadow-hover block" role="button" tabindex="0" aria-label="View USI Spectra Pro Smart Cooler details" style="cursor:pointer;" onclick="openModal('spectraPro')">
+        <article data-id="spectraPro" class="product-card card-shadow card-shadow-hover" role="button" tabindex="0" aria-label="View USI Spectra Pro Smart Cooler details" style="cursor:pointer;">
           <div class="product-img-wrap bg-white flex items-center justify-center" style="height:220px;">
             <img src="./vvs_product_catalog/images/spectra-pro-1.png" alt="USI Spectra Pro AI Smart Cooler" width="400" height="300" loading="lazy" decoding="async" style="height:200px;width:auto;object-fit:contain;" />
           </div>
@@ -946,10 +946,10 @@
               <span class="btn-green text-xs py-2.5 px-4">Get a Quote</span>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- USI Spectra Elevate -->
-        <div class="product-card card-shadow card-shadow-hover block" role="button" tabindex="0" aria-label="View USI Spectra Elevate Smart Cooler details" style="cursor:pointer;" onclick="openModal('spectraElevate')">
+        <article data-id="spectraElevate" class="product-card card-shadow card-shadow-hover" role="button" tabindex="0" aria-label="View USI Spectra Elevate Smart Cooler details" style="cursor:pointer;">
           <div class="product-img-wrap bg-white flex items-center justify-center" style="height:220px;">
             <img src="./vvs_product_catalog/images/spectra-elevate-1.webp" alt="USI Spectra Elevate AI Smart Cooler" width="400" height="300" loading="lazy" decoding="async" style="height:200px;width:auto;object-fit:contain;" />
           </div>
@@ -974,7 +974,7 @@
               <span class="btn-green text-xs py-2.5 px-4">Get a Quote</span>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- ── Vendera Brand Header ── -->
         <div class="col-span-full flex items-start gap-4 pt-8 pb-1 border-t border-gray-200 mt-4">
@@ -986,7 +986,7 @@
         </div>
 
         <!-- Vendera LC-510 -->
-        <div class="product-card card-shadow card-shadow-hover block" role="button" tabindex="0" aria-label="View Vendera LC-510 Smart Cooler details" style="cursor:pointer;" onclick="openModal('venderaLC510')">
+        <article data-id="venderaLC510" class="product-card card-shadow card-shadow-hover" role="button" tabindex="0" aria-label="View Vendera LC-510 Smart Cooler details" style="cursor:pointer;">
           <div class="product-img-wrap bg-white flex items-center justify-center" style="height:220px;">
             <img src="./vvs_product_catalog/images/vendera-modelLC510-image.png" alt="Vendera LC-510 AI smart cooler" width="400" height="300" loading="lazy" decoding="async" style="height:200px;width:auto;object-fit:contain;" />
           </div>
@@ -1011,7 +1011,7 @@
               <span class="btn-green text-xs py-2.5 px-4">Get a Quote</span>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- ── CoolBlu Brand Header ── -->
         <div class="col-span-full flex items-start gap-4 pt-8 pb-1 border-t border-gray-200 mt-4">
@@ -1023,7 +1023,7 @@
         </div>
 
         <!-- Coolblu Smart Cooler -->
-        <div class="product-card card-shadow card-shadow-hover block" role="button" tabindex="0" aria-label="View Coolblu Smart Cooler details" style="cursor:pointer;" onclick="openModal('coolblu')">
+        <article data-id="coolblu" class="product-card card-shadow card-shadow-hover" role="button" tabindex="0" aria-label="View Coolblu Smart Cooler details" style="cursor:pointer;">
           <div class="product-img-wrap bg-white flex items-center justify-center" style="height:220px;">
             <img src="./vvs_product_catalog/images/coolblu-coolers-2.jpg" alt="Coolblu AI-powered smart cooler" width="400" height="300" loading="lazy" decoding="async" style="height:200px;width:auto;object-fit:contain;" />
           </div>
@@ -1048,7 +1048,7 @@
               <span class="btn-green text-xs py-2.5 px-4">Get a Quote</span>
             </div>
           </div>
-        </div>
+        </article>
 
       </div>
 
