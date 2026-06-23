@@ -689,35 +689,17 @@
         </div>
       </div>
 
-      <!-- Right: three machines — absolutely positioned, same zone as original single machine -->
-      <div id="hero-machine-col" style="position:absolute;right:0;top:0;bottom:0;width:55%;display:flex;align-items:center;justify-content:center;pointer-events:none;" aria-hidden="false">
+      <!-- Right: machine — absolutely positioned, never adds height to section -->
+      <div id="hero-machine-col" style="position:absolute;right:0;top:0;bottom:0;width:55%;display:flex;align-items:center;justify-content:flex-end;pointer-events:none;" aria-hidden="false">
         <!-- Glow -->
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(61,181,74,0.22) 0%,rgba(61,181,74,0.07) 50%,transparent 72%);filter:blur(52px);animation:vmGlow 5s ease-in-out infinite;pointer-events:none;"></div>
-        <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:460px;height:44px;background:radial-gradient(ellipse,rgba(61,181,74,0.42) 0%,transparent 70%);filter:blur(20px);border-radius:50%;pointer-events:none;"></div>
-
-        <!-- Three machines in a row, bottom-aligned, same total footprint as original single machine -->
-        <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;height:90%;max-height:520px;width:98%;max-width:560px;position:relative;z-index:2;">
-
-          <!-- Spectra Launch -->
-          <img src="./vvs_product_catalog/images/spectra-launch-1.png"
-               alt="USI Spectra Launch AI Smart Cooler"
-               style="flex:1;min-width:0;height:100%;width:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 20px 44px rgba(0,0,0,0.6)) drop-shadow(0 0 28px rgba(61,181,74,0.18));"
-               loading="eager" fetchpriority="high" />
-
-          <!-- HAHA Pro — slightly taller -->
-          <img src="./vvs_product_catalog/images/ai-vending-pro-2.jpg"
-               alt="HAHA AI Smart Vending Machine"
-               class="hero-machine"
-               style="flex:1;min-width:0;height:108%;width:100%;object-fit:contain;object-position:center bottom;pointer-events:auto;filter:drop-shadow(0 28px 56px rgba(0,0,0,0.65)) drop-shadow(0 0 52px rgba(61,181,74,0.28)) drop-shadow(0 0 18px rgba(61,181,74,0.15));"
-               loading="eager" fetchpriority="high" />
-
-          <!-- Vendera LC-510 -->
-          <img src="./vendera-hero.png"
-               alt="Vendera LC-510 AI Smart Cooler"
-               style="flex:1;min-width:0;height:100%;width:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 20px 44px rgba(0,0,0,0.6)) drop-shadow(0 0 28px rgba(61,181,74,0.18));"
-               loading="eager" />
-
-        </div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(61,181,74,0.26) 0%,rgba(61,181,74,0.08) 48%,transparent 72%);filter:blur(50px);animation:vmGlow 5s ease-in-out infinite;pointer-events:none;"></div>
+        <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:340px;height:50px;background:radial-gradient(ellipse,rgba(61,181,74,0.45) 0%,transparent 70%);filter:blur(20px);border-radius:50%;pointer-events:none;"></div>
+        <!-- Machine -->
+        <img src="./vvs_product_catalog/images/ai-vending-pro-2.jpg"
+             alt="AI Vending PRO — 24H Smart Vending Machine"
+             class="hero-machine"
+             style="position:relative;z-index:2;width:72%;max-width:420px;max-height:100%;display:block;object-fit:contain;object-position:center bottom;opacity:1;pointer-events:auto;filter:drop-shadow(0 32px 64px rgba(0,0,0,0.65)) drop-shadow(0 0 60px rgba(61,181,74,0.28)) drop-shadow(0 0 20px rgba(61,181,74,0.15));"
+             width="420" loading="eager" fetchpriority="high" />
       </div>
 
     </div>
