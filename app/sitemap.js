@@ -32,5 +32,6 @@ export default function sitemap() {
       priority: 0.6,
     })),
     { url: `${BASE}/privacy-policy`, lastModified, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/terms-of-service`, lastModified, changeFrequency: 'yearly', priority: 0.3 },
   ];
 }
