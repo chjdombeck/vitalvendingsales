@@ -18,6 +18,7 @@ export default function sitemap() {
 
   return [
     { url: `${BASE}/`, lastModified, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${BASE}/summit`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/smart-coolers`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/vending-machines`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/vending-parts`, lastModified, changeFrequency: 'weekly', priority: 0.8 },

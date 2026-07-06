@@ -40,20 +40,22 @@ export default function Navbar() {
             {/* Desktop nav links */}
             <nav className="hidden lg:flex items-center gap-9">
               {[
+                { href: '/summit', label: 'Smart Cooler Summit', highlight: true },
                 { href: '/smart-coolers', label: 'AI Smart Coolers' },
                 { href: '/vending-machines', label: 'Vending Machines' },
                 { href: '/vending-parts', label: 'Vending Parts' },
                 { href: '/about', label: 'About' },
                 { href: '/reviews', label: 'Reviews' },
                 { href: '/blog', label: 'Blog' },
-              ].map(({ href, label }) => (
+              ].map(({ href, label, highlight }) => (
                 <Link
                   key={href}
                   href={href}
-                  className="relative text-[#3D4D5C] font-medium text-[0.9rem] hover:text-[#1B2A4A] transition-colors duration-200
+                  className={`relative font-medium text-[0.9rem] transition-colors duration-200
                     after:content-[''] after:absolute after:-bottom-1 after:left-0 after:right-0
                     after:h-0.5 after:bg-[#3DB54A] after:scale-x-0 after:transition-transform
-                    after:origin-left hover:after:scale-x-100 after:rounded-sm"
+                    after:origin-left hover:after:scale-x-100 after:rounded-sm
+                    ${highlight ? 'text-[#1e7a28] font-bold' : 'text-[#3D4D5C] hover:text-[#1B2A4A]'}`}
                 >
                   {label}
                 </Link>
@@ -127,18 +129,19 @@ export default function Navbar() {
           <div className="lg:hidden border-t border-gray-100 bg-white">
             <nav className="px-4 py-4 flex flex-col gap-1">
               {[
+                { href: '/summit', label: 'Smart Cooler Summit', highlight: true },
                 { href: '/smart-coolers', label: 'AI Smart Coolers' },
                 { href: '/vending-machines', label: 'Vending Machines' },
                 { href: '/vending-parts', label: 'Vending Parts' },
                 { href: '/about', label: 'About' },
                 { href: '/reviews', label: 'Reviews' },
                 { href: '/blog', label: 'Blog' },
-              ].map(({ href, label }) => (
+              ].map(({ href, label, highlight }) => (
                 <Link
                   key={href}
                   href={href}
                   onClick={() => setMenuOpen(false)}
-                  className="py-2.5 px-3 rounded-lg text-[#3D4D5C] font-medium hover:bg-[#F4F6F8] hover:text-[#1B2A4A] transition-colors duration-200"
+                  className={`py-2.5 px-3 rounded-lg font-medium hover:bg-[#F4F6F8] transition-colors duration-200 ${highlight ? 'text-[#1e7a28] font-bold' : 'text-[#3D4D5C] hover:text-[#1B2A4A]'}`}
                 >
                   {label}
                 </Link>
