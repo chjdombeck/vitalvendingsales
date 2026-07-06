@@ -38,7 +38,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop nav links */}
-            <nav className="hidden lg:flex items-center gap-9">
+            <nav className="hidden lg:flex items-center justify-center flex-1 gap-7 mx-8">
               {[
                 { href: '/summit', label: 'Smart Cooler Summit', highlight: true },
                 { href: '/smart-coolers', label: 'AI Smart Coolers' },
@@ -51,7 +51,7 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className={`relative font-medium text-[0.9rem] transition-colors duration-200
+                  className={`relative whitespace-nowrap font-medium text-[0.9rem] transition-colors duration-200
                     after:content-[''] after:absolute after:-bottom-1 after:left-0 after:right-0
                     after:h-0.5 after:bg-[#3DB54A] after:scale-x-0 after:transition-transform
                     after:origin-left hover:after:scale-x-100 after:rounded-sm
@@ -63,7 +63,7 @@ export default function Navbar() {
             </nav>
 
             {/* Desktop CTA + social icons */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
               {/* Facebook */}
               <a href="https://www.facebook.com/vitalvendingsales" target="_blank" rel="noopener noreferrer"
                 aria-label="Facebook"
