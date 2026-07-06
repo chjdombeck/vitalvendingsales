@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { submitToHubSpot } from '../../lib/hubspot';
 
 const LEARN_ITEMS = [
-  'Physical & operational review of 3 leading AI smart cooler brands — HAHA, USI Spectra, and Vendera',
+  'Physical & operational review of 2 leading AI smart cooler brands — HAHA and USI Spectra',
   'How to prospect and secure high-value locations',
-  'Real operator Q&A with Tim Wear, founder of Snack Savvy NH (20+ smart coolers, 50+ traditional vending machines)',
+  'Real operator Q&A with Tim Wear, founder of Snack Savvy NH, who has deployed and operates 20+ smart coolers and traditional vending machines',
   'Networking with other operators and industry experts',
 ];
 
@@ -15,13 +15,12 @@ const GET_ITEMS = [
   'A side-by-side look at the top AI smart cooler brands',
   'Insights on profitable locations and real-world operations',
   'Q&A with a real operator in the field',
-  'Summit-only pricing and promotions not available to the public',
+  'Summit-only pricing and promotions on both brands — not available to the public',
 ];
 
 const BRANDS = [
   { name: 'HAHA Smart Coolers', img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png' },
   { name: 'USI Spectra', img: '/static-assets/vvs_product_catalog/images/spectra-pro-1.png' },
-  { name: 'Vendera', img: '/static-assets/vvs_product_catalog/images/vendera-modelLC510-image.png' },
 ];
 
 function RegisterForm() {
@@ -124,7 +123,7 @@ export default function Summit() {
             {/* Left: details + flier */}
             <div>
               <div className="relative rounded-2xl overflow-hidden mb-8" style={{ boxShadow: '0 4px 32px rgba(27,42,74,0.14)' }}>
-                <Image src="/static-assets/summit/summit-flier.png" alt="New England Smart Cooler Summit flier — August 8, 2026, Apex Entertainment, Marlborough MA" width={1260} height={1620} style={{ width: '100%', height: 'auto', display: 'block' }} priority />
+                <Image src="/static-assets/summit/summit-flier.png" alt="New England Smart Cooler Summit flier — August 8, 2026, Apex Entertainment, Marlborough MA" width={1200} height={1650} style={{ width: '100%', height: 'auto', display: 'block' }} priority />
               </div>
 
               <h2 className="font-black text-2xl mb-4" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>What You&apos;ll Learn</h2>
@@ -157,7 +156,7 @@ export default function Summit() {
             <div>
               <div className="rounded-2xl p-6 lg:p-8 mb-8" style={{ background: '#F4F6F8' }}>
                 <p className="text-xs font-bold uppercase mb-4" style={{ color: '#3DB54A', letterSpacing: '0.1em' }}>Physical &amp; Operational Review Of</p>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 gap-3">
                   {BRANDS.map((b) => (
                     <div key={b.name} className="rounded-xl bg-white flex flex-col items-center p-3" style={{ border: '1px solid rgba(27,42,74,0.08)' }}>
                       <div className="relative flex items-center justify-center" style={{ height: 110, width: '100%' }}>
