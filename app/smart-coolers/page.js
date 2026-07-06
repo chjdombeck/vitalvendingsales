@@ -52,13 +52,6 @@ const MODAL_DATA = {
     specs: ['Model: LC-510', 'Warranty: 2 years parts / 5 years compressor (no labor)', 'Power: Standard 110V outlet — no installation crew needed', 'Connectivity: Cellular (4G LTE)', 'Dimensions: 28.4" W x 29.3" D', 'Shelves: 6', 'Capacity: Up to 400 products'],
     features: 'The Vendera LC-510 is the most accessible AI smart cooler on the market — plug it into a standard 110V outlet and you\'re ready to go. No installation crew required. Built-in 4G cellular connectivity means it works anywhere, even without Wi-Fi. Six shelves hold up to 400 products. A 2-year parts warranty and 5-year compressor warranty back it up. The ideal entry point for operators who want smart cooler technology without the complexity.',
   },
-  coolblu: {
-    name: 'Coolblu Smart Cooler', brand: 'Coolblu', category: 'Cooler', price: '$2,499',
-    img: '/static-assets/vvs_product_catalog/images/coolblu-coolers-2.jpg',
-    images: ['coolblu-coolers-2.jpg', 'coolblu-coolers-3.jpg'],
-    specs: ['Capacity: More than any comparable commercial cooler', 'Temperature lock: Health & safety lock on/off toggle', 'Product types: Fresh food or cold drinks', 'Refrigeration: Cassette-style with E-Z lift system', 'Service: Swap refrigeration unit in minutes', 'Cost of ownership: Lowest in its class'],
-    features: 'Arguably the best cooler on the market for vending and micro-market operators. More capacity than any comparable commercial cooler on the market. Stock it with fresh food or cold drinks. You can turn the health and safety lock on or off, eliminating the need for multiple cooler SKUs. The cassette-style refrigeration unit with E-Z lift system can be swapped in minutes. Offers the lowest cost of ownership of any cooler in its class.',
-  },
 };
 
 const VS_ROWS = [
@@ -338,16 +331,6 @@ export default function SmartCoolers() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
             <USICard id="venderaLC510" img="/static-assets/vvs_product_catalog/images/vendera-modelLC510-image.png" name="Vendera LC-510" part="LC-510" tagline="Plug-and-play 110V smart cooler — no installation crew needed" specs={['Up to 400 items', '6 shelves', 'Cellular 4G']} price="$3,800" badge="AI Smart Cooler" badgeStyle={{}} onOpen={setOpenId} />
-          </div>
-
-          {/* CoolBlu */}
-          <div className="mb-3 pt-8 pb-1 border-t mt-4" style={{ borderColor: '#e5e7eb' }}>
-            <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#8C95A0' }}>Brand</div>
-            <div className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>CoolBlu Smart Coolers</div>
-            <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Highest capacity in its class. Lowest cost of ownership among comparable coolers.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-            <USICard id="coolblu" brandLabel="Coolblu" img="/static-assets/vvs_product_catalog/images/coolblu-coolers-2.jpg" name="Coolblu Smart Cooler" tagline="High-capacity cooler for fresh food or cold drinks, swappable refrigeration" specs={['High capacity', 'Fresh food ready', 'Cashless pay']} price="$2,499" badge="Cooler" badgeStyle={{ background: 'rgba(27,42,74,0.1)', color: '#1B2A4A' }} onOpen={setOpenId} />
           </div>
 
         </div>
