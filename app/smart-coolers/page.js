@@ -15,11 +15,51 @@ const HAHA_PRODUCTS = [
 ];
 
 const USI_PRODUCTS = [
-  { img: '/static-assets/vvs_product_catalog/images/spectra-launch-1.png', name: 'Spectra Launch', part: '#36730001', tagline: 'Entry-level TrueAI™ smart cooler with 6 customizable shelves', specs: ['TrueAI™ vision', '6 shelves', 'Cassette fridge'], price: '$4,995', badge: '3-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
-  { img: '/static-assets/vvs_product_catalog/images/spectra-core-1.png', name: 'Spectra Core', part: '#36710001', tagline: 'Black interior, 30" ad screen, snack & beverage organizers', specs: ['TrueAI™ vision', '30" screen', 'Cashless pay'], price: '$5,495', badge: '5-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
-  { img: '/static-assets/vvs_product_catalog/images/spectra-pro-1.png', name: 'Spectra Pro', part: '#36720003', tagline: '32" embedded ad screen, LED door handle, black interior', specs: ['TrueAI™ vision', '32" screen', 'LED handle'], price: '$6,495', badge: '5-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
-  { img: '/static-assets/vvs_product_catalog/images/spectra-elevate-1.webp', name: 'Spectra Elevate', part: '#36700001', tagline: 'GPS tracking, loyalty program, real-time theft alerts, USA-made', specs: ['TrueAI™ vision', 'GPS tracking', 'Loyalty rewards'], price: '$7,995', badge: '7-Year Warranty', badgeStyle: { background: '#3DB54A', color: '#fff' } },
+  { id: 'spectraLaunch', img: '/static-assets/vvs_product_catalog/images/spectra-launch-1.png', name: 'Spectra Launch', part: '#36730001', tagline: 'Entry-level TrueAI™ smart cooler with 6 customizable shelves', specs: ['TrueAI™ vision', '6 shelves', 'Cassette fridge'], price: '$4,995', badge: '3-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
+  { id: 'spectraCore', img: '/static-assets/vvs_product_catalog/images/spectra-core-1.png', name: 'Spectra Core', part: '#36710001', tagline: 'Black interior, 30" ad screen, snack & beverage organizers', specs: ['TrueAI™ vision', '30" screen', 'Cashless pay'], price: '$5,495', badge: '5-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
+  { id: 'spectraPro', img: '/static-assets/vvs_product_catalog/images/spectra-pro-1.png', name: 'Spectra Pro', part: '#36720003', tagline: '32" embedded ad screen, LED door handle, black interior', specs: ['TrueAI™ vision', '32" screen', 'LED handle'], price: '$6,495', badge: '5-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
+  { id: 'spectraElevate', img: '/static-assets/vvs_product_catalog/images/spectra-elevate-1.webp', name: 'Spectra Elevate', part: '#36700001', tagline: 'GPS tracking, loyalty program, real-time theft alerts, USA-made', specs: ['TrueAI™ vision', 'GPS tracking', 'Loyalty rewards'], price: '$7,995', badge: '7-Year Warranty', badgeStyle: { background: '#3DB54A', color: '#fff' } },
 ];
+
+const MODAL_DATA = {
+  spectraLaunch: {
+    name: 'USI Spectra Launch Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$4,995',
+    img: '/static-assets/vvs_product_catalog/images/spectra-launch-1.png', images: [],
+    specs: ['Part Number: 36730001', 'Warranty: 3 Years', 'Technology: TrueAI™ computer vision product recognition', 'Shelves: 6 customizable shelves with product pushers', 'Interior: White interior', 'Refrigeration: Cassette-style removable refrigeration', 'Payment: Cashless — WeVend or Cantaloupe', 'Connectivity: Cloud-based remote monitoring (VMS)', 'Support: Lifetime 24/7 U.S.-based support', 'Lock: NAMA-compliant smart lock'],
+    features: 'The Spectra Launch is USI\'s entry-level TrueAI™ smart cooler, backed by a 3-year warranty and lifetime U.S. support. Six customizable shelves with product pushers, cassette-style removable refrigeration, cashless payments via WeVend or Cantaloupe, real-time smart shopping cart, and an interactive voice assistant. A powerful starting point for operators entering the AI smart cooler market.',
+  },
+  spectraCore: {
+    name: 'USI Spectra Core Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$5,495',
+    img: '/static-assets/vvs_product_catalog/images/spectra-core-1.png', images: [],
+    specs: ['Part Number: 36710001', 'Warranty: 5 Years', 'Technology: TrueAI™ computer vision product recognition', 'Screen: 30" customer-facing advertising display', 'Interior: Black interior for enhanced merchandising', 'Includes: Snack and beverage organizers', 'Refrigeration: Cassette-style removable refrigeration', 'Payment: Cashless — WeVend or Cantaloupe', 'Connectivity: Cloud-based remote monitoring (VMS)', 'Support: Lifetime 24/7 U.S.-based support'],
+    features: 'The Spectra Core steps up to a 5-year warranty and adds a 30" customer-facing advertising screen for passive revenue. Black interior for premium merchandising presentation, snack and beverage organizers included. TrueAI™ computer vision, cashless payments, real-time smart cart, and voice assistant standard across all Spectra models.',
+  },
+  spectraPro: {
+    name: 'USI Spectra Pro Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$6,495',
+    img: '/static-assets/vvs_product_catalog/images/spectra-pro-1.png', images: [],
+    specs: ['Part Number: 36720003', 'Warranty: 5 Years', 'Technology: TrueAI™ computer vision product recognition', 'Screen: 32" embedded advertising screen (remotely updatable)', 'Interior: Black interior for enhanced visibility', 'Door: Interactive LED door handle with status indicators', 'Includes: Snack and beverage organizers', 'Refrigeration: Cassette-style removable refrigeration', 'Payment: Cashless — WeVend or Cantaloupe', 'Support: Lifetime 24/7 U.S.-based support'],
+    features: 'The Spectra Pro is USI\'s most popular AI smart cooler, featuring a 32" remotely-updatable embedded advertising screen and an interactive LED door handle with status indicators. 5-year warranty, black interior for premium merchandising, TrueAI™ computer vision, cashless payments, and cloud-based VMS. The go-to model for operators who want a premium, revenue-generating location centerpiece.',
+  },
+  spectraElevate: {
+    name: 'USI Spectra Elevate Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$7,995',
+    img: '/static-assets/vvs_product_catalog/images/spectra-elevate-1.webp', images: [],
+    specs: ['Part Number: 36700001', 'Warranty: 7 Years — industry-leading', 'Technology: TrueAI™ computer vision product recognition', 'Pushers: RTC pushers for fresh food & drinks', 'Loyalty: Integrated loyalty program', 'Security: Real-time theft alerts', 'Tracking: GPS asset tracking', 'Construction: Premium USA-made cooler', 'Support: Lifetime 24/7 U.S.-based hardware support', 'Payment: Cashless — WeVend or Cantaloupe'],
+    features: 'The Spectra Elevate is USI\'s flagship — the only model backed by a 7-year warranty and built in the USA. RTC pushers for fresh food and drinks, an integrated loyalty program, real-time theft alerts, and GPS asset tracking make this the most operator-friendly smart cooler on the market. Premium construction, lifetime U.S. hardware support, and every Spectra standard feature included.',
+  },
+  venderaLC510: {
+    name: 'Vendera LC-510 Smart Cooler', brand: 'Vendera', category: 'AI Smart Cooler', price: '$3,800',
+    img: '/static-assets/vvs_product_catalog/images/vendera-modelLC510-image.png', images: [],
+    specs: ['Model: LC-510', 'Warranty: 2 years parts / 5 years compressor (no labor)', 'Power: Standard 110V outlet — no installation crew needed', 'Connectivity: Cellular (4G LTE)', 'Dimensions: 28.4" W x 29.3" D', 'Shelves: 6', 'Capacity: Up to 400 products'],
+    features: 'The Vendera LC-510 is the most accessible AI smart cooler on the market — plug it into a standard 110V outlet and you\'re ready to go. No installation crew required. Built-in 4G cellular connectivity means it works anywhere, even without Wi-Fi. Six shelves hold up to 400 products. A 2-year parts warranty and 5-year compressor warranty back it up. The ideal entry point for operators who want smart cooler technology without the complexity.',
+  },
+  coolblu: {
+    name: 'Coolblu Smart Cooler', brand: 'Coolblu', category: 'Cooler', price: '$2,499',
+    img: '/static-assets/vvs_product_catalog/images/coolblu-coolers-2.jpg',
+    images: ['coolblu-coolers-2.jpg', 'coolblu-coolers-3.jpg'],
+    specs: ['Capacity: More than any comparable commercial cooler', 'Temperature lock: Health & safety lock on/off toggle', 'Product types: Fresh food or cold drinks', 'Refrigeration: Cassette-style with E-Z lift system', 'Service: Swap refrigeration unit in minutes', 'Cost of ownership: Lowest in its class'],
+    features: 'Arguably the best cooler on the market for vending and micro-market operators. More capacity than any comparable commercial cooler on the market. Stock it with fresh food or cold drinks. You can turn the health and safety lock on or off, eliminating the need for multiple cooler SKUs. The cassette-style refrigeration unit with E-Z lift system can be swapped in minutes. Offers the lowest cost of ownership of any cooler in its class.',
+  },
+};
 
 const VS_ROWS = [
   { label: 'What It Sells', smart: 'Sells 15,000+ SKUs — drinks, snacks, flowers, fresh produce, even glass or irregular-shaped items', old: 'Limited selection — no glass, fresh produce, or irregular-shaped items' },
@@ -80,9 +120,13 @@ function ProductCard({ img, name, model, tagline, specs, price, badge, badgeStyl
   );
 }
 
-function USICard({ img, name, part, tagline, specs, price, badge, badgeStyle }) {
+function USICard({ id, img, name, part, tagline, specs, price, badge, badgeStyle, brandLabel = 'USI', onOpen }) {
   return (
-    <div className="rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+    <div
+      role="button" tabIndex={0} aria-label={`View ${name} details`}
+      onClick={() => onOpen(id)}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(id); } }}
+      className="rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
       style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 1px 2px rgba(27,42,74,0.06),0 4px 12px rgba(27,42,74,0.08),0 16px 32px rgba(27,42,74,0.06)', cursor: 'pointer' }}>
       <div className="flex items-center justify-center" style={{ height: 220, background: '#F4F6F8' }}>
         <img src={img} alt={name} style={{ height: 200, width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
@@ -90,10 +134,10 @@ function USICard({ img, name, part, tagline, specs, price, badge, badgeStyle }) 
       <div className="p-5">
         <div className="flex items-center justify-between mb-2">
           <Badge label={badge} style={badgeStyle} />
-          <span className="text-xs font-bold uppercase tracking-wide px-2 py-1 rounded" style={{ background: 'rgba(27,42,74,0.08)', color: '#1B2A4A' }}>USI</span>
+          <span className="text-xs font-bold uppercase tracking-wide px-2 py-1 rounded" style={{ background: 'rgba(27,42,74,0.08)', color: '#1B2A4A' }}>{brandLabel}</span>
         </div>
         <h3 className="font-bold text-base mb-0.5 leading-snug" style={{ color: '#1B2A4A' }}>{name}</h3>
-        <p className="text-xs mb-0.5" style={{ color: '#8C95A0' }}>Part {part}</p>
+        {part && <p className="text-xs mb-0.5" style={{ color: '#8C95A0' }}>Part {part}</p>}
         <p className="text-xs mb-3" style={{ color: '#8C95A0' }}>{tagline}</p>
         <div className="flex flex-wrap gap-1.5 mb-4">
           {specs.map(s => <SpecChip key={s} label={s} />)}
@@ -103,7 +147,94 @@ function USICard({ img, name, part, tagline, specs, price, badge, badgeStyle }) 
             <div className="text-xs font-medium" style={{ color: '#8C95A0' }}>Starting at</div>
             <div className="font-black text-xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>{price}</div>
           </div>
-          <Link href="/#contact" className="inline-flex items-center gap-1.5 text-xs font-bold text-white px-4 py-2.5 rounded-lg" style={{ background: '#3DB54A' }}>Get a Quote</Link>
+          <button
+            onClick={(e) => { e.stopPropagation(); onOpen(id); }}
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-white px-4 py-2.5 rounded-lg"
+            style={{ background: '#3DB54A', border: 'none', cursor: 'pointer' }}>
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ProductModal({ id, onClose }) {
+  const [activeImg, setActiveImg] = useState(null);
+  const p = id ? MODAL_DATA[id] : null;
+
+  if (!p) return null;
+  const currentImg = activeImg || p.img;
+  const imgDir = '/static-assets/vvs_product_catalog/images/';
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: 'rgba(27,42,74,0.55)' }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="bg-white rounded-2xl overflow-hidden w-full" style={{ maxWidth: 880, maxHeight: '90vh', overflowY: 'auto' }}>
+        <div className="flex items-start justify-between p-6 lg:p-8 border-b border-gray-100">
+          <div>
+            <span className="inline-block text-xs font-bold uppercase rounded-md px-2 py-1 mb-2" style={{ background: '#D6F0DA', color: '#1e7a28', letterSpacing: '0.08em' }}>{p.category}</span>
+            <h2 className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>{p.name}</h2>
+            <div className="text-sm mt-1" style={{ color: '#8C95A0' }}>{p.brand}</div>
+          </div>
+          <button onClick={onClose} aria-label="Close" className="flex-shrink-0 ml-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200" style={{ background: '#F4F6F8', border: 'none', cursor: 'pointer' }}>
+            <svg className="w-5 h-5" fill="none" stroke="#3D4D5C" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-0">
+          <div className="flex flex-col">
+            <div className="flex items-center justify-center p-8" style={{ background: '#F4F6F8', minHeight: 260 }}>
+              <img src={currentImg} alt={p.name} style={{ maxHeight: 288, width: 'auto', objectFit: 'contain' }} />
+            </div>
+            {p.images.length > 1 && (
+              <div className="flex gap-2 p-3 overflow-x-auto bg-white border-t border-gray-100">
+                {p.images.map((filename) => {
+                  const src = imgDir + filename;
+                  return (
+                    <button key={filename} onClick={() => setActiveImg(src)} aria-label={`View image`}
+                      className="flex-shrink-0 rounded-lg overflow-hidden"
+                      style={{ width: 56, height: 56, border: currentImg === src ? '2px solid #3DB54A' : '2px solid transparent', cursor: 'pointer', padding: 0, background: '#F4F6F8' }}>
+                      <img src={src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          <div className="p-6 lg:p-8">
+            <div className="mb-6">
+              <div className="text-xs font-medium mb-1" style={{ color: '#8C95A0' }}>Starting Price</div>
+              <div className="font-black text-3xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>{p.price}</div>
+            </div>
+            <div className="mb-6">
+              <div className="font-semibold text-sm mb-3" style={{ color: '#1B2A4A' }}>Key Specifications</div>
+              <ul className="space-y-2">
+                {p.specs.map((s) => (
+                  <li key={s} className="flex items-start gap-2 text-sm" style={{ color: '#3D4D5C' }}>
+                    <svg className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#3DB54A' }} fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mb-6">
+              <div className="font-semibold text-sm mb-3" style={{ color: '#1B2A4A' }}>Features</div>
+              <p className="text-sm" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>{p.features}</p>
+            </div>
+            <div className="pt-4 border-t border-gray-100">
+              <p className="text-xs mb-4" style={{ color: '#8C95A0', lineHeight: 1.6 }}>Prices shown are starting MSRP. Contact us for exact quotes, availability, and delivery options to your location.</p>
+              <Link href="/#contact" onClick={onClose} className="flex items-center justify-center gap-2 font-bold rounded-xl text-white px-6 py-3 text-sm w-full" style={{ background: 'rgba(61,181,74,0.9)', textDecoration: 'none' }}>
+                Get a Quote for This Unit
+              </Link>
+              <a href="tel:4132823776" className="flex items-center justify-center gap-2 font-semibold rounded-xl px-6 py-3 text-sm w-full mt-3" style={{ color: '#1B2A4A', background: '#F4F6F8', textDecoration: 'none' }}>
+                Call (413) 282-3776
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -129,8 +260,10 @@ function FAQItem({ q, a }) {
 }
 
 export default function SmartCoolers() {
+  const [openId, setOpenId] = useState(null);
   return (
     <>
+      <ProductModal id={openId} onClose={() => setOpenId(null)} />
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden py-20 lg:py-32" style={{ background: '#1B2A4A', backgroundImage: 'radial-gradient(ellipse 60% 70% at 20% 50%,rgba(61,181,74,0.13) 0%,transparent 65%),radial-gradient(ellipse 70% 50% at 85% 60%,rgba(36,53,96,0.8) 0%,transparent 55%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -194,7 +327,7 @@ export default function SmartCoolers() {
             <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Industry-leading warranty coverage — up to 7 years. Powered by TrueAI™ computer vision.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-            {USI_PRODUCTS.map(p => <USICard key={p.name} {...p} />)}
+            {USI_PRODUCTS.map(p => <USICard key={p.name} {...p} onOpen={setOpenId} />)}
           </div>
 
           {/* Vendera */}
@@ -204,7 +337,17 @@ export default function SmartCoolers() {
             <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Plug-and-play AI smart cooler. Standard 110V outlet — no installation crew needed.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-            <USICard img="/static-assets/vvs_product_catalog/images/vendera-modelLC510-image.png" name="Vendera LC-510" part="LC-510" tagline="Plug-and-play 110V smart cooler — no installation crew needed" specs={['Up to 400 items', '6 shelves', 'Cellular 4G']} price="$3,800" badge="AI Smart Cooler" badgeStyle={{}} />
+            <USICard id="venderaLC510" img="/static-assets/vvs_product_catalog/images/vendera-modelLC510-image.png" name="Vendera LC-510" part="LC-510" tagline="Plug-and-play 110V smart cooler — no installation crew needed" specs={['Up to 400 items', '6 shelves', 'Cellular 4G']} price="$3,800" badge="AI Smart Cooler" badgeStyle={{}} onOpen={setOpenId} />
+          </div>
+
+          {/* CoolBlu */}
+          <div className="mb-3 pt-8 pb-1 border-t mt-4" style={{ borderColor: '#e5e7eb' }}>
+            <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#8C95A0' }}>Brand</div>
+            <div className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>CoolBlu Smart Coolers</div>
+            <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Highest capacity in its class. Lowest cost of ownership among comparable coolers.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+            <USICard id="coolblu" brandLabel="Coolblu" img="/static-assets/vvs_product_catalog/images/coolblu-coolers-2.jpg" name="Coolblu Smart Cooler" tagline="High-capacity cooler for fresh food or cold drinks, swappable refrigeration" specs={['High capacity', 'Fresh food ready', 'Cashless pay']} price="$2,499" badge="Cooler" badgeStyle={{ background: 'rgba(27,42,74,0.1)', color: '#1B2A4A' }} onOpen={setOpenId} />
           </div>
 
         </div>
