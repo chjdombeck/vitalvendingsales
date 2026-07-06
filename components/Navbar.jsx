@@ -31,7 +31,7 @@ export default function Navbar() {
                 src="/VitalLogoandmoreTEXTONLY.png"
                 alt="Vital Vending Sales"
                 width={220}
-                height={64}
+                height={143}
                 className="h-14 lg:h-16 w-auto"
                 priority
               />

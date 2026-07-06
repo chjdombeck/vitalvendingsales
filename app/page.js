@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { submitToHubSpot } from '../lib/hubspot';
 
 const REVIEWS = [
   { name: 'John Ragno', time: '7 months ago', text: '"Nick is trustworthy, honest, and takes his time to help you find the right machine, whether you\'re starting out or expanding your vending business. He\'s knowledgeable, patient, and goes above and beyond to ensure you understand your options. Excellent service from start to finish."' },
@@ -58,17 +59,11 @@ function ReviewCard({ review }) {
 
 function TestimonialsCarousel() {
   const [current, setCurrent] = useState(0);
+  const [visible, setVisible] = useState(1);
   const trackRef = useRef(null);
 
-  function getVisible() {
-    if (typeof window === 'undefined') return 3;
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 640) return 2;
-    return 1;
-  }
-
   const total = REVIEWS.length;
-  const maxIdx = total - getVisible();
+  const maxIdx = total - visible;
 
   function goTo(idx) {
     const clamped = Math.max(0, Math.min(idx, maxIdx));
@@ -76,9 +71,20 @@ function TestimonialsCarousel() {
   }
 
   useEffect(() => {
+    function updateVisible() {
+      if (window.innerWidth >= 1024) setVisible(3);
+      else if (window.innerWidth >= 640) setVisible(2);
+      else setVisible(1);
+    }
+    updateVisible();
+    window.addEventListener('resize', updateVisible);
+    return () => window.removeEventListener('resize', updateVisible);
+  }, []);
+
+  useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    const vis = getVisible();
+    const vis = visible;
     const viewport = track.parentElement;
     const gap = window.innerWidth >= 640 ? 20 : 12;
     const pl = parseInt(window.getComputedStyle(viewport).paddingLeft) || 0;
@@ -87,7 +93,7 @@ function TestimonialsCarousel() {
     Array.from(track.children).forEach(c => { c.style.width = cardW + 'px'; });
     track.style.gap = gap + 'px';
     track.style.transform = `translateX(-${current * (cardW + gap)}px)`;
-  }, [current]);
+  }, [current, visible]);
 
   return (
     <div className="relative">
@@ -126,10 +132,13 @@ function ContactForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await fetch('https://formspree.io/f/xpwpwdae', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
+    await submitToHubSpot({
+      firstname: formData.first_name,
+      lastname: formData.last_name,
+      email: formData.email,
+      phone: formData.phone,
+      i_m_interested_in: formData.interest,
+      message: formData.message,
     });
     setSubmitted(true);
   }
@@ -306,7 +315,7 @@ export default function Home() {
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" aria-hidden="true" />
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(135deg,rgba(27,42,74,0.58) 0%,rgba(27,42,74,0.32) 60%,rgba(18,30,53,0.58) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ display: 'flex', alignItems: 'center', minHeight: 0 }}>
-          <div style={{ position: 'relative', zIndex: 2, width: '50%', paddingTop: '7rem', paddingBottom: '9rem', maxWidth: 540 }}>
+          <div className="w-full lg:w-1/2 pt-16 pb-14 lg:pt-28 lg:pb-36" style={{ position: 'relative', zIndex: 2, maxWidth: 540 }}>
             <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#fff', background: 'rgba(61,181,74,0.25)', border: '1px solid rgba(61,181,74,0.4)', padding: '4px 12px', borderRadius: 4, display: 'inline-block', marginBottom: '0.75rem' }}>
               Northeast&apos;s Leader in AI Smart Vending
             </div>
@@ -336,7 +345,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div id="hero-machine-col" style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '55%', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', pointerEvents: 'none' }}>
+          <div id="hero-machine-col" className="hidden lg:flex" style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '55%', alignItems: 'center', justifyContent: 'flex-end', pointerEvents: 'none' }}>
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle,rgba(61,181,74,0.26) 0%,rgba(61,181,74,0.08) 48%,transparent 72%)', filter: 'blur(50px)', animation: 'vmGlow 5s ease-in-out infinite', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: 340, height: 50, background: 'radial-gradient(ellipse,rgba(61,181,74,0.45) 0%,transparent 70%)', filter: 'blur(20px)', borderRadius: '50%', pointerEvents: 'none' }} />
             <img src="/static-assets/hero5.png" alt="AI Smart Vending Machines" width={546}

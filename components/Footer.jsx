@@ -13,7 +13,7 @@ export default function Footer() {
               src="/VitalLogoandmoreTEXTONLY.png"
               alt="Vital Vending Sales logo"
               width={220}
-              height={48}
+              height={143}
               className="h-12 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-white/70 text-sm mb-4" style={{ lineHeight: 1.7 }}>
@@ -122,7 +122,6 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-4">
             <Link href="/privacy-policy" className="text-white/30 text-xs hover:text-white/60 transition-colors duration-200">Privacy Policy</Link>
-            <a href="#" className="text-white/30 text-xs hover:text-white/60 transition-colors duration-200">Terms of Service</a>
           </div>
         </div>
       </div>

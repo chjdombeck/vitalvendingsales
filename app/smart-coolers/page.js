@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { submitToHubSpot } from '../../lib/hubspot';
 
 const HAHA_PRODUCTS = [
   { href: '/smart-coolers/haha-mini', img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', name: 'HAHA Mini', model: 'US360C', tagline: 'Compact and capable — perfect for tighter spaces', specs: ['252 bottles', '6 shelves', 'AI recognition'], price: '$2,999', badge: 'AI Smart Cooler', badgeStyle: {} },
@@ -363,7 +364,14 @@ function SmartCoolerForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await fetch('https://formspree.io/f/xpwpwdae', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+    await submitToHubSpot({
+      firstname: data.first_name,
+      lastname: data.last_name,
+      email: data.email,
+      phone: data.phone,
+      i_m_interested_in: 'smart-cooler',
+      message: data.message,
+    });
     setSubmitted(true);
   }
 
