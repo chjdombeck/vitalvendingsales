@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-inter), 'Helvetica Neue', Arial, sans-serif;
   background: #fff;
   color: #3D4D5C;
 }
