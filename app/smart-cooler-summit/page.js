@@ -38,7 +38,7 @@ function RegisterForm() {
       lastname: data.last_name,
       email: data.email,
       phone: data.phone,
-      i_m_interested_in: 'Smart Cooler Summit — Aug 8, 2026',
+      i_m_interested_in: 'general',
       message: `RSVP for the New England Smart Cooler Summit (Aug 8, 2026, Apex Entertainment, Marlborough MA). Number of attendees: ${data.attendees || '1'}`,
     });
     setSubmitted(true);
