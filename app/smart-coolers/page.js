@@ -46,7 +46,7 @@ const MODAL_DATA = {
     costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
-    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .png',
+    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
   },
   'haha-plus': {
     name: 'HAHA Plus', model: 'US440CT', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$3,399',
@@ -72,7 +72,7 @@ const MODAL_DATA = {
     costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
-    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .png',
+    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
   },
   'haha-pro': {
     name: 'HAHA Pro', model: 'US542CT', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$4,399',
@@ -98,7 +98,7 @@ const MODAL_DATA = {
     costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
-    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .png',
+    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
   },
   'haha-freezer': {
     name: 'HAHA Freezer', model: 'US550FT', brand: 'HAHA Smart Coolers', category: 'AI Freezer', price: '$4,799',
@@ -124,7 +124,7 @@ const MODAL_DATA = {
     costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
-    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .png',
+    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
   },
   'haha-max-620': {
     name: 'HAHA Max 620', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$4,799',
@@ -150,7 +150,7 @@ const MODAL_DATA = {
     costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
-    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .png',
+    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
   },
   'haha-max-660': {
     name: 'HAHA Max 620s', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$5,499',
@@ -176,7 +176,7 @@ const MODAL_DATA = {
     costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
-    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .png',
+    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
   },
   'haha-ultra-double-door': {
     name: 'HAHA Ultra Double Door', model: 'US1200CT', brand: 'HAHA Smart Coolers', category: 'Double Door', price: '$6,999',
@@ -202,7 +202,7 @@ const MODAL_DATA = {
     costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
-    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .png',
+    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
   },
   spectraLaunch: {
     name: 'USI Spectra Launch Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$4,995',
@@ -300,14 +300,14 @@ function ProductCard({ id, img, name, model, tagline, specs, price, badge, badge
           <span className="text-xs font-bold uppercase tracking-wide px-2 py-1 rounded" style={{ background: 'rgba(27,42,74,0.08)', color: '#1B2A4A' }}>HAHA</span>
         </div>
         <h3 className="font-bold text-base mb-0.5 leading-snug" style={{ color: '#1B2A4A' }}>{name}</h3>
-        {model && <p className="text-xs mb-0.5" style={{ color: '#8C95A0' }}>Model: {model}</p>}
-        <p className="text-xs mb-3" style={{ color: '#8C95A0' }}>{tagline}</p>
+        {model && <p className="text-xs mb-0.5" style={{ color: '#6B7280' }}>Model: {model}</p>}
+        <p className="text-xs mb-3" style={{ color: '#6B7280' }}>{tagline}</p>
         <div className="flex flex-wrap gap-1.5 mb-4">
           {specs.map(s => <SpecChip key={s} label={s} />)}
         </div>
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-xs font-medium" style={{ color: '#8C95A0' }}>Starting at</div>
+            <div className="text-xs font-medium" style={{ color: '#6B7280' }}>Starting at</div>
             <div className="font-black text-xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>{price}</div>
           </div>
           <button
@@ -339,14 +339,14 @@ function USICard({ id, img, name, part, tagline, specs, price, badge, badgeStyle
           <span className="text-xs font-bold uppercase tracking-wide px-2 py-1 rounded" style={{ background: 'rgba(27,42,74,0.08)', color: '#1B2A4A' }}>{brandLabel}</span>
         </div>
         <h3 className="font-bold text-base mb-0.5 leading-snug" style={{ color: '#1B2A4A' }}>{name}</h3>
-        {part && <p className="text-xs mb-0.5" style={{ color: '#8C95A0' }}>Part {part}</p>}
-        <p className="text-xs mb-3" style={{ color: '#8C95A0' }}>{tagline}</p>
+        {part && <p className="text-xs mb-0.5" style={{ color: '#6B7280' }}>Part {part}</p>}
+        <p className="text-xs mb-3" style={{ color: '#6B7280' }}>{tagline}</p>
         <div className="flex flex-wrap gap-1.5 mb-4">
           {specs.map(s => <SpecChip key={s} label={s} />)}
         </div>
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-xs font-medium" style={{ color: '#8C95A0' }}>Starting at</div>
+            <div className="text-xs font-medium" style={{ color: '#6B7280' }}>Starting at</div>
             <div className="font-black text-xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>{price}</div>
           </div>
           <button
@@ -379,7 +379,7 @@ function ProductModal({ id, onClose }) {
           <div>
             <span className="inline-block text-xs font-bold uppercase rounded-md px-2 py-1 mb-2" style={{ background: '#D6F0DA', color: '#1e7a28', letterSpacing: '0.08em' }}>{p.category}</span>
             <h2 className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>{p.name}</h2>
-            <div className="text-sm mt-1" style={{ color: '#8C95A0' }}>{p.brand}</div>
+            <div className="text-sm mt-1" style={{ color: '#6B7280' }}>{p.brand}</div>
           </div>
           <button onClick={onClose} aria-label="Close" className="flex-shrink-0 ml-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200" style={{ background: '#F4F6F8', border: 'none', cursor: 'pointer' }}>
             <svg className="w-5 h-5" fill="none" stroke="#3D4D5C" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -409,7 +409,7 @@ function ProductModal({ id, onClose }) {
 
           <div className="p-6 lg:p-8">
             <div className="mb-6">
-              <div className="text-xs font-medium mb-1" style={{ color: '#8C95A0' }}>Starting Price</div>
+              <div className="text-xs font-medium mb-1" style={{ color: '#6B7280' }}>Starting Price</div>
               <div className="font-black text-3xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>{p.price}</div>
             </div>
             <div className="mb-6">
@@ -428,7 +428,7 @@ function ProductModal({ id, onClose }) {
               <p className="text-sm" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>{p.features}</p>
             </div>
             <div className="pt-4 border-t border-gray-100">
-              <p className="text-xs mb-4" style={{ color: '#8C95A0', lineHeight: 1.6 }}>Prices shown are starting MSRP. Contact us for exact quotes, availability, and delivery options to your location.</p>
+              <p className="text-xs mb-4" style={{ color: '#6B7280', lineHeight: 1.6 }}>Prices shown are starting MSRP. Contact us for exact quotes, availability, and delivery options to your location.</p>
               <Link href="/#contact" onClick={onClose} className="flex items-center justify-center gap-2 font-bold rounded-xl text-white px-6 py-3 text-sm w-full" style={{ background: 'rgba(61,181,74,0.9)', textDecoration: 'none' }}>
                 Get a Quote for This Unit
               </Link>
@@ -485,7 +485,7 @@ function ProductModal({ id, onClose }) {
                 </tbody>
               </table>
             </div>
-            {p.costNote && <p className="text-xs mt-3" style={{ color: '#8C95A0', lineHeight: 1.6 }}>{p.costNote}</p>}
+            {p.costNote && <p className="text-xs mt-3" style={{ color: '#6B7280', lineHeight: 1.6 }}>{p.costNote}</p>}
           </div>
         )}
 
@@ -509,7 +509,7 @@ function FAQItem({ q, a }) {
         className="w-full text-left py-5 flex items-center justify-between gap-4 font-semibold text-sm"
         style={{ color: '#1B2A4A', background: 'none', border: 'none', cursor: 'pointer' }}>
         {q}
-        <svg className="flex-shrink-0 w-5 h-5 transition-transform duration-200" style={{ color: '#8C95A0', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
+        <svg className="flex-shrink-0 w-5 h-5 transition-transform duration-200" style={{ color: '#6B7280', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
           fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
@@ -573,7 +573,7 @@ export default function SmartCoolers() {
 
           {/* HAHA */}
           <div className="mb-3 pt-2 pb-1">
-            <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#8C95A0' }}>Brand</div>
+            <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#6B7280' }}>Brand</div>
             <div className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>HAHA Smart Coolers</div>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
@@ -582,7 +582,7 @@ export default function SmartCoolers() {
 
           {/* USI Spectra */}
           <div className="mb-3 pt-8 pb-1 border-t mt-4" style={{ borderColor: '#e5e7eb' }}>
-            <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#8C95A0' }}>Brand</div>
+            <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#6B7280' }}>Brand</div>
             <div className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>USI Spectra Smart Coolers</div>
             <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Industry-leading warranty coverage — up to 7 years. Powered by TrueAI™ computer vision.</p>
           </div>
@@ -592,7 +592,7 @@ export default function SmartCoolers() {
 
           {/* Vendera */}
           <div className="mb-3 pt-8 pb-1 border-t mt-4" style={{ borderColor: '#e5e7eb' }}>
-            <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#8C95A0' }}>Brand</div>
+            <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#6B7280' }}>Brand</div>
             <div className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>Vendera Smart Coolers</div>
             <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Plug-and-play AI smart cooler. Standard 110V outlet — no installation crew needed.</p>
           </div>
@@ -621,7 +621,7 @@ export default function SmartCoolers() {
                 <span style={{ fontFamily: 'Georgia,serif', fontSize: '2.5rem', fontWeight: 900, color: '#1B2A4A', lineHeight: 1 }}>VS</span>
               </div>
               <div className="flex items-center justify-center p-5">
-                <span style={{ background: '#F4F6F8', border: '2px solid #8C95A0', borderRadius: 999, padding: '10px 22px', fontWeight: 600, fontSize: '1rem', color: '#3D4D5C' }}>Old Vending Machines</span>
+                <span style={{ background: '#F4F6F8', border: '2px solid #6B7280', borderRadius: 999, padding: '10px 22px', fontWeight: 600, fontSize: '1rem', color: '#3D4D5C' }}>Old Vending Machines</span>
               </div>
             </div>
             {VS_ROWS.map(row => (
@@ -684,7 +684,7 @@ export default function SmartCoolers() {
               </div>
               <div className="absolute hidden lg:block bg-white rounded-xl p-4" style={{ bottom: -20, left: -20, boxShadow: '0 4px 24px rgba(27,42,74,0.12)' }}>
                 <div className="font-black text-3xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>$4.55</div>
-                <div className="text-xs font-medium" style={{ color: '#8C95A0' }}>Avg transaction value</div>
+                <div className="text-xs font-medium" style={{ color: '#6B7280' }}>Avg transaction value</div>
               </div>
             </div>
           </div>
@@ -781,7 +781,7 @@ function SmartCoolerForm() {
         Send My Request
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </button>
-      <p className="text-xs text-center" style={{ color: '#8C95A0' }}>We respond within one business day. No spam, ever.</p>
+      <p className="text-xs text-center" style={{ color: '#6B7280' }}>We respond within one business day. No spam, ever.</p>
     </form>
   );
 }

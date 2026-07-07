@@ -156,7 +156,7 @@ export default function Reviews() {
                   <div>
                     <div className="font-bold text-sm" style={{ color: '#1B2A4A' }}>{r.name}</div>
                     <div style={{ color: '#F59E0B' }}>★★★★★</div>
-                    {r.badge && <div style={{ color: '#8C95A0', fontSize: '0.7rem' }}>{r.badge}</div>}
+                    {r.badge && <div style={{ color: '#6B7280', fontSize: '0.7rem' }}>{r.badge}</div>}
                   </div>
                   <GoogleIcon />
                 </div>

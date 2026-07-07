@@ -123,7 +123,7 @@ export default function Summit() {
             {/* Left: details + flier */}
             <div>
               <div className="relative rounded-2xl overflow-hidden mb-8" style={{ boxShadow: '0 4px 32px rgba(27,42,74,0.14)' }}>
-                <Image src="/static-assets/summit/summit-flier.png" alt="New England Smart Cooler Summit flier — August 8, 2026, Apex Entertainment, Marlborough MA" width={1200} height={1650} style={{ width: '100%', height: 'auto', display: 'block' }} priority />
+                <Image src="/static-assets/summit/summit-flier.jpg" alt="New England Smart Cooler Summit flier — August 8, 2026, Apex Entertainment, Marlborough MA" width={1200} height={1650} style={{ width: '100%', height: 'auto', display: 'block' }} priority />
               </div>
 
               <h2 className="font-black text-2xl mb-4" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>What You&apos;ll Learn</h2>

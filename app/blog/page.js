@@ -58,16 +58,16 @@ export default function Blog() {
               <h1 style={{ fontFamily: 'Georgia, serif', fontWeight: 900, color: '#1B2A4A', letterSpacing: '-0.02em', fontSize: 'clamp(2.8rem,7vw,5.5rem)', lineHeight: 0.95 }}>The Vending<br />Insider</h1>
             </div>
             <div className="hidden md:block text-right">
-              <p className="text-xs font-medium mb-1" style={{ color: '#8C95A0', letterSpacing: '0.06em' }}>INDUSTRY KNOWLEDGE</p>
-              <p className="text-xs" style={{ color: '#8C95A0' }}>10 Articles&nbsp;|&nbsp;Free to Read</p>
-              <p className="text-xs mt-1" style={{ color: '#8C95A0' }}>Northeast Edition</p>
+              <p className="text-xs font-medium mb-1" style={{ color: '#6B7280', letterSpacing: '0.06em' }}>INDUSTRY KNOWLEDGE</p>
+              <p className="text-xs" style={{ color: '#6B7280' }}>10 Articles&nbsp;|&nbsp;Free to Read</p>
+              <p className="text-xs mt-1" style={{ color: '#6B7280' }}>Northeast Edition</p>
             </div>
           </div>
           <hr style={{ border: 'none', borderTop: '1px solid rgba(27,42,74,0.15)', margin: 0 }} className="mb-1" />
           <div className="flex items-center gap-3 py-2">
             <span className="text-xs font-bold" style={{ color: '#1B2A4A', letterSpacing: '0.08em', whiteSpace: 'nowrap' }}>TODAY&apos;S TOPICS</span>
             <div className="flex-1 h-px" style={{ background: 'rgba(27,42,74,0.12)' }} />
-            <span className="text-xs hidden sm:block" style={{ color: '#8C95A0', whiteSpace: 'nowrap' }}>Equipment &bull; Marketing &bull; Operations &bull; Industry</span>
+            <span className="text-xs hidden sm:block" style={{ color: '#6B7280', whiteSpace: 'nowrap' }}>Equipment &bull; Marketing &bull; Operations &bull; Industry</span>
           </div>
           <hr style={{ border: 'none', borderTop: '1px solid rgba(27,42,74,0.15)', margin: 0 }} />
         </div>
@@ -118,7 +118,7 @@ export default function Blog() {
                     <h3 className="font-black mb-2" style={{ color: '#1B2A4A', fontSize: '1rem', lineHeight: 1.25, letterSpacing: '-0.02em' }}>{a.title}</h3>
                     <p className="text-xs flex-1 mb-4" style={{ color: '#6B7280', lineHeight: 1.6 }}>{a.excerpt}</p>
                     <div className="flex items-center justify-between">
-                      <span style={{ color: '#8C95A0', fontSize: '0.75rem' }}>{a.date}</span>
+                      <span style={{ color: '#6B7280', fontSize: '0.75rem' }}>{a.date}</span>
                       <span className="inline-flex items-center gap-1 text-xs font-bold" style={{ color: '#3DB54A' }}>Read <ArrowIcon /></span>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export default function Blog() {
                   <h3 className="font-black mb-2" style={{ color: '#1B2A4A', fontSize: '1rem', lineHeight: 1.25, letterSpacing: '-0.02em' }}>{a.title}</h3>
                   <p className="text-xs flex-1 mb-4" style={{ color: '#6B7280', lineHeight: 1.6 }}>{a.excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <span style={{ color: '#8C95A0', fontSize: '0.75rem' }}>{a.date}</span>
+                    <span style={{ color: '#6B7280', fontSize: '0.75rem' }}>{a.date}</span>
                     <span className="inline-flex items-center gap-1 text-xs font-bold" style={{ color: '#3DB54A' }}>Read <ArrowIcon /></span>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export default function Blog() {
                   <h3 className="font-black mb-2" style={{ color: '#1B2A4A', fontSize: '1.15rem', lineHeight: 1.25, letterSpacing: '-0.02em' }}>{a.title}</h3>
                   <p className="text-sm mb-5" style={{ color: '#6B7280', lineHeight: 1.65 }}>{a.excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <span style={{ color: '#8C95A0', fontSize: '0.8rem' }}>{a.author} &nbsp;&bull;&nbsp; {a.date}</span>
+                    <span style={{ color: '#6B7280', fontSize: '0.8rem' }}>{a.author} &nbsp;&bull;&nbsp; {a.date}</span>
                     <span className="inline-flex items-center gap-1 text-sm font-bold" style={{ color: '#3DB54A' }}>Read Article <ArrowIcon /></span>
                   </div>
                 </div>

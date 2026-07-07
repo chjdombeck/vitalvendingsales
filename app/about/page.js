@@ -55,7 +55,7 @@ export default function About() {
             </div>
             <div className="relative">
               <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: '4/5', maxWidth: 420, margin: '0 auto', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08), 0 16px 32px rgba(27,42,74,0.06)', position: 'relative' }}>
-                <Image src="/static-assets/Nick Headshot.png" alt="Nick Williamson, Founder of Vital Vending Sales" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+                <Image src="/static-assets/Nick Headshot.jpg" alt="Nick Williamson, Founder of Vital Vending Sales" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,30,53,0.72) 0%, rgba(18,30,53,0.1) 50%, transparent 100%)', pointerEvents: 'none' }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px 18px' }}>
                   <div className="font-black text-white text-lg" style={{ letterSpacing: '-0.02em' }}>Nick Williamson</div>
@@ -119,7 +119,7 @@ export default function About() {
           <div className="flex justify-center">
             <div className="rounded-2xl overflow-hidden" style={{ maxWidth: 360, width: '100%', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 12px 32px rgba(27,42,74,0.07)' }}>
               <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
-                <Image src="/static-assets/Nick Headshot.png" alt="Nick Williamson, Founder of Vital Vending Sales" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+                <Image src="/static-assets/Nick Headshot.jpg" alt="Nick Williamson, Founder of Vital Vending Sales" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,30,53,0.5) 0%, transparent 50%)', pointerEvents: 'none' }} />
               </div>
               <div className="p-6">

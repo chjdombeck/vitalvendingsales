@@ -17,7 +17,7 @@ export default function TermsOfService() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-bold uppercase mb-3" style={{ color: '#3DB54A', letterSpacing: '0.12em' }}>Legal</p>
           <h1 className="font-black mb-3" style={{ color: '#1B2A4A', fontSize: 'clamp(1.8rem,3vw,2.5rem)', letterSpacing: '-0.03em' }}>Terms of Service</h1>
-          <p className="text-sm" style={{ color: '#8C95A0' }}>Last updated: July 6, 2026 &nbsp;|&nbsp; Vital Vending Sales, Ludlow, MA</p>
+          <p className="text-sm" style={{ color: '#6B7280' }}>Last updated: July 6, 2026 &nbsp;|&nbsp; Vital Vending Sales, Ludlow, MA</p>
         </div>
       </section>
 

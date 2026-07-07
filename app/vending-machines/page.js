@@ -216,7 +216,7 @@ export default function VendingMachines() {
             </div>
             <div className="relative">
               <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: '4/5', background: '#F4F6F8', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08), 0 16px 32px rgba(27,42,74,0.06)' }}>
-                <img src="/static-assets/VVSworkpic1.png" alt="Vital Vending Sales team" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                <img src="/static-assets/VVSworkpic1.jpg" alt="Vital Vending Sales team" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
             </div>
           </div>
@@ -302,7 +302,7 @@ export default function VendingMachines() {
                 <div>
                   {badge && <span className="inline-block text-xs font-bold uppercase rounded-md px-2 py-1 mb-2" style={{ background: badge.bg, color: badge.color, letterSpacing: '0.08em' }}>{badge.label}</span>}
                   <h2 className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>{m?.name}</h2>
-                  <div className="text-sm mt-1" style={{ color: '#8C95A0' }}>{m?.brand}</div>
+                  <div className="text-sm mt-1" style={{ color: '#6B7280' }}>{m?.brand}</div>
                 </div>
                 <button onClick={() => setModal(null)} aria-label="Close" className="flex-shrink-0 ml-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200" style={{ background: '#F4F6F8', border: 'none', cursor: 'pointer' }}>
                   <svg className="w-5 h-5" fill="none" stroke="#3D4D5C" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -316,7 +316,7 @@ export default function VendingMachines() {
 
                 <div className="p-6 lg:p-8">
                   <div className="mb-6">
-                    <div className="text-xs font-medium mb-1" style={{ color: '#8C95A0' }}>Starting Price</div>
+                    <div className="text-xs font-medium mb-1" style={{ color: '#6B7280' }}>Starting Price</div>
                     <div className="font-black text-3xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>{m?.price}</div>
                   </div>
                   <div className="mb-6">
@@ -378,7 +378,7 @@ function VMFaqItem({ q, a }) {
     <div style={{ borderBottom: '1px solid rgba(27,42,74,0.08)' }}>
       <button onClick={() => setOpen(!open)} className="w-full text-left py-5 flex items-center justify-between gap-4 font-semibold text-sm" style={{ color: '#1B2A4A', background: 'none', border: 'none', cursor: 'pointer' }}>
         {q}
-        <svg className="flex-shrink-0 w-5 h-5" style={{ color: '#8C95A0', transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        <svg className="flex-shrink-0 w-5 h-5" style={{ color: '#6B7280', transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
       </button>
       {open && <div className="pb-5 text-sm" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>{a}</div>}
     </div>
@@ -427,7 +427,7 @@ function VendingMachineForm() {
         Send My Request
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </button>
-      <p className="text-xs text-center" style={{ color: '#8C95A0' }}>We respond within one business day. No spam, ever.</p>
+      <p className="text-xs text-center" style={{ color: '#6B7280' }}>We respond within one business day. No spam, ever.</p>
     </form>
   );
 }

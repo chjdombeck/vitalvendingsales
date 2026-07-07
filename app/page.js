@@ -163,25 +163,25 @@ function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls} style={{ color: '#1B2A4A' }}>First Name</label>
-          <input name="first_name" type="text" placeholder="John" required value={formData.first_name} onChange={handleChange} className={inputCls} style={inputStyle} />
+          <label htmlFor="contact-first-name" className={labelCls} style={{ color: '#1B2A4A' }}>First Name</label>
+          <input id="contact-first-name" name="first_name" type="text" placeholder="John" required value={formData.first_name} onChange={handleChange} className={inputCls} style={inputStyle} />
         </div>
         <div>
-          <label className={labelCls} style={{ color: '#1B2A4A' }}>Last Name</label>
-          <input name="last_name" type="text" placeholder="Smith" required value={formData.last_name} onChange={handleChange} className={inputCls} style={inputStyle} />
+          <label htmlFor="contact-last-name" className={labelCls} style={{ color: '#1B2A4A' }}>Last Name</label>
+          <input id="contact-last-name" name="last_name" type="text" placeholder="Smith" required value={formData.last_name} onChange={handleChange} className={inputCls} style={inputStyle} />
         </div>
       </div>
       <div>
-        <label className={labelCls} style={{ color: '#1B2A4A' }}>Email</label>
-        <input name="email" type="email" placeholder="john@example.com" required value={formData.email} onChange={handleChange} className={inputCls} style={inputStyle} />
+        <label htmlFor="contact-email" className={labelCls} style={{ color: '#1B2A4A' }}>Email</label>
+        <input id="contact-email" name="email" type="email" placeholder="john@example.com" required value={formData.email} onChange={handleChange} className={inputCls} style={inputStyle} />
       </div>
       <div>
-        <label className={labelCls} style={{ color: '#1B2A4A' }}>Phone</label>
-        <input name="phone" type="tel" placeholder="(413) 555-0000" value={formData.phone} onChange={handleChange} className={inputCls} style={inputStyle} />
+        <label htmlFor="contact-phone" className={labelCls} style={{ color: '#1B2A4A' }}>Phone</label>
+        <input id="contact-phone" name="phone" type="tel" placeholder="(413) 555-0000" value={formData.phone} onChange={handleChange} className={inputCls} style={inputStyle} />
       </div>
       <div>
-        <label className={labelCls} style={{ color: '#1B2A4A' }}>I&apos;m interested in</label>
-        <select name="interest" value={formData.interest} onChange={handleChange} className={inputCls} style={{ ...inputStyle, appearance: 'none' }}>
+        <label htmlFor="contact-interest" className={labelCls} style={{ color: '#1B2A4A' }}>I&apos;m interested in</label>
+        <select id="contact-interest" name="interest" value={formData.interest} onChange={handleChange} className={inputCls} style={{ ...inputStyle, appearance: 'none' }}>
           <option value="">Select an option...</option>
           <option value="smart-cooler">AI Smart Cooler</option>
           <option value="vending-new">New Vending Machine</option>
@@ -192,8 +192,8 @@ function ContactForm() {
         </select>
       </div>
       <div>
-        <label className={labelCls} style={{ color: '#1B2A4A' }}>Message</label>
-        <textarea name="message" rows={3} placeholder="Tell us a bit about your goals or questions..." value={formData.message} onChange={handleChange} className={inputCls} style={{ ...inputStyle, resize: 'none' }} />
+        <label htmlFor="contact-message" className={labelCls} style={{ color: '#1B2A4A' }}>Message</label>
+        <textarea id="contact-message" name="message" rows={3} placeholder="Tell us a bit about your goals or questions..." value={formData.message} onChange={handleChange} className={inputCls} style={{ ...inputStyle, resize: 'none' }} />
       </div>
       <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white transition-colors duration-200"
         style={{ background: '#3DB54A' }}>
@@ -348,7 +348,7 @@ export default function Home() {
           <div id="hero-machine-col" className="hidden lg:flex" style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '55%', alignItems: 'center', justifyContent: 'flex-end', pointerEvents: 'none' }}>
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle,rgba(61,181,74,0.26) 0%,rgba(61,181,74,0.08) 48%,transparent 72%)', filter: 'blur(50px)', animation: 'vmGlow 5s ease-in-out infinite', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: 340, height: 50, background: 'radial-gradient(ellipse,rgba(61,181,74,0.45) 0%,transparent 70%)', filter: 'blur(20px)', borderRadius: '50%', pointerEvents: 'none' }} />
-            <img src="/static-assets/hero5.png" alt="AI Smart Vending Machines" width={546}
+            <img src="/static-assets/hero5.webp" alt="AI Smart Vending Machines" width={546}
               style={{ position: 'relative', zIndex: 2, width: '94%', maxWidth: 546, maxHeight: '100%', objectFit: 'contain', objectPosition: 'center bottom', filter: 'drop-shadow(0 32px 64px rgba(0,0,0,0.65)) drop-shadow(0 0 60px rgba(61,181,74,0.28)) drop-shadow(0 0 20px rgba(61,181,74,0.15))' }} />
           </div>
         </div>
