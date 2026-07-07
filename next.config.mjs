@@ -3,6 +3,15 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/summit',
+        destination: '/smart-cooler-summit',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
