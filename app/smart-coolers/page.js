@@ -27,6 +27,7 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', images: [],
     specs: ['Exterior Dimensions: 22.8" x 26" x 76"', 'Shelves: 6 shelves', 'Approximate Capacity: ~252 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Mini is the most compact unit in the HAHA lineup — ideal for smaller offices, lobbies, or any location where footprint matters but revenue potential shouldn\'t be sacrificed. Fully AI-powered, cashless, and cloud-managed.',
+    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
     featureCards: [
       { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly platform fees, and minimal service requirements keep operating costs down.' },
@@ -52,6 +53,7 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Pus 440 Details.png', images: [],
     specs: ['Exterior Dimensions: 27.2" x 27" x 76.6"', 'Shelves: 6 shelves', 'Approximate Capacity: ~324 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Plus steps up the capacity with a wider footprint, making it the ideal choice for medium-traffic locations like offices, schools, and fitness centers. Same AI platform, more stocking capacity, and all organizers included.',
+    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
     featureCards: [
       { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements keep operating costs down.' },
@@ -77,6 +79,7 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Pro Details.png', images: [],
     specs: ['Exterior Dimensions: 29.5" x 25.6" x 79.5"', 'Shelves: 6 shelves', 'Approximate Capacity: ~378 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Pro is the workhorse of the lineup — a full-size AI smart cooler that holds 378 bottles across 6 shelves and fits into virtually any commercial location. Proven to average $4.55 per customer transaction, making it one of the strongest ROI units VVS carries.',
+    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
     featureCards: [
       { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
@@ -102,6 +105,7 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Freezer 550 Details.png', images: [],
     specs: ['Exterior Dimensions: 27.6" x 35.8" x 80.4"', 'Shelves: 6 shelves', 'Approximate Capacity: ~384 items', 'Temperature Mode: Freezer', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Freezer brings AI-powered unattended retail to frozen and refrigerated products. Same intuitive grab-and-go platform as the rest of the HAHA lineup — now for ice cream, frozen meals, cold packs, and beyond. Ideal for gyms, convenience locations, and break rooms with frozen demand.',
+    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
     featureCards: [
       { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
@@ -127,6 +131,7 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Max 620 Details.png', images: [],
     specs: ['Exterior Dimensions: 31.5" x 26.4" x 79.5"', 'Shelves: 6 shelves', 'Approximate Capacity: ~420 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Max 620 is built for locations that need maximum capacity in a single-door form factor. At 420 bottles across 6 shelves, this is the go-to unit for high-traffic offices, warehouses, gyms, and any site where restocking frequency matters. Same AI platform, bigger results.',
+    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
     featureCards: [
       { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
@@ -152,6 +157,7 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Max 620s Details.png', images: [],
     specs: ['Exterior Dimensions: 31.5" x 26.4" x 85.8"', 'Shelves: 6 shelves', 'Approximate Capacity: ~420 bottles', 'Display Screen: Built-in digital display', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Max 620s takes the high-volume Max 620 and adds a built-in digital display screen on top — giving you a powerful tool for advertising, promotion, and customer engagement. Same great AI platform, taller, and more attention-grabbing.',
+    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
     featureCards: [
       { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
@@ -177,6 +183,7 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Double Door Details.png', images: [],
     specs: ['Exterior Dimensions: 53.9" x 28.0" x 79.5"', 'Doors: Double door', 'Shelves: 12 shelves', 'Approximate Capacity: ~756 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Ultra Double Door is the flagship of the entire HAHA lineup — a wide-format, dual-door AI smart cooler purpose-built for the highest-volume locations. With 756-bottle capacity across 12 shelves, this unit is ideal for hospitals, airports, universities, large corporate campuses, and anywhere that demands maximum throughput around the clock.',
+    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
     featureCards: [
       { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
@@ -208,14 +215,30 @@ const MODAL_DATA = {
     img: '/static-assets/vvs_product_catalog/images/spectra-core-2.png', images: [],
     specs: ['Part Number: 36710001', 'Warranty: 5 Years', 'Technology: True AI product detection', 'Screen: 28" full-color advertising video screen', 'Cart: Real-time shopping cart & checkout', 'Trays: Product pushers for optimal merchandising', 'Payment: EMV-compliant cashless payments', 'Telemetry: Full telemetry with remote VMS integration', 'Security: Abnormal order & theft alerts, GPS asset tracking', 'Dimensions: 80.6"H x 28.6"W x 31.9"D — 313 lbs.', 'Electrical: 115 VAC/60Hz, 2.5 AMPS, 1/5 HP', 'Refrigeration: R290', 'Certification: ETL & NAMA'],
     features: 'The Spectra Core is a premium AI-powered smart cooler featuring a 28" full-color advertising video screen and real-time shopping cart & checkout for a seamless, modern customer experience. True AI product detection, product pushers for optimal merchandising, and full telemetry with remote VMS integration give operators total visibility. A pullout compressor reduces service time, and machine health alerts plus abnormal order/theft alerts and GPS asset tracking keep equipment secure. Backed by a 5-year warranty for long-term ownership.',
+    featureCardsTitle: 'The Most Advanced AI Powered Smart Cooler',
+    featureCards: [
+      { icon: '💵', title: 'Maximize Revenue at Every Location', body: 'Attract more customers and increase cart size with a premium grab-and-go experience, modern merchandising, and flexible cashless payment options.' },
+      { icon: '🧠', title: 'Operate with AI-Driven Visibility', body: 'True AI product detection, live sales data, remote diagnostics, and abnormal order alerts deliver total control across every location.' },
+      { icon: '✨', title: 'A Premium Customer Experience', body: 'A real-time shopping cart and checkout, and a 28" advertising video screen create a seamless, modern experience.' },
+      { icon: '🛡️', title: 'Built to Last. Backed for the Long Term.', body: 'Durable, field-tested hardware backed by a 5-year warranty simplifies service, sourcing, and long-term ownership.' },
+    ],
     pdfHref: '/static-assets/sellsheets/Spectra-Core-Sellsheet.pdf',
+    pdfLabel: 'Download Spectra Core Spec Sheet',
   },
   spectraPro: {
     name: 'USI Spectra Pro Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$6,495',
     img: '/static-assets/vvs_product_catalog/images/spectra-pro-2.webp', images: [],
     specs: ['Part Number: 36720003', 'Warranty: 5 Years', 'Technology: True AI product detection', 'Screen: 30" full-color advertising video screen', 'Door: Interactive LED handle', 'Trays: FIFO pull-out trays with pushers', 'Payment: EMV-compliant cashless payments', 'Telemetry: Full telemetry with remote VMS integration', 'Security: Abnormal order & theft alerts, GPS asset tracking', 'Dimensions: 82.6"H x 31.5"W x 28.8"D — 443 lbs.', 'Electrical: 115 VAC/60Hz, 2.4 AMPS, 2/7 HP', 'Refrigeration: R290', 'Certification: ETL & NAMA'],
     features: 'The Spectra Pro is USI\'s most advanced AI-powered smart cooler, featuring a 30" full-color advertising video screen and an interactive LED handle that attracts attention. True AI product detection, real-time cart and checkout visibility, and full telemetry with remote VMS integration give operators total control across every location. A pullout compressor reduces service time, and machine health alerts plus abnormal order/theft alerts and GPS asset tracking keep equipment secure. Backed by a 5-year warranty for long-term ownership.',
+    featureCardsTitle: 'The Most Advanced AI Powered Smart Cooler',
+    featureCards: [
+      { icon: '💵', title: 'Maximize Revenue at Every Location', body: 'Attract more customers and increase cart size with a premium grab-and-go experience, modern merchandising, and flexible cashless payment options.' },
+      { icon: '🧠', title: 'Operate with AI-Driven Visibility', body: 'True AI product detection, live sales data, remote diagnostics, and abnormal order alerts deliver total control across every location.' },
+      { icon: '✨', title: 'A Premium Customer Experience', body: 'A real-time shopping cart and checkout, interactive LED handle, and large advertising screen create a seamless, modern experience.' },
+      { icon: '🛡️', title: 'Built to Last. Backed for the Long Term.', body: 'Durable, field-tested hardware backed by a 5-year warranty simplifies service, sourcing, and long-term ownership.' },
+    ],
     pdfHref: '/static-assets/sellsheets/Spectra-Pro-Sellsheet.pdf',
+    pdfLabel: 'Download Spectra Pro Spec Sheet',
   },
   spectraElevate: {
     name: 'USI Spectra Elevate Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$7,995',
@@ -425,7 +448,7 @@ function ProductModal({ id, onClose }) {
         {/* Why HAHA — feature cards */}
         {p.featureCards && (
           <div className="p-6 lg:p-8 border-t border-gray-100" style={{ background: '#F4F6F8' }}>
-            <div className="font-semibold text-sm mb-4" style={{ color: '#1B2A4A' }}>Why HAHA — Built Different. Built Better.</div>
+            <div className="font-semibold text-sm mb-4" style={{ color: '#1B2A4A' }}>{p.featureCardsTitle || 'Why This Unit — Built Different. Built Better.'}</div>
             <div className="grid sm:grid-cols-2 gap-3">
               {p.featureCards.map((f) => (
                 <div key={f.title} className="rounded-xl p-4" style={{ background: '#fff' }}>
