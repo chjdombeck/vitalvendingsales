@@ -20,7 +20,7 @@ const GET_ITEMS = [
 
 const BRANDS = [
   { name: 'HAHA Smart Coolers', img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png' },
-  { name: 'USI Spectra', img: '/static-assets/vvs_product_catalog/images/spectra-pro-1.png' },
+  { name: 'USI Spectra', img: '/static-assets/vvs_product_catalog/images/spectra-pro-2.webp' },
 ];
 
 function RegisterForm() {

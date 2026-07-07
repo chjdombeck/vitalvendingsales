@@ -391,7 +391,7 @@ export default function Home() {
             {/* Spectra Pro */}
             <Link href="/smart-coolers" className="group rounded-2xl overflow-hidden border transition-shadow duration-300" style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 2px 12px rgba(27,42,74,0.06)' }}>
               <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', background: '#F4F6F8' }}>
-                <img src="/static-assets/vvs_product_catalog/images/spectra-pro-1.png" alt="USI Spectra Pro AI smart cooler" className="w-full h-full object-contain p-4" />
+                <img src="/static-assets/vvs_product_catalog/images/spectra-pro-2.webp" alt="USI Spectra Pro AI smart cooler" className="w-full h-full object-contain p-4" />
                 <div className="absolute top-3 left-3"><span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#3DB54A', color: '#fff', padding: '4px 10px', borderRadius: 4 }}>5-Year Warranty</span></div>
               </div>
               <div className="p-5">

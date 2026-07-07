@@ -17,7 +17,7 @@ const HAHA_PRODUCTS = [
 const USI_PRODUCTS = [
   { id: 'spectraLaunch', img: '/static-assets/vvs_product_catalog/images/spectra-launch-1.png', name: 'Spectra Launch', part: '#36730001', tagline: 'Entry-level TrueAI™ smart cooler with 6 customizable shelves', specs: ['TrueAI™ vision', '6 shelves', 'Cassette fridge'], price: '$4,995', badge: '3-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
   { id: 'spectraCore', img: '/static-assets/vvs_product_catalog/images/spectra-core-1.png', name: 'Spectra Core', part: '#36710001', tagline: 'Black interior, 30" ad screen, snack & beverage organizers', specs: ['TrueAI™ vision', '30" screen', 'Cashless pay'], price: '$5,495', badge: '5-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
-  { id: 'spectraPro', img: '/static-assets/vvs_product_catalog/images/spectra-pro-1.png', name: 'Spectra Pro', part: '#36720003', tagline: '32" embedded ad screen, LED door handle, black interior', specs: ['TrueAI™ vision', '32" screen', 'LED handle'], price: '$6,495', badge: '5-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
+  { id: 'spectraPro', img: '/static-assets/vvs_product_catalog/images/spectra-pro-2.webp', name: 'Spectra Pro', part: '#36720003', tagline: '30" ad screen, LED door handle, GPS asset tracking', specs: ['TrueAI™ vision', '30" screen', 'LED handle'], price: '$6,495', badge: '5-Year Warranty', badgeStyle: { background: '#D6F0DA', color: '#1a6b2a' } },
   { id: 'spectraElevate', img: '/static-assets/vvs_product_catalog/images/spectra-elevate-1.webp', name: 'Spectra Elevate', part: '#36700001', tagline: 'GPS tracking, loyalty program, real-time theft alerts, USA-made', specs: ['TrueAI™ vision', 'GPS tracking', 'Loyalty rewards'], price: '$7,995', badge: '7-Year Warranty', badgeStyle: { background: '#3DB54A', color: '#fff' } },
 ];
 
@@ -36,9 +36,10 @@ const MODAL_DATA = {
   },
   spectraPro: {
     name: 'USI Spectra Pro Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$6,495',
-    img: '/static-assets/vvs_product_catalog/images/spectra-pro-1.png', images: [],
-    specs: ['Part Number: 36720003', 'Warranty: 5 Years', 'Technology: TrueAI™ computer vision product recognition', 'Screen: 32" embedded advertising screen (remotely updatable)', 'Interior: Black interior for enhanced visibility', 'Door: Interactive LED door handle with status indicators', 'Includes: Snack and beverage organizers', 'Refrigeration: Cassette-style removable refrigeration', 'Payment: Cashless — WeVend or Cantaloupe', 'Support: Lifetime 24/7 U.S.-based support'],
-    features: 'The Spectra Pro is USI\'s most popular AI smart cooler, featuring a 32" remotely-updatable embedded advertising screen and an interactive LED door handle with status indicators. 5-year warranty, black interior for premium merchandising, TrueAI™ computer vision, cashless payments, and cloud-based VMS. The go-to model for operators who want a premium, revenue-generating location centerpiece.',
+    img: '/static-assets/vvs_product_catalog/images/spectra-pro-2.webp', images: [],
+    specs: ['Part Number: 36720003', 'Warranty: 5 Years', 'Technology: True AI product detection', 'Screen: 30" full-color advertising video screen', 'Door: Interactive LED handle', 'Trays: FIFO pull-out trays with pushers', 'Payment: EMV-compliant cashless payments', 'Telemetry: Full telemetry with remote VMS integration', 'Security: Abnormal order & theft alerts, GPS asset tracking', 'Dimensions: 82.6"H x 31.5"W x 28.8"D — 443 lbs.', 'Electrical: 115 VAC/60Hz, 2.4 AMPS, 2/7 HP', 'Refrigeration: R290', 'Certification: ETL & NAMA'],
+    features: 'The Spectra Pro is USI\'s most advanced AI-powered smart cooler, featuring a 30" full-color advertising video screen and an interactive LED handle that attracts attention. True AI product detection, real-time cart and checkout visibility, and full telemetry with remote VMS integration give operators total control across every location. A pullout compressor reduces service time, and machine health alerts plus abnormal order/theft alerts and GPS asset tracking keep equipment secure. Backed by a 5-year warranty for long-term ownership.',
+    pdfHref: '/static-assets/sellsheets/Spectra-Pro-Sellsheet.pdf',
   },
   spectraElevate: {
     name: 'USI Spectra Elevate Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$7,995',
@@ -226,6 +227,12 @@ function ProductModal({ id, onClose }) {
               <a href="tel:4132823776" className="flex items-center justify-center gap-2 font-semibold rounded-xl px-6 py-3 text-sm w-full mt-3" style={{ color: '#1B2A4A', background: '#F4F6F8', textDecoration: 'none' }}>
                 Call (413) 282-3776
               </a>
+              {p.pdfHref && (
+                <a href={p.pdfHref} download target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 font-semibold rounded-xl px-6 py-3 text-sm w-full mt-3" style={{ color: '#3DB54A', background: 'transparent', border: '1.5px solid #D6F0DA', textDecoration: 'none' }}>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3" /></svg>
+                  Download Spec Sheet
+                </a>
+              )}
             </div>
           </div>
         </div>
