@@ -27,6 +27,25 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', images: [],
     specs: ['Exterior Dimensions: 22.8" x 26" x 76"', 'Shelves: 6 shelves', 'Approximate Capacity: ~252 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Mini is the most compact unit in the HAHA lineup — ideal for smaller offices, lobbies, or any location where footprint matters but revenue potential shouldn\'t be sacrificed. Fully AI-powered, cashless, and cloud-managed.',
+    featureCards: [
+      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
+      { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly platform fees, and minimal service requirements keep operating costs down.' },
+      { icon: '🔧', title: 'Cut Service Calls by 66%', body: 'No motors, coils, harnesses, keypads, or displays to fail. Service concerns are limited to just a few core components, dramatically reducing downtime and technician visits.' },
+      { icon: '📈', title: 'Higher Consumer Spend', body: 'Customers consistently spend more from smart coolers. Open-door grab-and-go shopping behavior drives higher average transaction values compared to traditional vending.' },
+      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more — all in the same unit. Not restricted by coils or trays, so you can stock multiple sizes and categories freely.' },
+      { icon: '🔒', title: 'Superior Locking System', body: 'Spring-loaded door with piston lock closes and secures every single time. Simple, effective, and reliable — outperforms comparable designs on the market.' },
+    ],
+    costRows: [
+      ['Monthly Platform Fee', '$40/mo', 'Standard (SIM connectivity)'],
+      ['Monthly Platform Fee', '$25/mo', 'WiFi via router'],
+      ['WiFi Router Setup', '~$30', 'One-time, available on Amazon'],
+      ['Transaction Fee', '$0.05', 'Per transaction (HAHA platform)'],
+      ['Credit Card Processing', '5.95%', 'Standard vending industry CC rate'],
+    ],
+    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
+    pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
+    pdfLabel: 'Download HAHA App User Guide',
+    comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .png',
   },
   'haha-plus': {
     name: 'HAHA Plus', model: 'US440CT', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$3,399',
@@ -92,7 +111,7 @@ const MODAL_DATA = {
   },
   venderaLC510: {
     name: 'Vendera LC-510 Smart Cooler', brand: 'Vendera', category: 'AI Smart Cooler', price: '$3,800',
-    img: '/static-assets/vvs_product_catalog/images/vendera-modelLC510-image.png', images: [],
+    img: '/static-assets/vvs_product_catalog/images/vendera-lc510-2.png', images: [],
     specs: ['Model: LC-510', 'Warranty: 2 years parts / 5 years compressor (no labor)', 'Power: Standard 110V outlet — no installation crew needed', 'Connectivity: Cellular (4G LTE)', 'Dimensions: 28.4" W x 29.3" D', 'Shelves: 6', 'Capacity: Up to 400 products'],
     features: 'The Vendera LC-510 is the most accessible AI smart cooler on the market — plug it into a standard 110V outlet and you\'re ready to go. No installation crew required. Built-in 4G cellular connectivity means it works anywhere, even without Wi-Fi. Six shelves hold up to 400 products. A 2-year parts warranty and 5-year compressor warranty back it up. The ideal entry point for operators who want smart cooler technology without the complexity.',
   },
@@ -282,12 +301,64 @@ function ProductModal({ id, onClose }) {
               {p.pdfHref && (
                 <a href={p.pdfHref} download target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 font-semibold rounded-xl px-6 py-3 text-sm w-full mt-3" style={{ color: '#3DB54A', background: 'transparent', border: '1.5px solid #D6F0DA', textDecoration: 'none' }}>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3" /></svg>
-                  Download Spec Sheet
+                  {p.pdfLabel || 'Download Spec Sheet'}
                 </a>
               )}
             </div>
           </div>
         </div>
+
+        {/* Why HAHA — feature cards */}
+        {p.featureCards && (
+          <div className="p-6 lg:p-8 border-t border-gray-100" style={{ background: '#F4F6F8' }}>
+            <div className="font-semibold text-sm mb-4" style={{ color: '#1B2A4A' }}>Why HAHA — Built Different. Built Better.</div>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {p.featureCards.map((f) => (
+                <div key={f.title} className="rounded-xl p-4" style={{ background: '#fff' }}>
+                  <div className="text-xl mb-2">{f.icon}</div>
+                  <div className="font-bold text-sm mb-1" style={{ color: '#1B2A4A' }}>{f.title}</div>
+                  <p className="text-xs" style={{ color: '#3D4D5C', lineHeight: 1.6 }}>{f.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Operating costs */}
+        {p.costRows && (
+          <div className="p-6 lg:p-8 border-t border-gray-100">
+            <div className="font-semibold text-sm mb-4" style={{ color: '#1B2A4A' }}>What Does It Cost to Operate?</div>
+            <div className="rounded-xl overflow-hidden border border-gray-200" style={{ overflowX: 'auto' }}>
+              <table className="w-full text-sm">
+                <thead style={{ background: '#1B2A4A', color: '#fff' }}>
+                  <tr>
+                    <th className="text-left px-4 py-3 font-semibold text-xs">Cost Item</th>
+                    <th className="text-left px-4 py-3 font-semibold text-xs">Amount</th>
+                    <th className="text-left px-4 py-3 font-semibold text-xs hidden sm:table-cell">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {p.costRows.map((row, i) => (
+                    <tr key={row[0] + i} style={{ borderBottom: '1px solid #f3f4f6', background: i % 2 === 1 ? '#f9fafb' : 'transparent' }}>
+                      <td className="px-4 py-3 font-medium text-xs" style={{ color: '#1B2A4A' }}>{row[0]}</td>
+                      <td className="px-4 py-3 font-bold text-xs" style={{ color: '#1B2A4A' }}>{row[1]}</td>
+                      <td className="px-4 py-3 text-xs hidden sm:table-cell" style={{ color: '#3D4D5C' }}>{row[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {p.costNote && <p className="text-xs mt-3" style={{ color: '#8C95A0', lineHeight: 1.6 }}>{p.costNote}</p>}
+          </div>
+        )}
+
+        {/* VS comparison chart */}
+        {p.comparisonImage && (
+          <div className="p-6 lg:p-8 border-t border-gray-100" style={{ background: '#F4F6F8' }}>
+            <div className="font-semibold text-sm mb-4" style={{ color: '#1B2A4A' }}>HAHA Smart Vending vs. Traditional Vending</div>
+            <img src={p.comparisonImage} alt="HAHA Smart Vending vs Traditional Vending comparison chart" style={{ width: '100%', height: 'auto', borderRadius: 12, display: 'block' }} />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -389,7 +460,7 @@ export default function SmartCoolers() {
             <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Plug-and-play AI smart cooler. Standard 110V outlet — no installation crew needed.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-            <USICard id="venderaLC510" img="/static-assets/vvs_product_catalog/images/vendera-modelLC510-image.png" name="Vendera LC-510" part="LC-510" tagline="Plug-and-play 110V smart cooler — no installation crew needed" specs={['Up to 400 items', '6 shelves', 'Cellular 4G']} price="$3,800" badge="AI Smart Cooler" badgeStyle={{}} onOpen={setOpenId} />
+            <USICard id="venderaLC510" img="/static-assets/vvs_product_catalog/images/vendera-lc510-2.png" name="Vendera LC-510" part="LC-510" tagline="Plug-and-play 110V smart cooler — no installation crew needed" specs={['Up to 400 items', '6 shelves', 'Cellular 4G']} price="$3,800" badge="AI Smart Cooler" badgeStyle={{}} onOpen={setOpenId} />
           </div>
 
         </div>
