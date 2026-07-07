@@ -147,7 +147,12 @@ export default function VendingMachines() {
             {filtered.map(m => {
               const badge = getBadge(m);
               return (
-                <div key={m.id} className="bg-white rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)' }}>
+                <div key={m.id}
+                  role="button" tabIndex={0} aria-label={`Quick view ${m.name}`}
+                  onClick={() => { setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); }}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); } }}
+                  className="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                  style={{ border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)', cursor: 'pointer' }}>
                   <div className="flex items-center justify-center" style={{ height: 200, background: '#F4F6F8' }}>
                     <img src={m.img} alt={m.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '12px', mixBlendMode: 'multiply' }} />
                   </div>
@@ -167,11 +172,11 @@ export default function VendingMachines() {
                         <div className="font-black text-xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>{m.price}</div>
                       </div>
                       <button
-                        onClick={() => { setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); }}
+                        onClick={(e) => { e.stopPropagation(); setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); }}
                         className="text-xs font-bold py-2.5 px-4 rounded-xl text-white"
                         style={{ background: '#3DB54A', border: 'none', cursor: 'pointer' }}
                       >
-                        Request Info
+                        Quick View
                       </button>
                     </div>
                   </div>
@@ -286,39 +291,83 @@ export default function VendingMachines() {
         </div>
       </section>
 
-      {/* Request Info Modal */}
-      {modal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(0,0,0,0.6)' }} onClick={() => setModal(null)}>
-          <div className="bg-white rounded-2xl w-full max-w-md p-6 relative" onClick={e => e.stopPropagation()}>
-            <button onClick={() => setModal(null)} className="absolute top-4 right-4 p-2 rounded-lg hover:bg-gray-100 transition-colors">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-            {sent ? (
-              <div className="text-center py-8">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: '#D6F0DA' }}>
-                  <svg className="w-8 h-8" fill="none" stroke="#3DB54A" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+      {/* Quick View Modal */}
+      {modal && (() => {
+        const m = MACHINES.find(x => x.id === modal);
+        const badge = m ? getBadge(m) : null;
+        return (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(27,42,74,0.55)' }} onClick={() => setModal(null)}>
+            <div className="bg-white rounded-2xl overflow-hidden w-full" style={{ maxWidth: 880, maxHeight: '90vh', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+              <div className="flex items-start justify-between p-6 lg:p-8 border-b border-gray-100">
+                <div>
+                  {badge && <span className="inline-block text-xs font-bold uppercase rounded-md px-2 py-1 mb-2" style={{ background: badge.bg, color: badge.color, letterSpacing: '0.08em' }}>{badge.label}</span>}
+                  <h2 className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>{m?.name}</h2>
+                  <div className="text-sm mt-1" style={{ color: '#8C95A0' }}>{m?.brand}</div>
                 </div>
-                <h3 className="font-black text-xl mb-2" style={{ color: '#1B2A4A' }}>Message Sent!</h3>
-                <p style={{ color: '#6B7280' }}>We&apos;ll be in touch shortly about the {MACHINES.find(m => m.id === modal)?.name}.</p>
+                <button onClick={() => setModal(null)} aria-label="Close" className="flex-shrink-0 ml-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200" style={{ background: '#F4F6F8', border: 'none', cursor: 'pointer' }}>
+                  <svg className="w-5 h-5" fill="none" stroke="#3D4D5C" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
               </div>
-            ) : (
-              <>
-                <h3 className="font-black text-lg mb-1" style={{ color: '#1B2A4A' }}>Request Info</h3>
-                <p className="text-sm mb-4" style={{ color: '#6B7280' }}>{MACHINES.find(m => m.id === modal)?.name}</p>
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  {[['name', 'Your Name', 'text'], ['email', 'Email Address', 'email'], ['phone', 'Phone (optional)', 'tel']].map(([field, placeholder, type]) => (
-                    <input key={field} type={type} placeholder={placeholder} required={field !== 'phone'} value={form[field]} onChange={e => setForm(f => ({ ...f, [field]: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-xl text-sm" style={{ border: '1.5px solid #e5e7eb', outline: 'none', color: '#1B2A4A' }} />
-                  ))}
-                  <textarea placeholder="Any questions or special requirements?" rows={3} value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                    className="w-full px-4 py-3 rounded-xl text-sm resize-none" style={{ border: '1.5px solid #e5e7eb', outline: 'none', color: '#1B2A4A' }} />
-                  <button type="submit" className="w-full font-bold py-3 rounded-xl text-white" style={{ background: '#3DB54A', border: 'none', cursor: 'pointer' }}>Send Message</button>
-                </form>
-              </>
-            )}
+
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="flex items-center justify-center p-8" style={{ background: '#F4F6F8', minHeight: 260 }}>
+                  {m && <img src={m.img} alt={m.name} style={{ maxHeight: 288, width: 'auto', objectFit: 'contain', mixBlendMode: 'multiply' }} />}
+                </div>
+
+                <div className="p-6 lg:p-8">
+                  <div className="mb-6">
+                    <div className="text-xs font-medium mb-1" style={{ color: '#8C95A0' }}>Starting Price</div>
+                    <div className="font-black text-3xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>{m?.price}</div>
+                  </div>
+                  <div className="mb-6">
+                    <div className="font-semibold text-sm mb-3" style={{ color: '#1B2A4A' }}>Key Specifications</div>
+                    <ul className="space-y-2">
+                      {m?.specs.map((s) => (
+                        <li key={s} className="flex items-start gap-2 text-sm" style={{ color: '#3D4D5C' }}>
+                          <svg className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#3DB54A' }} fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mb-6">
+                    <div className="font-semibold text-sm mb-3" style={{ color: '#1B2A4A' }}>Overview</div>
+                    <p className="text-sm" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>{m?.desc}</p>
+                  </div>
+
+                  <div className="pt-4 border-t border-gray-100">
+                    {sent ? (
+                      <div className="text-center py-6">
+                        <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#D6F0DA' }}>
+                          <svg className="w-6 h-6" fill="none" stroke="#3DB54A" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        </div>
+                        <h3 className="font-black text-lg mb-1" style={{ color: '#1B2A4A' }}>Message Sent!</h3>
+                        <p className="text-sm" style={{ color: '#6B7280' }}>We&apos;ll be in touch shortly about the {m?.name}.</p>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="font-semibold text-sm mb-3" style={{ color: '#1B2A4A' }}>Get a Quote for This Unit</div>
+                        <form onSubmit={handleSubmit} className="space-y-3">
+                          {[['name', 'Your Name', 'text'], ['email', 'Email Address', 'email'], ['phone', 'Phone (optional)', 'tel']].map(([field, placeholder, type]) => (
+                            <input key={field} type={type} placeholder={placeholder} required={field !== 'phone'} value={form[field]} onChange={e => setForm(f => ({ ...f, [field]: e.target.value }))}
+                              className="w-full px-4 py-3 rounded-xl text-sm" style={{ border: '1.5px solid #e5e7eb', outline: 'none', color: '#1B2A4A' }} />
+                          ))}
+                          <textarea placeholder="Any questions or special requirements?" rows={3} value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                            className="w-full px-4 py-3 rounded-xl text-sm resize-none" style={{ border: '1.5px solid #e5e7eb', outline: 'none', color: '#1B2A4A' }} />
+                          <button type="submit" className="w-full font-bold py-3 rounded-xl text-white" style={{ background: 'rgba(61,181,74,0.9)', border: 'none', cursor: 'pointer' }}>Send Message</button>
+                        </form>
+                        <a href="tel:4132823776" className="flex items-center justify-center gap-2 font-semibold rounded-xl px-6 py-3 text-sm w-full mt-3" style={{ color: '#1B2A4A', background: '#F4F6F8', textDecoration: 'none' }}>
+                          Call (413) 282-3776
+                        </a>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </>
   );
 }
