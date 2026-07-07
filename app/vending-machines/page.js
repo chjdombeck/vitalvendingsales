@@ -304,7 +304,7 @@ export default function VendingMachines() {
                   <h2 className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>{m?.name}</h2>
                   <div className="text-sm mt-1" style={{ color: '#6B7280' }}>{m?.brand}</div>
                 </div>
-                <button onClick={() => setModal(null)} aria-label="Close" className="flex-shrink-0 ml-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200" style={{ background: '#F4F6F8', border: 'none', cursor: 'pointer' }}>
+                <button onClick={() => setModal(null)} aria-label="Close" className="flex-shrink-0 ml-4 w-11 h-11 rounded-full flex items-center justify-center transition-colors duration-200" style={{ background: '#F4F6F8', border: 'none', cursor: 'pointer' }}>
                   <svg className="w-5 h-5" fill="none" stroke="#3D4D5C" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
               </div>

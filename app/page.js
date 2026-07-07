@@ -98,12 +98,12 @@ function TestimonialsCarousel() {
   return (
     <div className="relative">
       <button onClick={() => goTo(current - 1)} aria-label="Previous"
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full flex items-center justify-center lg:-translate-x-5"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full flex items-center justify-center lg:-translate-x-5"
         style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', opacity: current === 0 ? 0.35 : 1 }}>
         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
       </button>
       <button onClick={() => goTo(current + 1)} aria-label="Next"
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full flex items-center justify-center lg:translate-x-5"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full flex items-center justify-center lg:translate-x-5"
         style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', opacity: current >= maxIdx ? 0.35 : 1 }}>
         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
       </button>
@@ -266,8 +266,12 @@ export default function Home() {
       c.restore();
     }
 
+    const isMobile = window.innerWidth < 768;
+    const beamCount = isMobile ? 12 : 28;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     function resize() {
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 2 : 3);
       const w = section.offsetWidth;
       const h = section.offsetHeight;
       canvas.width = w * dpr;
@@ -276,7 +280,7 @@ export default function Home() {
       canvas.style.height = h + 'px';
       ctx = canvas.getContext('2d');
       ctx.scale(dpr, dpr);
-      beams = Array.from({ length: 28 }, (_, i) => createBeam(w, h, i));
+      beams = Array.from({ length: beamCount }, (_, i) => createBeam(w, h, i));
     }
 
     function animate() {
@@ -284,7 +288,6 @@ export default function Home() {
       const w = section.offsetWidth;
       const h = section.offsetHeight;
       ctx.clearRect(0, 0, w, h);
-      ctx.filter = 'blur(24px)';
       beams.forEach((beam, i) => {
         beam.y -= beam.speed;
         beam.pulse += beam.pulseSpeed;
@@ -296,9 +299,14 @@ export default function Home() {
 
     resize();
     window.addEventListener('resize', resize, { passive: true });
-    const onVisibility = () => { if (document.hidden) cancelAnimationFrame(rafId); else animate(); };
+    const onVisibility = () => { if (document.hidden) cancelAnimationFrame(rafId); else if (!prefersReducedMotion) animate(); };
     document.addEventListener('visibilitychange', onVisibility);
-    animate();
+    if (prefersReducedMotion) {
+      animate();
+      cancelAnimationFrame(rafId);
+    } else {
+      animate();
+    }
 
     return () => {
       cancelAnimationFrame(rafId);
@@ -312,7 +320,7 @@ export default function Home() {
       <style>{`@keyframes vmGlow { 0%,100%{opacity:.8;transform:scale(1)} 50%{opacity:1;transform:scale(1.08)} }`}</style>
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden" style={{ background: '#1B2A4A' }}>
-        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" aria-hidden="true" />
+        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ filter: 'blur(24px)', willChange: 'transform' }} aria-hidden="true" />
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(135deg,rgba(27,42,74,0.58) 0%,rgba(27,42,74,0.32) 60%,rgba(18,30,53,0.58) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ display: 'flex', alignItems: 'center', minHeight: 0 }}>
           <div className="w-full lg:w-1/2 pt-16 pb-14 lg:pt-28 lg:pb-36" style={{ position: 'relative', zIndex: 2, maxWidth: 540 }}>
