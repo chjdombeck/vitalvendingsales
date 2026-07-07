@@ -118,7 +118,7 @@ export default function Reviews() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#3DB54A' }}>Client Photos</div>
+            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#1a6b2a' }}>Client Photos</div>
             <h2 className="font-black" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>Real clients. Real machines. Real smiles.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -136,7 +136,7 @@ export default function Reviews() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
             <div>
-              <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#3DB54A' }}>Google Reviews</div>
+              <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#1a6b2a' }}>Google Reviews</div>
               <h2 className="font-black mb-3" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>What people are saying</h2>
               <p style={{ color: '#3D4D5C', maxWidth: 460, lineHeight: 1.7 }}>Pulled straight from Google. Unedited, unfiltered, and 100% real.</p>
             </div>

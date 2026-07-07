@@ -378,7 +378,7 @@ export default function Home() {
               { num: '3', label: 'Core Services' },
             ].map(s => (
               <div key={s.label} className="text-center">
-                <div className="font-black" style={{ color: '#3DB54A', fontSize: '2.5rem', letterSpacing: '-0.03em', lineHeight: 1 }}>{s.num}</div>
+                <div className="font-black" style={{ color: '#1a6b2a', fontSize: '2.5rem', letterSpacing: '-0.03em', lineHeight: 1 }}>{s.num}</div>
                 <div className="text-sm font-medium mt-1" style={{ color: '#6B7280' }}>{s.label}</div>
               </div>
             ))}
@@ -390,7 +390,7 @@ export default function Home() {
       <section id="smart-coolers" className="bg-white py-10 lg:py-28" style={{ backgroundImage: 'radial-gradient(ellipse 50% 40% at 80% 50%, rgba(61,181,74,0.06) 0%, transparent 70%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3DB54A', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1rem' }}>New Technology</div>
+            <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1a6b2a', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1rem' }}>New Technology</div>
             <h2 className="font-black text-4xl mb-4" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.12 }}>AI Smart Coolers &amp;<br />Micro-Market Solutions</h2>
             <p style={{ color: '#3D4D5C', lineHeight: 1.7 }}>We carry multiple AI smart cooler brands — USI Spectra, Vendera, and HAHA — so you&apos;re never locked into one manufacturer. Every model delivers cashless checkout, AI product recognition, and remote management.</p>
           </div>
@@ -501,7 +501,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
             <div className="max-w-xl">
-              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3DB54A', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1rem' }}>Equipment Catalog</div>
+              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1a6b2a', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1rem' }}>Equipment Catalog</div>
               <h2 className="font-black text-4xl mb-3" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.12 }}>Premium Vending Machines</h2>
               <p style={{ color: '#3D4D5C', lineHeight: 1.7 }}>We carry the best vending brands in the USA: USI Evoke series, AMS, and more. Every machine selected for operator reliability and profitability.</p>
             </div>
@@ -545,7 +545,7 @@ export default function Home() {
       <section id="services" className="py-10 lg:py-28" style={{ background: '#F4F6F8' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3DB54A', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1rem' }}>What We Do</div>
+            <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1a6b2a', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1rem' }}>What We Do</div>
             <h2 className="font-black text-4xl mb-4" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.12 }}>Three Ways VVS Helps You Win</h2>
             <p style={{ color: '#3D4D5C', lineHeight: 1.7 }}>From your first machine to a full fleet, we equip, place, and support vending operators across the Northeast.</p>
           </div>
@@ -576,7 +576,7 @@ export default function Home() {
                   {idx === 1 && <svg className="w-6 h-6" style={{ color: '#3DB54A' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>}
                   {idx === 2 && <svg className="w-6 h-6" style={{ color: '#3DB54A' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>}
                 </div>
-                <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3DB54A', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '0.75rem' }}>{s.badge}</div>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1a6b2a', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '0.75rem' }}>{s.badge}</div>
                 <h3 className="font-bold text-xl mb-3" style={{ color: '#1B2A4A', letterSpacing: '-0.01em' }}>{s.title}</h3>
                 <p className="text-sm mb-5" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>{s.desc}</p>
                 <ul className="space-y-2 mb-6">
@@ -673,7 +673,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
-              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#3DB54A', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1.25rem' }}>Get In Touch</div>
+              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1a6b2a', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1.25rem' }}>Get In Touch</div>
               <h2 className="font-black text-4xl mb-5" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.12 }}>Ready to Start Your<br />Vending Journey?</h2>
               <p className="text-base mb-8" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Whether you&apos;re buying your first machine, scaling a fleet, or looking to place vending in your facility, our team is ready. Consultations are always free and we respond fast.</p>
               <div className="space-y-4 mb-8">

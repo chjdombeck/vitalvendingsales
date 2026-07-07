@@ -192,7 +192,7 @@ export default function VendingMachines() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <div className="inline-block text-xs font-bold uppercase px-3 py-1 mb-4" style={{ background: '#D6F0DA', color: '#3DB54A', borderRadius: 4, letterSpacing: '0.08em' }}>Why Choose VVS</div>
+              <div className="inline-block text-xs font-bold uppercase px-3 py-1 mb-4" style={{ background: '#D6F0DA', color: '#1a6b2a', borderRadius: 4, letterSpacing: '0.08em' }}>Why Choose VVS</div>
               <h2 className="font-black mb-5" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>The Right Machine for Your Business, Every Time</h2>
               <p className="mb-8" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Buying a vending machine is a long-term investment. At Vital Vending Sales, we help you choose the right equipment for your specific location, product mix, and revenue goals. We have 15 years of experience in the Northeast vending market, and we back every machine sale with expert support.</p>
               <ul className="space-y-4">
@@ -259,7 +259,7 @@ export default function VendingMachines() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="inline-block text-xs font-bold uppercase px-3 py-1 mb-4" style={{ background: '#D6F0DA', color: '#3DB54A', borderRadius: 4, letterSpacing: '0.08em' }}>FAQ</div>
+            <div className="inline-block text-xs font-bold uppercase px-3 py-1 mb-4" style={{ background: '#D6F0DA', color: '#1a6b2a', borderRadius: 4, letterSpacing: '0.08em' }}>FAQ</div>
             <h2 className="font-black" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>Common Questions About Buying Vending Machines</h2>
           </div>
           <div>

@@ -54,7 +54,7 @@ export default function Blog() {
           <hr style={{ border: 'none', borderTop: '3px solid #1B2A4A', margin: 0 }} className="mb-3" />
           <div className="flex items-end justify-between gap-4 pb-3">
             <div>
-              <p className="text-xs font-bold mb-1 uppercase" style={{ color: '#3DB54A', letterSpacing: '0.12em' }}>Vital Vending Sales</p>
+              <p className="text-xs font-bold mb-1 uppercase" style={{ color: '#1a6b2a', letterSpacing: '0.12em' }}>Vital Vending Sales</p>
               <h1 style={{ fontFamily: 'Georgia, serif', fontWeight: 900, color: '#1B2A4A', letterSpacing: '-0.02em', fontSize: 'clamp(2.8rem,7vw,5.5rem)', lineHeight: 0.95 }}>The Vending<br />Insider</h1>
             </div>
             <div className="hidden md:block text-right">
@@ -119,7 +119,7 @@ export default function Blog() {
                     <p className="text-xs flex-1 mb-4" style={{ color: '#6B7280', lineHeight: 1.6 }}>{a.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <span style={{ color: '#6B7280', fontSize: '0.75rem' }}>{a.date}</span>
-                      <span className="inline-flex items-center gap-1 text-xs font-bold" style={{ color: '#3DB54A' }}>Read <ArrowIcon /></span>
+                      <span className="inline-flex items-center gap-1 text-xs font-bold" style={{ color: '#1a6b2a' }}>Read <ArrowIcon /></span>
                     </div>
                   </div>
                 </Link>
@@ -149,7 +149,7 @@ export default function Blog() {
                   <p className="text-xs flex-1 mb-4" style={{ color: '#6B7280', lineHeight: 1.6 }}>{a.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <span style={{ color: '#6B7280', fontSize: '0.75rem' }}>{a.date}</span>
-                    <span className="inline-flex items-center gap-1 text-xs font-bold" style={{ color: '#3DB54A' }}>Read <ArrowIcon /></span>
+                    <span className="inline-flex items-center gap-1 text-xs font-bold" style={{ color: '#1a6b2a' }}>Read <ArrowIcon /></span>
                   </div>
                 </div>
               </Link>
@@ -173,7 +173,7 @@ export default function Blog() {
                   <p className="text-sm mb-5" style={{ color: '#6B7280', lineHeight: 1.65 }}>{a.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <span style={{ color: '#6B7280', fontSize: '0.8rem' }}>{a.author} &nbsp;&bull;&nbsp; {a.date}</span>
-                    <span className="inline-flex items-center gap-1 text-sm font-bold" style={{ color: '#3DB54A' }}>Read Article <ArrowIcon /></span>
+                    <span className="inline-flex items-center gap-1 text-sm font-bold" style={{ color: '#1a6b2a' }}>Read Article <ArrowIcon /></span>
                   </div>
                 </div>
               </Link>

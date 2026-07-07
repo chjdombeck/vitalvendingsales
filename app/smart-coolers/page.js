@@ -273,7 +273,7 @@ const FAQS = [
 ];
 
 function Badge({ label, style = {} }) {
-  const defaultStyle = { background: '#D6F0DA', color: '#3DB54A' };
+  const defaultStyle = { background: '#D6F0DA', color: '#1a6b2a' };
   return (
     <span className="text-xs font-bold uppercase tracking-wide px-2 py-1 rounded" style={{ ...defaultStyle, ...style }}>{label}</span>
   );
@@ -566,7 +566,7 @@ export default function SmartCoolers() {
       <section id="catalog" className="py-16 lg:py-24" style={{ background: '#F4F6F8' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 lg:mb-14">
-            <div className="inline-flex px-3 py-1 text-xs font-bold uppercase tracking-widest mb-3" style={{ background: '#D6F0DA', color: '#3DB54A', borderRadius: 4 }}>AI Smart Cooler Lineup</div>
+            <div className="inline-flex px-3 py-1 text-xs font-bold uppercase tracking-widest mb-3" style={{ background: '#D6F0DA', color: '#1a6b2a', borderRadius: 4 }}>AI Smart Cooler Lineup</div>
             <h2 className="font-black text-3xl mb-3" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.2 }}>12 Models. 3 Brands. Every Location Covered.</h2>
             <p className="text-base" style={{ color: '#3D4D5C', lineHeight: 1.7, maxWidth: 640 }}>We carry AI smart coolers from HAHA, USI Spectra, and Vendera — so you&apos;re never locked into one manufacturer. USI Spectra models carry industry-leading warranty periods up to 7 years.</p>
           </div>
@@ -607,7 +607,7 @@ export default function SmartCoolers() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <div className="inline-flex px-3 py-1 text-xs font-bold uppercase tracking-widest mb-3" style={{ background: '#D6F0DA', color: '#3DB54A', borderRadius: 4 }}>Why Make the Switch</div>
+            <div className="inline-flex px-3 py-1 text-xs font-bold uppercase tracking-widest mb-3" style={{ background: '#D6F0DA', color: '#1a6b2a', borderRadius: 4 }}>Why Make the Switch</div>
             <h2 className="font-black text-3xl mb-4" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.2 }}>AI Smart Vending vs. Traditional Vending</h2>
             <p style={{ color: '#3D4D5C', maxWidth: 520, margin: '0 auto', lineHeight: 1.75 }}>Side by side, the difference is clear. More product flexibility, fewer service calls, higher revenue per visit.</p>
           </div>
@@ -653,7 +653,7 @@ export default function SmartCoolers() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <div className="inline-flex px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4" style={{ background: '#D6F0DA', color: '#3DB54A', borderRadius: 4 }}>Why Smart Coolers</div>
+              <div className="inline-flex px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4" style={{ background: '#D6F0DA', color: '#1a6b2a', borderRadius: 4 }}>Why Smart Coolers</div>
               <h2 className="font-black text-3xl mb-5" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.2 }}>More Revenue. Less Work. Smarter Vending.</h2>
               <p className="mb-8" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Traditional vending machines are limited by selections and product types. AI smart coolers change the game. Customers spend nearly double the typical vending transaction, they can grab anything from snacks to medications to electronics, and you manage the entire operation from your phone.</p>
               <ul className="space-y-4">
@@ -727,7 +727,7 @@ export default function SmartCoolers() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="inline-flex px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4" style={{ background: '#D6F0DA', color: '#3DB54A', borderRadius: 4 }}>FAQ</div>
+            <div className="inline-flex px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4" style={{ background: '#D6F0DA', color: '#1a6b2a', borderRadius: 4 }}>FAQ</div>
             <h2 className="font-black text-3xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.2 }}>Common Questions About AI Smart Coolers</h2>
           </div>
           <div>

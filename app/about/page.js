@@ -41,7 +41,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <div>
-              <div className="text-xs font-bold mb-4 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#3DB54A' }}>How It Started</div>
+              <div className="text-xs font-bold mb-4 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#1a6b2a' }}>How It Started</div>
               <h2 className="font-black mb-6" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>The story behind<br />Vital Vending Sales</h2>
               <div className="space-y-5" style={{ color: '#3D4D5C', lineHeight: 1.8, fontSize: '1rem' }}>
                 <p><strong style={{ color: '#1B2A4A' }}>Founder Nick Williamson graduated from Ithaca College in 2011 and built his career in sales across a variety of industries.</strong> His passion for vending was cultivated through more than a decade with Gekay Sales &amp; Service, where he gained hands-on experience servicing, refurbishing, installing, and supporting vending and refreshment equipment throughout New England and across the country.</p>
@@ -71,7 +71,7 @@ export default function About() {
       <section style={{ background: '#F4F6F8', borderTop: '1px solid rgba(27,42,74,0.06)' }} className="py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#3DB54A' }}>Our Why</div>
+            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#1a6b2a' }}>Our Why</div>
             <h2 className="font-black mb-5" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>More than machines.</h2>
             <p style={{ color: '#3D4D5C', maxWidth: 600, lineHeight: 1.8, fontSize: '1.05rem' }} className="mx-auto">At Vital Vending Sales, we believe vending is about far more than equipment. It&apos;s about creating opportunities, solving problems, building relationships, and helping people succeed.</p>
           </div>
@@ -112,7 +112,7 @@ export default function About() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#3DB54A' }}>Meet the Owner</div>
+            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#1a6b2a' }}>Meet the Owner</div>
             <h2 className="font-black mb-4" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>The person behind VVS</h2>
             <p style={{ color: '#3D4D5C', maxWidth: 520, lineHeight: 1.75 }} className="mx-auto">Real experience, real care. Nick brings over 15 years of hands-on vending industry knowledge to every client relationship.</p>
           </div>
@@ -136,7 +136,7 @@ export default function About() {
       <section style={{ background: '#F4F6F8' }} className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#3DB54A' }}>Behind the Scenes</div>
+            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#1a6b2a' }}>Behind the Scenes</div>
             <h2 className="font-black mb-4" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>Life at VVS</h2>
             <p style={{ color: '#3D4D5C', maxWidth: 500, lineHeight: 1.75 }} className="mx-auto">From installs and route runs to warehouse days and machine builds — a look at how we operate.</p>
           </div>
