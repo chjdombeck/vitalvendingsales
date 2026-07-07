@@ -323,7 +323,7 @@ export default function Home() {
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ filter: 'blur(24px)', willChange: 'transform' }} aria-hidden="true" />
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(135deg,rgba(27,42,74,0.58) 0%,rgba(27,42,74,0.32) 60%,rgba(18,30,53,0.58) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ display: 'flex', alignItems: 'center', minHeight: 0 }}>
-          <div className="w-full lg:w-1/2 pt-16 pb-14 lg:pt-28 lg:pb-36" style={{ position: 'relative', zIndex: 2, maxWidth: 540 }}>
+          <div className="w-full lg:w-1/2 pt-16 pb-24 lg:pt-28 lg:pb-36" style={{ position: 'relative', zIndex: 2, maxWidth: 540 }}>
             <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#fff', background: 'rgba(61,181,74,0.25)', border: '1px solid rgba(61,181,74,0.4)', padding: '4px 12px', borderRadius: 4, display: 'inline-block', marginBottom: '0.75rem' }}>
               Northeast&apos;s Leader in AI Smart Vending
             </div>
