@@ -176,7 +176,7 @@ export default function VendingMachines() {
                         className="text-xs font-bold py-2.5 px-4 rounded-xl text-white"
                         style={{ background: '#3DB54A', border: 'none', cursor: 'pointer' }}
                       >
-                        Quick View
+                        View Details
                       </button>
                     </div>
                   </div>

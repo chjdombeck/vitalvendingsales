@@ -10,6 +10,11 @@ const nextConfig = {
         destination: '/smart-cooler-summit',
         permanent: true,
       },
+      {
+        source: '/smart-coolers/haha-:slug',
+        destination: '/smart-coolers',
+        permanent: true,
+      },
     ];
   },
   async headers() {

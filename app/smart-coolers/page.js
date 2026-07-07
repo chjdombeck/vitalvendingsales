@@ -5,13 +5,13 @@ import Link from 'next/link';
 import { submitToHubSpot } from '../../lib/hubspot';
 
 const HAHA_PRODUCTS = [
-  { id: 'haha-mini', href: '/smart-coolers/haha-mini', img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', name: 'HAHA Mini', model: 'US360C', tagline: 'Compact and capable — perfect for tighter spaces', specs: ['252 bottles', '6 shelves', 'AI recognition'], price: '$2,999', badge: 'AI Smart Cooler', badgeStyle: {} },
-  { id: 'haha-plus', href: '/smart-coolers/haha-plus', img: '/static-assets/MoreVendingMachinesandContent/Pus 440 Details.png', name: 'HAHA Plus', model: 'US440CT', tagline: 'Mid-size powerhouse with room to grow', specs: ['324 bottles', '6 shelves', 'AI recognition'], price: '$3,399', badge: 'AI Smart Cooler', badgeStyle: {} },
-  { id: 'haha-pro', href: '/smart-coolers/haha-pro', img: '/static-assets/MoreVendingMachinesandContent/Pro Details.png', name: 'HAHA Pro', model: 'US542CT', tagline: 'Full-size AI cooler, avg $4.55 per transaction', specs: ['378 bottles', '6 shelves', 'AI recognition'], price: '$4,399', badge: 'AI Smart Cooler', badgeStyle: {} },
-  { id: 'haha-freezer', href: '/smart-coolers/haha-freezer', img: '/static-assets/MoreVendingMachinesandContent/Freezer 550 Details.png', name: 'HAHA Freezer', model: 'US550FT', tagline: 'Frozen and fresh — same smart AI platform', specs: ['384 capacity', '6 shelves', 'Freezer ready'], price: '$4,799', badge: 'AI Freezer', badgeStyle: { background: '#E0F0FF', color: '#0B5FA0' } },
-  { id: 'haha-max-620', href: '/smart-coolers/haha-max-620', img: '/static-assets/MoreVendingMachinesandContent/Max 620 Details.png', name: 'HAHA Max 620', model: '', tagline: 'Maximum capacity for busy locations', specs: ['420 bottles', '6 shelves', 'AI recognition'], price: '$4,799', badge: 'AI Smart Cooler', badgeStyle: {} },
-  { id: 'haha-max-660', href: '/smart-coolers/haha-max-660', img: '/static-assets/MoreVendingMachinesandContent/Max 620s Details.png', name: 'HAHA Max 660', model: '', tagline: 'Advertise, engage, and sell — all from one unit', specs: ['420 bottles', 'Digital screen', 'AI recognition'], price: '$4,999', badge: 'AI Smart Cooler', badgeStyle: {} },
-  { id: 'haha-ultra-double-door', href: '/smart-coolers/haha-ultra-double-door', img: '/static-assets/MoreVendingMachinesandContent/Double Door Details.png', name: 'HAHA Ultra Double Door', model: 'US1200CT', tagline: 'Double capacity for the highest-volume locations', specs: ['756 bottles', '12 shelves', 'Dual door'], price: '$6,999', badge: 'Double Door', badgeStyle: { background: '#F0E8FD', color: '#5B0FA8' }, wide: true },
+  { id: 'haha-mini', img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', name: 'HAHA Mini', model: 'US360C', tagline: 'Compact and capable — perfect for tighter spaces', specs: ['252 bottles', '6 shelves', 'AI recognition'], price: '$2,999', badge: 'AI Smart Cooler', badgeStyle: {} },
+  { id: 'haha-plus', img: '/static-assets/MoreVendingMachinesandContent/Pus 440 Details.png', name: 'HAHA Plus', model: 'US440CT', tagline: 'Mid-size powerhouse with room to grow', specs: ['324 bottles', '6 shelves', 'AI recognition'], price: '$3,399', badge: 'AI Smart Cooler', badgeStyle: {} },
+  { id: 'haha-pro', img: '/static-assets/MoreVendingMachinesandContent/Pro Details.png', name: 'HAHA Pro', model: 'US542CT', tagline: 'Full-size AI cooler, avg $4.55 per transaction', specs: ['378 bottles', '6 shelves', 'AI recognition'], price: '$4,399', badge: 'AI Smart Cooler', badgeStyle: {} },
+  { id: 'haha-freezer', img: '/static-assets/MoreVendingMachinesandContent/Freezer 550 Details.png', name: 'HAHA Freezer', model: 'US550FT', tagline: 'Frozen and fresh — same smart AI platform', specs: ['384 capacity', '6 shelves', 'Freezer ready'], price: '$4,799', badge: 'AI Freezer', badgeStyle: { background: '#E0F0FF', color: '#0B5FA0' } },
+  { id: 'haha-max-620', img: '/static-assets/MoreVendingMachinesandContent/Max 620 Details.png', name: 'HAHA Max 620', model: '', tagline: 'Maximum capacity for busy locations', specs: ['420 bottles', '6 shelves', 'AI recognition'], price: '$4,799', badge: 'AI Smart Cooler', badgeStyle: {} },
+  { id: 'haha-max-660', img: '/static-assets/MoreVendingMachinesandContent/Max 620s Details.png', name: 'HAHA Max 660', model: '', tagline: 'Advertise, engage, and sell — all from one unit', specs: ['420 bottles', 'Digital screen', 'AI recognition'], price: '$4,999', badge: 'AI Smart Cooler', badgeStyle: {} },
+  { id: 'haha-ultra-double-door', img: '/static-assets/MoreVendingMachinesandContent/Double Door Details.png', name: 'HAHA Ultra Double Door', model: 'US1200CT', tagline: 'Double capacity for the highest-volume locations', specs: ['756 bottles', '12 shelves', 'Dual door'], price: '$6,999', badge: 'Double Door', badgeStyle: { background: '#F0E8FD', color: '#5B0FA8' }, wide: true },
 ];
 
 const USI_PRODUCTS = [
@@ -27,49 +27,42 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', images: [],
     specs: ['Exterior Dimensions: 22.8" x 26" x 76"', 'Shelves: 6 shelves', 'Approximate Capacity: ~252 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Mini is the most compact unit in the HAHA lineup — ideal for smaller offices, lobbies, or any location where footprint matters but revenue potential shouldn\'t be sacrificed. Fully AI-powered, cashless, and cloud-managed.',
-    detailHref: '/smart-coolers/haha-mini',
   },
   'haha-plus': {
     name: 'HAHA Plus', model: 'US440CT', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$3,399',
     img: '/static-assets/MoreVendingMachinesandContent/Pus 440 Details.png', images: [],
     specs: ['Exterior Dimensions: 27.2" x 27" x 76.6"', 'Shelves: 6 shelves', 'Approximate Capacity: ~324 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Plus steps up the capacity with a wider footprint, making it the ideal choice for medium-traffic locations like offices, schools, and fitness centers. Same AI platform, more stocking capacity, and all organizers included.',
-    detailHref: '/smart-coolers/haha-plus',
   },
   'haha-pro': {
     name: 'HAHA Pro', model: 'US542CT', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$4,399',
     img: '/static-assets/MoreVendingMachinesandContent/Pro Details.png', images: [],
     specs: ['Exterior Dimensions: 29.5" x 25.6" x 79.5"', 'Shelves: 6 shelves', 'Approximate Capacity: ~378 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Pro is the workhorse of the lineup — a full-size AI smart cooler that holds 378 bottles across 6 shelves and fits into virtually any commercial location. Proven to average $4.55 per customer transaction, making it one of the strongest ROI units VVS carries.',
-    detailHref: '/smart-coolers/haha-pro',
   },
   'haha-freezer': {
     name: 'HAHA Freezer', model: 'US550FT', brand: 'HAHA Smart Coolers', category: 'AI Freezer', price: '$4,799',
     img: '/static-assets/MoreVendingMachinesandContent/Freezer 550 Details.png', images: [],
     specs: ['Exterior Dimensions: 27.6" x 35.8" x 80.4"', 'Shelves: 6 shelves', 'Approximate Capacity: ~384 items', 'Temperature Mode: Freezer', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Freezer brings AI-powered unattended retail to frozen and refrigerated products. Same intuitive grab-and-go platform as the rest of the HAHA lineup — now for ice cream, frozen meals, cold packs, and beyond. Ideal for gyms, convenience locations, and break rooms with frozen demand.',
-    detailHref: '/smart-coolers/haha-freezer',
   },
   'haha-max-620': {
     name: 'HAHA Max 620', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$4,799',
     img: '/static-assets/MoreVendingMachinesandContent/Max 620 Details.png', images: [],
     specs: ['Exterior Dimensions: 31.5" x 26.4" x 79.5"', 'Shelves: 6 shelves', 'Approximate Capacity: ~420 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Max 620 is built for locations that need maximum capacity in a single-door form factor. At 420 bottles across 6 shelves, this is the go-to unit for high-traffic offices, warehouses, gyms, and any site where restocking frequency matters. Same AI platform, bigger results.',
-    detailHref: '/smart-coolers/haha-max-620',
   },
   'haha-max-660': {
     name: 'HAHA Max 660', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$4,999',
     img: '/static-assets/MoreVendingMachinesandContent/Max 620s Details.png', images: [],
     specs: ['Exterior Dimensions: 31.5" x 26.4" x 85.8"', 'Shelves: 6 shelves', 'Approximate Capacity: ~420 bottles', 'Display Screen: Built-in digital display', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Max 660 takes the high-volume Max 620 and adds a built-in digital display screen on top — giving you a powerful tool for advertising, promotion, and customer engagement. Same great AI platform, taller, and more attention-grabbing.',
-    detailHref: '/smart-coolers/haha-max-660',
   },
   'haha-ultra-double-door': {
     name: 'HAHA Ultra Double Door', model: 'US1200CT', brand: 'HAHA Smart Coolers', category: 'Double Door', price: '$6,999',
     img: '/static-assets/MoreVendingMachinesandContent/Double Door Details.png', images: [],
     specs: ['Exterior Dimensions: 53.9" x 28.0" x 79.5"', 'Doors: Double door', 'Shelves: 12 shelves', 'Approximate Capacity: ~756 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Ultra Double Door is the flagship of the entire HAHA lineup — a wide-format, dual-door AI smart cooler purpose-built for the highest-volume locations. With 756-bottle capacity across 12 shelves, this unit is ideal for hospitals, airports, universities, large corporate campuses, and anywhere that demands maximum throughput around the clock.',
-    detailHref: '/smart-coolers/haha-ultra-double-door',
   },
   spectraLaunch: {
     name: 'USI Spectra Launch Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$4,995',
@@ -165,7 +158,7 @@ function ProductCard({ id, img, name, model, tagline, specs, price, badge, badge
             onClick={(e) => { e.stopPropagation(); onOpen(id); }}
             className="inline-flex items-center gap-1.5 text-xs font-bold text-white px-4 py-2.5 rounded-lg"
             style={{ background: '#3DB54A', border: 'none', cursor: 'pointer' }}>
-            Quick View
+            View Details
           </button>
         </div>
       </div>
@@ -283,11 +276,6 @@ function ProductModal({ id, onClose }) {
               <Link href="/#contact" onClick={onClose} className="flex items-center justify-center gap-2 font-bold rounded-xl text-white px-6 py-3 text-sm w-full" style={{ background: 'rgba(61,181,74,0.9)', textDecoration: 'none' }}>
                 Get a Quote for This Unit
               </Link>
-              {p.detailHref && (
-                <Link href={p.detailHref} onClick={onClose} className="flex items-center justify-center gap-2 font-semibold rounded-xl px-6 py-3 text-sm w-full mt-3" style={{ color: '#1B2A4A', background: '#F4F6F8', textDecoration: 'none' }}>
-                  View Full Product Page
-                </Link>
-              )}
               <a href="tel:4132823776" className="flex items-center justify-center gap-2 font-semibold rounded-xl px-6 py-3 text-sm w-full mt-3" style={{ color: '#1B2A4A', background: '#F4F6F8', textDecoration: 'none' }}>
                 Call (413) 282-3776
               </a>
