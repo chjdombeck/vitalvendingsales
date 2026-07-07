@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { submitToHubSpot } from '../../lib/hubspot';
+import { submitToHubSpot, SUMMIT_FORM_GUID } from '../../lib/hubspot';
 
 const LEARN_ITEMS = [
   'Physical & operational review of 2 leading AI smart cooler brands — HAHA and USI Spectra',
@@ -38,9 +38,10 @@ function RegisterForm() {
       lastname: data.last_name,
       email: data.email,
       phone: data.phone,
-      i_m_interested_in: 'general',
+      // TODO: once the dedicated "Number of Attendees" field is added in HubSpot,
+      // replace this with its internal property name, e.g. number_of_attendees: data.attendees.
       message: `RSVP for the New England Smart Cooler Summit (Aug 8, 2026, Apex Entertainment, Marlborough MA). Number of attendees: ${data.attendees || '1'}`,
-    });
+    }, SUMMIT_FORM_GUID);
     setSubmitted(true);
   }
 
