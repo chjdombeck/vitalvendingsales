@@ -38,9 +38,8 @@ function RegisterForm() {
       lastname: data.last_name,
       email: data.email,
       phone: data.phone,
-      // TODO: once the dedicated "Number of Attendees" field is added in HubSpot,
-      // replace this with its internal property name, e.g. number_of_attendees: data.attendees.
-      message: `RSVP for the New England Smart Cooler Summit (Aug 8, 2026, Apex Entertainment, Marlborough MA). Number of attendees: ${data.attendees || '1'}`,
+      number_of_attendees: data.attendees || '1',
+      message: 'RSVP for the New England Smart Cooler Summit (Aug 8, 2026, Apex Entertainment, Marlborough MA).',
     }, SUMMIT_FORM_GUID);
     setSubmitted(true);
   }
