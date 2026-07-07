@@ -225,7 +225,7 @@ const MODAL_DATA = {
   },
   venderaLC510: {
     name: 'Vendera LC-510 Smart Cooler', brand: 'Vendera', category: 'AI Smart Cooler', price: '$3,800',
-    img: '/static-assets/vvs_product_catalog/images/vendera-lc510-2.png', images: [],
+    img: '/static-assets/vvs_product_catalog/images/vendera-lc510-2.png', images: [], imgScale: 1.2,
     specs: ['Model: LC-510', 'Warranty: 2 years parts / 5 years compressor (no labor)', 'Power: Standard 110V outlet — no installation crew needed', 'Connectivity: Cellular (4G LTE)', 'Dimensions: 28.4" W x 29.3" D', 'Shelves: 6', 'Capacity: Up to 400 products'],
     features: 'The Vendera LC-510 is the most accessible AI smart cooler on the market — plug it into a standard 110V outlet and you\'re ready to go. No installation crew required. Built-in 4G cellular connectivity means it works anywhere, even without Wi-Fi. Six shelves hold up to 400 products. A 2-year parts warranty and 5-year compressor warranty back it up. The ideal entry point for operators who want smart cooler technology without the complexity.',
   },
@@ -299,7 +299,7 @@ function ProductCard({ id, img, name, model, tagline, specs, price, badge, badge
   );
 }
 
-function USICard({ id, img, name, part, tagline, specs, price, badge, badgeStyle, brandLabel = 'USI', onOpen }) {
+function USICard({ id, img, name, part, tagline, specs, price, badge, badgeStyle, brandLabel = 'USI', onOpen, imgScale = 1 }) {
   return (
     <div
       role="button" tabIndex={0} aria-label={`View ${name} details`}
@@ -307,8 +307,8 @@ function USICard({ id, img, name, part, tagline, specs, price, badge, badgeStyle
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(id); } }}
       className="rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
       style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 1px 2px rgba(27,42,74,0.06),0 4px 12px rgba(27,42,74,0.08),0 16px 32px rgba(27,42,74,0.06)', cursor: 'pointer' }}>
-      <div className="flex items-center justify-center" style={{ height: 220, background: '#F4F6F8' }}>
-        <img src={img} alt={name} style={{ height: 200, width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
+      <div className="flex items-center justify-center" style={{ height: 220 * Math.max(1, imgScale), background: '#F4F6F8' }}>
+        <img src={img} alt={name} style={{ height: 200 * imgScale, width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
       </div>
       <div className="p-5">
         <div className="flex items-center justify-between mb-2">
@@ -366,7 +366,7 @@ function ProductModal({ id, onClose }) {
         <div className="grid lg:grid-cols-2 gap-0">
           <div className="flex flex-col">
             <div className="flex items-center justify-center p-8" style={{ background: '#F4F6F8', minHeight: 260 }}>
-              <img src={currentImg} alt={p.name} style={{ maxHeight: 288, width: 'auto', objectFit: 'contain' }} />
+              <img src={currentImg} alt={p.name} style={{ maxHeight: 288 * (p.imgScale || 1), width: 'auto', objectFit: 'contain' }} />
             </div>
             {p.images.length > 1 && (
               <div className="flex gap-2 p-3 overflow-x-auto bg-white border-t border-gray-100">
@@ -574,7 +574,7 @@ export default function SmartCoolers() {
             <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Plug-and-play AI smart cooler. Standard 110V outlet — no installation crew needed.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-            <USICard id="venderaLC510" img="/static-assets/vvs_product_catalog/images/vendera-lc510-2.png" name="Vendera LC-510" part="LC-510" tagline="Plug-and-play 110V smart cooler — no installation crew needed" specs={['Up to 400 items', '6 shelves', 'Cellular 4G']} price="$3,800" badge="AI Smart Cooler" badgeStyle={{}} onOpen={setOpenId} />
+            <USICard id="venderaLC510" img="/static-assets/vvs_product_catalog/images/vendera-lc510-2.png" name="Vendera LC-510" part="LC-510" tagline="Plug-and-play 110V smart cooler — no installation crew needed" specs={['Up to 400 items', '6 shelves', 'Cellular 4G']} price="$3,800" badge="AI Smart Cooler" badgeStyle={{}} brandLabel="Vendera" onOpen={setOpenId} imgScale={1.2} />
           </div>
 
         </div>
