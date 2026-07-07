@@ -29,21 +29,21 @@ const GoogleIcon = () => (
 );
 
 const CLIENT_PHOTOS = [
-  'Screenshot 2026-06-17 at 08-35-35 Instagram.png',
-  'Screenshot 2026-06-17 at 08-35-53 Instagram.png',
-  'Screenshot 2026-06-17 at 08-36-33 Instagram.png',
-  'Screenshot 2026-06-17 at 08-36-40 Instagram.png',
-  'Screenshot 2026-06-17 at 08-36-47 Instagram.png',
-  'Screenshot 2026-06-17 at 08-36-54 Instagram.png',
-  'Screenshot 2026-06-17 at 08-37-06 Instagram.png',
-  'Screenshot 2026-06-17 at 08-37-21 Instagram.png',
-  'Screenshot 2026-06-17 at 08-37-27 Instagram.png',
-  'Screenshot 2026-06-17 at 08-37-32 Instagram.png',
-  'Screenshot 2026-06-17 at 08-37-40 Instagram.png',
-  'Screenshot 2026-06-17 at 08-37-45 Instagram.png',
-  'Screenshot 2026-06-17 at 08-37-52 Instagram.png',
-  'Screenshot 2026-06-17 at 08-37-58 Instagram.png',
-  'Screenshot 2026-06-17 at 08-38-06 Instagram.png',
+  'Screenshot 2026-06-17 at 08-35-35 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-35-53 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-36-33 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-36-40 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-36-47 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-36-54 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-37-06 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-37-21 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-37-27 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-37-32 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-37-40 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-37-45 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-37-52 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-37-58 Instagram.jpg',
+  'Screenshot 2026-06-17 at 08-38-06 Instagram.jpg',
 ];
 
 export default function Reviews() {
@@ -88,7 +88,7 @@ export default function Reviews() {
             </div>
             <div className="hidden lg:flex items-center justify-center" style={{ height: 420 }}>
               <div style={{ height: 391, width: 391, borderRadius: 20, overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.35)', position: 'relative' }}>
-                <Image src="/static-assets/Client testimonial pictures/Screenshot 2026-06-17 at 08-36-54 Instagram.png" alt="Happy VVS client" fill style={{ objectFit: 'cover' }} />
+                <Image src="/static-assets/Client testimonial pictures/Screenshot 2026-06-17 at 08-36-54 Instagram.jpg" alt="Happy VVS client" fill style={{ objectFit: 'cover' }} />
               </div>
             </div>
           </div>

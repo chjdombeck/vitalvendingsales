@@ -142,7 +142,7 @@ export default function About() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             <div className="rounded-2xl overflow-hidden relative col-span-1 lg:row-span-2" style={{ aspectRatio: '3/4', background: '#F4F6F8', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)' }}>
-              <Image src="/static-assets/MoreVendingMachinesandContent/bhs1.png" alt="Machine install behind the scenes" fill style={{ objectFit: 'cover' }} />
+              <Image src="/static-assets/MoreVendingMachinesandContent/bhs1.jpg" alt="Machine install behind the scenes" fill style={{ objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,30,53,0.72) 0%, rgba(18,30,53,0.1) 50%, transparent 100%)', pointerEvents: 'none' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px 18px' }}>
                 <div className="font-bold text-white text-sm">Machine Install</div>
@@ -150,7 +150,7 @@ export default function About() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: '4/3', background: '#F4F6F8', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)' }}>
-              <Image src="/static-assets/Client testimonial pictures/Screenshot 2026-06-17 at 08-37-52 Instagram.png" alt="Happy VVS clients" fill style={{ objectFit: 'cover' }} />
+              <Image src="/static-assets/Client testimonial pictures/Screenshot 2026-06-17 at 08-37-52 Instagram.jpg" alt="Happy VVS clients" fill style={{ objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,30,53,0.72) 0%, rgba(18,30,53,0.1) 50%, transparent 100%)', pointerEvents: 'none' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px 18px' }}>
                 <div className="font-bold text-white text-sm">Happy Clients</div>
@@ -158,7 +158,7 @@ export default function About() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: '4/3', background: '#F4F6F8', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)' }}>
-              <Image src="/static-assets/MoreVendingMachinesandContent/bhs3.png" alt="Pro tip from VVS" fill style={{ objectFit: 'cover' }} />
+              <Image src="/static-assets/MoreVendingMachinesandContent/bhs3.jpg" alt="Pro tip from VVS" fill style={{ objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,30,53,0.72) 0%, rgba(18,30,53,0.1) 50%, transparent 100%)', pointerEvents: 'none' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px 18px' }}>
                 <div className="font-bold text-white text-sm">Pro Tips</div>
@@ -166,7 +166,7 @@ export default function About() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden relative col-span-2 lg:col-span-2" style={{ aspectRatio: '4/3', background: '#F4F6F8', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)' }}>
-              <Image src="/static-assets/MoreVendingMachinesandContent/bhs2.png" alt="VVS team in the field" fill style={{ objectFit: 'cover', objectPosition: 'center 30%' }} />
+              <Image src="/static-assets/MoreVendingMachinesandContent/bhs2.jpg" alt="VVS team in the field" fill style={{ objectFit: 'cover', objectPosition: 'center 30%' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,30,53,0.72) 0%, rgba(18,30,53,0.1) 50%, transparent 100%)', pointerEvents: 'none' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px 18px' }}>
                 <div className="font-bold text-white text-sm">The VVS Team</div>
