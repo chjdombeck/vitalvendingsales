@@ -153,8 +153,8 @@ export default function VendingMachines() {
                   onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); } }}
                   className="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
                   style={{ border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)', cursor: 'pointer' }}>
-                  <div className="flex items-center justify-center" style={{ height: 200, background: '#F4F6F8' }}>
-                    <img src={m.img} alt={m.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '12px', mixBlendMode: 'multiply' }} />
+                  <div className="relative" style={{ height: 200, background: '#F4F6F8' }}>
+                    <Image src={m.img} alt={m.name} fill loading="lazy" sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, (max-width: 1279px) 30vw, 23vw" style={{ objectFit: 'contain', padding: 12, mixBlendMode: 'multiply' }} />
                   </div>
                   <div className="p-5">
                     <div className="flex items-center justify-between mb-2">
@@ -215,8 +215,8 @@ export default function VendingMachines() {
               </ul>
             </div>
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: '4/5', background: '#F4F6F8', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08), 0 16px 32px rgba(27,42,74,0.06)' }}>
-                <img src="/static-assets/VVSworkpic1.jpg" alt="Vital Vending Sales team" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+              <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '4/5', background: '#F4F6F8', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08), 0 16px 32px rgba(27,42,74,0.06)' }}>
+                <Image src="/static-assets/VVSworkpic1.jpg" alt="Vital Vending Sales team" fill sizes="(max-width: 1023px) 90vw, 45vw" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
             </div>
           </div>

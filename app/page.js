@@ -356,7 +356,7 @@ export default function Home() {
           <div id="hero-machine-col" className="hidden lg:flex" style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '55%', alignItems: 'center', justifyContent: 'flex-end', pointerEvents: 'none' }}>
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle,rgba(61,181,74,0.26) 0%,rgba(61,181,74,0.08) 48%,transparent 72%)', filter: 'blur(50px)', animation: 'vmGlow 5s ease-in-out infinite', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: 340, height: 50, background: 'radial-gradient(ellipse,rgba(61,181,74,0.45) 0%,transparent 70%)', filter: 'blur(20px)', borderRadius: '50%', pointerEvents: 'none' }} />
-            <img src="/static-assets/hero5.webp" alt="AI Smart Vending Machines" width={546}
+            <Image src="/static-assets/hero5.webp" alt="AI Smart Vending Machines" width={546} height={546} sizes="(max-width: 1023px) 0px, 546px"
               style={{ position: 'relative', zIndex: 2, width: '94%', maxWidth: 546, maxHeight: '100%', objectFit: 'contain', objectPosition: 'center bottom', filter: 'drop-shadow(0 32px 64px rgba(0,0,0,0.65)) drop-shadow(0 0 60px rgba(61,181,74,0.28)) drop-shadow(0 0 20px rgba(61,181,74,0.15))' }} />
           </div>
         </div>
@@ -399,7 +399,7 @@ export default function Home() {
             {/* Spectra Pro */}
             <Link href="/smart-coolers" className="group rounded-2xl overflow-hidden border transition-shadow duration-300" style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 2px 12px rgba(27,42,74,0.06)' }}>
               <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', background: '#F4F6F8' }}>
-                <img src="/static-assets/vvs_product_catalog/images/spectra-pro-2.webp" alt="USI Spectra Pro AI smart cooler" className="w-full h-full object-contain p-4" />
+                <Image src="/static-assets/vvs_product_catalog/images/spectra-pro-2.webp" alt="USI Spectra Pro AI smart cooler" fill sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 23vw" className="object-contain p-4" />
                 <div className="absolute top-3 left-3"><span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#3DB54A', color: '#fff', padding: '4px 10px', borderRadius: 4 }}>5-Year Warranty</span></div>
               </div>
               <div className="p-5">
@@ -419,7 +419,7 @@ export default function Home() {
             {/* Vendera LC-510 */}
             <Link href="/smart-coolers" className="group rounded-2xl overflow-hidden transition-shadow duration-300" style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 2px 12px rgba(27,42,74,0.06)' }}>
               <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', background: '#F4F6F8' }}>
-                <img src="/static-assets/vvs_product_catalog/images/vendera-lc510-2.png" alt="Vendera LC-510 AI smart cooler" className="w-full h-full object-contain p-4" />
+                <Image src="/static-assets/vvs_product_catalog/images/vendera-lc510-2.png" alt="Vendera LC-510 AI smart cooler" fill sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 23vw" className="object-contain p-4" />
                 <div className="absolute top-3 left-3"><span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#1B2A4A', color: '#fff', padding: '4px 10px', borderRadius: 4 }}>Entry-Level AI</span></div>
               </div>
               <div className="p-5">
@@ -439,7 +439,7 @@ export default function Home() {
             {/* HAHA Pro */}
             <Link href="/smart-coolers" className="group rounded-2xl overflow-hidden transition-shadow duration-300" style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 2px 12px rgba(27,42,74,0.06)' }}>
               <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', background: '#F4F6F8' }}>
-                <img src="/static-assets/MoreVendingMachinesandContent/Pro Details.png" alt="HAHA Pro AI Smart Cooler" className="w-full h-full object-contain p-4" style={{ mixBlendMode: 'multiply' }} />
+                <Image src="/static-assets/MoreVendingMachinesandContent/Pro Details.png" alt="HAHA Pro AI Smart Cooler" fill sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 23vw" className="object-contain p-4" style={{ mixBlendMode: 'multiply' }} />
                 <div className="absolute top-3 left-3"><span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#1B2A4A', color: '#fff', padding: '4px 10px', borderRadius: 4 }}>Best Seller</span></div>
               </div>
               <div className="p-5">
@@ -516,8 +516,8 @@ export default function Home() {
               { img: 'summit-5000-cold-drink-vending-machine-2.jpg', cat: 'Beverage Machine', name: 'Cold Beverage Unit', desc: 'High-capacity cold drink vending for offices, factories, and schools.', price: 'Contact Us', href: '/vending-machines' },
             ].map(m => (
               <Link key={m.name} href={m.href} className="group rounded-2xl overflow-hidden transition-shadow duration-300" style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 2px 12px rgba(27,42,74,0.06)' }}>
-                <div className="overflow-hidden" style={{ aspectRatio: '3/4', background: '#F4F6F8' }}>
-                  <img src={`/static-assets/vvs_product_catalog/images/${m.img}`} alt={m.name} className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500" style={{ mixBlendMode: 'multiply' }} />
+                <div className="relative overflow-hidden" style={{ aspectRatio: '3/4', background: '#F4F6F8' }}>
+                  <Image src={`/static-assets/vvs_product_catalog/images/${m.img}`} alt={m.name} fill sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 23vw" className="object-contain p-3 group-hover:scale-105 transition-transform duration-500" style={{ mixBlendMode: 'multiply' }} />
                 </div>
                 <div className="p-4">
                   <div className="text-xs font-medium uppercase tracking-wide mb-0.5" style={{ color: '#6B7280' }}>{m.cat}</div>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { submitToHubSpot } from '../../lib/hubspot';
 
 const HAHA_PRODUCTS = [
@@ -291,8 +292,8 @@ function ProductCard({ id, img, name, model, tagline, specs, price, badge, badge
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(id); } }}
       className={`rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 ${wide ? 'sm:col-span-2 lg:col-span-1' : ''}`}
       style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 1px 2px rgba(27,42,74,0.06),0 4px 12px rgba(27,42,74,0.08),0 16px 32px rgba(27,42,74,0.06)', cursor: 'pointer' }}>
-      <div className="flex items-center justify-center" style={{ height: 220, background: '#F4F6F8' }}>
-        <img src={img} alt={name} loading="lazy" style={{ height: 200, width: 'auto', maxWidth: '100%', objectFit: 'contain', mixBlendMode: 'multiply' }} />
+      <div className="relative" style={{ height: 220, background: '#F4F6F8' }}>
+        <Image src={img} alt={name} fill sizes="(max-width: 639px) 90vw, (max-width: 1279px) 45vw, 23vw" style={{ objectFit: 'contain', mixBlendMode: 'multiply', padding: 12 }} />
       </div>
       <div className="p-5">
         <div className="flex items-center justify-between mb-2">
@@ -330,8 +331,8 @@ function USICard({ id, img, name, part, tagline, specs, price, badge, badgeStyle
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(id); } }}
       className="rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
       style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 1px 2px rgba(27,42,74,0.06),0 4px 12px rgba(27,42,74,0.08),0 16px 32px rgba(27,42,74,0.06)', cursor: 'pointer' }}>
-      <div className="flex items-center justify-center" style={{ height: 220 * Math.max(1, imgScale), background: '#F4F6F8' }}>
-        <img src={img} alt={name} style={{ height: 200 * imgScale, width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
+      <div className="relative" style={{ height: 220 * Math.max(1, imgScale), background: '#F4F6F8' }}>
+        <Image src={img} alt={name} fill sizes="(max-width: 639px) 90vw, (max-width: 1279px) 45vw, 23vw" style={{ objectFit: 'contain', padding: 12 }} />
       </div>
       <div className="p-5">
         <div className="flex items-center justify-between mb-2">
@@ -680,7 +681,7 @@ export default function SmartCoolers() {
             </div>
             <div className="relative">
               <div className="rounded-2xl overflow-hidden" style={{ boxShadow: '0 8px 40px rgba(27,42,74,0.14)' }}>
-                <img src="/static-assets/MoreVendingMachinesandContent/HAHA Smart Cooler In Gym .jpg" alt="HAHA AI smart cooler in a gym" loading="lazy" className="w-full h-auto object-cover" style={{ maxHeight: 480 }} />
+                <Image src="/static-assets/MoreVendingMachinesandContent/HAHA Smart Cooler In Gym .jpg" alt="HAHA AI smart cooler in a gym" width={900} height={698} loading="lazy" sizes="(max-width: 1023px) 90vw, 45vw" className="w-full h-auto object-cover" style={{ maxHeight: 480 }} />
               </div>
               <div className="absolute hidden lg:block bg-white rounded-xl p-4" style={{ bottom: -20, left: -20, boxShadow: '0 4px 24px rgba(27,42,74,0.12)' }}>
                 <div className="font-black text-3xl" style={{ color: '#1B2A4A', letterSpacing: '-0.03em' }}>$4.55</div>
