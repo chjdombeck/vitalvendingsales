@@ -367,25 +367,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== STATS BAR ===== */}
-      <section className="bg-white py-10 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
-            {[
-              { num: '15+', label: 'Years Experience' },
-              { num: 'NE', label: 'Regional Leader' },
-              { num: '$0', label: 'Cost Consultation' },
-              { num: '3', label: 'Core Services' },
-            ].map(s => (
-              <div key={s.label} className="text-center">
-                <div className="font-black" style={{ color: '#1a6b2a', fontSize: '2.5rem', letterSpacing: '-0.03em', lineHeight: 1 }}>{s.num}</div>
-                <div className="text-sm font-medium mt-1" style={{ color: '#6B7280' }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===== AI SMART COOLERS ===== */}
       <section id="smart-coolers" className="bg-white py-10 lg:py-28" style={{ backgroundImage: 'radial-gradient(ellipse 50% 40% at 80% 50%, rgba(61,181,74,0.06) 0%, transparent 70%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
