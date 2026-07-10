@@ -614,27 +614,27 @@ export default function SmartCoolers() {
           </div>
           <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(27,42,74,0.1)', boxShadow: '0 4px 32px rgba(27,42,74,0.12)' }}>
             {/* Header */}
-            <div className="grid" style={{ gridTemplateColumns: '1fr 160px 1fr', background: '#fff' }}>
-              <div className="flex items-center justify-center p-5">
-                <span style={{ background: '#FFF3CD', border: '2px solid #F5A623', borderRadius: 999, padding: '10px 22px', fontWeight: 800, fontSize: '1rem', color: '#E59400' }}>AI Smart Vending</span>
+            <div className="flex items-center justify-center gap-2 py-4 px-3 md:grid md:grid-cols-[1fr_160px_1fr] md:gap-0 md:py-0" style={{ background: '#fff' }}>
+              <div className="flex-1 flex items-center justify-center md:p-5">
+                <span className="text-xs md:text-base px-3 py-2 md:px-[22px] md:py-[10px]" style={{ background: '#FFF3CD', border: '2px solid #F5A623', borderRadius: 999, fontWeight: 800, color: '#E59400' }}>AI Smart Vending</span>
               </div>
-              <div className="flex items-center justify-center p-5">
-                <span style={{ fontFamily: 'Georgia,serif', fontSize: '2.5rem', fontWeight: 900, color: '#1B2A4A', lineHeight: 1 }}>VS</span>
+              <div className="flex items-center justify-center md:p-5">
+                <span className="text-2xl md:text-[2.5rem]" style={{ fontFamily: 'Georgia,serif', fontWeight: 900, color: '#1B2A4A', lineHeight: 1 }}>VS</span>
               </div>
-              <div className="flex items-center justify-center p-5">
-                <span style={{ background: '#F4F6F8', border: '2px solid #6B7280', borderRadius: 999, padding: '10px 22px', fontWeight: 600, fontSize: '1rem', color: '#3D4D5C' }}>Old Vending Machines</span>
+              <div className="flex-1 flex items-center justify-center md:p-5">
+                <span className="text-xs md:text-base px-3 py-2 md:px-[22px] md:py-[10px]" style={{ background: '#F4F6F8', border: '2px solid #6B7280', borderRadius: 999, fontWeight: 600, color: '#3D4D5C' }}>Old Vending Machines</span>
               </div>
             </div>
             {VS_ROWS.map(row => (
-              <div key={row.label} className="grid" style={{ gridTemplateColumns: '1fr 160px 1fr', borderTop: '1px dashed rgba(27,42,74,0.15)' }}>
-                <div className="flex items-center gap-3 p-3.5" style={{ background: '#FFFBEE' }}>
+              <div key={row.label} className="grid grid-cols-1 md:grid-cols-[1fr_160px_1fr]" style={{ borderTop: '1px dashed rgba(27,42,74,0.15)' }}>
+                <div className="order-2 md:order-none flex items-center gap-3 p-3.5" style={{ background: '#FFFBEE' }}>
                   <div className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: '#F5A623' }}>
                     <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </div>
                   <p className="text-sm" style={{ color: '#3D4D5C', lineHeight: 1.5, margin: 0 }}>{row.smart}</p>
                 </div>
-                <div className="flex items-center justify-center p-3.5 text-center font-bold text-sm" style={{ color: '#1B2A4A', borderLeft: '1px dashed rgba(27,42,74,0.15)', borderRight: '1px dashed rgba(27,42,74,0.15)' }}>{row.label}</div>
-                <div className="flex items-center gap-3 p-3.5" style={{ background: '#F9F9F9' }}>
+                <div className="order-1 md:order-none flex items-center justify-center p-2.5 md:p-3.5 text-center font-bold text-xs md:text-sm" style={{ color: '#1B2A4A', background: 'rgba(27,42,74,0.03)' }}>{row.label}</div>
+                <div className="order-3 md:order-none flex items-center gap-3 p-3.5" style={{ background: '#F9F9F9' }}>
                   <div className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: '#D1D5DB' }}>
                     <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke="#fff" strokeWidth="2" strokeLinecap="round" /></svg>
                   </div>

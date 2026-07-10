@@ -163,8 +163,8 @@ export default function Blog() {
           </div>
           <div className="flex flex-col gap-5">
             {WIDE_ARTICLES.map((a) => (
-              <Link key={a.href} href={a.href} className="rounded-2xl overflow-hidden bg-white" style={{ textDecoration: 'none', display: 'grid', gridTemplateColumns: '280px 1fr', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.05), 0 4px 12px rgba(27,42,74,0.07)' }}>
-                <div className="relative overflow-hidden" style={{ background: '#F4F6F8' }}>
+              <Link key={a.href} href={a.href} className="grid grid-cols-1 sm:[grid-template-columns:280px_1fr] rounded-2xl overflow-hidden bg-white" style={{ textDecoration: 'none', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.05), 0 4px 12px rgba(27,42,74,0.07)' }}>
+                <div className="relative overflow-hidden" style={{ background: '#F4F6F8', aspectRatio: '16/9' }}>
                   <Image src={a.img} alt={a.title} fill style={{ objectFit: 'cover' }} loading="lazy" />
                 </div>
                 <div className="p-7 flex flex-col justify-center">
