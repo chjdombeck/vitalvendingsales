@@ -405,7 +405,7 @@ export default function Home() {
               </div>
               <div className="p-5">
                 <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: '#6B7280' }}>USI Spectra Series</div>
-                <h3 className="font-bold text-lg mb-1" style={{ color: '#1B2A4A', letterSpacing: '-0.01em' }}>Spectra Pro</h3>
+                <h3 className="font-bold text-lg mb-1" style={{ color: '#1B2A4A', letterSpacing: '-0.01em' }}>Spectra Pro Smart Cooler</h3>
                 <p className="text-sm mb-4" style={{ color: '#3D4D5C', lineHeight: 1.6 }}>TrueAI™ computer vision, 32&quot; embedded ad screen, cashless payments, and cloud monitoring.</p>
                 <div className="flex items-center justify-between">
                   <div>
