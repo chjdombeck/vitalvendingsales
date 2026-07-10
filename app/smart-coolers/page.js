@@ -568,8 +568,8 @@ export default function SmartCoolers() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 lg:mb-14">
             <div className="inline-flex px-3 py-1 text-xs font-bold uppercase tracking-widest mb-3" style={{ background: '#D6F0DA', color: '#1a6b2a', borderRadius: 4 }}>AI Smart Cooler Lineup</div>
-            <h2 className="font-black text-3xl mb-3" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.2 }}>12 Models. 3 Brands. Every Location Covered.</h2>
-            <p className="text-base" style={{ color: '#3D4D5C', lineHeight: 1.7, maxWidth: 640 }}>We carry AI smart coolers from HAHA, USI Spectra, and Vendera — so you&apos;re never locked into one manufacturer. USI Spectra models carry industry-leading warranty periods up to 7 years.</p>
+            <h2 className="font-black text-3xl mb-3" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.2 }}>Proven Smart Cooler Solutions</h2>
+            <p className="text-base" style={{ color: '#3D4D5C', lineHeight: 1.7, maxWidth: 640 }}>HAHA Smart Coolers are our most popular AI-powered solution, with over 100 units deployed throughout New England. We&apos;ve seen firsthand how they perform in the field and have built our installation, training, and support around helping customers succeed with the platform. We also offer additional smart cooler solutions, including USI Spectra and other select manufacturers, to ensure every customer has the right fit for their business.</p>
           </div>
 
           {/* HAHA */}
