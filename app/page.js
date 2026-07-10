@@ -356,7 +356,7 @@ export default function Home() {
           <div id="hero-machine-col" className="hidden lg:flex" style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '55%', alignItems: 'center', justifyContent: 'flex-end', pointerEvents: 'none' }}>
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle,rgba(61,181,74,0.26) 0%,rgba(61,181,74,0.08) 48%,transparent 72%)', filter: 'blur(50px)', animation: 'vmGlow 5s ease-in-out infinite', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: 340, height: 50, background: 'radial-gradient(ellipse,rgba(61,181,74,0.45) 0%,transparent 70%)', filter: 'blur(20px)', borderRadius: '50%', pointerEvents: 'none' }} />
-            <Image src="/static-assets/hero5.webp" alt="AI Smart Vending Machines" width={546} height={546} sizes="(max-width: 1023px) 0px, 546px"
+            <Image src="/static-assets/hero6.webp" alt="AI Smart Vending Machines" width={546} height={477} sizes="(max-width: 1023px) 0px, 546px"
               style={{ position: 'relative', zIndex: 2, width: '94%', maxWidth: 546, maxHeight: '100%', objectFit: 'contain', objectPosition: 'center bottom', filter: 'drop-shadow(0 32px 64px rgba(0,0,0,0.65)) drop-shadow(0 0 60px rgba(61,181,74,0.28)) drop-shadow(0 0 20px rgba(61,181,74,0.15))' }} />
           </div>
         </div>
