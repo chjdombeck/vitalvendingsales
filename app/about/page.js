@@ -117,14 +117,14 @@ export default function About() {
             <p style={{ color: '#3D4D5C', maxWidth: 520, lineHeight: 1.75 }} className="mx-auto">Real experience, real care. Nick and the VVS crew bring over 15 years of hands-on vending industry knowledge to every client relationship.</p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-5">
-            <div className="rounded-2xl overflow-hidden" style={{ width: 160, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
+            <div className="rounded-2xl overflow-hidden" style={{ width: 190, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
               <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
-                <Image src="/static-assets/team/team-member-1.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="160px" />
+                <Image src="/static-assets/team/team-member-1.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="190px" />
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ width: 160, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
+            <div className="rounded-2xl overflow-hidden" style={{ width: 190, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
               <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
-                <Image src="/static-assets/team/team-member-2.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="160px" />
+                <Image src="/static-assets/team/team-member-2.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="190px" />
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ maxWidth: 300, width: '100%', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 4px 16px rgba(27,42,74,0.1), 0 16px 40px rgba(27,42,74,0.1)' }}>
@@ -138,19 +138,14 @@ export default function About() {
                 <p className="text-sm" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Ithaca College grad with 15+ years of hands-on vending industry experience. Nick built VVS on a simple belief: great equipment, honest guidance, and people who actually care make all the difference.</p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ width: 160, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
+            <div className="rounded-2xl overflow-hidden" style={{ width: 190, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
               <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
-                <Image src="/static-assets/team/team-member-3.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="160px" />
+                <Image src="/static-assets/team/team-member-3.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="190px" />
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ width: 160, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
+            <div className="rounded-2xl overflow-hidden" style={{ width: 190, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
               <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
-                <Image src="/static-assets/team/team-member-4.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="160px" />
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden" style={{ width: 160, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
-              <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
-                <Image src="/static-assets/team/team-member-5.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="160px" />
+                <Image src="/static-assets/team/team-member-5.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="190px" />
               </div>
             </div>
           </div>
