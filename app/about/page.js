@@ -112,20 +112,40 @@ export default function About() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#1a6b2a' }}>Meet the Owner</div>
-            <h2 className="font-black mb-4" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>The person behind VVS</h2>
-            <p style={{ color: '#3D4D5C', maxWidth: 520, lineHeight: 1.75 }} className="mx-auto">Real experience, real care. Nick brings over 15 years of hands-on vending industry knowledge to every client relationship.</p>
+            <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#1a6b2a' }}>Meet the Team</div>
+            <h2 className="font-black mb-4" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>The people behind VVS</h2>
+            <p style={{ color: '#3D4D5C', maxWidth: 520, lineHeight: 1.75 }} className="mx-auto">Real experience, real care. Nick and the VVS crew bring over 15 years of hands-on vending industry knowledge to every client relationship.</p>
           </div>
-          <div className="flex justify-center">
-            <div className="rounded-2xl overflow-hidden" style={{ maxWidth: 360, width: '100%', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 12px 32px rgba(27,42,74,0.07)' }}>
+          <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-5">
+            <div className="rounded-2xl overflow-hidden" style={{ width: 190, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
               <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
-                <Image src="/static-assets/Nick Headshot.jpg" alt="Nick Williamson, Founder of Vital Vending Sales" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+                <Image src="/static-assets/team/team-member-1.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="190px" />
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ width: 190, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
+              <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
+                <Image src="/static-assets/team/team-member-2.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="190px" />
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ maxWidth: 300, width: '100%', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 4px 16px rgba(27,42,74,0.1), 0 16px 40px rgba(27,42,74,0.1)' }}>
+              <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
+                <Image src="/static-assets/Nick Headshot.jpg" alt="Nick Williamson, Founder of Vital Vending Sales" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="(max-width: 767px) 90vw, 300px" />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,30,53,0.5) 0%, transparent 50%)', pointerEvents: 'none' }} />
               </div>
               <div className="p-6">
                 <div className="font-black text-lg mb-0.5" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>Nick Williamson</div>
                 <div className="font-semibold text-sm mb-3" style={{ color: '#3DB54A' }}>Founder &amp; Owner</div>
                 <p className="text-sm" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Ithaca College grad with 15+ years of hands-on vending industry experience. Nick built VVS on a simple belief: great equipment, honest guidance, and people who actually care make all the difference.</p>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ width: 190, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
+              <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
+                <Image src="/static-assets/team/team-member-3.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="190px" />
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ width: 190, border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 2px 8px rgba(27,42,74,0.06), 0 8px 20px rgba(27,42,74,0.06)' }}>
+              <div className="relative" style={{ aspectRatio: '4/5', background: '#F4F6F8' }}>
+                <Image src="/static-assets/team/team-member-4.jpg" alt="Member of the Vital Vending Sales team" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="190px" />
               </div>
             </div>
           </div>
