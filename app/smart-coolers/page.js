@@ -247,12 +247,6 @@ const MODAL_DATA = {
     specs: ['Part Number: 36700001', 'Warranty: 7 Years — industry-leading', 'Technology: TrueAI™ computer vision product recognition', 'Pushers: RTC pushers for fresh food & drinks', 'Cart: Real-time smart shopping cart', 'Loyalty: Integrated loyalty program', 'Payment: Cashless — WeVend or Cantaloupe', 'Lock: NAMA-compliant smart lock', 'Connectivity: Cloud-based remote monitoring (VMS)', 'Voice: Interactive voice assistant (can be enabled or disabled)', 'Security: Real-time theft alerts', 'Tracking: GPS asset tracking', 'Construction: Premium USA-made cooler', 'Support: Lifetime 24/7 U.S.-based hardware support'],
     features: 'The Spectra Elevate is USI\'s flagship — the only model backed by a 7-year warranty and built in the USA. RTC pushers for fresh food and drinks, an integrated loyalty program, real-time theft alerts, and GPS asset tracking make this the most operator-friendly smart cooler on the market. Premium construction, lifetime U.S. hardware support, and every Spectra standard feature included.',
   },
-  venderaLC510: {
-    name: 'Vendera LC-510 Smart Cooler', brand: 'Vendera', category: 'AI Smart Cooler', price: '$3,800',
-    img: '/static-assets/vvs_product_catalog/images/vendera-lc510-2.png', images: [], imgScale: 1.2,
-    specs: ['Model: LC-510', 'Warranty: 2 years parts / 5 years compressor (no labor)', 'Power: Standard 110V outlet — no installation crew needed', 'Connectivity: Cellular (4G LTE)', 'Dimensions: 28.4" W x 29.3" D', 'Shelves: 6', 'Capacity: Up to 400 products'],
-    features: 'The Vendera LC-510 is the most accessible AI smart cooler on the market — plug it into a standard 110V outlet and you\'re ready to go. No installation crew required. Built-in 4G cellular connectivity means it works anywhere, even without Wi-Fi. Six shelves hold up to 400 products. A 2-year parts warranty and 5-year compressor warranty back it up. The ideal entry point for operators who want smart cooler technology without the complexity.',
-  },
 };
 
 const VS_ROWS = [
@@ -266,7 +260,7 @@ const VS_ROWS = [
 
 const FAQS = [
   { q: 'What is an AI smart cooler?', a: 'An AI smart cooler is a next-generation unattended retail unit that uses cameras, weight sensors, and AI software to identify what customers take. Customers unlock the cooler with a card or mobile payment, grab their items, and the system charges them automatically when the door closes. No attendant or manual checkout required.' },
-  { q: 'How much does a smart cooler cost?', a: 'AI smart coolers from Vital Vending Sales start at $2,999 for the HAHA Mini and range up to $7,995 for the USI Spectra Elevate. USI Spectra models are priced from $4,995 to $7,995, and the Vendera LC-510 starts at $3,800. Contact us for current pricing and any ongoing fees or subscription costs tied to the cloud platform.' },
+  { q: 'How much does a smart cooler cost?', a: 'AI smart coolers from Vital Vending Sales start at $2,999 for the HAHA Mini and range up to $7,995 for the USI Spectra Elevate. USI Spectra models are priced from $4,995 to $7,995. Contact us for current pricing and any ongoing fees or subscription costs tied to the cloud platform.' },
   { q: 'What can I sell in a smart cooler?', a: 'Smart coolers are not limited to food and drinks. The HAHA units can vend almost any item larger than a tennis ball, including beverages, fresh food, snacks, over-the-counter medications, toiletries, electronics accessories, and personal care products.' },
   { q: 'Do smart coolers require Wi-Fi?', a: 'HAHA smart coolers support both Wi-Fi and 4G LTE connectivity. The FLEX model includes built-in cellular so it can operate in locations without reliable Wi-Fi. The cloud dashboard works on any internet-connected device.' },
   { q: 'How is a smart cooler different from a traditional vending machine?', a: 'Traditional vending machines dispense one item at a time through a mechanical selection process. Smart coolers let customers browse and grab items freely just like a store shelf. The AI detects what was taken and charges automatically. Smart coolers hold more variety, support fresh food, and generate higher per-visit revenue.' },
@@ -589,16 +583,6 @@ export default function SmartCoolers() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
             {USI_PRODUCTS.map(p => <USICard key={p.name} {...p} onOpen={setOpenId} />)}
-          </div>
-
-          {/* Vendera */}
-          <div className="mb-3 pt-8 pb-1 border-t mt-4" style={{ borderColor: '#e5e7eb' }}>
-            <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#6B7280' }}>Brand</div>
-            <div className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>Vendera Smart Coolers</div>
-            <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Plug-and-play AI smart cooler. Standard 110V outlet — no installation crew needed.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-            <USICard id="venderaLC510" img="/static-assets/vvs_product_catalog/images/vendera-lc510-2.png" name="Vendera LC-510" part="LC-510" tagline="Plug-and-play 110V smart cooler — no installation crew needed" specs={['Up to 400 items', '6 shelves', 'Cellular 4G']} price="$3,800" badge="AI Smart Cooler" badgeStyle={{}} brandLabel="Vendera" onOpen={setOpenId} imgScale={1.2} />
           </div>
 
         </div>

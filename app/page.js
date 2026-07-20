@@ -373,10 +373,10 @@ export default function Home() {
           <div className="max-w-2xl mb-14">
             <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1a6b2a', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1rem' }}>New Technology</div>
             <h2 className="font-black text-4xl mb-4" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.12 }}>AI Smart Coolers &amp;<br />Micro-Market Solutions</h2>
-            <p style={{ color: '#3D4D5C', lineHeight: 1.7 }}>HAHA Smart Coolers are our most popular AI-powered solution, with over 100 units deployed throughout New England. We also offer additional smart cooler solutions, including USI Spectra and Vendera, to ensure every customer has the right fit for their business.</p>
+            <p style={{ color: '#3D4D5C', lineHeight: 1.7 }}>HAHA Smart Coolers are our most popular AI-powered solution, with over 100 units deployed throughout New England. We also offer additional smart cooler solutions, including USI Spectra, to ensure every customer has the right fit for their business.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {/* HAHA Pro */}
             <Link href="/smart-coolers" className="group rounded-2xl overflow-hidden transition-shadow duration-300" style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 2px 12px rgba(27,42,74,0.06)' }}>
               <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', background: '#F4F6F8' }}>
@@ -411,26 +411,6 @@ export default function Home() {
                   <div>
                     <div className="text-xs" style={{ color: '#6B7280' }}>Starting at</div>
                     <div className="font-black text-xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>$6,495</div>
-                  </div>
-                  <span className="px-4 py-2 rounded-lg text-sm font-bold text-white" style={{ background: '#3DB54A' }}>Get a Quote</span>
-                </div>
-              </div>
-            </Link>
-
-            {/* Vendera LC-510 */}
-            <Link href="/smart-coolers" className="group rounded-2xl overflow-hidden transition-shadow duration-300" style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 2px 12px rgba(27,42,74,0.06)' }}>
-              <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', background: '#F4F6F8' }}>
-                <Image src="/static-assets/vvs_product_catalog/images/vendera-lc510-2.png" alt="Vendera LC-510 AI smart cooler" fill sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 23vw" className="object-contain p-4" />
-                <div className="absolute top-3 left-3"><span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#1B2A4A', color: '#fff', padding: '4px 10px', borderRadius: 4 }}>Entry-Level AI</span></div>
-              </div>
-              <div className="p-5">
-                <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: '#6B7280' }}>Vendera Smart Cooler</div>
-                <h3 className="font-bold text-lg mb-1" style={{ color: '#1B2A4A', letterSpacing: '-0.01em' }}>Vendera LC-510</h3>
-                <p className="text-sm mb-4" style={{ color: '#3D4D5C', lineHeight: 1.6 }}>110V plug-and-play AI smart cooler. 6 shelves, up to 400 products, cellular connectivity.</p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-xs" style={{ color: '#6B7280' }}>Starting at</div>
-                    <div className="font-black text-xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>$3,800</div>
                   </div>
                   <span className="px-4 py-2 rounded-lg text-sm font-bold text-white" style={{ background: '#3DB54A' }}>Get a Quote</span>
                 </div>
