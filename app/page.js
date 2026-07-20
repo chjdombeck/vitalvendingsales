@@ -268,7 +268,6 @@ export default function Home() {
 
     const isMobile = window.innerWidth < 768;
     const beamCount = isMobile ? 12 : 28;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function resize() {
       const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 2 : 3);
@@ -299,14 +298,9 @@ export default function Home() {
 
     resize();
     window.addEventListener('resize', resize, { passive: true });
-    const onVisibility = () => { if (document.hidden) cancelAnimationFrame(rafId); else if (!prefersReducedMotion) animate(); };
+    const onVisibility = () => { if (document.hidden) cancelAnimationFrame(rafId); else animate(); };
     document.addEventListener('visibilitychange', onVisibility);
-    if (prefersReducedMotion) {
-      animate();
-      cancelAnimationFrame(rafId);
-    } else {
-      animate();
-    }
+    animate();
 
     return () => {
       cancelAnimationFrame(rafId);
