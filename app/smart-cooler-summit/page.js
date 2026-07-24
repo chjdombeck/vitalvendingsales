@@ -26,6 +26,7 @@ const BRANDS = [
 
 function RegisterForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
   const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', attendees: '', invited: '', referrer_name: '', referrer_email: '' });
 
   const inputCls = 'w-full px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-shadow duration-200';
@@ -34,6 +35,17 @@ function RegisterForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setError('');
+
+    if (!data.invited) {
+      setError('Please let us know if you were invited by another attendee.');
+      return;
+    }
+    if (data.invited === 'yes' && !data.referrer_name.trim()) {
+      setError('Please tell us who invited you.');
+      return;
+    }
+
     const referredBy = data.invited === 'yes' ? data.referrer_name : '';
     const referrerEmail = data.invited === 'yes' ? data.referrer_email : '';
     await submitToHubSpot({
@@ -75,28 +87,28 @@ function RegisterForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls} style={{ color: '#1B2A4A' }}>First Name</label>
+          <label className={labelCls} style={{ color: '#1B2A4A' }}>First Name *</label>
           <input name="first_name" type="text" placeholder="John" required value={data.first_name} onChange={(e) => setData((p) => ({ ...p, first_name: e.target.value }))} className={inputCls} style={inputStyle} />
         </div>
         <div>
-          <label className={labelCls} style={{ color: '#1B2A4A' }}>Last Name</label>
+          <label className={labelCls} style={{ color: '#1B2A4A' }}>Last Name *</label>
           <input name="last_name" type="text" placeholder="Smith" required value={data.last_name} onChange={(e) => setData((p) => ({ ...p, last_name: e.target.value }))} className={inputCls} style={inputStyle} />
         </div>
       </div>
       <div>
-        <label className={labelCls} style={{ color: '#1B2A4A' }}>Email</label>
+        <label className={labelCls} style={{ color: '#1B2A4A' }}>Email *</label>
         <input name="email" type="email" placeholder="john@example.com" required value={data.email} onChange={(e) => setData((p) => ({ ...p, email: e.target.value }))} className={inputCls} style={inputStyle} />
       </div>
       <div>
-        <label className={labelCls} style={{ color: '#1B2A4A' }}>Phone Number</label>
-        <input name="phone" type="tel" placeholder="(413) 555-0000" value={data.phone} onChange={(e) => setData((p) => ({ ...p, phone: e.target.value }))} className={inputCls} style={inputStyle} />
+        <label className={labelCls} style={{ color: '#1B2A4A' }}>Phone Number *</label>
+        <input name="phone" type="tel" placeholder="(413) 555-0000" required value={data.phone} onChange={(e) => setData((p) => ({ ...p, phone: e.target.value }))} className={inputCls} style={inputStyle} />
       </div>
       <div>
-        <label className={labelCls} style={{ color: '#1B2A4A' }}>Number of Attendees</label>
-        <input name="attendees" type="number" min="1" placeholder="1" value={data.attendees} onChange={(e) => setData((p) => ({ ...p, attendees: e.target.value }))} className={inputCls} style={inputStyle} />
+        <label className={labelCls} style={{ color: '#1B2A4A' }}>Number of Attendees *</label>
+        <input name="attendees" type="number" min="1" placeholder="1" required value={data.attendees} onChange={(e) => setData((p) => ({ ...p, attendees: e.target.value }))} className={inputCls} style={inputStyle} />
       </div>
       <div>
-        <label className={labelCls} style={{ color: '#1B2A4A' }}>Were you invited to the Summit by another attendee?</label>
+        <label className={labelCls} style={{ color: '#1B2A4A' }}>Were you invited to the Summit by another attendee? *</label>
         <div className="flex gap-3">
           {['yes', 'no'].map((opt) => (
             <button
@@ -125,6 +137,9 @@ function RegisterForm() {
             <p className="text-xs mt-1.5" style={{ color: '#6B7280' }}>So we can make sure they get their referral credit.</p>
           </div>
         </>
+      )}
+      {error && (
+        <p className="text-sm font-semibold text-center" style={{ color: '#C0392B' }}>{error}</p>
       )}
       <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white transition-colors duration-200" style={{ background: '#3DB54A' }}>
         Reserve My Spot — It&apos;s Free
