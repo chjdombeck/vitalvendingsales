@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { submitToHubSpot } from '../../lib/hubspot';
+import { submitToGHLLead } from '../../lib/ghl';
 
 const MACHINES = [
   { id: 'evoke6', category: 'snack', brand: 'USI', name: 'USI Evoke 6', desc: 'Largest capacity snack machine for high-volume locations', specs: ['733 items', '83 selections', 'ADA compliant'], price: '$6,316', img: '/static-assets/vvs_product_catalog/images/usi-evoke-6-snack-vending-machine-2.jpg' },
@@ -55,14 +56,23 @@ export default function VendingMachines() {
     const machine = MACHINES.find(m => m.id === modal);
     const [firstname, ...rest] = form.name.trim().split(' ');
     try {
+      const message = machine ? `Interested in: ${machine.name}\n\n${form.message}` : form.message;
       await submitToHubSpot({
         firstname,
         lastname: rest.join(' '),
         email: form.email,
         phone: form.phone,
         i_m_interested_in: 'vending-new',
-        message: machine ? `Interested in: ${machine.name}\n\n${form.message}` : form.message,
+        message,
       });
+      submitToGHLLead({
+        first_name: firstname,
+        last_name: rest.join(' '),
+        email: form.email,
+        phone: form.phone,
+        interest: 'vending-new',
+        message,
+      }).catch(() => {});
       setSent(true);
     } catch {}
   }
@@ -411,6 +421,14 @@ function VendingMachineForm() {
       i_m_interested_in: 'vending-new',
       message: data.message,
     });
+    submitToGHLLead({
+      first_name: data.first_name,
+      last_name: data.last_name,
+      email: data.email,
+      phone: data.phone,
+      interest: 'vending-new',
+      message: data.message,
+    }).catch(() => {});
     setSubmitted(true);
   }
 

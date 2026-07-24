@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { submitToHubSpot, SUMMIT_FORM_GUID } from '../../lib/hubspot';
+import { submitToGHLSummit } from '../../lib/ghl';
 
 const LEARN_ITEMS = [
   'Physical & operational review of 2 leading AI smart cooler brands — HAHA and USI Spectra',
@@ -25,7 +26,7 @@ const BRANDS = [
 
 function RegisterForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', attendees: '' });
+  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', attendees: '', invited: '', referrer_name: '', referrer_email: '' });
 
   const inputCls = 'w-full px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-shadow duration-200';
   const inputStyle = { borderColor: '#e5e7eb', background: '#fff', color: '#1B2A4A' };
@@ -33,14 +34,28 @@ function RegisterForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    const referredBy = data.invited === 'yes' ? data.referrer_name : '';
+    const referrerEmail = data.invited === 'yes' ? data.referrer_email : '';
     await submitToHubSpot({
       firstname: data.first_name,
       lastname: data.last_name,
       email: data.email,
       phone: data.phone,
       number_of_attendees: data.attendees || '1',
+      referred_by: referredBy,
+      referrer_email: referrerEmail,
       message: 'RSVP for the New England Smart Cooler Summit (Aug 8, 2026, Apex Entertainment, Marlborough MA).',
     }, SUMMIT_FORM_GUID);
+    submitToGHLSummit({
+      first_name: data.first_name,
+      last_name: data.last_name,
+      email: data.email,
+      phone: data.phone,
+      attendees: data.attendees || '1',
+      referred_by: referredBy,
+      referrer_email: referrerEmail,
+      message: 'RSVP for the New England Smart Cooler Summit (Aug 8, 2026, Apex Entertainment, Marlborough MA).',
+    }).catch(() => {});
     setSubmitted(true);
   }
 
@@ -80,6 +95,37 @@ function RegisterForm() {
         <label className={labelCls} style={{ color: '#1B2A4A' }}>Number of Attendees</label>
         <input name="attendees" type="number" min="1" placeholder="1" value={data.attendees} onChange={(e) => setData((p) => ({ ...p, attendees: e.target.value }))} className={inputCls} style={inputStyle} />
       </div>
+      <div>
+        <label className={labelCls} style={{ color: '#1B2A4A' }}>Were you invited to the Summit by another attendee?</label>
+        <div className="flex gap-3">
+          {['yes', 'no'].map((opt) => (
+            <button
+              key={opt}
+              type="button"
+              onClick={() => setData((p) => ({ ...p, invited: opt, ...(opt === 'no' ? { referrer_name: '', referrer_email: '' } : {}) }))}
+              className="flex-1 px-4 py-2.5 rounded-lg border text-sm font-semibold capitalize transition-colors duration-200"
+              style={data.invited === opt
+                ? { borderColor: '#3DB54A', background: '#D6F0DA', color: '#1B2A4A' }
+                : { borderColor: '#e5e7eb', background: '#fff', color: '#6B7280' }}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+      </div>
+      {data.invited === 'yes' && (
+        <>
+          <div>
+            <label className={labelCls} style={{ color: '#1B2A4A' }}>Who invited you?</label>
+            <input name="referrer_name" type="text" placeholder="Jane Doe" required value={data.referrer_name} onChange={(e) => setData((p) => ({ ...p, referrer_name: e.target.value }))} className={inputCls} style={inputStyle} />
+          </div>
+          <div>
+            <label className={labelCls} style={{ color: '#1B2A4A' }}>Their Email (optional)</label>
+            <input name="referrer_email" type="email" placeholder="jane@example.com" value={data.referrer_email} onChange={(e) => setData((p) => ({ ...p, referrer_email: e.target.value }))} className={inputCls} style={inputStyle} />
+            <p className="text-xs mt-1.5" style={{ color: '#6B7280' }}>So we can make sure they get their referral credit.</p>
+          </div>
+        </>
+      )}
       <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white transition-colors duration-200" style={{ background: '#3DB54A' }}>
         Reserve My Spot — It&apos;s Free
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

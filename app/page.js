@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { submitToHubSpot } from '../lib/hubspot';
+import { submitToGHLLead } from '../lib/ghl';
 
 const REVIEWS = [
   { name: 'John Ragno', time: '7 months ago', text: '"Nick is trustworthy, honest, and takes his time to help you find the right machine, whether you\'re starting out or expanding your vending business. He\'s knowledgeable, patient, and goes above and beyond to ensure you understand your options. Excellent service from start to finish."' },
@@ -140,6 +141,14 @@ function ContactForm() {
       i_m_interested_in: formData.interest,
       message: formData.message,
     });
+    submitToGHLLead({
+      first_name: formData.first_name,
+      last_name: formData.last_name,
+      email: formData.email,
+      phone: formData.phone,
+      interest: formData.interest,
+      message: formData.message,
+    }).catch(() => {});
     setSubmitted(true);
   }
 
