@@ -21,13 +21,13 @@ export const metadata = {
     siteName: 'Vital Vending Sales',
     title: 'AI Smart Coolers & Vending Machines | Vital Vending Sales',
     description: 'AI-powered smart coolers, vending machines, and micro-market solutions for the Northeast. 15+ years experience. Free consultation.',
-    images: ['/static-assets/hero5.webp'],
+    images: ['/static-assets/hero6.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Smart Coolers & Vending Machines | Vital Vending Sales',
     description: 'AI-powered smart coolers, vending machines, and micro-market solutions for the Northeast. 15+ years experience. Free consultation.',
-    images: ['/static-assets/hero5.webp'],
+    images: ['/static-assets/hero6.webp'],
   },
 };
 
