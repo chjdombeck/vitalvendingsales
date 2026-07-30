@@ -216,7 +216,7 @@ function ContactForm() {
         Send Message — It&apos;s Free
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </button>
-      <p className="text-center text-xs" style={{ color: '#6B7280' }}>By submitting, you agree to be contacted by Vital Vending Sales. We never share your info.</p>
+      <p className="text-center text-xs" style={{ color: '#6B7280' }}>By submitting, you agree to be contacted by Vital Vending Sales LLC regarding your inquiry. See our <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a> for how we handle your information.</p>
     </form>
   );
 }
