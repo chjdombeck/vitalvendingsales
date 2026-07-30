@@ -46,7 +46,7 @@ function getBadge(m) {
 export default function VendingMachines() {
   const [active, setActive] = useState('all');
   const [modal, setModal] = useState(null);
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', sms_consent: false });
   const [sent, setSent] = useState(false);
 
   const filtered = active === 'all' ? MACHINES : MACHINES.filter(m => m.category === active);
@@ -159,8 +159,8 @@ export default function VendingMachines() {
               return (
                 <div key={m.id}
                   role="button" tabIndex={0} aria-label={`Quick view ${m.name}`}
-                  onClick={() => { setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); }}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); } }}
+                  onClick={() => { setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '', sms_consent: false }); }}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '', sms_consent: false }); } }}
                   className="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
                   style={{ border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)', cursor: 'pointer' }}>
                   <div className="relative" style={{ height: 200, background: '#F4F6F8' }}>
@@ -182,7 +182,7 @@ export default function VendingMachines() {
                         <div className="font-black text-xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>{m.price}</div>
                       </div>
                       <button
-                        onClick={(e) => { e.stopPropagation(); setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); }}
+                        onClick={(e) => { e.stopPropagation(); setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '', sms_consent: false }); }}
                         className="text-xs font-bold py-2.5 px-4 rounded-xl text-white"
                         style={{ background: '#3DB54A', border: 'none', cursor: 'pointer' }}
                       >
@@ -364,6 +364,13 @@ export default function VendingMachines() {
                           ))}
                           <textarea placeholder="Any questions or special requirements?" rows={3} value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                             className="w-full px-4 py-3 rounded-xl text-sm resize-none" style={{ border: '1.5px solid #e5e7eb', outline: 'none', color: '#1B2A4A' }} />
+                          <div className="flex items-start gap-2">
+                            <input id={`sms-consent-${m?.id}`} type="checkbox" checked={form.sms_consent} onChange={e => setForm(f => ({ ...f, sms_consent: e.target.checked }))}
+                              className="mt-0.5 flex-shrink-0" style={{ width: 15, height: 15, accentColor: '#3DB54A' }} />
+                            <label htmlFor={`sms-consent-${m?.id}`} className="text-xs" style={{ color: '#6B7280', lineHeight: 1.5 }}>
+                              I consent to receive marketing and promotional SMS messages from Vital Vending Sales LLC at the phone number provided. Msg frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out. <a href="/terms-of-service" className="underline" style={{ color: '#3DB54A' }}>Terms</a> &amp; <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a>
+                            </label>
+                          </div>
                           <button type="submit" className="w-full font-bold py-3 rounded-xl text-white" style={{ background: 'rgba(61,181,74,0.9)', border: 'none', cursor: 'pointer' }}>Send Message</button>
                         </form>
                         <a href="tel:4132823776" className="flex items-center justify-center gap-2 font-semibold rounded-xl px-6 py-3 text-sm w-full mt-3" style={{ color: '#1B2A4A', background: '#F4F6F8', textDecoration: 'none' }}>
@@ -397,7 +404,7 @@ function VMFaqItem({ q, a }) {
 
 function VendingMachineForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', message: '' });
+  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', message: '', sms_consent: false });
   const inputCls = 'w-full px-4 py-3 rounded-lg border text-sm focus:outline-none';
   const inputStyle = { borderColor: '#e5e7eb', color: '#1B2A4A' };
 
@@ -441,6 +448,12 @@ function VendingMachineForm() {
       <div><label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#1B2A4A' }}>Email Address</label><input type="email" required placeholder="john@example.com" value={data.email} onChange={e => setData(p => ({ ...p, email: e.target.value }))} className={inputCls} style={inputStyle} /></div>
       <div><label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#1B2A4A' }}>Phone Number</label><input type="tel" placeholder="(413) 555-0100" value={data.phone} onChange={e => setData(p => ({ ...p, phone: e.target.value }))} className={inputCls} style={inputStyle} /></div>
       <div><label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#1B2A4A' }}>Tell Us About Your Location</label><textarea rows={3} placeholder="E.g. office of 80 people, looking for a snack and beverage combo..." value={data.message} onChange={e => setData(p => ({ ...p, message: e.target.value }))} className={inputCls} style={{ ...inputStyle, resize: 'none' }} /></div>
+      <div className="flex items-start gap-2.5">
+        <input id="vm-sms-consent" type="checkbox" checked={data.sms_consent} onChange={e => setData(p => ({ ...p, sms_consent: e.target.checked }))} className="mt-0.5 flex-shrink-0" style={{ width: 16, height: 16, accentColor: '#3DB54A' }} />
+        <label htmlFor="vm-sms-consent" className="text-xs" style={{ color: '#6B7280', lineHeight: 1.5 }}>
+          I consent to receive marketing and promotional SMS messages from Vital Vending Sales LLC at the phone number provided. Message frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt out. View our <a href="/terms-of-service" className="underline" style={{ color: '#3DB54A' }}>Terms of Service</a> and <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a>.
+        </label>
+      </div>
       <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white" style={{ background: '#3DB54A' }}>
         Send My Request
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

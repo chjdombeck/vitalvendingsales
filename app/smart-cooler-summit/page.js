@@ -27,7 +27,7 @@ const BRANDS = [
 function RegisterForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
-  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', attendees: '', invited: '', referrer_name: '', referrer_email: '' });
+  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', attendees: '', invited: '', referrer_name: '', referrer_email: '', sms_consent: false });
 
   const inputCls = 'w-full px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-shadow duration-200';
   const inputStyle = { borderColor: '#e5e7eb', background: '#fff', color: '#1B2A4A' };
@@ -45,7 +45,6 @@ function RegisterForm() {
       setError('Please tell us who invited you.');
       return;
     }
-
     const referredBy = data.invited === 'yes' ? data.referrer_name : '';
     const referrerEmail = data.invited === 'yes' ? data.referrer_email : '';
     await submitToHubSpot({
@@ -138,6 +137,12 @@ function RegisterForm() {
           </div>
         </>
       )}
+      <div className="flex items-start gap-2.5">
+        <input id="summit-sms-consent" type="checkbox" checked={data.sms_consent} onChange={(e) => setData((p) => ({ ...p, sms_consent: e.target.checked }))} className="mt-0.5 flex-shrink-0" style={{ width: 16, height: 16, accentColor: '#3DB54A' }} />
+        <label htmlFor="summit-sms-consent" className="text-xs" style={{ color: '#6B7280', lineHeight: 1.5 }}>
+          I consent to receive marketing and promotional SMS messages from Vital Vending Sales LLC at the phone number provided, including messages about the Summit and future events. Message frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt out. View our <a href="/terms-of-service" className="underline" style={{ color: '#3DB54A' }}>Terms of Service</a> and <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a>.
+        </label>
+      </div>
       {error && (
         <p className="text-sm font-semibold text-center" style={{ color: '#C0392B' }}>{error}</p>
       )}

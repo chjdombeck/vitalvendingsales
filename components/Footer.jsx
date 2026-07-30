@@ -117,7 +117,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-white/30 text-xs">
-            &copy; 2026 Vital Vending Sales. All rights reserved. &middot; Ludlow, Massachusetts &middot;{' '}
+            &copy; 2026 Vital Vending Sales LLC. All rights reserved. &middot; Ludlow, Massachusetts &middot;{' '}
             <Link href="/privacy-policy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
           </div>
           <div className="flex items-center gap-4">

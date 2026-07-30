@@ -727,7 +727,7 @@ export default function SmartCoolers() {
 
 function SmartCoolerForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', message: '' });
+  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', message: '', sms_consent: false });
   const inputCls = 'w-full px-4 py-3 rounded-lg border text-sm focus:outline-none transition-shadow duration-200';
   const inputStyle = { borderColor: '#e5e7eb', color: '#1B2A4A' };
 
@@ -771,6 +771,12 @@ function SmartCoolerForm() {
       <div><label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#1B2A4A' }}>Email Address</label><input type="email" required placeholder="john@example.com" value={data.email} onChange={e => setData(p => ({ ...p, email: e.target.value }))} className={inputCls} style={inputStyle} /></div>
       <div><label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#1B2A4A' }}>Phone Number</label><input type="tel" placeholder="(413) 555-0100" value={data.phone} onChange={e => setData(p => ({ ...p, phone: e.target.value }))} className={inputCls} style={inputStyle} /></div>
       <div><label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#1B2A4A' }}>Tell Us About Your Location</label><textarea rows={3} placeholder="E.g. office of 50 people, looking for a smart cooler..." value={data.message} onChange={e => setData(p => ({ ...p, message: e.target.value }))} className={inputCls} style={{ ...inputStyle, resize: 'none' }} /></div>
+      <div className="flex items-start gap-2.5">
+        <input id="sc-sms-consent" type="checkbox" checked={data.sms_consent} onChange={e => setData(p => ({ ...p, sms_consent: e.target.checked }))} className="mt-0.5 flex-shrink-0" style={{ width: 16, height: 16, accentColor: '#3DB54A' }} />
+        <label htmlFor="sc-sms-consent" className="text-xs" style={{ color: '#6B7280', lineHeight: 1.5 }}>
+          I consent to receive marketing and promotional SMS messages from Vital Vending Sales LLC at the phone number provided. Message frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt out. View our <a href="/terms-of-service" className="underline" style={{ color: '#3DB54A' }}>Terms of Service</a> and <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a>.
+        </label>
+      </div>
       <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white" style={{ background: '#3DB54A' }}>
         Send My Request
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

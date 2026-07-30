@@ -125,10 +125,11 @@ function TestimonialsCarousel() {
 
 function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ first_name: '', last_name: '', email: '', phone: '', interest: '', message: '' });
+  const [formData, setFormData] = useState({ first_name: '', last_name: '', email: '', phone: '', interest: '', message: '', sms_consent: false });
 
   function handleChange(e) {
-    setFormData(p => ({ ...p, [e.target.name]: e.target.value }));
+    const { name, type, checked, value } = e.target;
+    setFormData(p => ({ ...p, [name]: type === 'checkbox' ? checked : value }));
   }
 
   async function handleSubmit(e) {
@@ -203,6 +204,12 @@ function ContactForm() {
       <div>
         <label htmlFor="contact-message" className={labelCls} style={{ color: '#1B2A4A' }}>Message</label>
         <textarea id="contact-message" name="message" rows={3} placeholder="Tell us a bit about your goals or questions..." value={formData.message} onChange={handleChange} className={inputCls} style={{ ...inputStyle, resize: 'none' }} />
+      </div>
+      <div className="flex items-start gap-2.5">
+        <input id="contact-sms-consent" name="sms_consent" type="checkbox" checked={formData.sms_consent} onChange={handleChange} className="mt-0.5 flex-shrink-0" style={{ width: 16, height: 16, accentColor: '#3DB54A' }} />
+        <label htmlFor="contact-sms-consent" className="text-xs" style={{ color: '#6B7280', lineHeight: 1.5 }}>
+          I consent to receive marketing and promotional SMS messages from Vital Vending Sales LLC at the phone number provided. Message frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt out. View our <a href="/terms-of-service" className="underline" style={{ color: '#3DB54A' }}>Terms of Service</a> and <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a>.
+        </label>
       </div>
       <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white transition-colors duration-200"
         style={{ background: '#3DB54A' }}>
