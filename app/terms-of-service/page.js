@@ -24,7 +24,7 @@ export default function TermsOfService() {
       <section className="py-14 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <p style={p}>Welcome to Vital Vending Sales (&quot;VVS,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;). These Terms of Service (&quot;Terms&quot;) govern your access to and use of the website at <a href="https://www.vitalvendingsales.com" style={a}>www.vitalvendingsales.com</a> (the &quot;Site&quot;), including any consultation request forms, contact forms, vending parts store, and content available on the Site (collectively, the &quot;Services&quot;). By accessing or using the Site, submitting a form, or purchasing parts through our online store, you agree to be bound by these Terms. If you do not agree, please do not use the Site.</p>
+          <p style={p}>Welcome to Vital Vending Sales LLC (&quot;VVS,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;). These Terms of Service (&quot;Terms&quot;) govern your access to and use of the website at <a href="https://www.vitalvendingsales.com" style={a}>www.vitalvendingsales.com</a> (the &quot;Site&quot;), including any consultation request forms, contact forms, vending parts store, and content available on the Site (collectively, the &quot;Services&quot;). By accessing or using the Site, submitting a form, or purchasing parts through our online store, you agree to be bound by these Terms. If you do not agree, please do not use the Site.</p>
 
           <p style={p}>These Terms should be read together with our <a href="/privacy-policy" style={a}>Privacy Policy</a>, which explains how we collect, use, and protect your information and is incorporated into these Terms by reference.</p>
 

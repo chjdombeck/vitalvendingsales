@@ -21,7 +21,6 @@ export default function sitemap() {
     { url: `${BASE}/smart-cooler-summit`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/smart-coolers`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/vending-machines`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${BASE}/vending-parts`, lastModified, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/about`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/reviews`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/blog`, lastModified, changeFrequency: 'weekly', priority: 0.8 },

@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
       <section className="py-14 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <p style={p}>Vital Vending Sales (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the website at <a href="https://www.vitalvendingsales.com" style={a}>www.vitalvendingsales.com</a>. This Privacy Policy explains what personal information we collect, how we use it, and your rights regarding that information. By using our website you agree to the practices described in this policy.</p>
+          <p style={p}>Vital Vending Sales LLC (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the website at <a href="https://www.vitalvendingsales.com" style={a}>www.vitalvendingsales.com</a>. This Privacy Policy explains what personal information we collect, how we use it, and your rights regarding that information. By using our website you agree to the practices described in this policy.</p>
 
           <h2 style={h2}>1. Information We Collect</h2>
           <p style={p}>We collect information you provide directly when you:</p>
