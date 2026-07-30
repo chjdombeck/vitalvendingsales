@@ -140,7 +140,7 @@ function RegisterForm() {
       <div className="flex items-start gap-2.5">
         <input id="summit-sms-consent" type="checkbox" checked={data.sms_consent} onChange={(e) => setData((p) => ({ ...p, sms_consent: e.target.checked }))} className="mt-0.5 flex-shrink-0" style={{ width: 16, height: 16, accentColor: '#3DB54A' }} />
         <label htmlFor="summit-sms-consent" className="text-xs" style={{ color: '#6B7280', lineHeight: 1.5 }}>
-          I consent to receive marketing and promotional SMS messages from Vital Vending Sales LLC at the phone number provided, including messages about the Summit and future events. Message frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt out. View our <a href="/terms-of-service" className="underline" style={{ color: '#3DB54A' }}>Terms of Service</a> and <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a>.
+          I consent to receive marketing and promotional SMS messages from Vital Vending Sales LLC at the phone number provided, including messages about the Summit and future events. Message frequency may vary. Message &amp; Data rates may apply. Reply HELP for help or STOP to opt-out. View our <a href="/terms-of-service" className="underline" style={{ color: '#3DB54A' }}>Terms of Service</a> and <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a>.
         </label>
       </div>
       {error && (
