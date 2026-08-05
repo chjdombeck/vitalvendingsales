@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { submitToHubSpot, SUMMIT_FORM_GUID } from '../../lib/hubspot';
 import { submitToGHLSummit } from '../../lib/ghl';
+import SuccessModal from '../../components/SuccessModal';
 
 const LEARN_ITEMS = [
   'Physical & operational review of 2 leading AI smart cooler brands — HAHA and USI Spectra',
@@ -24,10 +25,13 @@ const BRANDS = [
   { name: 'USI Spectra', img: '/static-assets/vvs_product_catalog/images/spectra-pro-2.webp' },
 ];
 
+const EMPTY_SUMMIT_FORM = { first_name: '', last_name: '', email: '', phone: '', attendees: '', invited: '', referrer_name: '', referrer_email: '', sms_consent: false };
+
 function RegisterForm() {
+  const [showModal, setShowModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
-  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', attendees: '', invited: '', referrer_name: '', referrer_email: '', sms_consent: false });
+  const [data, setData] = useState(EMPTY_SUMMIT_FORM);
 
   const inputCls = 'w-full px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-shadow duration-200';
   const inputStyle = { borderColor: '#e5e7eb', background: '#fff', color: '#1B2A4A' };
@@ -35,6 +39,7 @@ function RegisterForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (submitted) return;
     setError('');
 
     if (!data.invited) {
@@ -67,22 +72,13 @@ function RegisterForm() {
       referrer_email: referrerEmail,
       message: 'RSVP for the New England Smart Cooler Summit (Aug 8, 2026, Apex Entertainment, Marlborough MA).',
     }).catch(() => {});
+    setData(EMPTY_SUMMIT_FORM);
     setSubmitted(true);
-  }
-
-  if (submitted) {
-    return (
-      <div className="text-center py-10">
-        <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#D6F0DA' }}>
-          <svg className="w-6 h-6" style={{ color: '#3DB54A' }} fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-        </div>
-        <div className="font-bold text-xl mb-1" style={{ color: '#1B2A4A' }}>You&apos;re Registered!</div>
-        <div className="text-sm" style={{ color: '#6B7280' }}>We&apos;ll send you the details for August 8th. See you at Apex Entertainment.</div>
-      </div>
-    );
+    setShowModal(true);
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
@@ -146,12 +142,23 @@ function RegisterForm() {
       {error && (
         <p className="text-sm font-semibold text-center" style={{ color: '#C0392B' }}>{error}</p>
       )}
-      <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white transition-colors duration-200" style={{ background: '#3DB54A' }}>
-        Reserve My Spot — It&apos;s Free
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      <button type="submit" disabled={submitted} className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white transition-colors duration-200" style={{ background: submitted ? '#8CA88F' : '#3DB54A', cursor: submitted ? 'not-allowed' : 'pointer' }}>
+        {submitted ? (
+          <>
+            Message Received
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+          </>
+        ) : (
+          <>
+            Reserve My Spot — It&apos;s Free
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </>
+        )}
       </button>
       <p className="text-center text-xs" style={{ color: '#6B7280' }}>Free to attend. Breakfast &amp; refreshments provided. Space is limited.</p>
     </form>
+    <SuccessModal open={showModal} onClose={() => setShowModal(false)} />
+    </>
   );
 }
 

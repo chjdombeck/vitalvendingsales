@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { submitToHubSpot } from '../../lib/hubspot';
 import { submitToGHLLead } from '../../lib/ghl';
+import SuccessModal from '../../components/SuccessModal';
 
 const HAHA_PRODUCTS = [
   { id: 'haha-mini', img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', name: 'HAHA Mini', model: 'US360C', tagline: 'Compact and capable — perfect for tighter spaces', specs: ['252 bottles', '6 shelves', 'AI recognition'], price: '$2,999', badge: 'AI Smart Cooler', badgeStyle: {} },
@@ -725,24 +726,18 @@ export default function SmartCoolers() {
   );
 }
 
+const EMPTY_SC_FORM = { first_name: '', last_name: '', email: '', phone: '', message: '', sms_consent: false };
+
 function SmartCoolerForm() {
+  const [showModal, setShowModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [data, setData] = useState({ first_name: '', last_name: '', email: '', phone: '', message: '', sms_consent: false });
+  const [data, setData] = useState(EMPTY_SC_FORM);
   const inputCls = 'w-full px-4 py-3 rounded-lg border text-sm focus:outline-none transition-shadow duration-200';
   const inputStyle = { borderColor: '#e5e7eb', color: '#1B2A4A' };
 
-  if (submitted) return (
-    <div className="text-center py-6">
-      <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#D6F0DA' }}>
-        <svg className="w-6 h-6" style={{ color: '#3DB54A' }} fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-      </div>
-      <div className="font-bold text-xl mb-1" style={{ color: '#1B2A4A' }}>Request Sent!</div>
-      <div className="text-sm" style={{ color: '#6B7280' }}>We&apos;ll be in touch within 1 business day.</div>
-    </div>
-  );
-
   async function handleSubmit(e) {
     e.preventDefault();
+    if (submitted) return;
     await submitToHubSpot({
       firstname: data.first_name,
       lastname: data.last_name,
@@ -759,10 +754,13 @@ function SmartCoolerForm() {
       interest: 'smart-cooler',
       message: data.message,
     }).catch(() => {});
+    setData(EMPTY_SC_FORM);
     setSubmitted(true);
+    setShowModal(true);
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-4">
         <div><label className="block text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#1B2A4A' }}>First Name</label><input type="text" required placeholder="John" value={data.first_name} onChange={e => setData(p => ({ ...p, first_name: e.target.value }))} className={inputCls} style={inputStyle} /></div>
@@ -777,11 +775,22 @@ function SmartCoolerForm() {
           I consent to receive marketing and promotional SMS messages from Vital Vending Sales LLC at the phone number provided. Message frequency may vary. Message &amp; Data rates may apply. Reply HELP for help or STOP to opt-out. View our <a href="/terms-of-service" className="underline" style={{ color: '#3DB54A' }}>Terms of Service</a> and <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a>.
         </label>
       </div>
-      <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white" style={{ background: '#3DB54A' }}>
-        Send My Request
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      <button type="submit" disabled={submitted} className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white" style={{ background: submitted ? '#8CA88F' : '#3DB54A', cursor: submitted ? 'not-allowed' : 'pointer' }}>
+        {submitted ? (
+          <>
+            Message Received
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+          </>
+        ) : (
+          <>
+            Send My Request
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </>
+        )}
       </button>
       <p className="text-xs text-center" style={{ color: '#6B7280' }}>We respond within one business day. No spam, ever.</p>
     </form>
+    <SuccessModal open={showModal} onClose={() => setShowModal(false)} />
+    </>
   );
 }

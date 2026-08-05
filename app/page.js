@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { submitToHubSpot } from '../lib/hubspot';
 import { submitToGHLLead } from '../lib/ghl';
+import SuccessModal from '../components/SuccessModal';
 
 const REVIEWS = [
   { name: 'John Ragno', time: '7 months ago', text: '"Nick is trustworthy, honest, and takes his time to help you find the right machine, whether you\'re starting out or expanding your vending business. He\'s knowledgeable, patient, and goes above and beyond to ensure you understand your options. Excellent service from start to finish."' },
@@ -123,9 +124,12 @@ function TestimonialsCarousel() {
   );
 }
 
+const EMPTY_CONTACT_FORM = { first_name: '', last_name: '', email: '', phone: '', interest: '', message: '', sms_consent: false };
+
 function ContactForm() {
+  const [showModal, setShowModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ first_name: '', last_name: '', email: '', phone: '', interest: '', message: '', sms_consent: false });
+  const [formData, setFormData] = useState(EMPTY_CONTACT_FORM);
 
   function handleChange(e) {
     const { name, type, checked, value } = e.target;
@@ -134,6 +138,7 @@ function ContactForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (submitted) return;
     await submitToHubSpot({
       firstname: formData.first_name,
       lastname: formData.last_name,
@@ -150,26 +155,17 @@ function ContactForm() {
       interest: formData.interest,
       message: formData.message,
     }).catch(() => {});
+    setFormData(EMPTY_CONTACT_FORM);
     setSubmitted(true);
+    setShowModal(true);
   }
 
   const inputCls = 'w-full px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-shadow duration-200';
   const inputStyle = { borderColor: '#e5e7eb', background: '#fff', color: '#1B2A4A' };
   const labelCls = 'block text-xs font-bold mb-1.5 uppercase tracking-wide';
 
-  if (submitted) {
-    return (
-      <div className="text-center py-8">
-        <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#D6F0DA' }}>
-          <svg className="w-6 h-6" style={{ color: '#3DB54A' }} fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-        </div>
-        <div className="font-bold text-xl mb-1" style={{ color: '#1B2A4A' }}>Message Sent!</div>
-        <div className="text-sm" style={{ color: '#6B7280' }}>We&apos;ll be in touch within 1 business day.</div>
-      </div>
-    );
-  }
-
   return (
+    <>
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
@@ -211,13 +207,24 @@ function ContactForm() {
           I consent to receive marketing and promotional SMS messages from Vital Vending Sales LLC at the phone number provided. Message frequency may vary. Message &amp; Data rates may apply. Reply HELP for help or STOP to opt-out. View our <a href="/terms-of-service" className="underline" style={{ color: '#3DB54A' }}>Terms of Service</a> and <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a>.
         </label>
       </div>
-      <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white transition-colors duration-200"
-        style={{ background: '#3DB54A' }}>
-        Send Message — It&apos;s Free
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      <button type="submit" disabled={submitted} className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base text-white transition-colors duration-200"
+        style={{ background: submitted ? '#8CA88F' : '#3DB54A', cursor: submitted ? 'not-allowed' : 'pointer' }}>
+        {submitted ? (
+          <>
+            Message Received
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+          </>
+        ) : (
+          <>
+            Send Message — It&apos;s Free
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </>
+        )}
       </button>
       <p className="text-center text-xs" style={{ color: '#6B7280' }}>By submitting, you agree to be contacted by Vital Vending Sales LLC regarding your inquiry. See our <a href="/privacy-policy" className="underline" style={{ color: '#3DB54A' }}>Privacy Policy</a> for how we handle your information.</p>
     </form>
+    <SuccessModal open={showModal} onClose={() => setShowModal(false)} />
+    </>
   );
 }
 
