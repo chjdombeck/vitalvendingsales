@@ -4,7 +4,12 @@ const nextConfig = {
     return [
       {
         source: '/summit',
-        destination: '/smart-cooler-summit',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/smart-cooler-summit',
+        destination: '/',
         permanent: true,
       },
       {

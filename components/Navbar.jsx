@@ -40,7 +40,6 @@ export default function Navbar() {
             {/* Desktop nav links */}
             <nav className="hidden lg:flex items-center justify-center flex-1 gap-7 mx-8">
               {[
-                { href: '/smart-cooler-summit', label: 'August 8th Summit!', highlight: true },
                 { href: '/smart-coolers', label: 'AI Smart Coolers' },
                 { href: '/vending-machines', label: 'Vending Machines' },
                 { href: '/about', label: 'About' },
@@ -128,7 +127,6 @@ export default function Navbar() {
           <div className="lg:hidden border-t border-gray-100 bg-white">
             <nav className="px-4 py-4 flex flex-col gap-1">
               {[
-                { href: '/smart-cooler-summit', label: 'August 8th Summit!', highlight: true },
                 { href: '/smart-coolers', label: 'AI Smart Coolers' },
                 { href: '/vending-machines', label: 'Vending Machines' },
                 { href: '/about', label: 'About' },

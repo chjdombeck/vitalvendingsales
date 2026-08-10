@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
           <p style={p}>We do not use your information for advertising, profiling, or any automated decision-making.</p>
 
           <h2 style={h2}>3. SMS / Text Messaging Program</h2>
-          <p style={p}>If you provide your phone number and check the SMS consent box on one of our forms, you agree to receive text messages from Vital Vending Sales, including marketing and promotional messages about our products, services, and events (such as the Smart Cooler Summit).</p>
+          <p style={p}>If you provide your phone number and check the SMS consent box on one of our forms, you agree to receive text messages from Vital Vending Sales, including marketing and promotional messages about our products, services, and events.</p>
           <ul style={ul}>
             <li style={p}>Message frequency varies.</li>
             <li style={p}>Message and data rates may apply.</li>
