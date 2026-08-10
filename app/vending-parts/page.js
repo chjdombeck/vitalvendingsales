@@ -26,7 +26,7 @@ export default function VendingParts() {
             Our online parts store is on its way.
           </h2>
           <p className="mb-10" style={{ color: '#3D4D5C', lineHeight: 1.75, fontSize: '1.05rem' }}>
-            We&apos;re building a full catalog of genuine vending machine parts — motors, bill validators, coin mechanisms, control boards, and more — so you can order online and ship direct. In the meantime, give us a call and we&apos;ll help you track down the part you need.
+            We&apos;re building a full catalog of genuine vending machine parts, including motors, bill validators, coin mechanisms, control boards, and more, so you can order online and ship direct. In the meantime, give us a call and we&apos;ll help you track down the part you need.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="tel:4132823776" className="inline-flex items-center gap-2 font-bold rounded-xl text-white px-7 py-3.5" style={{ background: 'rgba(61,181,74,0.88)', border: '1px solid rgba(255,255,255,0.28)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35), 0 4px 16px rgba(0,0,0,0.18)' }}>

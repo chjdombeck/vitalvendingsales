@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Terms of Service | Vital Vending Sales',
-  description: 'Terms of Service for Vital Vending Sales — governing use of our website, consultation forms, and vending parts store.',
+  description: 'Terms of Service for Vital Vending Sales: governing use of our website, consultation forms, and vending parts store.',
 };
 
 const h2 = { fontSize: '1.25rem', fontWeight: 700, color: '#1B2A4A', marginTop: '2rem', marginBottom: '0.75rem' };
@@ -33,9 +33,9 @@ export default function TermsOfService() {
           <h2 style={h2}>1. Who We Are</h2>
           <p style={p}>Vital Vending Sales is a vending machine, AI smart cooler, and micro-market equipment supplier based in Ludlow, Massachusetts, serving customers and vending operators primarily across the Northeast United States. We provide three core services:</p>
           <ul style={ul}>
-            <li style={p}><strong>Equipment Sales</strong> — vending machines, AI smart coolers, and micro-market equipment</li>
-            <li style={p}><strong>Location Services</strong> — matching vending operators with high-traffic placement locations</li>
-            <li style={p}><strong>Service &amp; Support</strong> — parts sourcing, technical support, and operator guidance</li>
+            <li style={p}><strong>Equipment Sales:</strong> vending machines, AI smart coolers, and micro-market equipment</li>
+            <li style={p}><strong>Location Services:</strong> matching vending operators with high-traffic placement locations</li>
+            <li style={p}><strong>Service &amp; Support:</strong> parts sourcing, technical support, and operator guidance</li>
           </ul>
           <p style={p}>Nothing on the Site constitutes an offer to sell vending equipment that can be accepted merely by browsing. Equipment is sold through direct consultation, quote, and invoice as described in Section 6 below.</p>
 
@@ -55,7 +55,7 @@ export default function TermsOfService() {
             <li style={p}>Carriers are not liable for delayed or undelivered messages.</li>
           </ul>
 
-          <p style={p}><strong>How your information is used.</strong> Information submitted through our forms is sent directly into our customer relationship management (CRM) system — currently HubSpot, and/or such other CRM or marketing automation platform we may use from time to time (including, without limitation, platforms such as GoHighLevel) — where it is used to track your inquiry, schedule follow-up, and, if you have consented, send you relevant marketing communications such as promotions, new equipment announcements, or educational content. We do not sell your contact information to third parties. See our <a href="/privacy-policy" style={a}>Privacy Policy</a> for full detail on data handling.</p>
+          <p style={p}><strong>How your information is used.</strong> Information submitted through our forms is sent directly into our customer relationship management (CRM) system, currently HubSpot, and/or such other CRM or marketing automation platform we may use from time to time (including, without limitation, platforms such as GoHighLevel), where it is used to track your inquiry, schedule follow-up, and, if you have consented, send you relevant marketing communications such as promotions, new equipment announcements, or educational content. We do not sell your contact information to third parties. See our <a href="/privacy-policy" style={a}>Privacy Policy</a> for full detail on data handling.</p>
 
           <p style={p}><strong>Accuracy of information.</strong> You agree to provide accurate, current, and complete information when submitting any form, and to update it as needed so we can properly respond to your request.</p>
 

@@ -45,7 +45,7 @@ export default function About() {
               <h2 className="font-black mb-6" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>The story behind<br />Vital Vending Sales</h2>
               <div className="space-y-5" style={{ color: '#3D4D5C', lineHeight: 1.8, fontSize: '1rem' }}>
                 <p><strong style={{ color: '#1B2A4A' }}>Founder Nick Williamson graduated from Ithaca College in 2011 and built his career in sales across a variety of industries.</strong> His passion for vending was cultivated through more than a decade with Gekay Sales &amp; Service, where he gained hands-on experience servicing, refurbishing, installing, and supporting vending and refreshment equipment throughout New England and across the country.</p>
-                <p>Through those experiences, Nick learned that success in the vending industry isn&apos;t simply about equipment — it&apos;s about trust, reliability, and genuinely caring about the people you serve. He saw firsthand how quality equipment, honest guidance, and dependable support could help businesses grow and entrepreneurs create meaningful opportunities for themselves and their families.</p>
+                <p>Through those experiences, Nick learned that success in the vending industry isn&apos;t simply about equipment. It&apos;s about trust, reliability, and genuinely caring about the people you serve. He saw firsthand how quality equipment, honest guidance, and dependable support could help businesses grow and entrepreneurs create meaningful opportunities for themselves and their families.</p>
                 <p>With those values as the foundation, Vital Vending Sales was created. Today, Nick and the VVS team are dedicated to helping businesses, entrepreneurs, schools, healthcare organizations, property managers, and vending operators find the right solutions for their unique needs.</p>
               </div>
               <div className="flex flex-wrap gap-3 mt-8">
@@ -158,7 +158,7 @@ export default function About() {
           <div className="text-center mb-12">
             <div className="text-xs font-bold mb-3 uppercase tracking-widest" style={{ letterSpacing: '0.12em', color: '#1a6b2a' }}>Behind the Scenes</div>
             <h2 className="font-black mb-4" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.1 }}>Life at VVS</h2>
-            <p style={{ color: '#3D4D5C', maxWidth: 500, lineHeight: 1.75 }} className="mx-auto">From installs and route runs to warehouse days and machine builds — a look at how we operate.</p>
+            <p style={{ color: '#3D4D5C', maxWidth: 500, lineHeight: 1.75 }} className="mx-auto">From installs and route runs to warehouse days and machine builds, a look at how we operate.</p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             <div className="rounded-2xl overflow-hidden relative col-span-1 lg:row-span-2" style={{ aspectRatio: '3/4', background: '#F4F6F8', border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)' }}>

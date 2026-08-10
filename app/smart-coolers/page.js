@@ -8,12 +8,12 @@ import { submitToGHLLead } from '../../lib/ghl';
 import SuccessModal from '../../components/SuccessModal';
 
 const HAHA_PRODUCTS = [
-  { id: 'haha-mini', img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', name: 'HAHA Mini', model: 'US360C', tagline: 'Compact and capable — perfect for tighter spaces', specs: ['252 bottles', '6 shelves', 'AI recognition'], price: '$2,999', badge: 'AI Smart Cooler', badgeStyle: {} },
+  { id: 'haha-mini', img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', name: 'HAHA Mini', model: 'US360C', tagline: 'Compact and capable, perfect for tighter spaces', specs: ['252 bottles', '6 shelves', 'AI recognition'], price: '$2,999', badge: 'AI Smart Cooler', badgeStyle: {} },
   { id: 'haha-plus', img: '/static-assets/MoreVendingMachinesandContent/Pus 440 Details.png', name: 'HAHA Plus', model: 'US440CT', tagline: 'Mid-size powerhouse with room to grow', specs: ['324 bottles', '6 shelves', 'AI recognition'], price: '$3,399', badge: 'AI Smart Cooler', badgeStyle: {} },
   { id: 'haha-pro', img: '/static-assets/MoreVendingMachinesandContent/Pro Details.png', name: 'HAHA Pro', model: 'US542CT', tagline: 'Full-size AI cooler, avg $4.55 per transaction', specs: ['378 bottles', '6 shelves', 'AI recognition'], price: '$4,399', badge: 'AI Smart Cooler', badgeStyle: {} },
-  { id: 'haha-freezer', img: '/static-assets/MoreVendingMachinesandContent/Freezer 550 Details.png', name: 'HAHA Freezer', model: 'US550FT', tagline: 'Frozen and fresh — same smart AI platform', specs: ['384 capacity', '6 shelves', 'Freezer ready'], price: '$4,799', badge: 'AI Freezer', badgeStyle: { background: '#E0F0FF', color: '#0B5FA0' } },
+  { id: 'haha-freezer', img: '/static-assets/MoreVendingMachinesandContent/Freezer 550 Details.png', name: 'HAHA Freezer', model: 'US550FT', tagline: 'Frozen and fresh, same smart AI platform', specs: ['384 capacity', '6 shelves', 'Freezer ready'], price: '$4,799', badge: 'AI Freezer', badgeStyle: { background: '#E0F0FF', color: '#0B5FA0' } },
   { id: 'haha-max-620', img: '/static-assets/MoreVendingMachinesandContent/Max 620 Details.png', name: 'HAHA Max 620', model: '', tagline: 'Maximum capacity for busy locations', specs: ['420 bottles', '6 shelves', 'AI recognition'], price: '$4,799', badge: 'AI Smart Cooler', badgeStyle: {} },
-  { id: 'haha-max-660', img: '/static-assets/MoreVendingMachinesandContent/Max 620s Details.png', name: 'HAHA Max 620s', model: '', tagline: 'Advertise, engage, and sell — all from one unit', specs: ['420 bottles', 'Digital screen', 'AI recognition'], price: '$5,499', badge: 'AI Smart Cooler', badgeStyle: {} },
+  { id: 'haha-max-660', img: '/static-assets/MoreVendingMachinesandContent/Max 620s Details.png', name: 'HAHA Max 620s', model: '', tagline: 'Advertise, engage, and sell, all from one unit', specs: ['420 bottles', 'Digital screen', 'AI recognition'], price: '$5,499', badge: 'AI Smart Cooler', badgeStyle: {} },
   { id: 'haha-ultra-double-door', img: '/static-assets/MoreVendingMachinesandContent/Double Door Details.png', name: 'HAHA Ultra Double Door', model: 'US1200CT', tagline: 'Double capacity for the highest-volume locations', specs: ['756 bottles', '12 shelves', 'Dual door'], price: '$6,999', badge: 'Double Door', badgeStyle: { background: '#F0E8FD', color: '#5B0FA8' }, wide: true },
 ];
 
@@ -29,15 +29,15 @@ const MODAL_DATA = {
     name: 'HAHA Mini', model: 'US360C', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$2,999',
     img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', images: [],
     specs: ['Exterior Dimensions: 22.8" x 26" x 76"', 'Shelves: 6 shelves', 'Approximate Capacity: ~252 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
-    features: 'The HAHA Mini is the most compact unit in the HAHA lineup — ideal for smaller offices, lobbies, or any location where footprint matters but revenue potential shouldn\'t be sacrificed. Fully AI-powered, cashless, and cloud-managed.',
-    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
+    features: 'The HAHA Mini is the most compact unit in the HAHA lineup, ideal for smaller offices, lobbies, or any location where footprint matters but revenue potential shouldn\'t be sacrificed. Fully AI-powered, cashless, and cloud-managed.',
+    featureCardsTitle: 'Why HAHA: Built Different. Built Better.',
     featureCards: [
-      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
+      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken. Reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly platform fees, and minimal service requirements keep operating costs down.' },
       { icon: '🔧', title: 'Cut Service Calls by 66%', body: 'No motors, coils, harnesses, keypads, or displays to fail. Service concerns are limited to just a few core components, dramatically reducing downtime and technician visits.' },
       { icon: '📈', title: 'Higher Consumer Spend', body: 'Customers consistently spend more from smart coolers. Open-door grab-and-go shopping behavior drives higher average transaction values compared to traditional vending.' },
-      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more — all in the same unit. Not restricted by coils or trays, so you can stock multiple sizes and categories freely.' },
-      { icon: '🔒', title: 'Superior Locking System', body: 'Spring-loaded door with piston lock closes and secures every single time. Simple, effective, and reliable — outperforms comparable designs on the market.' },
+      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more, all in the same unit. Not restricted by coils or trays, so you can stock multiple sizes and categories freely.' },
+      { icon: '🔒', title: 'Superior Locking System', body: 'Spring-loaded door with piston lock closes and secures every single time. Simple, effective, and reliable. Outperforms comparable designs on the market.' },
     ],
     costRows: [
       ['Monthly Platform Fee', '$40/mo', 'Standard (SIM connectivity)'],
@@ -46,7 +46,7 @@ const MODAL_DATA = {
       ['Transaction Fee', '$0.05', 'Per transaction (HAHA platform)'],
       ['Credit Card Processing', '5.95%', 'Standard vending industry CC rate'],
     ],
-    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
+    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30. Setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
     comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
@@ -56,13 +56,13 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Pus 440 Details.png', images: [],
     specs: ['Exterior Dimensions: 27.2" x 27" x 76.6"', 'Shelves: 6 shelves', 'Approximate Capacity: ~324 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Plus steps up the capacity with a wider footprint, making it the ideal choice for medium-traffic locations like offices, schools, and fitness centers. Same AI platform, more stocking capacity, and all organizers included.',
-    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
+    featureCardsTitle: 'Why HAHA: Built Different. Built Better.',
     featureCards: [
-      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
+      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken. Reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements keep operating costs down.' },
       { icon: '🔧', title: 'Cut Service Calls by 66%', body: 'No motors, coils, harnesses, keypads, or displays to fail. Service concerns are limited to just a few core components, dramatically reducing downtime.' },
       { icon: '📈', title: 'Higher Consumer Spend', body: 'Customers consistently spend more from smart coolers. Open-door grab-and-go shopping drives higher average transaction values compared to traditional vending.' },
-      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more — all in the same unit. Not restricted by coils or trays.' },
+      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more, all in the same unit. Not restricted by coils or trays.' },
       { icon: '🔒', title: 'Superior Locking System', body: 'Spring-loaded door with piston lock closes and secures every single time. Outperforms comparable designs on the market.' },
     ],
     costRows: [
@@ -72,7 +72,7 @@ const MODAL_DATA = {
       ['Transaction Fee', '$0.05', 'Per transaction (HAHA platform)'],
       ['Credit Card Processing', '5.95%', 'Standard vending industry CC rate'],
     ],
-    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
+    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30. Setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
     comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
@@ -81,14 +81,14 @@ const MODAL_DATA = {
     name: 'HAHA Pro', model: 'US542CT', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$4,399',
     img: '/static-assets/MoreVendingMachinesandContent/Pro Details.png', images: [],
     specs: ['Exterior Dimensions: 29.5" x 25.6" x 79.5"', 'Shelves: 6 shelves', 'Approximate Capacity: ~378 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
-    features: 'The HAHA Pro is the workhorse of the lineup — a full-size AI smart cooler that holds 378 bottles across 6 shelves and fits into virtually any commercial location. Proven to average $4.55 per customer transaction, making it one of the strongest ROI units VVS carries.',
-    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
+    features: 'The HAHA Pro is the workhorse of the lineup: a full-size AI smart cooler that holds 378 bottles across 6 shelves and fits into virtually any commercial location. Proven to average $4.55 per customer transaction, making it one of the strongest ROI units VVS carries.',
+    featureCardsTitle: 'Why HAHA: Built Different. Built Better.',
     featureCards: [
-      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
+      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken. Reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
       { icon: '🔧', title: 'Cut Service Calls by 66%', body: 'No motors, coils, harnesses, keypads, or displays to fail. Service concerns are limited to a few core components, dramatically reducing downtime.' },
       { icon: '📈', title: 'Higher Consumer Spend', body: 'Customers consistently spend more from smart coolers. Open-door grab-and-go shopping drives higher average transaction values.' },
-      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more — all in the same unit. Not restricted by coils or trays.' },
+      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more, all in the same unit. Not restricted by coils or trays.' },
       { icon: '🔒', title: 'Superior Locking System', body: 'Spring-loaded door with piston lock closes and secures every single time. Outperforms comparable designs on the market.' },
     ],
     costRows: [
@@ -98,7 +98,7 @@ const MODAL_DATA = {
       ['Transaction Fee', '$0.05', 'Per transaction (HAHA platform)'],
       ['Credit Card Processing', '5.95%', 'Standard vending industry CC rate'],
     ],
-    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
+    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30. Setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
     comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
@@ -107,14 +107,14 @@ const MODAL_DATA = {
     name: 'HAHA Freezer', model: 'US550FT', brand: 'HAHA Smart Coolers', category: 'AI Freezer', price: '$4,799',
     img: '/static-assets/MoreVendingMachinesandContent/Freezer 550 Details.png', images: [],
     specs: ['Exterior Dimensions: 27.6" x 35.8" x 80.4"', 'Shelves: 6 shelves', 'Approximate Capacity: ~384 items', 'Temperature Mode: Freezer', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
-    features: 'The HAHA Freezer brings AI-powered unattended retail to frozen and refrigerated products. Same intuitive grab-and-go platform as the rest of the HAHA lineup — now for ice cream, frozen meals, cold packs, and beyond. Ideal for gyms, convenience locations, and break rooms with frozen demand.',
-    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
+    features: 'The HAHA Freezer brings AI-powered unattended retail to frozen and refrigerated products. Same intuitive grab-and-go platform as the rest of the HAHA lineup, now for ice cream, frozen meals, cold packs, and beyond. Ideal for gyms, convenience locations, and break rooms with frozen demand.',
+    featureCardsTitle: 'Why HAHA: Built Different. Built Better.',
     featureCards: [
-      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
+      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken. Reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
       { icon: '🔧', title: 'Cut Service Calls by 66%', body: 'No motors, coils, harnesses, keypads, or displays to fail. Service concerns are limited to a few core components, dramatically reducing downtime.' },
       { icon: '📈', title: 'Higher Consumer Spend', body: 'Customers consistently spend more from smart coolers. Open-door grab-and-go shopping drives higher average transaction values.' },
-      { icon: '📦', title: 'Product Flexibility', body: 'Sell frozen meals, ice cream, cold packs, beverages, snacks, and more — all in the same unit.' },
+      { icon: '📦', title: 'Product Flexibility', body: 'Sell frozen meals, ice cream, cold packs, beverages, snacks, and more, all in the same unit.' },
       { icon: '🔒', title: 'Superior Locking System', body: 'Spring-loaded door with piston lock closes and secures every single time. Outperforms comparable designs on the market.' },
     ],
     costRows: [
@@ -124,7 +124,7 @@ const MODAL_DATA = {
       ['Transaction Fee', '$0.05', 'Per transaction (HAHA platform)'],
       ['Credit Card Processing', '5.95%', 'Standard vending industry CC rate'],
     ],
-    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
+    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30. Setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
     comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
@@ -134,13 +134,13 @@ const MODAL_DATA = {
     img: '/static-assets/MoreVendingMachinesandContent/Max 620 Details.png', images: [],
     specs: ['Exterior Dimensions: 31.5" x 26.4" x 79.5"', 'Shelves: 6 shelves', 'Approximate Capacity: ~420 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
     features: 'The HAHA Max 620 is built for locations that need maximum capacity in a single-door form factor. At 420 bottles across 6 shelves, this is the go-to unit for high-traffic offices, warehouses, gyms, and any site where restocking frequency matters. Same AI platform, bigger results.',
-    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
+    featureCardsTitle: 'Why HAHA: Built Different. Built Better.',
     featureCards: [
-      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
+      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken. Reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
       { icon: '🔧', title: 'Cut Service Calls by 66%', body: 'No motors, coils, harnesses, keypads, or displays to fail. Service concerns limited to a few core components, dramatically reducing downtime.' },
       { icon: '📈', title: 'Higher Consumer Spend', body: 'Customers consistently spend more from smart coolers. Open-door grab-and-go shopping drives higher average transaction values.' },
-      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more — all in the same unit. Not restricted by coils or trays.' },
+      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more, all in the same unit. Not restricted by coils or trays.' },
       { icon: '🔒', title: 'Superior Locking System', body: 'Spring-loaded door with piston lock closes and secures every single time. Outperforms comparable designs on the market.' },
     ],
     costRows: [
@@ -150,7 +150,7 @@ const MODAL_DATA = {
       ['Transaction Fee', '$0.05', 'Per transaction (HAHA platform)'],
       ['Credit Card Processing', '5.95%', 'Standard vending industry CC rate'],
     ],
-    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
+    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30. Setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
     comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
@@ -159,14 +159,14 @@ const MODAL_DATA = {
     name: 'HAHA Max 620s', brand: 'HAHA Smart Coolers', category: 'AI Smart Cooler', price: '$5,499',
     img: '/static-assets/MoreVendingMachinesandContent/Max 620s Details.png', images: [],
     specs: ['Exterior Dimensions: 31.5" x 26.4" x 85.8"', 'Shelves: 6 shelves', 'Approximate Capacity: ~420 bottles', 'Display Screen: Built-in digital display', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
-    features: 'The HAHA Max 620s takes the high-volume Max 620 and adds a built-in digital display screen on top — giving you a powerful tool for advertising, promotion, and customer engagement. Same great AI platform, taller, and more attention-grabbing.',
-    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
+    features: 'The HAHA Max 620s takes the high-volume Max 620 and adds a built-in digital display screen on top, giving you a powerful tool for advertising, promotion, and customer engagement. Same great AI platform, taller, and more attention-grabbing.',
+    featureCardsTitle: 'Why HAHA: Built Different. Built Better.',
     featureCards: [
-      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
+      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken. Reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
       { icon: '🔧', title: 'Cut Service Calls by 66%', body: 'No motors, coils, harnesses, keypads, or displays to fail. Service concerns limited to a few core components, dramatically reducing downtime.' },
       { icon: '📺', title: 'Built-In Digital Screen', body: 'Play your video content, promotions, or brand messages directly on the unit. The Max 620s screen makes the machine impossible to ignore in any location.' },
-      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more — all in the same unit. Not restricted by coils or trays.' },
+      { icon: '📦', title: 'Product Flexibility', body: 'Sell beverages, snacks, fresh food, and more, all in the same unit. Not restricted by coils or trays.' },
       { icon: '🔒', title: 'Superior Locking System', body: 'Spring-loaded door with piston lock closes and secures every single time. Outperforms comparable designs on the market.' },
     ],
     costRows: [
@@ -176,7 +176,7 @@ const MODAL_DATA = {
       ['Transaction Fee', '$0.05', 'Per transaction (HAHA platform)'],
       ['Credit Card Processing', '5.95%', 'Standard vending industry CC rate'],
     ],
-    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
+    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30. Setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
     comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
@@ -185,14 +185,14 @@ const MODAL_DATA = {
     name: 'HAHA Ultra Double Door', model: 'US1200CT', brand: 'HAHA Smart Coolers', category: 'Double Door', price: '$6,999',
     img: '/static-assets/MoreVendingMachinesandContent/Double Door Details.png', images: [],
     specs: ['Exterior Dimensions: 53.9" x 28.0" x 79.5"', 'Doors: Double door', 'Shelves: 12 shelves', 'Approximate Capacity: ~756 bottles', 'Connectivity: SIM or WiFi', 'Payment: Card, Apple Pay, Google Pay'],
-    features: 'The HAHA Ultra Double Door is the flagship of the entire HAHA lineup — a wide-format, dual-door AI smart cooler purpose-built for the highest-volume locations. With 756-bottle capacity across 12 shelves, this unit is ideal for hospitals, airports, universities, large corporate campuses, and anywhere that demands maximum throughput around the clock.',
-    featureCardsTitle: 'Why HAHA — Built Different. Built Better.',
+    features: 'The HAHA Ultra Double Door is the flagship of the entire HAHA lineup: a wide-format, dual-door AI smart cooler purpose-built for the highest-volume locations. With 756-bottle capacity across 12 shelves, this unit is ideal for hospitals, airports, universities, large corporate campuses, and anywhere that demands maximum throughput around the clock.',
+    featureCardsTitle: 'Why HAHA: Built Different. Built Better.',
     featureCards: [
-      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken — reliable in real-world conditions.' },
+      { icon: '🧠', title: 'AI Recognition That Works', body: 'Extremely accurate with standard products. No weights, no recalibration required. Computer vision identifies what was taken. Reliable in real-world conditions.' },
       { icon: '💰', title: 'Most Economical on the Market', body: 'Lowest total cost of ownership among AI smart coolers. Competitive hardware pricing, low monthly fees, and minimal service requirements.' },
       { icon: '🔧', title: 'Cut Service Calls by 66%', body: 'No motors, coils, harnesses, keypads, or displays to fail. Service concerns limited to a few core components, dramatically reducing downtime.' },
       { icon: '📈', title: 'Higher Consumer Spend', body: 'Customers consistently spend more from smart coolers. Open-door grab-and-go shopping drives higher average transaction values.' },
-      { icon: '📦', title: 'Double the Capacity', body: '756 bottles, 12 shelves, two doors. The Ultra Double Door handles locations that other units can’t — maximizing restocking intervals and revenue per visit.' },
+      { icon: '📦', title: 'Double the Capacity', body: '756 bottles, 12 shelves, two doors. The Ultra Double Door handles locations that other units can’t, maximizing restocking intervals and revenue per visit.' },
       { icon: '🔒', title: 'Superior Locking System', body: 'Spring-loaded doors with piston locks close and secure every single time. Outperforms comparable designs on the market.' },
     ],
     costRows: [
@@ -202,21 +202,21 @@ const MODAL_DATA = {
       ['Transaction Fee', '$0.05', 'Per transaction (HAHA platform)'],
       ['Credit Card Processing', '5.95%', 'Standard vending industry CC rate'],
     ],
-    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30 — setup takes about 20 minutes.',
+    costNote: 'SIM connectivity is available at $40/month and is the most reliable option overall. WiFi connectivity is available at $25/month using a router available on Amazon for approximately $30. Setup takes about 20 minutes.',
     pdfHref: '/static-assets/MoreVendingMachinesandContent/APP Instructions (1) (1).pdf',
     pdfLabel: 'Download HAHA App User Guide',
     comparisonImage: '/static-assets/MoreVendingMachinesandContent/Pros of smart vending VS. Traditional Vending .jpg',
   },
   spectraLaunch: {
-    name: 'Spectra Launch Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$4,995',
+    name: 'Spectra Launch Smart Cooler', brand: 'USI Spectra Series', category: 'AI Smart Cooler', price: '$4,995',
     img: '/static-assets/vvs_product_catalog/images/spectra-launch-1.png', images: [],
-    specs: ['Part Number: 36730001', 'Warranty: 3 Years', 'Technology: TrueAI™ computer vision product recognition', 'Shelves: 6 customizable shelves with product pushers', 'Interior: White interior', 'Refrigeration: Cassette-style removable refrigeration', 'Cart: Real-time smart shopping cart', 'Payment: Cashless — WeVend or Cantaloupe', 'Lock: NAMA-compliant smart lock', 'Connectivity: Cloud-based remote monitoring (VMS)', 'Voice: Interactive voice assistant (can be enabled or disabled)', 'Support: Lifetime 24/7 U.S.-based support'],
+    specs: ['Part Number: 36730001', 'Warranty: 3 Years', 'Technology: TrueAI™ computer vision product recognition', 'Shelves: 6 customizable shelves with product pushers', 'Interior: White interior', 'Refrigeration: Cassette-style removable refrigeration', 'Cart: Real-time smart shopping cart', 'Payment: Cashless: WeVend or Cantaloupe', 'Lock: NAMA-compliant smart lock', 'Connectivity: Cloud-based remote monitoring (VMS)', 'Voice: Interactive voice assistant (can be enabled or disabled)', 'Support: Lifetime 24/7 U.S.-based support'],
     features: 'The Spectra Launch is USI\'s entry-level TrueAI™ smart cooler, backed by a 3-year warranty and lifetime U.S. support. Six customizable shelves with product pushers, cassette-style removable refrigeration, cashless payments via WeVend or Cantaloupe, real-time smart shopping cart, and an interactive voice assistant. A powerful starting point for operators entering the AI smart cooler market.',
   },
   spectraCore: {
-    name: 'Spectra Core Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$5,495',
+    name: 'Spectra Core Smart Cooler', brand: 'USI Spectra Series', category: 'AI Smart Cooler', price: '$5,495',
     img: '/static-assets/vvs_product_catalog/images/spectra-core-2.png', images: [],
-    specs: ['Part Number: 36710001', 'Warranty: 5 Years', 'Technology: True AI product detection (TrueAI™ computer vision)', 'Screen: 28" full-color advertising video screen', 'Cart: Real-time shopping cart & checkout', 'Trays: Product pushers for optimal merchandising', 'Payment: Cashless — WeVend or Cantaloupe (EMV-compliant)', 'Lock: NAMA-compliant smart lock', 'Telemetry: Full telemetry with remote VMS integration', 'Voice: Interactive voice assistant (can be enabled or disabled)', 'Security: Abnormal order & theft alerts, GPS asset tracking', 'Dimensions: 80.6"H x 28.6"W x 31.9"D — 313 lbs.', 'Electrical: 115 VAC/60Hz, 2.5 AMPS, 1/5 HP', 'Refrigeration: Cassette-style removable refrigeration (R290)', 'Certification: ETL & NAMA', 'Support: Lifetime 24/7 U.S.-based support'],
+    specs: ['Part Number: 36710001', 'Warranty: 5 Years', 'Technology: True AI product detection (TrueAI™ computer vision)', 'Screen: 28" full-color advertising video screen', 'Cart: Real-time shopping cart & checkout', 'Trays: Product pushers for optimal merchandising', 'Payment: Cashless: WeVend or Cantaloupe (EMV-compliant)', 'Lock: NAMA-compliant smart lock', 'Telemetry: Full telemetry with remote VMS integration', 'Voice: Interactive voice assistant (can be enabled or disabled)', 'Security: Abnormal order & theft alerts, GPS asset tracking', 'Dimensions: 80.6"H x 28.6"W x 31.9"D, 313 lbs.', 'Electrical: 115 VAC/60Hz, 2.5 AMPS, 1/5 HP', 'Refrigeration: Cassette-style removable refrigeration (R290)', 'Certification: ETL & NAMA', 'Support: Lifetime 24/7 U.S.-based support'],
     features: 'The Spectra Core is a premium AI-powered smart cooler featuring a 28" full-color advertising video screen and real-time shopping cart & checkout for a seamless, modern customer experience. True AI product detection, product pushers for optimal merchandising, and full telemetry with remote VMS integration give operators total visibility. A pullout compressor reduces service time, and machine health alerts plus abnormal order/theft alerts and GPS asset tracking keep equipment secure. Backed by a 5-year warranty for long-term ownership.',
     featureCardsTitle: 'The Most Advanced AI Powered Smart Cooler',
     featureCards: [
@@ -229,9 +229,9 @@ const MODAL_DATA = {
     pdfLabel: 'Download Spectra Core Spec Sheet',
   },
   spectraPro: {
-    name: 'Spectra Pro Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$6,495',
+    name: 'Spectra Pro Smart Cooler', brand: 'USI Spectra Series', category: 'AI Smart Cooler', price: '$6,495',
     img: '/static-assets/vvs_product_catalog/images/spectra-pro-2.webp', images: [],
-    specs: ['Part Number: 36720003', 'Warranty: 5 Years', 'Technology: True AI product detection (TrueAI™ computer vision)', 'Screen: 30" full-color advertising video screen', 'Door: Interactive LED handle', 'Trays: FIFO pull-out trays with pushers', 'Cart: Real-time smart shopping cart & checkout', 'Payment: Cashless — WeVend or Cantaloupe (EMV-compliant)', 'Lock: NAMA-compliant smart lock', 'Telemetry: Full telemetry with remote VMS integration', 'Voice: Interactive voice assistant (can be enabled or disabled)', 'Security: Abnormal order & theft alerts, GPS asset tracking', 'Dimensions: 82.6"H x 31.5"W x 28.8"D — 443 lbs.', 'Electrical: 115 VAC/60Hz, 2.4 AMPS, 2/7 HP', 'Refrigeration: Cassette-style removable refrigeration (R290)', 'Certification: ETL & NAMA', 'Support: Lifetime 24/7 U.S.-based support'],
+    specs: ['Part Number: 36720003', 'Warranty: 5 Years', 'Technology: True AI product detection (TrueAI™ computer vision)', 'Screen: 30" full-color advertising video screen', 'Door: Interactive LED handle', 'Trays: FIFO pull-out trays with pushers', 'Cart: Real-time smart shopping cart & checkout', 'Payment: Cashless: WeVend or Cantaloupe (EMV-compliant)', 'Lock: NAMA-compliant smart lock', 'Telemetry: Full telemetry with remote VMS integration', 'Voice: Interactive voice assistant (can be enabled or disabled)', 'Security: Abnormal order & theft alerts, GPS asset tracking', 'Dimensions: 82.6"H x 31.5"W x 28.8"D, 443 lbs.', 'Electrical: 115 VAC/60Hz, 2.4 AMPS, 2/7 HP', 'Refrigeration: Cassette-style removable refrigeration (R290)', 'Certification: ETL & NAMA', 'Support: Lifetime 24/7 U.S.-based support'],
     features: 'The Spectra Pro is USI\'s most advanced AI-powered smart cooler, featuring a 30" full-color advertising video screen and an interactive LED handle that attracts attention. True AI product detection, real-time cart and checkout visibility, and full telemetry with remote VMS integration give operators total control across every location. A pullout compressor reduces service time, and machine health alerts plus abnormal order/theft alerts and GPS asset tracking keep equipment secure. Backed by a 5-year warranty for long-term ownership.',
     featureCardsTitle: 'The Most Advanced AI Powered Smart Cooler',
     featureCards: [
@@ -244,20 +244,20 @@ const MODAL_DATA = {
     pdfLabel: 'Download Spectra Pro Spec Sheet',
   },
   spectraElevate: {
-    name: 'Spectra Elevate Smart Cooler', brand: 'USI — Spectra Series', category: 'AI Smart Cooler', price: '$7,995',
+    name: 'Spectra Elevate Smart Cooler', brand: 'USI Spectra Series', category: 'AI Smart Cooler', price: '$7,995',
     img: '/static-assets/vvs_product_catalog/images/spectra-elevate-1.webp', images: [],
-    specs: ['Part Number: 36700001', 'Warranty: 7 Years — industry-leading', 'Technology: TrueAI™ computer vision product recognition', 'Pushers: RTC pushers for fresh food & drinks', 'Cart: Real-time smart shopping cart', 'Loyalty: Integrated loyalty program', 'Payment: Cashless — WeVend or Cantaloupe', 'Lock: NAMA-compliant smart lock', 'Connectivity: Cloud-based remote monitoring (VMS)', 'Voice: Interactive voice assistant (can be enabled or disabled)', 'Security: Real-time theft alerts', 'Tracking: GPS asset tracking', 'Construction: Premium USA-made cooler', 'Support: Lifetime 24/7 U.S.-based hardware support'],
-    features: 'The Spectra Elevate is USI\'s flagship — the only model backed by a 7-year warranty and built in the USA. RTC pushers for fresh food and drinks, an integrated loyalty program, real-time theft alerts, and GPS asset tracking make this the most operator-friendly smart cooler on the market. Premium construction, lifetime U.S. hardware support, and every Spectra standard feature included.',
+    specs: ['Part Number: 36700001', 'Warranty: 7 Years, industry-leading', 'Technology: TrueAI™ computer vision product recognition', 'Pushers: RTC pushers for fresh food & drinks', 'Cart: Real-time smart shopping cart', 'Loyalty: Integrated loyalty program', 'Payment: Cashless: WeVend or Cantaloupe', 'Lock: NAMA-compliant smart lock', 'Connectivity: Cloud-based remote monitoring (VMS)', 'Voice: Interactive voice assistant (can be enabled or disabled)', 'Security: Real-time theft alerts', 'Tracking: GPS asset tracking', 'Construction: Premium USA-made cooler', 'Support: Lifetime 24/7 U.S.-based hardware support'],
+    features: 'The Spectra Elevate is USI\'s flagship: the only model backed by a 7-year warranty and built in the USA. RTC pushers for fresh food and drinks, an integrated loyalty program, real-time theft alerts, and GPS asset tracking make this the most operator-friendly smart cooler on the market. Premium construction, lifetime U.S. hardware support, and every Spectra standard feature included.',
   },
 };
 
 const VS_ROWS = [
-  { label: 'What It Sells', smart: 'Sells 15,000+ SKUs — drinks, snacks, flowers, fresh produce, even glass or irregular-shaped items', old: 'Limited selection — no glass, fresh produce, or irregular-shaped items' },
-  { label: 'Where It Works', smart: 'Works anywhere — offices, dorms, gyms, and more. One person can move it; fits through doors and elevators', old: 'Bulky and heavy — limited to larger or more accessible locations' },
-  { label: 'How Customers Buy', smart: 'Customers can grab multiple items at once, spend more per visit, and pay any way (card, Apple Pay, etc.)', old: 'Fixed slots — less flexible and slower to restock' },
-  { label: 'How It Restocks', smart: 'Smart app enables remote control, restock alerts, and data-driven product operation analysis', old: 'Complex slot mechanisms — harder to maintain and more prone to failure' },
-  { label: 'Machine Design', smart: 'Slot-free design makes it easy to maintain and less likely to break down', old: 'Clumsy design and size limit mobility — frequent maintenance issues' },
-  { label: 'User Experience', smart: 'Quick and easy — customers pick items directly, no bending required', old: 'Less user-friendly — items drop behind a door, forcing customers to bend down' },
+  { label: 'What It Sells', smart: 'Sells 15,000+ SKUs: drinks, snacks, flowers, fresh produce, even glass or irregular-shaped items', old: 'Limited selection: no glass, fresh produce, or irregular-shaped items' },
+  { label: 'Where It Works', smart: 'Works anywhere: offices, dorms, gyms, and more. One person can move it; fits through doors and elevators', old: 'Bulky and heavy, limited to larger or more accessible locations' },
+  { label: 'How Customers Buy', smart: 'Customers can grab multiple items at once, spend more per visit, and pay any way (card, Apple Pay, etc.)', old: 'Fixed slots, less flexible and slower to restock' },
+  { label: 'How It Restocks', smart: 'Smart app enables remote control, restock alerts, and data-driven product operation analysis', old: 'Complex slot mechanisms, harder to maintain and more prone to failure' },
+  { label: 'Machine Design', smart: 'Slot-free design makes it easy to maintain and less likely to break down', old: 'Clumsy design and size limit mobility, frequent maintenance issues' },
+  { label: 'User Experience', smart: 'Quick and easy: customers pick items directly, no bending required', old: 'Less user-friendly: items drop behind a door, forcing customers to bend down' },
 ];
 
 const FAQS = [
@@ -442,10 +442,10 @@ function ProductModal({ id, onClose }) {
           </div>
         </div>
 
-        {/* Why HAHA — feature cards */}
+        {/* Why HAHA feature cards */}
         {p.featureCards && (
           <div className="p-6 lg:p-8 border-t border-gray-100" style={{ background: '#F4F6F8' }}>
-            <div className="font-semibold text-sm mb-4" style={{ color: '#1B2A4A' }}>{p.featureCardsTitle || 'Why This Unit — Built Different. Built Better.'}</div>
+            <div className="font-semibold text-sm mb-4" style={{ color: '#1B2A4A' }}>{p.featureCardsTitle || 'Why This Unit: Built Different. Built Better.'}</div>
             <div className="grid sm:grid-cols-2 gap-3">
               {p.featureCards.map((f) => (
                 <div key={f.title} className="rounded-xl p-4" style={{ background: '#fff' }}>
@@ -581,7 +581,7 @@ export default function SmartCoolers() {
           <div className="mb-3 pt-8 pb-1 border-t mt-4" style={{ borderColor: '#e5e7eb' }}>
             <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: '#6B7280' }}>Brand</div>
             <div className="font-black text-2xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>USI Spectra Smart Coolers</div>
-            <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Industry-leading warranty coverage — up to 7 years. Powered by TrueAI™ computer vision.</p>
+            <p className="text-sm mt-1" style={{ color: '#3D4D5C' }}>Industry-leading warranty coverage, up to 7 years. Powered by TrueAI™ computer vision.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
             {USI_PRODUCTS.map(p => <USICard key={p.name} {...p} onOpen={setOpenId} />)}
