@@ -122,6 +122,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link href="/privacy-policy" className="text-white/30 text-xs hover:text-white/60 transition-colors duration-200">Privacy Policy</Link>
             <Link href="/terms-of-service" className="text-white/30 text-xs hover:text-white/60 transition-colors duration-200">Terms of Service</Link>
+            <a href="https://www.ceejaysocial.com" target="_blank" rel="noopener noreferrer" className="text-white/30 text-xs hover:text-white/60 transition-colors duration-200">Site by CeeJay Social</a>
           </div>
         </div>
       </div>
