@@ -42,6 +42,7 @@ export default function Navbar() {
               {[
                 { href: '/smart-coolers', label: 'AI Smart Coolers' },
                 { href: '/vending-machines', label: 'Vending Machines' },
+                { href: '/request-service', label: 'Request Service' },
                 { href: '/about', label: 'About' },
                 { href: '/reviews', label: 'Reviews' },
                 { href: '/blog', label: 'Blog' },
@@ -129,6 +130,7 @@ export default function Navbar() {
               {[
                 { href: '/smart-coolers', label: 'AI Smart Coolers' },
                 { href: '/vending-machines', label: 'Vending Machines' },
+                { href: '/request-service', label: 'Request Service' },
                 { href: '/about', label: 'About' },
                 { href: '/reviews', label: 'Reviews' },
                 { href: '/blog', label: 'Blog' },

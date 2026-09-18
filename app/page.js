@@ -572,6 +572,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== MEET THE TEAM TEASER ===== */}
+      <section className="py-10 lg:py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 gap-0 items-center rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06),0 4px 12px rgba(27,42,74,0.08),0 16px 32px rgba(27,42,74,0.06)' }}>
+            <div className="relative" style={{ aspectRatio: '1/1' }}>
+              <Image src="/static-assets/team/vvs-team-photo-3.png" alt="The Vital Vending Sales team: Nick, Deanna, Hayden, Prez, and Justin" fill className="object-cover" />
+            </div>
+            <div className="p-8 lg:p-10">
+              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1a6b2a', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '0.75rem' }}>Who We Are</div>
+              <h2 className="font-black mb-3" style={{ fontSize: '1.6rem', color: '#1B2A4A', letterSpacing: '-0.02em', lineHeight: 1.2 }}>A real team, not a call center.</h2>
+              <p className="text-sm mb-5" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Vital Vending Sales is owner-operated and based right here in Ludlow, MA. When you call, you&apos;re talking to the same people who build, install, and service your equipment, not a script.</p>
+              <Link href="/about" className="inline-flex items-center gap-2 font-bold text-sm" style={{ padding: '10px 20px', borderRadius: 10, color: '#1B2A4A', border: '1.5px solid #1B2A4A' }}>
+                Meet the Team
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== ENTREPRENEUR CTA ===== */}
       <section className="py-10 lg:py-28 relative overflow-hidden" style={{ background: '#1B2A4A' }}>
         <div className="absolute inset-0 pointer-events-none">
@@ -702,7 +722,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="rounded-2xl p-8 lg:p-10" style={{ background: '#F4F6F8', border: '1px solid rgba(27,42,74,0.06)', boxShadow: '0 4px 24px rgba(27,42,74,0.08)' }}>
+            <div className="rounded-2xl p-8 lg:p-10" style={{ background: '#D6E4F5', border: '1px solid rgba(27,42,74,0.08)', boxShadow: '0 4px 24px rgba(27,42,74,0.08)' }}>
               <h3 className="font-bold text-xl mb-1" style={{ color: '#1B2A4A', letterSpacing: '-0.01em' }}>Book a Free Consultation</h3>
               <p className="text-sm mb-6" style={{ color: '#6B7280' }}>We&apos;ll respond within 1 business day. Zero pressure, zero cost.</p>
               <ContactForm />

@@ -77,7 +77,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li><Link href="/#services" className="text-white/70 text-sm hover:text-[#3DB54A] transition-colors duration-200">Equipment Sales</Link></li>
               <li><Link href="/#services" className="text-white/70 text-sm hover:text-[#3DB54A] transition-colors duration-200">Location Services</Link></li>
-              <li><Link href="/#services" className="text-white/70 text-sm hover:text-[#3DB54A] transition-colors duration-200">Service &amp; Support</Link></li>
+              <li><Link href="/request-service" className="text-white/70 text-sm hover:text-[#3DB54A] transition-colors duration-200">Request Service</Link></li>
               <li><Link href="/#contact" className="text-white/70 text-sm hover:text-[#3DB54A] transition-colors duration-200">Free Consultation</Link></li>
             </ul>
           </div>
