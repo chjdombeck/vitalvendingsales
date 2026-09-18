@@ -225,7 +225,7 @@ export default function RequestServicePage() {
                 <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-10">
                   {/* Step 1 */}
                   <div>
-                    <div className="font-bold text-xs uppercase tracking-wide mb-1.5" style={{ color: '#3DB54A' }}>Step 1</div>
+                    <div className="font-bold text-xs uppercase tracking-wide mb-1.5" style={{ color: '#1a6b2a' }}>Step 1</div>
                     <label className="font-bold block mb-3.5" style={{ color: '#1B2A4A', fontSize: '1.05rem', letterSpacing: '-0.01em' }}>How many vending machines need service?</label>
                     <div className="grid grid-cols-5 gap-2 sm:gap-3">
                       {[1, 2, 3, 4, 5].map(n => (
@@ -242,7 +242,7 @@ export default function RequestServicePage() {
 
                   {/* Step 2 */}
                   <div>
-                    <div className="font-bold text-xs uppercase tracking-wide mb-1.5" style={{ color: '#3DB54A' }}>Step 2</div>
+                    <div className="font-bold text-xs uppercase tracking-wide mb-1.5" style={{ color: '#1a6b2a' }}>Step 2</div>
                     <label className="font-bold block mb-3.5" style={{ color: '#1B2A4A', fontSize: '1.05rem', letterSpacing: '-0.01em' }}>Your Contact Information</label>
                     <div className="space-y-5">
                       <div className="grid sm:grid-cols-2 gap-5">
@@ -292,7 +292,7 @@ export default function RequestServicePage() {
 
                   {/* Step 3 */}
                   <div>
-                    <div className="font-bold text-xs uppercase tracking-wide mb-1.5" style={{ color: '#3DB54A' }}>Step 3</div>
+                    <div className="font-bold text-xs uppercase tracking-wide mb-1.5" style={{ color: '#1a6b2a' }}>Step 3</div>
                     <label className="font-bold block mb-1" style={{ color: '#1B2A4A', fontSize: '1.05rem', letterSpacing: '-0.01em' }}>Machine Details</label>
                     <p className="text-xs mb-5" style={{ color: '#3D4D5C', lineHeight: 1.6 }}>Each machine gets its own section below, even if several are at the same site.</p>
                     <div className="space-y-6">
@@ -317,7 +317,7 @@ export default function RequestServicePage() {
                     Submit Request
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </button>
-                  <p className="text-center text-xs" style={{ color: '#8C95A0', lineHeight: 1.6 }}>We typically respond within one business day. For urgent, machine-down issues, please call us directly.</p>
+                  <p className="text-center text-xs" style={{ color: '#5C6672', lineHeight: 1.6 }}>We typically respond within one business day. For urgent, machine-down issues, please call us directly.</p>
                 </form>
               ) : (
                 <div className="text-center py-16">
@@ -439,8 +439,8 @@ function MachineBlock({ index, total, machine, open, onToggle, onChange, onPhoto
         <SectionLabel>Machine Issue</SectionLabel>
         <div className="space-y-4">
           <div>
-            <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>What is the machine&apos;s issue?<Required /></label>
-            <select required value={machine.issue} onChange={e => onChange('issue', e.target.value)} className={inputCls} style={{ ...inputStyle, appearance: 'none' }}>
+            <label htmlFor={`machine-issue-${index}`} className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>What is the machine&apos;s issue?<Required /></label>
+            <select id={`machine-issue-${index}`} required value={machine.issue} onChange={e => onChange('issue', e.target.value)} className={inputCls} style={{ ...inputStyle, appearance: 'none' }}>
               <option value="" disabled>Select an issue</option>
               {ISSUE_OPTIONS.map(o => <option key={o} value={o}>{o}</option>)}
             </select>

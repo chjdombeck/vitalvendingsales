@@ -283,7 +283,7 @@ function SpecChip({ label }) {
 function ProductCard({ id, img, name, model, tagline, specs, price, badge, badgeStyle, wide, onOpen }) {
   return (
     <div
-      role="button" tabIndex={0} aria-label={`Quick view ${name}`}
+      role="button" tabIndex={0}
       onClick={() => onOpen(id)}
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(id); } }}
       className={`rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 ${wide ? 'sm:col-span-2 lg:col-span-1' : ''}`}
@@ -322,7 +322,7 @@ function ProductCard({ id, img, name, model, tagline, specs, price, badge, badge
 function USICard({ id, img, name, part, tagline, specs, price, badge, badgeStyle, brandLabel = 'USI', onOpen, imgScale = 1 }) {
   return (
     <div
-      role="button" tabIndex={0} aria-label={`View ${name} details`}
+      role="button" tabIndex={0}
       onClick={() => onOpen(id)}
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(id); } }}
       className="rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
