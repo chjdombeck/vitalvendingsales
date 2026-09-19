@@ -27,13 +27,6 @@ function emptyMachine() {
   };
 }
 
-const SERVICE_TYPES = [
-  { title: 'Repair', body: 'Machine jammed, not vending, or malfunctioning.', icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z' },
-  { title: 'Restock / Refill', body: 'Running low on product or need an out-of-cycle fill.', icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4' },
-  { title: 'Maintenance', body: 'Routine cleaning, inspection, or preventive service.', icon: 'M10 20l4-16m4 4l4 4-4 4M6 8l-4 4 4 4' },
-  { title: 'Something Else', body: 'Question, complaint, or anything not listed above.', icon: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
-];
-
 const inputCls = 'w-full px-3.5 py-3 rounded-xl border text-sm focus:outline-none focus:ring-4 transition-shadow duration-200';
 const inputStyle = { borderColor: '#e5e7eb', background: '#fff', color: '#1B2A4A' };
 const labelCls = 'block font-bold text-sm mb-1.5';
@@ -196,28 +189,16 @@ export default function RequestServicePage() {
             <span style={{ color: 'rgba(255,255,255,0.85)' }}>Request Service</span>
           </nav>
           <h1 className="font-black text-white mb-3" style={{ fontSize: 'clamp(2rem,4vw,3rem)', letterSpacing: '-0.03em', lineHeight: 1.1 }}>Request Service</h1>
-          <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, maxWidth: 560 }}>Machine down, running low, or due for maintenance? Tell us what&apos;s going on and our service team will follow up fast.</p>
+          <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, maxWidth: 560 }}>Machine down or due for maintenance? Tell us what&apos;s going on and our service team will follow up fast.</p>
         </div>
       </section>
 
-      {/* Service type cards */}
+      {/* Request form */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-            {SERVICE_TYPES.map(s => (
-              <div key={s.title} className="rounded-2xl p-6" style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.07)' }}>
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: '#D6F0DA' }}>
-                  <svg className="w-5 h-5" fill="none" stroke="#3DB54A" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d={s.icon} /></svg>
-                </div>
-                <div className="font-bold text-sm mb-1.5" style={{ color: '#1B2A4A' }}>{s.title}</div>
-                <p className="text-xs" style={{ color: '#3D4D5C', lineHeight: 1.6 }}>{s.body}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
+          <div className="max-w-3xl mx-auto">
             {/* Form panel */}
-            <div className="lg:col-span-3 rounded-3xl p-8 lg:p-10" style={{ background: '#D6E4F5', border: '1px solid rgba(27,42,74,0.08)' }}>
+            <div className="rounded-3xl p-8 lg:p-10" style={{ background: '#D6E4F5', border: '1px solid rgba(27,42,74,0.08)' }}>
               <h2 className="font-black mb-2" style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', color: '#1B2A4A', letterSpacing: '-0.03em' }}>Tell us what you need</h2>
               <p className="text-sm mb-8" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Fill out the form below. The more detail you give us, the fewer questions we&apos;ll need to ask before dispatching a technician.</p>
 
@@ -328,29 +309,6 @@ export default function RequestServicePage() {
                   <p className="text-sm mx-auto" style={{ color: '#3D4D5C', lineHeight: 1.7, maxWidth: 420 }}>Thanks! We&apos;ve got your service request. Our team will reach out within one business day to confirm details and schedule your visit.</p>
                 </div>
               )}
-            </div>
-
-            {/* Side panel */}
-            <div className="lg:col-span-2">
-              <div className="rounded-2xl p-8" style={{ background: '#1B2A4A' }}>
-                <div className="font-black text-white text-lg mb-1" style={{ letterSpacing: '-0.02em' }}>Need it faster?</div>
-                <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>Call us directly for urgent, machine-down situations. Our team handles service across Massachusetts and the Northeast.</p>
-                <a href="tel:4132823776" className="flex items-center justify-center gap-2 w-full font-bold rounded-xl text-white text-sm py-3.5 mb-3"
-                  style={{ background: 'rgba(61,181,74,0.88)', border: '1px solid rgba(255,255,255,0.28)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35), 0 4px 16px rgba(0,0,0,0.18), 0 0 24px rgba(61,181,74,0.28)' }}>
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
-                  Call (413) 282-3776
-                </a>
-                <a href="mailto:info@vitalvendingsales.com" className="flex items-center justify-center gap-2 w-full font-semibold rounded-xl text-sm py-3.5"
-                  style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.32)', color: '#fff' }}>
-                  Email Us
-                </a>
-                <div className="mt-6 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-                  <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', lineHeight: 1.7 }}>
-                    Service Hours<br />
-                    <span style={{ color: 'rgba(255,255,255,0.8)', fontWeight: 600 }}>Mon&ndash;Fri, 8am&ndash;5pm ET</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
