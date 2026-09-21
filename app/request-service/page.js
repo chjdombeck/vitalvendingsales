@@ -46,6 +46,7 @@ export default function RequestServicePage() {
   const [openIndices, setOpenIndices] = useState({ 0: true });
   const [submitting, setSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   function updateMachine(i, field, value) {
     setMachines(prev => prev.map((m, idx) => (idx === i ? { ...m, [field]: value } : m)));
@@ -149,7 +150,7 @@ export default function RequestServicePage() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (submitting) return;
+    if (submitting || submitted) return;
 
     // Expand every machine block before validating, so a required field inside
     // a collapsed section can never be silently skipped.
@@ -175,6 +176,7 @@ export default function RequestServicePage() {
         buildSummary()
       );
 
+      setSubmitted(true);
       setShowModal(true);
       setSubmitting(false);
     }, 50);
@@ -204,7 +206,7 @@ export default function RequestServicePage() {
               <h2 className="font-black mb-2" style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', color: '#1B2A4A', letterSpacing: '-0.03em' }}>Tell us what you need</h2>
               <p className="text-sm mb-8" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Fill out the form below. The more detail you give us, the fewer questions we&apos;ll need to ask before dispatching a technician.</p>
 
-              {!showModal ? (
+              {!submitted ? (
                 <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-10">
                   {/* Step 1 */}
                   <div>
@@ -307,8 +309,8 @@ export default function RequestServicePage() {
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style={{ background: '#D6F0DA' }}>
                     <svg className="w-8 h-8" style={{ color: '#3DB54A' }} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                   </div>
-                  <h3 className="font-black mb-2" style={{ color: '#1B2A4A', fontSize: '1.6rem', letterSpacing: '-0.03em' }}>Request Received</h3>
-                  <p className="text-sm mx-auto" style={{ color: '#3D4D5C', lineHeight: 1.7, maxWidth: 420 }}>Thanks! We&apos;ve got your service request. Our team will reach out within one business day to confirm details and schedule your visit.</p>
+                  <h3 className="font-black mb-2" style={{ color: '#1B2A4A', fontSize: '1.6rem', letterSpacing: '-0.03em' }}>Your Request Has Been Submitted</h3>
+                  <p className="text-sm mx-auto" style={{ color: '#3D4D5C', lineHeight: 1.7, maxWidth: 420 }}>Thank you! Please check your email and phone for our follow-up. Our team will reach out within one business day to confirm details and schedule your visit. You can safely leave this page. To send another request, refresh the page.</p>
                 </div>
               )}
             </div>
@@ -316,7 +318,13 @@ export default function RequestServicePage() {
         </div>
       </section>
 
-      <SuccessModal open={showModal} onClose={() => setShowModal(false)} />
+      <SuccessModal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        title="Your Request Has Been Submitted!"
+        message="Please check your email and phone for our follow-up. Our team will reach out within one business day. You can now leave this page."
+        buttonLabel="Got It"
+      />
     </>
   );
 }

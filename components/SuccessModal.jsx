@@ -1,6 +1,12 @@
 'use client';
 
-export default function SuccessModal({ open, onClose }) {
+export default function SuccessModal({
+  open,
+  onClose,
+  title = 'We Received Your Information!',
+  message = "We'll get back to you shortly. Please check your email for more information.",
+  buttonLabel = 'Got It',
+}) {
   if (!open) return null;
 
   return (
@@ -31,10 +37,10 @@ export default function SuccessModal({ open, onClose }) {
         </div>
 
         <h3 id="success-modal-title" className="font-black mb-2" style={{ color: '#1B2A4A', fontSize: '1.3rem', letterSpacing: '-0.02em' }}>
-          We Received Your Information!
+          {title}
         </h3>
         <p style={{ color: '#3D4D5C', lineHeight: 1.7, fontSize: '0.95rem' }}>
-          We&apos;ll get back to you shortly. Please check your email for more information.
+          {message}
         </p>
 
         <button
@@ -42,7 +48,7 @@ export default function SuccessModal({ open, onClose }) {
           className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-white mt-6"
           style={{ background: '#3DB54A', border: 'none', cursor: 'pointer' }}
         >
-          Got It
+          {buttonLabel}
         </button>
       </div>
     </div>
