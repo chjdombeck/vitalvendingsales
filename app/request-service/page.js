@@ -19,7 +19,7 @@ function emptyMachine() {
   return {
     manufacturer: '', model: '', serial: '',
     photoFile: null, photoUrl: '', photoStatus: '',
-    street: '', city: '', state: '', zip: '', locationName: '',
+    street: '', city: '', state: '', zip: '', locationName: '', siteDetails: '',
     issue: '',
     moveStreet: '', moveCity: '', moveState: '', moveZip: '', moveLocationName: '',
     notes: '',
@@ -95,6 +95,7 @@ export default function RequestServicePage() {
       if (m.photoUrl) lines.push(`Photo URL: ${m.photoUrl}`);
       lines.push(`Address: ${m.street}, ${m.city}, ${m.state} ${m.zip}`);
       lines.push(`Location/Site Name: ${m.locationName || 'N/A'}`);
+      lines.push(`Site Specific Info: ${m.siteDetails || 'N/A'}`);
       lines.push(`Issue: ${m.issue}`);
       if (m.issue === MOVE_ISSUE_VALUE) {
         lines.push(`Move To Address: ${m.moveStreet}, ${m.moveCity}, ${m.moveState} ${m.moveZip}`);
@@ -132,6 +133,7 @@ export default function RequestServicePage() {
       payload[`${prefix}serial`] = active ? m.serial : '';
       payload[`${prefix}address`] = active ? `${m.street}, ${m.city}, ${m.state} ${m.zip}` : '';
       payload[`${prefix}location_name`] = active ? (m.locationName || '') : '';
+      payload[`${prefix}site_details`] = active ? (m.siteDetails || '') : '';
       payload[`${prefix}issue`] = active ? m.issue : '';
       payload[`${prefix}move_to_address`] = active && m.issue === MOVE_ISSUE_VALUE
         ? `${m.moveStreet}, ${m.moveCity}, ${m.moveState} ${m.moveZip}` : '';
@@ -248,7 +250,7 @@ export default function RequestServicePage() {
                       </div>
                       <div className="grid sm:grid-cols-2 gap-5">
                         <div>
-                          <label className={labelCls} style={{ color: '#1B2A4A' }}>Business Name<Optional /></label>
+                          <label className={labelCls} style={{ color: '#1B2A4A' }}>Your Business Name<Optional /></label>
                           <input value={customer.company} onChange={e => setCustomer(c => ({ ...c, company: e.target.value }))} placeholder="Acme Warehouse" className={inputCls} style={inputStyle} />
                         </div>
                         <div>
@@ -371,6 +373,10 @@ function MachineBlock({ index, total, machine, open, onToggle, onChange, onPhoto
         <SectionLabel>Machine Location <span style={{ color: '#8C95A0', fontWeight: 600, fontSize: '0.7rem', textTransform: 'none' }}>Current Location</span></SectionLabel>
         <div className="space-y-4">
           <div>
+            <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Location / Site<Required /></label>
+            <input required value={machine.locationName} onChange={e => onChange('locationName', e.target.value)} placeholder="Business or building name" className={inputCls} style={inputStyle} />
+          </div>
+          <div>
             <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Street Address<Required /></label>
             <input required value={machine.street} onChange={e => onChange('street', e.target.value)} placeholder="123 Main St" className={inputCls} style={inputStyle} />
           </div>
@@ -389,8 +395,8 @@ function MachineBlock({ index, total, machine, open, onToggle, onChange, onPhoto
             </div>
           </div>
           <div>
-            <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Location / Site Name<Optional /></label>
-            <input value={machine.locationName} onChange={e => onChange('locationName', e.target.value)} placeholder="e.g. Building B breakroom" className={inputCls} style={inputStyle} />
+            <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Site Specific Information<Optional /></label>
+            <input value={machine.siteDetails} onChange={e => onChange('siteDetails', e.target.value)} placeholder="e.g. Second floor break room, lobby, third floor hallway" className={inputCls} style={inputStyle} />
           </div>
         </div>
 
@@ -465,11 +471,11 @@ function MachineBlock({ index, total, machine, open, onToggle, onChange, onPhoto
           {showOnsite && (
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Onsite Contact Name</label>
+                <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Onsite Contact Name<Required /></label>
                 <input required={showOnsite} value={machine.onsiteName} onChange={e => onChange('onsiteName', e.target.value)} placeholder="Contact name" className={inputCls} style={inputStyle} />
               </div>
               <div>
-                <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Onsite Contact Phone</label>
+                <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Onsite Contact Phone<Required /></label>
                 <input required={showOnsite} type="tel" value={machine.onsitePhone} onChange={e => onChange('onsitePhone', e.target.value)} placeholder="(413) 000-0000" className={inputCls} style={inputStyle} />
               </div>
             </div>
