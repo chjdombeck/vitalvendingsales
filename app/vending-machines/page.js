@@ -13,9 +13,16 @@ const MACHINES = [
   { id: 'mercato5000', category: 'snack', brand: 'USI', name: 'USI Mercato 5000', desc: 'High-volume glass-front snack machine, most selections', specs: ['528 items', '65 selections', 'Glass front'], price: '$5,821', img: '/static-assets/vvs_product_catalog/images/usi-mercato-5000-snack-vending-machine-2.jpg' },
   { id: 'mercato4000', category: 'snack', brand: 'USI', name: 'USI Mercato 4000', desc: 'Reliable mid-range snack machine, MDB payment ready', specs: ['360 items', '36 selections', 'MDB compatible'], price: '$5,631', img: '/static-assets/vvs_product_catalog/images/usi-mercato-4000-snack-vending-machine-2.jpg' },
   { id: 'mercato3000', category: 'snack', brand: 'USI', name: 'USI Mercato 3000', desc: 'Best value for space-conscious operators, small footprint', specs: ['360 items', '36 selections', 'Compact'], price: '$5,072', img: '/static-assets/vvs_product_catalog/images/usi-mercato-3000-snack-vending-machine-2.jpg' },
-  { id: 'ams39', category: 'snack', brand: 'AMS', name: 'AMS 39 Snack Machine', desc: 'AMS workhorse, built for simplicity and dependability', specs: ['5-wide', 'Dual config', 'Proven reliability'], price: '$4,330', img: '/static-assets/vvs_product_catalog/images/ams-39-snack-vending-machine-2.jpg' },
+  { id: 'ams39classicsingle', category: 'snack', brand: 'AMS', name: 'AMS 39 Classic Snack Machine (Single Coil)', desc: 'Reliable non-refrigerated snack vending, dependable for offices, schools, and break rooms', specs: ['Single coil', '72"H', '35" or 39"W'], price: '$4,557', img: '/static-assets/vvs_product_catalog/images/ams/ams-39-classic-single-coil.png' },
+  { id: 'ams39classicdual', category: 'snack', brand: 'AMS', name: 'AMS 39 Classic Snack Machine (Dual Spiral Coil)', desc: 'Higher capacity, same footprint, designed for higher-volume locations', specs: ['Dual spiral coils', '72"H', '35" or 39"W'], price: '$4,799', img: '/static-assets/vvs_product_catalog/images/ams/ams-39-classic-dual-coil.png' },
   { id: 'ams35', category: 'snack', brand: 'AMS', name: 'AMS 35 Snack Machine', desc: 'Compact 4-wide AMS machine for smaller footprint locations', specs: ['4-wide', '72"H x 35"W', 'Compact'], price: '$4,055', img: '/static-assets/vvs_product_catalog/images/ams-35-snack-vending-machine-2.jpg' },
-  { id: 'slimgem', category: 'snack', brand: 'AMS', name: 'AMS Slim Gem', desc: 'Ultra-slim design for tight spaces, Sensit delivery system', specs: ['28.5" wide', 'Dual spirals', 'Sensit delivery'], price: '$3,490', img: '/static-assets/vvs_product_catalog/images/ams-slim-gem-snack-vending-machine-2.jpg' },
+  { id: 'slimgem', category: 'snack', brand: 'AMS', name: 'AMS Slim GEM Snack Machine', desc: 'Compact snack vending, ideal where space is limited without sacrificing merchandising flexibility', specs: ['Slim footprint', 'Three-wide cabinet', 'Dual spiral'], price: '$4,134', img: '/static-assets/vvs_product_catalog/images/ams/ams-slim-gem.png' },
+  { id: 'ams39refrigsingle', category: 'combo', brand: 'AMS', name: 'AMS 39 Refrigerated Combo 5 Wide (Single Coil)', desc: 'A refrigerated combo machine that dispenses snacks and bottled beverages while maintaining product freshness', specs: ['Refrigerated', 'Snack + beverage', '5-wide'], price: '$6,940', img: '/static-assets/vvs_product_catalog/images/ams/ams-39-refrigerated-combo-single-coil.png', badgeCombo: true },
+  { id: 'ams39refrigdual', category: 'combo', brand: 'AMS', name: 'AMS 39 Refrigerated Combo (Dual Spiral Coil)', desc: 'Maximum refrigerated capacity, built for high-volume locations needing more product selections', specs: ['Dual spiral coils', 'Refrigerated', 'Snack + beverage'], price: '$7,096', img: '/static-assets/vvs_product_catalog/images/ams/ams-39-refrigerated-combo-dual-coil.png', badgeCombo: true },
+  { id: 'amsbook', category: 'snack', brand: 'AMS', name: 'AMS Book Vending Machine', desc: 'Automated book sales, a modern vending solution for schools, libraries, and community programs', specs: ['4 or 5 trays', 'Self-service', 'Custom graphics available'], price: '$4,620', img: '/static-assets/vvs_product_catalog/images/ams/ams-book-vending-machine.png', badgeBook: true },
+  { id: 'amslowtempsingle', category: 'combo', brand: 'AMS', name: 'AMS Low Temp 4 Wide (Single Coil)', desc: 'Compact refrigerated combo, a smaller footprint refrigerated machine for snacks and drinks', specs: ['Compact design', 'Refrigerated', '650 lb shipping weight'], price: '$6,663', img: '/static-assets/vvs_product_catalog/images/ams/ams-low-temp-4wide-single-coil.png', badgeCombo: true },
+  { id: 'amslowtempdual', category: 'combo', brand: 'AMS', name: 'AMS Low Temp 4 Wide (Dual Spiral Coil)', desc: 'Compact high-capacity combo, adds dual spiral capacity while maintaining a compact footprint', specs: ['Dual spiral', 'Refrigerated', '650 lb shipping weight'], price: '$6,787', img: '/static-assets/vvs_product_catalog/images/ams/ams-low-temp-4wide-dual-coil.png', badgeCombo: true },
+  { id: 'amsvrm', category: 'beverage', brand: 'AMS', name: 'AMS VRM Outdoor Vending Machine', desc: 'Outdoor and high-security vending, engineered for outdoor installations and demanding environments', specs: ['Weather resistant', 'High-security design', 'Refrigerated'], price: 'Contact for Price', img: '/static-assets/vvs_product_catalog/images/ams/ams-vrm-outdoor.png', badgeBev: true },
   { id: 'evokelift', category: 'combo', brand: 'USI', name: 'Evoke Elevator Food & Beverage', desc: 'Soft-elevator delivery for fresh food and fragile items', specs: ['60 selections', 'Soft elevator', 'FIFO loading'], price: '$10,929', img: '/static-assets/vvs_product_catalog/images/evoke-elevator-food-beverage-vending-machine-2.jpg', badgeCombo: true },
   { id: 'evokecombo', category: 'combo', brand: 'USI', name: 'USI Evoke ST5 Combo', desc: 'Eye-catching state-of-the-art combo, lowest cost of ownership', specs: ['Snack + cold drink', 'Refrigerated', 'ADA compliant'], price: '$8,378', img: '/static-assets/vvs_product_catalog/images/usi-evoke-st5-combo-vending-machine-2.jpg', badgeCombo: true },
   { id: 'ams39combo', category: 'combo', brand: 'AMS', name: 'AMS 39 Combo Machine', desc: 'Ideal for smaller locations and cost-conscious operators', specs: ['Snack + drink', 'Rugged build', 'Cost-effective'], price: '$5,999', img: '/static-assets/vvs_product_catalog/images/ams-39-combo-vending-machine-2.jpg', badgeCombo: true },
@@ -24,7 +31,7 @@ const MACHINES = [
   { id: 'dixie501e', category: 'beverage', brand: 'Dixie Narco', name: 'Dixie Narco 501E', desc: 'The workhorse of the vending world, legendary reliability', specs: ['72"H x 37"W', 'Cans & bottles', 'Easy service'], price: '$2,099', img: '/static-assets/vvs_product_catalog/images/dixie-narco-501e-2.jpg', badgeBev: true },
   { id: 'coolblu', category: 'beverage', brand: 'CoolBlu', name: 'CoolBlu Cooler', desc: 'High-capacity refrigerated cooler for fresh food and cold drinks', specs: ['High capacity', 'Fresh food ready', 'Cashless pay'], price: '$2,499', img: '/static-assets/vvs_product_catalog/images/coolblu-coolers-2.jpg', badgeBev: true },
   { id: 'evokecoffee', category: 'coffee', brand: 'USI', name: 'Evoke Coffee Machine', desc: 'Full ADA-compliant coffee vending with LED lighting', specs: ['ADA compliant', 'LED lighting', 'iVend sensor'], price: '$8,379', img: '/static-assets/vvs_product_catalog/images/evoke-coffee-machine-2.jpg', badgeCoffee: true },
-  { id: 'ap123', category: 'refurbished', brand: 'AP / InOne', name: 'AP 123 Snack + InOne Controller', desc: 'Fully refurbished AP 123 with upgraded InOne control board', specs: ['Refurbished', 'InOne controller', 'Updated electronics'], price: 'Call for Price', img: '/static-assets/vvs_product_catalog/images/ap-123-snack-vending-machine-inone-upgrade-controller-2.jpg', badgeRef: true },
+  { id: 'ap123', category: 'refurbished', brand: 'AP / InOne', name: 'AP 123 Snack + InOne Controller', desc: 'Fully refurbished AP 123 with upgraded InOne control board', specs: ['Refurbished', 'InOne controller', 'Updated electronics'], price: 'Contact for Price', img: '/static-assets/vvs_product_catalog/images/ap-123-snack-vending-machine-inone-upgrade-controller-2.jpg', badgeRef: true },
 ];
 
 const FILTERS = [
@@ -36,22 +43,35 @@ const FILTERS = [
   { key: 'refurbished', label: 'Used & Refurbished' },
 ];
 
+const BRAND_FILTERS = [
+  { key: 'all', label: 'All Brands' },
+  { key: 'USI', label: 'USI' },
+  { key: 'AMS', label: 'AMS' },
+  { key: 'Alpine', label: 'Alpine' },
+  { key: 'Dixie Narco', label: 'Dixie Narco' },
+  { key: 'CoolBlu', label: 'CoolBlu' },
+];
+
 function getBadge(m) {
   if (m.badgeCombo) return { label: 'Combo', bg: '#FFF3D6', color: '#B07D00' };
   if (m.badgeBev) return { label: 'Beverage', bg: '#D6EEF8', color: '#1B6FA8' };
   if (m.badgeCoffee) return { label: 'Coffee', bg: '#F3EAD6', color: '#7B4F1C' };
   if (m.badgeRef) return { label: 'Refurbished', bg: '#EAE0F5', color: '#5B3A8C' };
+  if (m.badgeBook) return { label: 'Book', bg: '#FDE8D6', color: '#B0530A' };
   return { label: 'Snack', bg: '#D6F0DA', color: '#1e7a28' };
 }
 
 export default function VendingMachines() {
   const [active, setActive] = useState('all');
+  const [activeBrand, setActiveBrand] = useState('all');
   const [modal, setModal] = useState(null);
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', sms_consent: false });
   const [sent, setSent] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-  const filtered = active === 'all' ? MACHINES : MACHINES.filter(m => m.category === active);
+  const filtered = MACHINES
+    .filter(m => active === 'all' || m.category === active)
+    .filter(m => activeBrand === 'all' || m.brand === activeBrand);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -155,6 +175,29 @@ export default function VendingMachines() {
                 {f.label}
               </button>
             ))}
+          </div>
+
+          {/* Brand Filter Tabs */}
+          <div className="mb-10 pt-8" style={{ borderTop: '1px solid rgba(27,42,74,0.08)' }}>
+            <div className="font-bold text-xs uppercase tracking-wide mb-3" style={{ color: '#8C95A0' }}>Filter by Brand</div>
+            <div className="flex flex-wrap gap-2">
+              {BRAND_FILTERS.map(b => (
+                <button
+                  key={b.key}
+                  onClick={() => setActiveBrand(b.key)}
+                  className="px-5 py-2 rounded-full font-semibold text-sm transition-all"
+                  style={{
+                    border: '2px solid',
+                    borderColor: activeBrand === b.key ? '#3DB54A' : '#e5e7eb',
+                    background: activeBrand === b.key ? '#D6F0DA' : '#fff',
+                    color: activeBrand === b.key ? '#1a6b2a' : '#3D4D5C',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {b.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Grid */}
