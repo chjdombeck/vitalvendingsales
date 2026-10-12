@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react';
 import Link from 'next/link';
 import SuccessModal from '../../components/SuccessModal';
-import { submitServiceRequestLead, submitServiceRequestBackupEmail, uploadServiceRequestPhoto, submitMoveRequestLead } from '../../lib/service-request';
+import { submitServiceRequestLead, submitServiceRequestBackupEmail, uploadServiceRequestPhoto } from '../../lib/service-request';
 
 const MAX_MACHINES = 5;
 const MOVE_ISSUE_VALUE = 'Needs to Be Moved';
@@ -12,7 +12,7 @@ const ISSUE_OPTIONS = [
   'Not Cooling', 'Will Not Vend', 'Double Vends', 'Drop Sensor Does Not Work',
   'Keypad Does Not Work', 'Display Does Not Work', 'Credit Card Reader Not Working',
   'Dollar Bill Acceptor Not Working', 'Coin Mechanism Not Working', "Won't Power On",
-  'Door/Lock Issue', 'Multiple Issues', 'Other',
+  'Door/Lock Issue', MOVE_ISSUE_VALUE, 'Multiple Issues', 'Other',
 ];
 
 function emptyMachine() {
@@ -22,17 +22,6 @@ function emptyMachine() {
     street: '', city: '', state: '', zip: '', locationName: '', siteDetails: '',
     issue: '',
     moveStreet: '', moveCity: '', moveState: '', moveZip: '', moveLocationName: '',
-    notes: '',
-    accessMethod: '', onsiteName: '', onsitePhone: '', accessNotes: '',
-  };
-}
-
-function emptyMoveMachine() {
-  return {
-    manufacturer: '', model: '', serial: '',
-    photoFile: null, photoUrl: '', photoStatus: '',
-    currentStreet: '', currentCity: '', currentState: '', currentZip: '', currentLocationName: '',
-    newStreet: '', newCity: '', newState: '', newZip: '', newLocationName: '',
     notes: '',
     accessMethod: '', onsiteName: '', onsitePhone: '', accessNotes: '',
   };
@@ -50,8 +39,6 @@ function Optional() {
 }
 
 export default function RequestServicePage() {
-  const [activeTab, setActiveTab] = useState('maintenance');
-
   const formRef = useRef(null);
   const [machineCount, setMachineCount] = useState(1);
   const [customer, setCustomer] = useState({ firstName: '', lastName: '', phone: '', email: '', company: '', existingCustomer: '' });
@@ -60,15 +47,6 @@ export default function RequestServicePage() {
   const [submitting, setSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
-  const moveFormRef = useRef(null);
-  const [moveMachineCount, setMoveMachineCount] = useState(1);
-  const [moveCustomer, setMoveCustomer] = useState({ firstName: '', lastName: '', phone: '', email: '', company: '', existingCustomer: '' });
-  const [moveMachines, setMoveMachines] = useState(() => Array.from({ length: MAX_MACHINES }, emptyMoveMachine));
-  const [moveOpenIndices, setMoveOpenIndices] = useState({ 0: true });
-  const [moveSubmitting, setMoveSubmitting] = useState(false);
-  const [moveShowModal, setMoveShowModal] = useState(false);
-  const [moveSubmitted, setMoveSubmitted] = useState(false);
 
   function updateMachine(i, field, value) {
     setMachines(prev => prev.map((m, idx) => (idx === i ? { ...m, [field]: value } : m)));
@@ -204,132 +182,6 @@ export default function RequestServicePage() {
     }, 50);
   }
 
-  function updateMoveMachine(i, field, value) {
-    setMoveMachines(prev => prev.map((m, idx) => (idx === i ? { ...m, [field]: value } : m)));
-  }
-
-  function toggleMoveBlock(i) {
-    setMoveOpenIndices(prev => ({ ...prev, [i]: !prev[i] }));
-  }
-
-  async function handleMovePhotoChange(i, file) {
-    if (!file) {
-      updateMoveMachine(i, 'photoFile', null);
-      updateMoveMachine(i, 'photoUrl', '');
-      updateMoveMachine(i, 'photoStatus', '');
-      return;
-    }
-    updateMoveMachine(i, 'photoFile', file);
-    updateMoveMachine(i, 'photoStatus', 'uploading');
-    const url = await uploadServiceRequestPhoto(file);
-    if (url) {
-      updateMoveMachine(i, 'photoUrl', url);
-      updateMoveMachine(i, 'photoStatus', 'uploaded');
-    } else {
-      updateMoveMachine(i, 'photoStatus', 'failed');
-    }
-  }
-
-  function buildMoveSummary() {
-    const lines = [];
-    lines.push('MACHINE MOVE REQUEST');
-    lines.push('');
-    lines.push('CUSTOMER INFO');
-    lines.push(`Name: ${moveCustomer.firstName} ${moveCustomer.lastName}`);
-    lines.push(`Phone: ${moveCustomer.phone}`);
-    lines.push(`Email: ${moveCustomer.email}`);
-    lines.push(`Business: ${moveCustomer.company || 'N/A'}`);
-    lines.push(`Existing Customer: ${moveCustomer.existingCustomer || 'Not answered'}`);
-    lines.push('');
-    for (let idx = 0; idx < moveMachineCount; idx++) {
-      const m = moveMachines[idx];
-      const n = idx + 1;
-      lines.push(`MACHINE ${n} OF ${moveMachineCount}`);
-      lines.push(`Manufacturer: ${m.manufacturer}`);
-      lines.push(`Model: ${m.model}`);
-      lines.push(`Serial Number: ${m.serial}`);
-      lines.push(`Photo Attached: ${m.photoUrl ? 'Yes' : 'No'}`);
-      if (m.photoUrl) lines.push(`Photo URL: ${m.photoUrl}`);
-      lines.push(`Current Address: ${m.currentStreet}, ${m.currentCity}, ${m.currentState} ${m.currentZip}`);
-      lines.push(`Current Location/Site Name: ${m.currentLocationName || 'N/A'}`);
-      lines.push(`New Address: ${m.newStreet}, ${m.newCity}, ${m.newState} ${m.newZip}`);
-      lines.push(`New Location/Site Name: ${m.newLocationName || 'N/A'}`);
-      lines.push(`Additional Notes: ${m.notes || 'N/A'}`);
-      lines.push(`Access Method: ${m.accessMethod}`);
-      if (m.accessMethod === 'Someone else will be onsite with the key') {
-        lines.push(`Onsite Contact: ${m.onsiteName || 'N/A'}, ${m.onsitePhone || 'N/A'}`);
-      }
-      lines.push(`Access Notes: ${m.accessNotes || 'N/A'}`);
-      lines.push('');
-    }
-    return lines.join('\n');
-  }
-
-  function buildMoveGhlPayload() {
-    const payload = {
-      first_name: moveCustomer.firstName,
-      last_name: moveCustomer.lastName,
-      phone: moveCustomer.phone,
-      email: moveCustomer.email,
-      companyName: moveCustomer.company || '',
-      existing_customer: moveCustomer.existingCustomer || '',
-      machine_count: moveMachineCount,
-      source: 'Request Move Page',
-    };
-    for (let idx = 0; idx < MAX_MACHINES; idx++) {
-      const n = idx + 1;
-      const prefix = `machine_${n}_`;
-      const active = idx < moveMachineCount;
-      const m = moveMachines[idx];
-      payload[`${prefix}manufacturer`] = active ? m.manufacturer : '';
-      payload[`${prefix}model`] = active ? m.model : '';
-      payload[`${prefix}serial`] = active ? m.serial : '';
-      payload[`${prefix}current_address`] = active ? `${m.currentStreet}, ${m.currentCity}, ${m.currentState} ${m.currentZip}` : '';
-      payload[`${prefix}current_location_name`] = active ? (m.currentLocationName || '') : '';
-      payload[`${prefix}new_address`] = active ? `${m.newStreet}, ${m.newCity}, ${m.newState} ${m.newZip}` : '';
-      payload[`${prefix}new_location_name`] = active ? (m.newLocationName || '') : '';
-      payload[`${prefix}notes`] = active ? (m.notes || '') : '';
-      payload[`${prefix}access_method`] = active ? m.accessMethod : '';
-      payload[`${prefix}onsite_contact`] = active ? `${m.onsiteName || ''} ${m.onsitePhone || ''}`.trim() : '';
-      payload[`${prefix}access_notes`] = active ? (m.accessNotes || '') : '';
-      payload[`${prefix}photo_url`] = active ? (m.photoUrl || '') : '';
-    }
-    payload.machines_summary = buildMoveSummary();
-    return payload;
-  }
-
-  function handleMoveSubmit(e) {
-    e.preventDefault();
-    if (moveSubmitting || moveSubmitted) return;
-
-    setMoveOpenIndices(() => {
-      const all = {};
-      for (let i = 0; i < moveMachineCount; i++) all[i] = true;
-      return all;
-    });
-
-    setTimeout(() => {
-      const form = moveFormRef.current;
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      setMoveSubmitting(true);
-
-      submitMoveRequestLead(buildMoveGhlPayload()).catch(() => {});
-      submitServiceRequestBackupEmail(
-        form,
-        `Machine Move Request from ${moveCustomer.firstName} (${moveMachineCount} machine${moveMachineCount > 1 ? 's' : ''})`,
-        buildMoveSummary()
-      );
-
-      setMoveSubmitted(true);
-      setMoveShowModal(true);
-      setMoveSubmitting(false);
-    }, 50);
-  }
-
   return (
     <>
       {/* Hero */}
@@ -340,42 +192,17 @@ export default function RequestServicePage() {
             <span className="mx-2">/</span>
             <span style={{ color: 'rgba(255,255,255,0.85)' }}>Request Service</span>
           </nav>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <div>
-              <h1 className="font-black text-white mb-3" style={{ fontSize: 'clamp(2rem,4vw,3rem)', letterSpacing: '-0.03em', lineHeight: 1.1 }}>Request Service</h1>
-              <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, maxWidth: 560 }}>
-                {activeTab === 'maintenance'
-                  ? "Machine down or due for maintenance? Tell us what's going on and our service team will follow up fast."
-                  : 'Need a machine relocated? Give us the current and new location and our team will get it moved.'}
-              </p>
-            </div>
-            <div className="flex-shrink-0 w-full lg:w-auto">
-              <div className="font-black text-center mb-3" style={{ color: '#fff', fontSize: 'clamp(1.5rem,3.2vw,2.4rem)', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Choose One</div>
-              <div className="flex rounded-2xl p-1.5 gap-1.5" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.16)' }}>
-                <button type="button" onClick={() => setActiveTab('maintenance')}
-                  className="flex-1 lg:flex-initial px-7 py-4 rounded-xl font-extrabold text-base transition-colors duration-200"
-                  style={{ background: activeTab === 'maintenance' ? '#3DB54A' : 'transparent', color: activeTab === 'maintenance' ? '#fff' : 'rgba(255,255,255,0.7)', border: 'none', cursor: 'pointer', boxShadow: activeTab === 'maintenance' ? '0 4px 16px rgba(61,181,74,0.35)' : 'none' }}>
-                  Fix My Machine
-                </button>
-                <button type="button" onClick={() => setActiveTab('move')}
-                  className="flex-1 lg:flex-initial px-7 py-4 rounded-xl font-extrabold text-base transition-colors duration-200"
-                  style={{ background: activeTab === 'move' ? '#3DB54A' : 'transparent', color: activeTab === 'move' ? '#fff' : 'rgba(255,255,255,0.7)', border: 'none', cursor: 'pointer', boxShadow: activeTab === 'move' ? '0 4px 16px rgba(61,181,74,0.35)' : 'none' }}>
-                  Move My Machine
-                </button>
-              </div>
-            </div>
-          </div>
+          <h1 className="font-black text-white mb-3" style={{ fontSize: 'clamp(2rem,4vw,3rem)', letterSpacing: '-0.03em', lineHeight: 1.1 }}>Request Service</h1>
+          <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, maxWidth: 560 }}>Machine down or due for maintenance? Tell us what&apos;s going on and our service team will follow up fast.</p>
         </div>
       </section>
 
-      {/* Request Maintenance form */}
-      {activeTab === 'maintenance' && (
+      {/* Request form */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Form panel */}
             <div className="rounded-3xl p-8 lg:p-10" style={{ background: '#D6E4F5', border: '1px solid rgba(27,42,74,0.08)' }}>
-              <div className="inline-block font-extrabold uppercase rounded-full mb-3 px-3 py-1" style={{ fontSize: '0.9rem', letterSpacing: '0.06em', color: '#1a6b2a', background: '#D6F0DA' }}>Maintenance Request</div>
               <h2 className="font-black mb-2" style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', color: '#1B2A4A', letterSpacing: '-0.03em' }}>Tell us what you need</h2>
               <p className="text-sm mb-8" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Fill out the form below. The more detail you give us, the fewer questions we&apos;ll need to ask before dispatching a technician.</p>
 
@@ -490,144 +317,11 @@ export default function RequestServicePage() {
           </div>
         </div>
       </section>
-      )}
-
-      {/* Request Move form */}
-      {activeTab === 'move' && (
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            {/* Form panel */}
-            <div className="rounded-3xl p-8 lg:p-10" style={{ background: '#D6E4F5', border: '1px solid rgba(27,42,74,0.08)' }}>
-              <div className="inline-block font-extrabold uppercase rounded-full mb-3 px-3 py-1" style={{ fontSize: '0.9rem', letterSpacing: '0.06em', color: '#1a6b2a', background: '#D6F0DA' }}>Move Request</div>
-              <h2 className="font-black mb-2" style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', color: '#1B2A4A', letterSpacing: '-0.03em' }}>Tell us what&apos;s moving</h2>
-              <p className="text-sm mb-8" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Fill out the form below with the current and new location for each machine. The more detail you give us, the fewer questions we&apos;ll need to ask before dispatching a technician.</p>
-
-              {!moveSubmitted ? (
-                <form ref={moveFormRef} onSubmit={handleMoveSubmit} noValidate className="space-y-10">
-                  {/* Step 1 */}
-                  <div>
-                    <div className="font-bold text-xs uppercase tracking-wide mb-1.5" style={{ color: '#1a6b2a' }}>Step 1</div>
-                    <label className="font-bold block mb-3.5" style={{ color: '#1B2A4A', fontSize: '1.05rem', letterSpacing: '-0.01em' }}>How many vending machines are moving?</label>
-                    <div className="grid grid-cols-5 gap-2 sm:gap-3">
-                      {[1, 2, 3, 4, 5].map(n => (
-                        <label key={n} className="flex items-center justify-center rounded-xl cursor-pointer" style={{
-                          height: 52, border: `1.5px solid ${moveMachineCount === n ? '#3DB54A' : '#e5e7eb'}`,
-                          background: moveMachineCount === n ? '#D6F0DA' : '#fff', fontWeight: 800, fontSize: '1.1rem', color: '#1B2A4A',
-                        }}>
-                          <input type="radio" name="move-machine-count" className="sr-only" checked={moveMachineCount === n} onChange={() => setMoveMachineCount(n)} />
-                          {n}
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Step 2 */}
-                  <div>
-                    <div className="font-bold text-xs uppercase tracking-wide mb-1.5" style={{ color: '#1a6b2a' }}>Step 2</div>
-                    <label className="font-bold block mb-3.5" style={{ color: '#1B2A4A', fontSize: '1.05rem', letterSpacing: '-0.01em' }}>Your Contact Information</label>
-                    <div className="space-y-5">
-                      <div className="grid sm:grid-cols-2 gap-5">
-                        <div>
-                          <label className={labelCls} style={{ color: '#1B2A4A' }}>First Name<Required /></label>
-                          <input required value={moveCustomer.firstName} onChange={e => setMoveCustomer(c => ({ ...c, firstName: e.target.value }))} placeholder="Jane" className={inputCls} style={inputStyle} />
-                        </div>
-                        <div>
-                          <label className={labelCls} style={{ color: '#1B2A4A' }}>Last Name<Required /></label>
-                          <input required value={moveCustomer.lastName} onChange={e => setMoveCustomer(c => ({ ...c, lastName: e.target.value }))} placeholder="Smith" className={inputCls} style={inputStyle} />
-                        </div>
-                      </div>
-                      <div className="grid sm:grid-cols-2 gap-5">
-                        <div>
-                          <label className={labelCls} style={{ color: '#1B2A4A' }}>Phone Number<Required /></label>
-                          <input required type="tel" value={moveCustomer.phone} onChange={e => setMoveCustomer(c => ({ ...c, phone: e.target.value }))} placeholder="(413) 000-0000" className={inputCls} style={inputStyle} />
-                        </div>
-                        <div>
-                          <label className={labelCls} style={{ color: '#1B2A4A' }}>Email Address<Required /></label>
-                          <input required type="email" value={moveCustomer.email} onChange={e => setMoveCustomer(c => ({ ...c, email: e.target.value }))} placeholder="jane@company.com" className={inputCls} style={inputStyle} />
-                        </div>
-                      </div>
-                      <div className="grid sm:grid-cols-2 gap-5">
-                        <div>
-                          <label className={labelCls} style={{ color: '#1B2A4A' }}>Your Business Name<Optional /></label>
-                          <input value={moveCustomer.company} onChange={e => setMoveCustomer(c => ({ ...c, company: e.target.value }))} placeholder="Acme Warehouse" className={inputCls} style={inputStyle} />
-                        </div>
-                        <div>
-                          <label className={labelCls} style={{ color: '#1B2A4A' }}>Existing Customer?</label>
-                          <div className="grid grid-cols-2 gap-3">
-                            {['Yes', 'No'].map(opt => (
-                              <label key={opt} className="flex items-center justify-center gap-1.5 rounded-xl cursor-pointer" style={{
-                                height: 48, border: `1.5px solid ${moveCustomer.existingCustomer === opt.toLowerCase() ? '#3DB54A' : '#e5e7eb'}`,
-                                background: moveCustomer.existingCustomer === opt.toLowerCase() ? '#D6F0DA' : '#fff', fontWeight: 700, fontSize: '0.85rem', color: '#1B2A4A',
-                              }}>
-                                <input type="radio" name="move-existing-customer" className="sr-only"
-                                  checked={moveCustomer.existingCustomer === opt.toLowerCase()}
-                                  onChange={() => setMoveCustomer(c => ({ ...c, existingCustomer: opt.toLowerCase() }))} />
-                                {opt}
-                              </label>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step 3 */}
-                  <div>
-                    <div className="font-bold text-xs uppercase tracking-wide mb-1.5" style={{ color: '#1a6b2a' }}>Step 3</div>
-                    <label className="font-bold block mb-1" style={{ color: '#1B2A4A', fontSize: '1.05rem', letterSpacing: '-0.01em' }}>Machine Details</label>
-                    <p className="text-xs mb-5" style={{ color: '#3D4D5C', lineHeight: 1.6 }}>Each machine gets its own section below, even if several are moving to the same new site.</p>
-                    <div className="space-y-6">
-                      {Array.from({ length: moveMachineCount }).map((_, idx) => (
-                        <MoveMachineBlock
-                          key={idx}
-                          index={idx}
-                          total={moveMachineCount}
-                          machine={moveMachines[idx]}
-                          open={!!moveOpenIndices[idx]}
-                          onToggle={() => toggleMoveBlock(idx)}
-                          onChange={(field, value) => updateMoveMachine(idx, field, value)}
-                          onPhotoChange={file => handleMovePhotoChange(idx, file)}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  <button type="submit" disabled={moveSubmitting}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-base text-white transition-colors duration-200"
-                    style={{ background: moveSubmitting ? '#8CA88F' : '#3DB54A', border: 'none', cursor: moveSubmitting ? 'not-allowed' : 'pointer' }}>
-                    Submit Move Request
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                  </button>
-                  <p className="text-center text-xs" style={{ color: '#5C6672', lineHeight: 1.6 }}>We typically respond within one business day. For urgent requests, please call us directly.</p>
-                </form>
-              ) : (
-                <div className="text-center py-16">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style={{ background: '#D6F0DA' }}>
-                    <svg className="w-8 h-8" style={{ color: '#3DB54A' }} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                  </div>
-                  <h3 className="font-black mb-2" style={{ color: '#1B2A4A', fontSize: '1.6rem', letterSpacing: '-0.03em' }}>Your Move Request Has Been Submitted</h3>
-                  <p className="text-sm mx-auto" style={{ color: '#3D4D5C', lineHeight: 1.7, maxWidth: 420 }}>Thank you! Please check your email and phone for our follow-up. Our team will reach out within one business day to confirm details and schedule the move. You can safely leave this page. To send another request, refresh the page.</p>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-      )}
 
       <SuccessModal
         open={showModal}
         onClose={() => setShowModal(false)}
         title="Your Request Has Been Submitted!"
-        message="Please check your email and phone for our follow-up. Our team will reach out within one business day. You can now leave this page."
-        buttonLabel="Got It"
-      />
-
-      <SuccessModal
-        open={moveShowModal}
-        onClose={() => setMoveShowModal(false)}
-        title="Your Move Request Has Been Submitted!"
         message="Please check your email and phone for our follow-up. Our team will reach out within one business day. You can now leave this page."
         buttonLabel="Got It"
       />
@@ -775,158 +469,6 @@ function MachineBlock({ index, total, machine, open, onToggle, onChange, onPhoto
                   background: machine.accessMethod === opt ? '#D6F0DA' : '#fff',
                 }}>
                   <input type="radio" required name={`m${index}-access`} className="mt-0.5" style={{ accentColor: '#3DB54A' }}
-                    checked={machine.accessMethod === opt} onChange={() => onChange('accessMethod', opt)} />
-                  <span className="text-sm font-semibold" style={{ color: '#1B2A4A' }}>{opt === 'I will be onsite with the key' ? 'I will be onsite to meet the technician with the machine key' : opt}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {showOnsite && (
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Onsite Contact Name<Required /></label>
-                <input required={showOnsite} value={machine.onsiteName} onChange={e => onChange('onsiteName', e.target.value)} placeholder="Contact name" className={inputCls} style={inputStyle} />
-              </div>
-              <div>
-                <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Onsite Contact Phone<Required /></label>
-                <input required={showOnsite} type="tel" value={machine.onsitePhone} onChange={e => onChange('onsitePhone', e.target.value)} placeholder="(413) 000-0000" className={inputCls} style={inputStyle} />
-              </div>
-            </div>
-          )}
-
-          <div>
-            <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Access Notes<Optional /></label>
-            <textarea value={machine.accessNotes} onChange={e => onChange('accessNotes', e.target.value)} rows={3} placeholder="Gate codes, lock boxes, check-in requirements, building hours, loading dock instructions..." className={inputCls} style={{ ...inputStyle, resize: 'vertical', minHeight: 70 }} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function MoveMachineBlock({ index, total, machine, open, onToggle, onChange, onPhotoChange }) {
-  const n = index + 1;
-  const showOnsite = machine.accessMethod === 'Someone else will be onsite with the key';
-  const subtext = [machine.manufacturer, machine.model].filter(Boolean).join(', ') || 'Tap to enter machine details';
-
-  return (
-    <div className="rounded-2xl overflow-hidden" style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.1)' }}>
-      <button type="button" onClick={onToggle} className="w-full flex items-center gap-2.5 px-5 py-4 text-left" style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}>
-        <div className="rounded-full flex items-center justify-center text-white font-extrabold flex-shrink-0" style={{ width: 28, height: 28, background: '#1B2A4A', fontSize: '0.8rem' }}>{n}</div>
-        <div className="flex-1 min-w-0">
-          <div className="font-bold text-sm" style={{ color: '#1B2A4A' }}>Machine {n} of {total}</div>
-          <div className="text-xs font-medium truncate" style={{ color: '#8C95A0' }}>{subtext}</div>
-        </div>
-        <svg className="w-5 h-5 flex-shrink-0" style={{ color: '#8C95A0', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.25s' }} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-      </button>
-
-      <div style={{ display: open ? 'block' : 'none', padding: '4px 20px 24px' }}>
-        <SectionLabel first>Machine Information</SectionLabel>
-        <div className="space-y-4">
-          <div className="grid sm:grid-cols-3 gap-4">
-            <div>
-              <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Manufacturer<Required /></label>
-              <input required value={machine.manufacturer} onChange={e => onChange('manufacturer', e.target.value)} placeholder='e.g. USI, AMS, or "not sure"' className={inputCls} style={inputStyle} />
-            </div>
-            <div>
-              <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Model<Required /></label>
-              <input required value={machine.model} onChange={e => onChange('model', e.target.value)} placeholder='e.g. Evoke 5, or "not sure"' className={inputCls} style={inputStyle} />
-            </div>
-            <div>
-              <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Serial Number<Required /></label>
-              <input required value={machine.serial} onChange={e => onChange('serial', e.target.value)} placeholder='e.g. on inside of door, or "not sure"' className={inputCls} style={inputStyle} />
-            </div>
-          </div>
-          <div>
-            <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Photo of Machine<span style={{ color: '#8C95A0', fontWeight: 600, fontSize: '0.7rem' }}> Optional, helps us ID it if you&apos;re not sure</span></label>
-            <label className="flex items-center gap-2.5 rounded-xl cursor-pointer" style={{ border: '1.5px dashed #cbd5e1', padding: '12px 14px', background: '#fff' }}>
-              <svg className="w-5 h-5 flex-shrink-0" style={{ color: '#8C95A0' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16l4-4a3 3 0 014 0l5 5m-2-2l1.5-1.5a3 3 0 014 0L21 19M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-              <span className="text-sm" style={{ color: '#3D4D5C' }}>
-                {machine.photoStatus === 'uploading' && `Uploading ${machine.photoFile?.name}...`}
-                {machine.photoStatus === 'uploaded' && `${machine.photoFile?.name} (uploaded)`}
-                {machine.photoStatus === 'failed' && `${machine.photoFile?.name} (upload failed)`}
-                {!machine.photoStatus && 'Tap to upload a photo'}
-              </span>
-              <input type="file" accept="image/*" capture="environment" className="hidden" onChange={e => onPhotoChange(e.target.files?.[0] || null)} />
-            </label>
-          </div>
-        </div>
-
-        <SectionLabel>Current Location</SectionLabel>
-        <div className="space-y-4">
-          <div>
-            <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Location / Site<Required /></label>
-            <input required value={machine.currentLocationName} onChange={e => onChange('currentLocationName', e.target.value)} placeholder="Business or building name" className={inputCls} style={inputStyle} />
-          </div>
-          <div>
-            <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Street Address<Required /></label>
-            <input required value={machine.currentStreet} onChange={e => onChange('currentStreet', e.target.value)} placeholder="123 Main St" className={inputCls} style={inputStyle} />
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <div>
-              <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>City<Required /></label>
-              <input required value={machine.currentCity} onChange={e => onChange('currentCity', e.target.value)} placeholder="Ludlow" className={inputCls} style={inputStyle} />
-            </div>
-            <div>
-              <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>State<Required /></label>
-              <input required value={machine.currentState} onChange={e => onChange('currentState', e.target.value)} placeholder="MA" className={inputCls} style={inputStyle} />
-            </div>
-            <div>
-              <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>ZIP<Required /></label>
-              <input required value={machine.currentZip} onChange={e => onChange('currentZip', e.target.value)} placeholder="01056" className={inputCls} style={inputStyle} />
-            </div>
-          </div>
-        </div>
-
-        <SectionLabel>New Location</SectionLabel>
-        <div className="rounded-xl p-4" style={{ background: '#EAF2FB', border: '1px solid rgba(27,42,74,0.08)' }}>
-          <div className="space-y-4">
-            <div>
-              <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Location / Site<Optional /></label>
-              <input value={machine.newLocationName} onChange={e => onChange('newLocationName', e.target.value)} placeholder="e.g. Building B breakroom" className={inputCls} style={inputStyle} />
-            </div>
-            <div>
-              <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Street Address<Required /></label>
-              <input required value={machine.newStreet} onChange={e => onChange('newStreet', e.target.value)} placeholder="456 Elm St" className={inputCls} style={inputStyle} />
-            </div>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <div>
-                <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>City<Required /></label>
-                <input required value={machine.newCity} onChange={e => onChange('newCity', e.target.value)} placeholder="Springfield" className={inputCls} style={inputStyle} />
-              </div>
-              <div>
-                <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>State<Required /></label>
-                <input required value={machine.newState} onChange={e => onChange('newState', e.target.value)} placeholder="MA" className={inputCls} style={inputStyle} />
-              </div>
-              <div>
-                <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>ZIP<Required /></label>
-                <input required value={machine.newZip} onChange={e => onChange('newZip', e.target.value)} placeholder="01103" className={inputCls} style={inputStyle} />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-4">
-          <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Additional Notes<Optional /></label>
-          <textarea value={machine.notes} onChange={e => onChange('notes', e.target.value)} rows={3} placeholder="Anything else about the move..." className={inputCls} style={{ ...inputStyle, resize: 'vertical', minHeight: 80 }} />
-        </div>
-
-        <SectionLabel>Access</SectionLabel>
-        <div className="space-y-4">
-          <div>
-            <label className={labelCls} style={{ color: '#1B2A4A', fontSize: '0.85rem' }}>Access Method<Required /></label>
-            <div className="space-y-2">
-              {[
-                'I will be onsite with the key',
-                'Someone else will be onsite with the key',
-                'VVS already has my key',
-              ].map(opt => (
-                <label key={opt} className="flex items-start gap-2.5 rounded-xl cursor-pointer" style={{
-                  padding: '12px 16px', border: `1.5px solid ${machine.accessMethod === opt ? '#3DB54A' : '#e5e7eb'}`,
-                  background: machine.accessMethod === opt ? '#D6F0DA' : '#fff',
-                }}>
-                  <input type="radio" required name={`mv${index}-access`} className="mt-0.5" style={{ accentColor: '#3DB54A' }}
                     checked={machine.accessMethod === opt} onChange={() => onChange('accessMethod', opt)} />
                   <span className="text-sm font-semibold" style={{ color: '#1B2A4A' }}>{opt === 'I will be onsite with the key' ? 'I will be onsite to meet the technician with the machine key' : opt}</span>
                 </label>
