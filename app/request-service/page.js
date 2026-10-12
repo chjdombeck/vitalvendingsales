@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import Link from 'next/link';
 import SuccessModal from '../../components/SuccessModal';
 import { submitServiceRequestLead, submitServiceRequestBackupEmail, uploadServiceRequestPhoto } from '../../lib/service-request';
+import { trackEvent } from '../../lib/analytics';
 
 const MAX_MACHINES = 5;
 const MOVE_ISSUE_VALUE = 'Needs to Be Moved';
@@ -179,6 +180,7 @@ export default function RequestServicePage() {
       setSubmitted(true);
       setShowModal(true);
       setSubmitting(false);
+      trackEvent('generate_lead', { form_name: 'request_service', machine_count: machineCount });
     }, 50);
   }
 

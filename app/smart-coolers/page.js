@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { submitToHubSpot } from '../../lib/hubspot';
 import { submitToGHLLead } from '../../lib/ghl';
 import SuccessModal from '../../components/SuccessModal';
+import { trackEvent } from '../../lib/analytics';
 
 const HAHA_PRODUCTS = [
   { id: 'haha-mini', img: '/static-assets/MoreVendingMachinesandContent/Mini Details.png', name: 'HAHA Mini', model: 'US360C', tagline: 'Compact and capable, perfect for tighter spaces', specs: ['252 bottles', '6 shelves', 'AI recognition'], price: '$2,999', badge: 'AI Smart Cooler', badgeStyle: {} },
@@ -750,6 +751,7 @@ function SmartCoolerForm() {
     setData(EMPTY_SC_FORM);
     setSubmitted(true);
     setShowModal(true);
+    trackEvent('generate_lead', { form_name: 'smart_coolers_consultation' });
   }
 
   return (

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { submitToHubSpot } from '../lib/hubspot';
 import { submitToGHLLead } from '../lib/ghl';
 import SuccessModal from '../components/SuccessModal';
+import { trackEvent } from '../lib/analytics';
 
 const REVIEWS = [
   { name: 'John Ragno', time: '7 months ago', text: '"Nick is trustworthy, honest, and takes his time to help you find the right machine, whether you\'re starting out or expanding your vending business. He\'s knowledgeable, patient, and goes above and beyond to ensure you understand your options. Excellent service from start to finish."' },
@@ -158,6 +159,7 @@ function ContactForm() {
     setFormData(EMPTY_CONTACT_FORM);
     setSubmitted(true);
     setShowModal(true);
+    trackEvent('generate_lead', { form_name: 'homepage_contact', interest: formData.interest });
   }
 
   const inputCls = 'w-full px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-shadow duration-200';

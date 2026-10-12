@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
             <li style={p}>Send us an email directly</li>
             <li style={p}>Purchase vending parts through our website</li>
           </ul>
-          <p style={p}>We do not use cookies, tracking pixels, or analytics tools at this time. We do not collect any information automatically when you browse the site.</p>
+          <p style={p}>We use Google Analytics to understand how visitors use our site, such as which pages are viewed and which forms are submitted. Google Analytics uses cookies and collects information automatically when you browse the site, including pages visited, time spent, and general location. This data is aggregated and does not personally identify you. You can opt out of Google Analytics tracking using the <a href="https://tools.google.com/dlpage/gaoptout" style={a} target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.</p>
 
           <h2 style={h2}>2. How We Use Your Information</h2>
           <p style={p}>We use the information you provide solely to:</p>

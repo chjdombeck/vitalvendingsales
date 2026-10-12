@@ -1,7 +1,10 @@
 import './globals.css';
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+
+const GA_MEASUREMENT_ID = 'G-0GRSJMW0NQ';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -59,6 +62,15 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.variable} antialiased`}>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <Navbar />
         <main>{children}</main>
         <Footer />

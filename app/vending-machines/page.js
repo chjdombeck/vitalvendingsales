@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { submitToHubSpot } from '../../lib/hubspot';
 import { submitToGHLLead } from '../../lib/ghl';
 import SuccessModal from '../../components/SuccessModal';
+import { trackEvent } from '../../lib/analytics';
 
 const MACHINES = [
   { id: 'evoke6', category: 'snack', brand: 'USI', name: 'USI Evoke 6', desc: 'Largest capacity snack machine for high-volume locations', specs: ['733 items', '83 selections', 'ADA compliant'], price: '$6,316', img: '/static-assets/vvs_product_catalog/images/usi-evoke-6-snack-vending-machine-2.jpg' },
@@ -99,6 +100,7 @@ export default function VendingMachines() {
       setForm({ name: '', email: '', phone: '', message: '', sms_consent: false });
       setSent(true);
       setShowSuccessModal(true);
+      trackEvent('generate_lead', { form_name: 'vending_machines_quote', machine_name: machine?.name || '' });
     } catch {}
   }
 
@@ -489,6 +491,7 @@ function VendingMachineForm() {
     setData(EMPTY_VM_FORM);
     setSubmitted(true);
     setShowModal(true);
+    trackEvent('generate_lead', { form_name: 'vending_machines_consultation' });
   }
 
   return (
