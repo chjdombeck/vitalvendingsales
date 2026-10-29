@@ -31,12 +31,28 @@ const MACHINES = [
   { id: 'evoke10drink', category: 'beverage', brand: 'USI', name: 'Evoke Ten Drink', desc: 'High-capacity cold drink machine for cans and bottles', specs: ['10 selections', 'Refrigerated', 'High volume'], price: '$6,114', img: '/static-assets/vvs_product_catalog/images/evoke-10-drink-1.png', badgeBev: true },
   { id: 'dixie501e', category: 'beverage', brand: 'Dixie Narco', name: 'Dixie Narco 501E', desc: 'The workhorse of the vending world, legendary reliability', specs: ['72"H x 37"W', 'Cans & bottles', 'Easy service'], price: '$2,099', img: '/static-assets/vvs_product_catalog/images/dixie-narco-501e-2.jpg', badgeBev: true },
   { id: 'coolblu', category: 'beverage', brand: 'CoolBlu', name: 'CoolBlu Cooler', desc: 'High-capacity refrigerated cooler for fresh food and cold drinks', specs: ['High capacity', 'Fresh food ready', 'Cashless pay'], price: '$2,499', img: '/static-assets/vvs_product_catalog/images/coolblu-coolers-2.jpg', badgeBev: true },
-  { id: 'idwgfv400', category: 'beverage', brand: 'IDW', name: 'IDW GFV 400 Glass Front Vendor', desc: 'Industry-leading 50 selections and 400-bottle capacity for faster vending and higher product visibility', specs: ['50 selections', '400 bottle capacity', 'Glass front'], price: 'Contact for Price', img: '/static-assets/vvs_product_catalog/images/idw-gfv400.png', gallery: [
+  { id: 'idwgfv400', category: 'beverage', brand: 'IDW', name: 'IDW GFV 400 Glass Front Vendor', desc: 'Industry-leading 50 selections and 400-bottle capacity for faster vending and higher product visibility. Delivery is 20% faster than the competition, and the one-piece slide-out refrigeration cassette cuts service time in half.', specs: ['50 selections', '400 bottle capacity', 'Glass front', '20% faster delivery'], price: 'Contact for Price', img: '/static-assets/vvs_product_catalog/images/idw-gfv400.png', gallery: [
     '/static-assets/vvs_product_catalog/images/idw-gfv400.png',
     '/static-assets/vvs_product_catalog/images/idw-gfv400-feature-1.png',
     '/static-assets/vvs_product_catalog/images/idw-gfv400-feature-2.png',
     '/static-assets/vvs_product_catalog/images/idw-gfv400-feature-3.png',
-  ], badgeBev: true },
+  ], techSpecs: [
+    ['Model', 'GFV-400-50'],
+    ['Exterior Dimensions (WxDxH)', '47.125" x 33" x 72"'],
+    ['Footprint', '10.8 sq. ft.'],
+    ['Shelf Spacing', '9.5"'],
+    ['Column Width', '3.19"'],
+    ['Product Capacity', '400 bottles (10 facings x 8 deep x 5 shelves)'],
+    ['Total Selections', '50'],
+    ['Accepts', '20oz PET, 1L PET, 500ml Can'],
+    ['Refrigerant', 'R290'],
+    ['Power', '110-120V/60Hz, 9 Amps'],
+    ['Compressor', '1/3 HP'],
+    ['Display', 'Full color 3.2"'],
+    ['Shipping Weight', '668 lbs (gross), 635 lbs (net)'],
+    ['Carton Dimensions', '48.5" x 34.5" x 75"'],
+    ['Certifications', 'UL541, ADA Compliant, ENERGY STAR Qualified (pending)'],
+  ], pdfHref: '/static-assets/vvs_product_catalog/spec-sheets/idw-gfv-400-50-spec-sheet.pdf', pdfLabel: 'Download Full Spec Sheet (PDF)', badgeBev: true },
   { id: 'evokecoffee', category: 'coffee', brand: 'USI', name: 'Evoke Coffee Machine', desc: 'Full ADA-compliant coffee vending with LED lighting', specs: ['ADA compliant', 'LED lighting', 'iVend sensor'], price: '$8,379', img: '/static-assets/vvs_product_catalog/images/evoke-coffee-machine-2.jpg', badgeCoffee: true },
   { id: 'ap123', category: 'refurbished', brand: 'AP / InOne', name: 'AP 123 Snack + InOne Controller', desc: 'Fully refurbished AP 123 with upgraded InOne control board', specs: ['Refurbished', 'InOne controller', 'Updated electronics'], price: 'Contact for Availability', img: '/static-assets/vvs_product_catalog/images/ap-123-snack-vending-machine-inone-upgrade-controller-2.jpg', badgeRef: true },
 ];
@@ -430,6 +446,31 @@ export default function VendingMachines() {
                     <div className="font-semibold text-sm mb-3" style={{ color: '#1B2A4A' }}>Overview</div>
                     <p className="text-sm" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>{m?.desc}</p>
                   </div>
+
+                  {m?.techSpecs && (
+                    <div className="mb-6">
+                      <div className="font-semibold text-sm mb-3" style={{ color: '#1B2A4A' }}>Full Technical Specs</div>
+                      <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(27,42,74,0.08)' }}>
+                        {m.techSpecs.map(([label, value], i) => (
+                          <div key={label} className="flex items-start justify-between gap-4 px-4 py-2.5 text-sm" style={{ background: i % 2 === 0 ? '#F4F6F8' : '#fff' }}>
+                            <span style={{ color: '#6B7280' }}>{label}</span>
+                            <span className="text-right font-semibold" style={{ color: '#1B2A4A' }}>{value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {m?.pdfHref && (
+                    <div className="mb-6">
+                      <a href={m.pdfHref} target="_blank" rel="noopener noreferrer" download
+                        className="inline-flex items-center gap-2 font-bold text-sm rounded-xl px-4 py-3"
+                        style={{ background: '#F4F6F8', color: '#1B2A4A', border: '1px solid rgba(27,42,74,0.1)', textDecoration: 'none' }}>
+                        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        {m.pdfLabel || 'Download Spec Sheet (PDF)'}
+                      </a>
+                    </div>
+                  )}
 
                   {m?.coilImg && (
                     <div className="mb-6">
