@@ -31,6 +31,12 @@ const MACHINES = [
   { id: 'evoke10drink', category: 'beverage', brand: 'USI', name: 'Evoke Ten Drink', desc: 'High-capacity cold drink machine for cans and bottles', specs: ['10 selections', 'Refrigerated', 'High volume'], price: '$6,114', img: '/static-assets/vvs_product_catalog/images/evoke-10-drink-1.png', badgeBev: true },
   { id: 'dixie501e', category: 'beverage', brand: 'Dixie Narco', name: 'Dixie Narco 501E', desc: 'The workhorse of the vending world, legendary reliability', specs: ['72"H x 37"W', 'Cans & bottles', 'Easy service'], price: '$2,099', img: '/static-assets/vvs_product_catalog/images/dixie-narco-501e-2.jpg', badgeBev: true },
   { id: 'coolblu', category: 'beverage', brand: 'CoolBlu', name: 'CoolBlu Cooler', desc: 'High-capacity refrigerated cooler for fresh food and cold drinks', specs: ['High capacity', 'Fresh food ready', 'Cashless pay'], price: '$2,499', img: '/static-assets/vvs_product_catalog/images/coolblu-coolers-2.jpg', badgeBev: true },
+  { id: 'idwgfv400', category: 'beverage', brand: 'IDW', name: 'IDW GFV 400 Glass Front Vendor', desc: 'Industry-leading 50 selections and 400-bottle capacity for faster vending and higher product visibility', specs: ['50 selections', '400 bottle capacity', 'Glass front'], price: 'Contact for Price', img: '/static-assets/vvs_product_catalog/images/idw-gfv400.png', gallery: [
+    '/static-assets/vvs_product_catalog/images/idw-gfv400.png',
+    '/static-assets/vvs_product_catalog/images/idw-gfv400-feature-1.png',
+    '/static-assets/vvs_product_catalog/images/idw-gfv400-feature-2.png',
+    '/static-assets/vvs_product_catalog/images/idw-gfv400-feature-3.png',
+  ], badgeBev: true },
   { id: 'evokecoffee', category: 'coffee', brand: 'USI', name: 'Evoke Coffee Machine', desc: 'Full ADA-compliant coffee vending with LED lighting', specs: ['ADA compliant', 'LED lighting', 'iVend sensor'], price: '$8,379', img: '/static-assets/vvs_product_catalog/images/evoke-coffee-machine-2.jpg', badgeCoffee: true },
   { id: 'ap123', category: 'refurbished', brand: 'AP / InOne', name: 'AP 123 Snack + InOne Controller', desc: 'Fully refurbished AP 123 with upgraded InOne control board', specs: ['Refurbished', 'InOne controller', 'Updated electronics'], price: 'Contact for Availability', img: '/static-assets/vvs_product_catalog/images/ap-123-snack-vending-machine-inone-upgrade-controller-2.jpg', badgeRef: true },
 ];
@@ -51,6 +57,7 @@ const BRAND_FILTERS = [
   { key: 'Alpine', label: 'Alpine' },
   { key: 'Dixie Narco', label: 'Dixie Narco' },
   { key: 'CoolBlu', label: 'CoolBlu' },
+  { key: 'IDW', label: 'IDW' },
 ];
 
 function getBadge(m) {
@@ -66,6 +73,7 @@ export default function VendingMachines() {
   const [active, setActive] = useState('all');
   const [activeBrand, setActiveBrand] = useState('all');
   const [modal, setModal] = useState(null);
+  const [galleryIndex, setGalleryIndex] = useState(0);
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', sms_consent: false });
   const [sent, setSent] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -209,8 +217,8 @@ export default function VendingMachines() {
               return (
                 <div key={m.id}
                   role="button" tabIndex={0} aria-label={`Quick view ${m.name}`}
-                  onClick={() => { setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '', sms_consent: false }); }}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '', sms_consent: false }); } }}
+                  onClick={() => { setModal(m.id); setGalleryIndex(0); setSent(false); setForm({ name: '', email: '', phone: '', message: '', sms_consent: false }); }}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setModal(m.id); setGalleryIndex(0); setSent(false); setForm({ name: '', email: '', phone: '', message: '', sms_consent: false }); } }}
                   className="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
                   style={{ border: '1px solid rgba(27,42,74,0.07)', boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 4px 12px rgba(27,42,74,0.08)', cursor: 'pointer' }}>
                   <div className="relative" style={{ height: 200, background: '#F4F6F8' }}>
@@ -232,7 +240,7 @@ export default function VendingMachines() {
                         <div className="font-black text-xl" style={{ color: '#1B2A4A', letterSpacing: '-0.02em' }}>{m.price}</div>
                       </div>
                       <button
-                        onClick={(e) => { e.stopPropagation(); setModal(m.id); setSent(false); setForm({ name: '', email: '', phone: '', message: '', sms_consent: false }); }}
+                        onClick={(e) => { e.stopPropagation(); setModal(m.id); setGalleryIndex(0); setSent(false); setForm({ name: '', email: '', phone: '', message: '', sms_consent: false }); }}
                         className="text-xs font-bold py-2.5 px-4 rounded-xl text-white"
                         style={{ background: '#3DB54A', border: 'none', cursor: 'pointer' }}
                       >
@@ -370,8 +378,36 @@ export default function VendingMachines() {
               </div>
 
               <div className="grid lg:grid-cols-2 gap-0">
-                <div className="flex items-center justify-center p-8" style={{ background: '#F4F6F8', minHeight: 260 }}>
-                  {m && <img src={m.img} alt={m.name} style={{ maxHeight: 288, width: 'auto', objectFit: 'contain', mixBlendMode: 'multiply' }} />}
+                <div className="relative flex items-center justify-center p-8" style={{ background: '#F4F6F8', minHeight: 260 }}>
+                  {m && (() => {
+                    const gallery = m.gallery && m.gallery.length > 0 ? m.gallery : [m.img];
+                    const idx = Math.min(galleryIndex, gallery.length - 1);
+                    return (
+                      <>
+                        <img src={gallery[idx]} alt={`${m.name} photo ${idx + 1} of ${gallery.length}`} style={{ maxHeight: 288, width: 'auto', objectFit: 'contain', mixBlendMode: 'multiply' }} />
+                        {gallery.length > 1 && (
+                          <>
+                            <button type="button" onClick={() => setGalleryIndex(i => (i - 1 + gallery.length) % gallery.length)} aria-label="Previous image"
+                              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center"
+                              style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.1)', cursor: 'pointer', boxShadow: '0 2px 8px rgba(27,42,74,0.12)' }}>
+                              <svg className="w-4 h-4" fill="none" stroke="#1B2A4A" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                            </button>
+                            <button type="button" onClick={() => setGalleryIndex(i => (i + 1) % gallery.length)} aria-label="Next image"
+                              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center"
+                              style={{ background: '#fff', border: '1px solid rgba(27,42,74,0.1)', cursor: 'pointer', boxShadow: '0 2px 8px rgba(27,42,74,0.12)' }}>
+                              <svg className="w-4 h-4" fill="none" stroke="#1B2A4A" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                            </button>
+                            <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-1.5">
+                              {gallery.map((_, i) => (
+                                <button type="button" key={i} onClick={() => setGalleryIndex(i)} aria-label={`Go to image ${i + 1}`}
+                                  style={{ width: i === idx ? 18 : 7, height: 7, borderRadius: 4, background: i === idx ? '#3DB54A' : 'rgba(27,42,74,0.2)', border: 'none', cursor: 'pointer', transition: 'all 0.2s' }} />
+                              ))}
+                            </div>
+                          </>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
 
                 <div className="p-6 lg:p-8">
