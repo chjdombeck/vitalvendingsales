@@ -31,12 +31,7 @@ const MACHINES = [
   { id: 'evoke10drink', category: 'beverage', brand: 'USI', name: 'Evoke Ten Drink', desc: 'High-capacity cold drink machine for cans and bottles', specs: ['10 selections', 'Refrigerated', 'High volume'], price: '$6,114', img: '/static-assets/vvs_product_catalog/images/evoke-10-drink-1.png', badgeBev: true },
   { id: 'dixie501e', category: 'beverage', brand: 'Dixie Narco', name: 'Dixie Narco 501E', desc: 'The workhorse of the vending world, legendary reliability', specs: ['72"H x 37"W', 'Cans & bottles', 'Easy service'], price: '$2,099', img: '/static-assets/vvs_product_catalog/images/dixie-narco-501e-2.jpg', badgeBev: true },
   { id: 'coolblu', category: 'beverage', brand: 'CoolBlu', name: 'CoolBlu Cooler', desc: 'High-capacity refrigerated cooler for fresh food and cold drinks', specs: ['High capacity', 'Fresh food ready', 'Cashless pay'], price: '$2,499', img: '/static-assets/vvs_product_catalog/images/coolblu-coolers-2.jpg', badgeBev: true },
-  { id: 'idwgfv400', category: 'beverage', brand: 'IDW', name: 'IDW GFV 400 Glass Front Vendor', desc: 'Industry-leading 50 selections and 400-bottle capacity for faster vending and higher product visibility. Delivery is 20% faster than the competition, and the one-piece slide-out refrigeration cassette cuts service time in half.', specs: ['50 selections', '400 bottle capacity', 'Glass front', '20% faster delivery'], price: 'Contact for Price', img: '/static-assets/vvs_product_catalog/images/idw-gfv400.png', gallery: [
-    '/static-assets/vvs_product_catalog/images/idw-gfv400.png',
-    '/static-assets/vvs_product_catalog/images/idw-gfv400-feature-1.png',
-    '/static-assets/vvs_product_catalog/images/idw-gfv400-feature-2.png',
-    '/static-assets/vvs_product_catalog/images/idw-gfv400-feature-3.png',
-  ], pdfHref: '/static-assets/vvs_product_catalog/spec-sheets/idw-gfv-400-50-spec-sheet.pdf', pdfLabel: 'Download Full Spec Sheet (PDF)', badgeBev: true },
+  { id: 'usigfv400', category: 'beverage', brand: 'USI', name: 'USI GFV-400 Glass Front Vendor', desc: 'Industry-leading 50 selections and 400-bottle capacity for faster vending and higher product visibility. A positive-drive vending system and one-piece slide-out refrigeration cassette cut service time and keep it reliable.', specs: ['50 selections', '400 bottle capacity', 'Glass front', 'Fits a 34" doorway'], price: '$10,495', img: '/static-assets/vvs_product_catalog/images/usi-gfv400.jpg', pdfHref: '/static-assets/vvs_product_catalog/spec-sheets/usi-gfv-400-spec-sheet.pdf', pdfLabel: 'Download Full Spec Sheet (PDF)', badgeBev: true },
   { id: 'evokecoffee', category: 'coffee', brand: 'USI', name: 'Evoke Coffee Machine', desc: 'Full ADA-compliant coffee vending with LED lighting', specs: ['ADA compliant', 'LED lighting', 'iVend sensor'], price: '$8,379', img: '/static-assets/vvs_product_catalog/images/evoke-coffee-machine-2.jpg', badgeCoffee: true },
   { id: 'ap123', category: 'refurbished', brand: 'AP / InOne', name: 'AP 123 Snack + InOne Controller', desc: 'Fully refurbished AP 123 with upgraded InOne control board', specs: ['Refurbished', 'InOne controller', 'Updated electronics'], price: 'Contact for Availability', img: '/static-assets/vvs_product_catalog/images/ap-123-snack-vending-machine-inone-upgrade-controller-2.jpg', badgeRef: true },
 ];
@@ -57,7 +52,6 @@ const BRAND_FILTERS = [
   { key: 'Alpine', label: 'Alpine' },
   { key: 'Dixie Narco', label: 'Dixie Narco' },
   { key: 'CoolBlu', label: 'CoolBlu' },
-  { key: 'IDW', label: 'IDW' },
 ];
 
 function getBadge(m) {
