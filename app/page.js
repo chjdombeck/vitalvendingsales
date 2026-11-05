@@ -196,6 +196,7 @@ function ContactForm() {
           <option value="vending-used">Used Vending Machine</option>
           <option value="location">Location Services</option>
           <option value="service">Service &amp; Support</option>
+          <option value="payment-solutions">Payment Devices</option>
           <option value="general">General Inquiry</option>
         </select>
       </div>
