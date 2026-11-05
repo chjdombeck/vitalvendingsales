@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import SuccessModal from '../../components/SuccessModal';
 import { submitServiceRequestLead, submitServiceRequestBackupEmail, uploadServiceRequestPhoto, submitMoveRequestLead } from '../../lib/service-request';
@@ -51,7 +52,21 @@ function Optional() {
 }
 
 export default function RequestServicePage() {
+  return (
+    <Suspense fallback={null}>
+      <RequestServiceContent />
+    </Suspense>
+  );
+}
+
+function RequestServiceContent() {
   const [activeTab, setActiveTab] = useState('maintenance');
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const tab = searchParams.get('tab');
+    if (tab === 'move' || tab === 'maintenance') setActiveTab(tab);
+  }, [searchParams]);
 
   const formRef = useRef(null);
   const [machineCount, setMachineCount] = useState(1);
@@ -358,12 +373,12 @@ export default function RequestServicePage() {
                 <button type="button" onClick={() => setActiveTab('maintenance')}
                   className="flex-1 lg:flex-initial px-3 sm:px-7 py-3 sm:py-4 rounded-xl font-extrabold whitespace-nowrap transition-colors duration-200"
                   style={{ fontSize: 'clamp(0.8rem,3.2vw,1rem)', background: activeTab === 'maintenance' ? '#3DB54A' : 'transparent', color: activeTab === 'maintenance' ? '#fff' : 'rgba(255,255,255,0.7)', border: 'none', cursor: 'pointer', boxShadow: activeTab === 'maintenance' ? '0 4px 16px rgba(61,181,74,0.35)' : 'none' }}>
-                  Fix My Machine
+                  Request Maintenance
                 </button>
                 <button type="button" onClick={() => setActiveTab('move')}
                   className="flex-1 lg:flex-initial px-3 sm:px-7 py-3 sm:py-4 rounded-xl font-extrabold whitespace-nowrap transition-colors duration-200"
                   style={{ fontSize: 'clamp(0.8rem,3.2vw,1rem)', background: activeTab === 'move' ? '#3DB54A' : 'transparent', color: activeTab === 'move' ? '#fff' : 'rgba(255,255,255,0.7)', border: 'none', cursor: 'pointer', boxShadow: activeTab === 'move' ? '0 4px 16px rgba(61,181,74,0.35)' : 'none' }}>
-                  Move My Machine
+                  Request Move
                 </button>
               </div>
             </div>
@@ -378,8 +393,8 @@ export default function RequestServicePage() {
           <div className="max-w-3xl mx-auto">
             {/* Form panel */}
             <div className="rounded-3xl p-8 lg:p-10" style={{ background: '#D6E4F5', border: '1px solid rgba(27,42,74,0.08)' }}>
-              <div className="inline-block font-extrabold uppercase rounded-full mb-3 px-3 py-1" style={{ fontSize: '0.9rem', letterSpacing: '0.06em', color: '#1a6b2a', background: '#D6F0DA' }}>Maintenance Request</div>
-              <h2 className="font-black mb-2" style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', color: '#1B2A4A', letterSpacing: '-0.03em' }}>Tell us what you need</h2>
+              <div className="inline-block font-extrabold uppercase rounded-full mb-3 px-3 py-1" style={{ fontSize: '0.9rem', letterSpacing: '0.06em', color: '#1a6b2a', background: '#D6F0DA' }}>Request Maintenance</div>
+              <h2 className="font-black mb-2" style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', color: '#1B2A4A', letterSpacing: '-0.03em' }}>Tell us what you need fixed</h2>
               <p className="text-sm mb-8" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Fill out the form below. The more detail you give us, the fewer questions we&apos;ll need to ask before dispatching a technician.</p>
 
               {!submitted ? (
@@ -502,7 +517,7 @@ export default function RequestServicePage() {
           <div className="max-w-3xl mx-auto">
             {/* Form panel */}
             <div className="rounded-3xl p-8 lg:p-10" style={{ background: '#D6E4F5', border: '1px solid rgba(27,42,74,0.08)' }}>
-              <div className="inline-block font-extrabold uppercase rounded-full mb-3 px-3 py-1" style={{ fontSize: '0.9rem', letterSpacing: '0.06em', color: '#1a6b2a', background: '#D6F0DA' }}>Move Request</div>
+              <div className="inline-block font-extrabold uppercase rounded-full mb-3 px-3 py-1" style={{ fontSize: '0.9rem', letterSpacing: '0.06em', color: '#1a6b2a', background: '#D6F0DA' }}>Request Move</div>
               <h2 className="font-black mb-2" style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', color: '#1B2A4A', letterSpacing: '-0.03em' }}>Tell us what&apos;s moving</h2>
               <p className="text-sm mb-8" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>Fill out the form below with the current and new location for each machine. The more detail you give us, the fewer questions we&apos;ll need to ask before dispatching a technician.</p>
 

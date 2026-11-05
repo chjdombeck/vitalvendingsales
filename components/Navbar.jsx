@@ -4,8 +4,61 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const SERVICES_MENU = [
+  { href: '/request-service?tab=maintenance', label: 'Request Maintenance' },
+  { href: '/request-service?tab=move', label: 'Request Move' },
+  { href: '/payment-solutions', label: 'Payment Solutions' },
+];
+
+const ABOUT_MENU = [
+  { href: '/about', label: 'Our Story' },
+  { href: '/reviews', label: 'Reviews' },
+  { href: '/blog', label: 'Blog' },
+];
+
+function NavDropdown({ label, items }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        className="relative whitespace-nowrap font-medium text-[0.9rem] text-[#3D4D5C] hover:text-[#1B2A4A] transition-colors duration-200 flex items-center gap-1"
+        aria-expanded={open}
+      >
+        {label}
+        <svg className={`w-3 h-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-200 ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-1 pointer-events-none'}`}
+      >
+        <div
+          className="min-w-[200px] rounded-xl bg-white border border-gray-100 overflow-hidden"
+          style={{ boxShadow: '0 12px 32px rgba(27,42,74,0.14), 0 2px 8px rgba(27,42,74,0.08)' }}
+        >
+          {items.map(({ href, label: itemLabel }) => (
+            <Link
+              key={href}
+              href={href}
+              className="block px-4 py-3 text-sm font-medium text-[#3D4D5C] hover:text-[#1B2A4A] hover:bg-[#F4F6F8] transition-colors duration-200"
+            >
+              {itemLabel}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
 
   return (
     <>
@@ -42,10 +95,6 @@ export default function Navbar() {
               {[
                 { href: '/smart-coolers', label: 'AI Smart Coolers' },
                 { href: '/vending-machines', label: 'Vending Machines' },
-                { href: '/request-service', label: 'Request Service' },
-                { href: '/about', label: 'About' },
-                { href: '/reviews', label: 'Reviews' },
-                { href: '/blog', label: 'Blog' },
               ].map(({ href, label, highlight }) => (
                 <Link
                   key={href}
@@ -59,6 +108,17 @@ export default function Navbar() {
                   {label}
                 </Link>
               ))}
+              <NavDropdown label="Services" items={SERVICES_MENU} />
+              <NavDropdown label="About" items={ABOUT_MENU} />
+              <Link
+                href="/financing"
+                className="relative whitespace-nowrap font-medium text-[0.9rem] transition-colors duration-200
+                  after:content-[''] after:absolute after:-bottom-1 after:left-0 after:right-0
+                  after:h-0.5 after:bg-[#3DB54A] after:scale-x-0 after:transition-transform
+                  after:origin-left hover:after:scale-x-100 after:rounded-sm text-[#3D4D5C] hover:text-[#1B2A4A]"
+              >
+                Financing
+              </Link>
             </nav>
 
             {/* Desktop CTA + social icons */}
@@ -130,10 +190,6 @@ export default function Navbar() {
               {[
                 { href: '/smart-coolers', label: 'AI Smart Coolers' },
                 { href: '/vending-machines', label: 'Vending Machines' },
-                { href: '/request-service', label: 'Request Service' },
-                { href: '/about', label: 'About' },
-                { href: '/reviews', label: 'Reviews' },
-                { href: '/blog', label: 'Blog' },
               ].map(({ href, label, highlight }) => (
                 <Link
                   key={href}
@@ -144,6 +200,57 @@ export default function Navbar() {
                   {label}
                 </Link>
               ))}
+
+              {/* Services collapsible */}
+              <button
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="py-2.5 px-3 rounded-lg font-medium text-[#3D4D5C] hover:bg-[#F4F6F8] hover:text-[#1B2A4A] transition-colors duration-200 flex items-center justify-between"
+              >
+                Services
+                <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobileServicesOpen && (
+                <div className="flex flex-col pl-4 border-l-2 border-[#F4F6F8] ml-3 mb-1">
+                  {SERVICES_MENU.map(({ href, label }) => (
+                    <Link key={href} href={href} onClick={() => setMenuOpen(false)}
+                      className="py-2 px-3 rounded-lg text-sm font-medium text-[#3D4D5C] hover:bg-[#F4F6F8] hover:text-[#1B2A4A] transition-colors duration-200">
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {/* About collapsible */}
+              <button
+                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                className="py-2.5 px-3 rounded-lg font-medium text-[#3D4D5C] hover:bg-[#F4F6F8] hover:text-[#1B2A4A] transition-colors duration-200 flex items-center justify-between"
+              >
+                About
+                <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobileAboutOpen && (
+                <div className="flex flex-col pl-4 border-l-2 border-[#F4F6F8] ml-3 mb-1">
+                  {ABOUT_MENU.map(({ href, label }) => (
+                    <Link key={href} href={href} onClick={() => setMenuOpen(false)}
+                      className="py-2 px-3 rounded-lg text-sm font-medium text-[#3D4D5C] hover:bg-[#F4F6F8] hover:text-[#1B2A4A] transition-colors duration-200">
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              <Link
+                href="/financing"
+                onClick={() => setMenuOpen(false)}
+                className="py-2.5 px-3 rounded-lg font-medium text-[#3D4D5C] hover:bg-[#F4F6F8] hover:text-[#1B2A4A] transition-colors duration-200"
+              >
+                Financing
+              </Link>
+
               <a href="tel:4132823776" className="py-2.5 px-3 rounded-lg text-[#3D4D5C] font-medium hover:bg-[#F4F6F8] hover:text-[#1B2A4A] transition-colors duration-200">
                 (413) 282-3776
               </a>
