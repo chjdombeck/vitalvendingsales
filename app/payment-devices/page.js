@@ -85,7 +85,7 @@ export default function PaymentSolutions() {
           <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-            <span style={{ color: 'rgba(255,255,255,0.8)' }}>Payment Solutions</span>
+            <span style={{ color: 'rgba(255,255,255,0.8)' }}>Payment Devices</span>
           </nav>
           <div className="max-w-3xl">
             <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase mb-4" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.8)', letterSpacing: '0.1em' }}>Cashless &amp; Cash Ready</div>

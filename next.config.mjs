@@ -17,6 +17,11 @@ const nextConfig = {
         destination: '/smart-coolers',
         permanent: true,
       },
+      {
+        source: '/payment-solutions',
+        destination: '/payment-devices',
+        permanent: true,
+      },
     ];
   },
   async headers() {

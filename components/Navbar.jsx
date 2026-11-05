@@ -7,7 +7,7 @@ import Image from 'next/image';
 const SERVICES_MENU = [
   { href: '/request-service?tab=maintenance', label: 'Request Maintenance' },
   { href: '/request-service?tab=move', label: 'Request Move' },
-  { href: '/payment-solutions', label: 'Payment Solutions' },
+  { href: '/payment-devices', label: 'Payment Devices' },
 ];
 
 const ABOUT_MENU = [
