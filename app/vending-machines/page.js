@@ -34,6 +34,8 @@ const MACHINES = [
   { id: 'usigfv400', category: 'beverage', brand: 'USI', name: 'USI GFV-400 Glass Front Vendor', desc: 'Industry-leading 50 selections and 400-bottle capacity for faster vending and higher product visibility. A positive-drive vending system and one-piece slide-out refrigeration cassette cut service time and keep it reliable.', specs: ['50 selections', '400 bottle capacity', 'Glass front', 'Fits a 34" doorway'], price: '$10,495', img: '/static-assets/vvs_product_catalog/images/usi-gfv400.jpg', pdfHref: '/static-assets/vvs_product_catalog/spec-sheets/usi-gfv-400-spec-sheet.pdf', pdfLabel: 'Download Full Spec Sheet (PDF)', badgeBev: true },
   { id: 'evokecoffee', category: 'coffee', brand: 'USI', name: 'Evoke Coffee Machine', desc: 'Full ADA-compliant coffee vending with LED lighting', specs: ['ADA compliant', 'LED lighting', 'iVend sensor'], price: '$8,379', img: '/static-assets/vvs_product_catalog/images/evoke-coffee-machine-2.jpg', badgeCoffee: true },
   { id: 'ap123', category: 'refurbished', brand: 'AP / InOne', name: 'AP 123 Snack + InOne Controller', desc: 'Fully refurbished AP 123 with upgraded InOne control board', specs: ['Refurbished', 'InOne controller', 'Updated electronics'], price: 'Contact for Availability', img: '/static-assets/vvs_product_catalog/images/ap-123-snack-vending-machine-inone-upgrade-controller-2.jpg', badgeRef: true },
+  { id: 'usiharmreductionoutdoor', category: 'harm-reduction', brand: 'USI', name: 'USI 5W Outdoor Harm Reduction Vending Machine', desc: 'A 24/7, contactless outdoor vending machine for harm reduction supplies like naloxone, fentanyl test strips, clean needles, and wound care kits. Weatherproof and vandal-resistant, with built-in usage and inventory tracking.', specs: ['Up to 60 selections', '~350 item capacity', 'Weatherproof & vandal-resistant', 'Contactless PIN/card access'], price: 'Contact Us for Pricing', img: '/static-assets/vvs_product_catalog/images/usi-harm-reduction/usi-5w-outdoor-harm-reduction.png', badgeHarmReduction: true },
+  { id: 'usiharmreductionambient', category: 'harm-reduction', brand: 'USI', name: 'USI 5W Ambient Harm Reduction Vending Machine', desc: 'A 24/7, contactless indoor vending machine for harm reduction supplies like naloxone, fentanyl test strips, clean needles, and wound care kits. Ideal for community centers and clinics, with built-in usage and inventory tracking.', specs: ['Up to 60 selections', '~350 item capacity', 'Indoor / ambient use', 'Contactless PIN/card access'], price: 'Contact Us for Pricing', img: '/static-assets/vvs_product_catalog/images/usi-harm-reduction/usi-5w-ambient-harm-reduction.png', badgeHarmReduction: true },
 ];
 
 const FILTERS = [
@@ -42,6 +44,7 @@ const FILTERS = [
   { key: 'combo', label: 'Combo Machines' },
   { key: 'beverage', label: 'Beverage Machines' },
   { key: 'coffee', label: 'Coffee Machines' },
+  { key: 'harm-reduction', label: 'Harm Reduction' },
   { key: 'refurbished', label: 'Used & Refurbished' },
 ];
 
@@ -59,6 +62,7 @@ function getBadge(m) {
   if (m.badgeCoffee) return { label: 'Coffee', bg: '#F3EAD6', color: '#7B4F1C' };
   if (m.badgeRef) return { label: 'Refurbished', bg: '#EAE0F5', color: '#5B3A8C' };
   if (m.badgeBook) return { label: 'Book', bg: '#FDE8D6', color: '#B0530A' };
+  if (m.badgeHarmReduction) return { label: 'Harm Reduction', bg: '#FDE2E2', color: '#B03A3A' };
   return { label: 'Snack', bg: '#D6F0DA', color: '#1e7a28' };
 }
 
