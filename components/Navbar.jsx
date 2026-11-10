@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const SERVICES_MENU = [
-  { href: '/request-service?tab=maintenance', label: 'Request Maintenance' },
-  { href: '/request-service?tab=move', label: 'Request Move' },
+  { href: '/request-service?tab=maintenance', label: 'Fix My Machine' },
+  { href: '/request-service?tab=move', label: 'Move My Machine' },
   { href: '/payment-devices', label: 'Payment Devices' },
 ];
 

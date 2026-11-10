@@ -481,10 +481,10 @@ export default function Home() {
       <section id="equipment" className="bg-white py-10 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
-            <div className="max-w-xl">
+            <div>
               <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1a6b2a', background: '#D6F0DA', padding: '4px 10px', borderRadius: 4, display: 'inline-block', marginBottom: '1rem' }}>Equipment Catalog</div>
-              <h2 className="font-black text-4xl mb-3" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.12 }}>Premium Vending Machines</h2>
-              <p style={{ color: '#3D4D5C', lineHeight: 1.7 }}>We carry the best vending brands in the USA: USI Evoke series, AMS, and more. Every machine selected for operator reliability and profitability.</p>
+              <h2 className="font-black mb-3 whitespace-nowrap" style={{ color: '#1B2A4A', letterSpacing: '-0.03em', lineHeight: 1.12, fontSize: 'clamp(0.95rem,5vw,2.25rem)' }}>Premium Vending Machines for Sale</h2>
+              <p style={{ color: '#3D4D5C', lineHeight: 1.7, maxWidth: 520 }}>We carry the best vending brands in the USA: USI Evoke series, AMS, and more. Every machine selected for operator reliability and profitability.</p>
             </div>
             <Link href="/vending-machines" className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-colors duration-200" style={{ border: '1.5px solid #1B2A4A', color: '#1B2A4A' }}>View All Equipment</Link>
           </div>

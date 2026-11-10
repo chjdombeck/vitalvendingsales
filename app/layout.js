@@ -15,20 +15,20 @@ const inter = Inter({
 
 export const metadata = {
   metadataBase: new URL('https://www.vitalvendingsales.com'),
-  title: 'AI Smart Coolers & Vending Machines | Vital Vending Sales',
-  description: 'AI-powered smart coolers, vending machines, and micro-market solutions for the Northeast. 15+ years experience. Free consultation.',
+  title: 'Vending Machines & AI Smart Coolers for Sale | Ludlow, MA | Vital Vending Sales',
+  description: 'Vending machines and AI smart coolers for sale across Massachusetts and the Northeast. 15+ years of experience, free location help and local service. Free consultation.',
   icons: { icon: '/VitalLogoOnly.png' },
   openGraph: {
     type: 'website',
     siteName: 'Vital Vending Sales',
-    title: 'AI Smart Coolers & Vending Machines | Vital Vending Sales',
-    description: 'AI-powered smart coolers, vending machines, and micro-market solutions for the Northeast. 15+ years experience. Free consultation.',
+    title: 'Vending Machines & AI Smart Coolers for Sale | Ludlow, MA | Vital Vending Sales',
+    description: 'Vending machines and AI smart coolers for sale across Massachusetts and the Northeast. 15+ years of experience, free location help and local service. Free consultation.',
     images: ['/static-assets/hero6.webp'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Smart Coolers & Vending Machines | Vital Vending Sales',
-    description: 'AI-powered smart coolers, vending machines, and micro-market solutions for the Northeast. 15+ years experience. Free consultation.',
+    title: 'Vending Machines & AI Smart Coolers for Sale | Ludlow, MA | Vital Vending Sales',
+    description: 'Vending machines and AI smart coolers for sale across Massachusetts and the Northeast. 15+ years of experience, free location help and local service. Free consultation.',
     images: ['/static-assets/hero6.webp'],
   },
 };
@@ -37,9 +37,9 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Vital Vending Sales',
-  description: 'Northeast supplier of vending machines, AI smart coolers, and micro-market solutions.',
+  description: 'Vending machines, AI smart coolers and micro-market equipment for sale, with location services and machine service across the Northeast.',
   url: 'https://www.vitalvendingsales.com',
-  telephone: '+14132823776',
+  telephone: '+1-413-282-3776',
   email: 'info@vitalvendingsales.com',
   address: {
     '@type': 'PostalAddress',
@@ -49,7 +49,14 @@ const localBusinessSchema = {
     postalCode: '01056',
     addressCountry: 'US',
   },
-  areaServed: 'Northeast United States',
+  areaServed: ['Massachusetts', 'New England', 'Northeastern United States'],
+  logo: 'https://www.vitalvendingsales.com/VitalLogoOnly.png',
+  image: 'https://www.vitalvendingsales.com/VitalLogoandmoreTEXTONLY.png',
+  sameAs: [
+    'https://www.instagram.com/vitalvendingsales',
+    'https://www.tiktok.com/@vitalvending',
+    'https://www.facebook.com/vitalvendingsales',
+  ],
 };
 
 export default function RootLayout({ children }) {

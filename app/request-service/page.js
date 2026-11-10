@@ -373,12 +373,12 @@ function RequestServiceContent() {
                 <button type="button" onClick={() => setActiveTab('maintenance')}
                   className="flex-1 lg:flex-initial px-3 sm:px-7 py-3 sm:py-4 rounded-xl font-extrabold whitespace-nowrap transition-colors duration-200"
                   style={{ fontSize: 'clamp(0.8rem,3.2vw,1rem)', background: activeTab === 'maintenance' ? '#3DB54A' : 'transparent', color: activeTab === 'maintenance' ? '#fff' : 'rgba(255,255,255,0.7)', border: 'none', cursor: 'pointer', boxShadow: activeTab === 'maintenance' ? '0 4px 16px rgba(61,181,74,0.35)' : 'none' }}>
-                  Request Maintenance
+                  Fix My Machine
                 </button>
                 <button type="button" onClick={() => setActiveTab('move')}
                   className="flex-1 lg:flex-initial px-3 sm:px-7 py-3 sm:py-4 rounded-xl font-extrabold whitespace-nowrap transition-colors duration-200"
                   style={{ fontSize: 'clamp(0.8rem,3.2vw,1rem)', background: activeTab === 'move' ? '#3DB54A' : 'transparent', color: activeTab === 'move' ? '#fff' : 'rgba(255,255,255,0.7)', border: 'none', cursor: 'pointer', boxShadow: activeTab === 'move' ? '0 4px 16px rgba(61,181,74,0.35)' : 'none' }}>
-                  Request Move
+                  Move My Machine
                 </button>
               </div>
             </div>

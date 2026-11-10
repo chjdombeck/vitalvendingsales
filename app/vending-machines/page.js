@@ -129,7 +129,7 @@ export default function VendingMachines() {
               <span style={{ color: '#3DB54A' }}>in the Northeast</span>
             </h1>
             <p className="mb-8" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: 560 }}>
-              New, used, and refurbished snack, combo, and beverage vending machines from top brands like USI and AMS. We serve entrepreneurs and businesses across Massachusetts, Connecticut, Rhode Island, and beyond.
+              New, used, and refurbished snack, combo, and beverage vending machines from top brands like USI and AMS. Based in Ludlow, Massachusetts, we deliver and install vending machines across New England and the Northeast.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="#catalog" className="inline-flex items-center gap-2 font-bold rounded-xl text-white px-6 py-3" style={{ background: 'rgba(61,181,74,0.88)', border: '1px solid rgba(255,255,255,0.28)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35), 0 4px 16px rgba(0,0,0,0.18)' }}>
