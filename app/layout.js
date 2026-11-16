@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import BlackFridayPromo from '@/components/BlackFridayPromo';
 
 const GA_MEASUREMENT_ID = 'G-0GRSJMW0NQ';
 
@@ -81,6 +82,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <BlackFridayPromo />
       </body>
     </html>
   );
