@@ -136,6 +136,7 @@ export default function Navbar() {
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3DB54A]" />
                   </span>
                   <span>Black Friday<span className="max-xl:hidden"> Deals</span></span>
+                  <span aria-hidden="true">🎁</span>
                 </Link>
               )}
             </nav>
@@ -214,6 +215,7 @@ export default function Navbar() {
                 >
                   <span className="h-2 w-2 rounded-full bg-[#3DB54A]" aria-hidden="true" />
                   Black Friday Deals
+                  <span aria-hidden="true">🎁</span>
                 </Link>
               )}
               {[

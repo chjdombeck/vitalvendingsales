@@ -74,7 +74,7 @@ export default function BlackFriday() {
           </div>
 
           <h1 className="font-black text-white mb-5 max-w-3xl" style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', letterSpacing: '-0.035em', lineHeight: 1.02 }}>
-            Black Friday <span style={{ color: '#3DB54A' }}>smart cooler</span> deals
+            Black Friday <span style={{ color: '#3DB54A' }}>smart cooler</span> deals <span aria-hidden="true">🎁</span>
           </h1>
           <p className="max-w-xl mb-8 text-base lg:text-lg" style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.7 }}>
             Our best pricing of the year on HAHA and Spectra AI smart coolers. Lock in your price before November 30.
