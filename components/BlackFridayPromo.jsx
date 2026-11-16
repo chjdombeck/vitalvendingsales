@@ -77,7 +77,7 @@ export default function BlackFridayPromo() {
           </div>
 
           <p className="font-black mb-2" style={{ color: '#1B2A4A', fontSize: '1.3rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-            {live ? 'Smart cooler deals are here' : 'Smart cooler deals start Nov 20'}
+            {live ? 'Smart cooler deals are here' : 'Smart cooler deals start Nov 20'}{' '}<span aria-hidden="true">🎁</span>
           </p>
           <ul className="text-[0.85rem] mb-4 space-y-1.5" style={{ color: '#3D4D5C', lineHeight: 1.5 }}>
             <li className="flex gap-2">
