@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const metadata = {
   title: 'Black Friday Smart Cooler Deals | Nov 20 to 30, 2026 | Vital Vending Sales',
-  description: 'Black Friday pricing on HAHA AI smart coolers plus a free extended warranty, and $214.95 in savings on every Spectra smart cooler. November 20 to 30, 2026.',
+  description: 'Black Friday pricing on HAHA AI smart coolers plus a free extended warranty, and $214.95 in savings on every Spectra smart cooler, and a free credit card reader with any vending machine. November 20 to 30, 2026.',
   alternates: { canonical: '/black-friday' },
 };
 
@@ -77,12 +77,25 @@ export default function BlackFriday() {
             Black Friday <span style={{ color: '#3DB54A' }}>smart cooler</span> deals <span aria-hidden="true">🎁</span>
           </h1>
           <p className="max-w-xl mb-8 text-base lg:text-lg" style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.7 }}>
-            Our best pricing of the year on HAHA and Spectra AI smart coolers. Lock in your price before November 30.
+            Our best pricing of the year on HAHA and Spectra AI smart coolers, plus a free credit card reader with any vending machine. Lock in your price before November 30.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a href="#haha" className={btnPrimary} style={btnPrimaryStyle}>HAHA Deals</a>
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
+            <Link
+              href="/#contact"
+              className={btnPrimary + ' text-[1.05rem]'}
+              style={{
+                ...btnPrimaryStyle,
+                background: 'linear-gradient(180deg, #4fd05d 0%, #3DB54A 100%)',
+                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.4), 0 0 0 1px rgba(126,224,138,0.6), 0 10px 28px rgba(61,181,74,0.45), 0 0 40px rgba(61,181,74,0.3)',
+              }}
+            >
+              Claim Your Deal
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 12h12" /></svg>
+            </Link>
+            <a href="#haha" className={btnGhost} style={btnGhostStyle}>HAHA Deals</a>
             <a href="#spectra" className={btnGhost} style={btnGhostStyle}>Spectra Deals</a>
+            <a href="#vending" className={btnGhost} style={btnGhostStyle}>Vending Machine Deals</a>
           </div>
         </div>
       </section>
@@ -217,6 +230,72 @@ export default function BlackFriday() {
         </div>
       </section>
 
+      {/* Vending machines: free card reader */}
+      <section id="vending" className="py-14 lg:py-24 scroll-mt-20" style={{ background: '#F4F6F8' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 lg:mb-14">
+            <SectionTag>Vending Machines</SectionTag>
+            <h2 className="font-black mt-4 mb-3" style={{ color: '#1B2A4A', fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+              Free credit card reader
+            </h2>
+            <p className="font-semibold" style={{ color: '#3D4D5C', lineHeight: 1.7 }}>
+              With any new or refurbished vending machine. Buy a vending machine, get a reader free.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="grid grid-cols-2 gap-4 lg:gap-6 items-end">
+              {[
+                { src: '/static-assets/vvs_product_catalog/images/usi-evoke-st5-combo-vending-machine-2.jpg', alt: 'Snack and drink combo vending machine' },
+                { src: '/static-assets/vvs_product_catalog/images/ams-39-combo-vending-machine-2.jpg', alt: 'AMS combo vending machine' },
+              ].map((m) => (
+                <div key={m.src} className="relative aspect-square rounded-2xl bg-white overflow-hidden" style={{ boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 8px 24px rgba(27,42,74,0.07)', border: '1px solid rgba(27,42,74,0.06)' }}>
+                  <Image src={m.src} alt={m.alt} fill sizes="(min-width:1024px) 300px, 45vw" className="object-contain p-2" />
+                </div>
+              ))}
+            </div>
+
+            <div>
+              <p className="font-extrabold text-sm tracking-[0.14em] uppercase mb-4" style={{ color: '#1B2A4A' }}>Choose your free reader</p>
+              <div className="grid grid-cols-2 gap-4 mb-5">
+                {[
+                  { name: 'Nayax', img: '/payment-products/nayax-vpos.png' },
+                  { name: 'Cantaloupe', img: '/static-assets/black-friday/cantaloupe-reader.png' },
+                ].map((r) => (
+                  <div key={r.name} className="rounded-2xl bg-white p-4 flex flex-col items-center text-center" style={{ boxShadow: '0 1px 2px rgba(27,42,74,0.06), 0 8px 24px rgba(27,42,74,0.07)', border: '1px solid rgba(27,42,74,0.06)' }}>
+                    <div className="relative w-full h-28 lg:h-32 mb-3">
+                      <Image src={r.img} alt={`${r.name} credit card reader`} fill sizes="200px" className="object-contain" />
+                    </div>
+                    <p className="font-black" style={{ color: '#1B2A4A', fontSize: '1.25rem', letterSpacing: '-0.02em' }}>{r.name}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="relative overflow-hidden rounded-2xl p-6 text-center" style={{ background: '#1B2A4A', boxShadow: '0 16px 40px rgba(27,42,74,0.25), 0 0 0 2px #3DB54A' }}>
+                <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 50% 100% at 100% 50%, rgba(61,181,74,0.25), transparent 70%)' }} />
+                <p className="relative font-black" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2rem)', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+                  <span style={{ color: '#3DB54A' }}>$350 value.</span> <span className="text-white">Installed for you!</span>
+                </p>
+                <p className="relative text-sm mt-2" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  One free reader per qualifying machine. Your choice of brand.
+                </p>
+              </div>
+
+              <div className="mt-5 text-center lg:text-left">
+                <Link
+                  href="/vending-machines"
+                  className="inline-flex items-center gap-2 py-2.5 font-bold text-[0.95rem] hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3DB54A] rounded-md active:opacity-70"
+                  style={{ color: '#2e9439' }}
+                >
+                  Browse vending machines
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 12h12" /></svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="relative overflow-hidden py-14 lg:py-20" style={{ background: 'radial-gradient(ellipse 50% 80% at 50% 0%, rgba(61,181,74,0.18), transparent 70%), #1B2A4A' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: GRAIN, opacity: 0.08, mixBlendMode: 'overlay' }} />
@@ -225,13 +304,13 @@ export default function BlackFriday() {
             Lock in your Black Friday price
           </h2>
           <p className="mb-8" style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.7 }}>
-            Offers run November 20 to 30, 2026. Reach out and we will walk you through the right cooler for your location.
+            Offers run November 20 to 30, 2026. Reach out and we will walk you through the right equipment for your location.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
             <Link href="/#contact" className={btnPrimary} style={btnPrimaryStyle}>Get a Quote</Link>
             <a href="tel:+14132823776" className={btnGhost} style={btnGhostStyle}>Call (413) 282-3776</a>
           </div>
-          <a href="mailto:info@vitalvendingsales.com" className="text-sm font-semibold hover:text-white focus-visible:text-white focus-visible:outline-none" style={{ color: '#9be3a4' }}>
+          <a href="mailto:info@vitalvendingsales.com" className="inline-block py-2.5 text-sm font-semibold hover:text-white focus-visible:text-white focus-visible:outline-none" style={{ color: '#9be3a4' }}>
             info@vitalvendingsales.com
           </a>
         </div>

@@ -38,7 +38,7 @@ export default function BlackFridayPromo() {
     <aside
       role="dialog"
       aria-label="Black Friday deals"
-      className="fixed z-[60] bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:w-[360px]"
+      className="fixed z-40 bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:w-[360px]"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.97)',
@@ -87,6 +87,10 @@ export default function BlackFridayPromo() {
             <li className="flex gap-2">
               <svg className="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="#3DB54A" strokeWidth="3" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
               <span><strong style={{ color: '#1B2A4A' }}>Spectra coolers</strong> save $214.95 per cooler</span>
+            </li>
+            <li className="flex gap-2">
+              <svg className="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="#3DB54A" strokeWidth="3" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span><strong style={{ color: '#1B2A4A' }}>Vending machines</strong> come with a free card reader</span>
             </li>
           </ul>
 
