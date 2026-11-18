@@ -104,7 +104,7 @@ export default function BlackFridayPromo() {
               transition: `transform 250ms ${SPRING}`,
             }}
           >
-            {live ? 'See the deals' : 'Preview the deals'}
+            Claim Your Deal
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 12h12" />
             </svg>
